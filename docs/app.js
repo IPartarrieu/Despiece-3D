@@ -47,7 +47,7 @@ function aplicarModelo(m) {
 
 function reconstruir() {
   if (grupo) scene.remove(grupo);
-  modelo = construir({ disco: st.disco, color: COLOR[st.marca] || COLOR.Genérica, bateria: st.bateria, gatillo: st.gatillo });
+  modelo = construir({ disco: st.disco, color: COLOR[st.marca] || COLOR.Genérica, bateria: st.bateria, gatillo: st.gatillo, etiqueta: st.modelo ? `${st.marca} ${st.modelo.modelo}`.slice(0, 26).toUpperCase() : st.marca === 'Genérica' ? '' : st.marca.toUpperCase() });
   grupo = new THREE.Group(); scene.add(grupo);
   for (const p of Object.values(modelo.parts)) { monto[p.id] ??= 0; p.items.forEach(i => grupo.add(i.obj)); p.mats.forEach(m => { m.userData.op = 1; }); }
   if (st.sel && !modelo.parts[st.sel]) st.sel = null;
@@ -62,7 +62,7 @@ function aparienciaPiezas() {
     if (st.xray && p.shell) op = 0.22;
     if (st.aislar && st.sel && p.id !== st.sel) op = Math.min(op, 0.12);
     const brillo = p.id === st.sel ? [0x3b82f6, 0.55] : foco.has(p.id) ? [0xf5a524, 0.5] : p.id === hover ? [0x3b82f6, 0.25] : [0, 0];
-    for (const m of p.mats) { m.transparent = op < 1; m.opacity = op; m.depthWrite = op >= 1; m.emissive.setHex(brillo[0]); m.emissiveIntensity = brillo[1]; }
+    for (const m of p.mats) { m.transparent = op < 1; m.opacity = op; if (m.emissive) { m.depthWrite = op >= 1; m.emissive.setHex(brillo[0]); m.emissiveIntensity = brillo[1]; } }
   }
   renderer.clippingPlanes = st.corte ? [plano] : [];
 }
