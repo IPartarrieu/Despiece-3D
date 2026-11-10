@@ -7,9 +7,10 @@ Visor 3D desmontable de maquinaria menor, hecho con three.js y sin compilación 
 | Herramienta | Modelos | Fuente |
 |---|---|---|
 | Demoledor | DeWalt D25900K (10 kg), D25940K (12 kg) | Procedimientos de desarme ESSG de DeWalt (63 y 59 págs.) |
+| Rotomartillo | Makita HR2600, HR2601 (documentados); HR2470 y Kothman RK26 (referenciales, misma arquitectura) | Makita Technical Information HR2600/HR2601 (13 págs.) y manual del HR2470 |
 | Esmeril angular | Makita GA4530, Milwaukee M18 FUEL 2880-20 | Despiece Makita y lista de piezas Milwaukee 54-38-7025 |
 
-Pendientes con documentación hallada: Milwaukee 6130-33 y 6140-30, Makita GA4030K y 9557NB (esmeril); Makita HM1214C y Bosch GSH 10 E (demoledor, parciales).
+Los modelos referenciales usan la arquitectura de un modelo documentado y lo dicen en su ficha. Pendientes con documentación hallada: Milwaukee 6130-33 y 6140-30, Makita GA4030K y 9557NB (esmeril); Makita HM1214C y Bosch GSH 10 E (demoledor, parciales).
 
 - Rotar, acercar y mover con el mouse; clic en una pieza para ver su ficha.
 - Explosión, corte, rayos X y aislar pieza; desarme paso a paso por modelo.

@@ -1,0 +1,2839 @@
+{
+ "modelos": [
+  {
+   "marca": "Makita",
+   "modelo": "HR2600",
+   "porta": "SDS-plus",
+   "capacidad": 26,
+   "potencia": 800,
+   "rpm": "0-1.200",
+   "golpes": "0-4.600",
+   "energia": null,
+   "peso": 2.8,
+   "largo": 361,
+   "alto": 209,
+   "ancho": 77,
+   "modos": 2,
+   "avt": false,
+   "nota": "Documentado: Makita Technical Information HR2600/HR2601 (13 págs.). Exacto: lista de piezas y números de la Fig. 1, orden y sentido del desarme ([3]-1 a [3]-9), lubricación, herramientas 1R y medidas externas 361 x 77 x 209 mm. 800 W de entrada (400 W de salida, 550 W máx.), 2 modos, limitador de torque. Peso EPTA 2,8 kg con empuñadura lateral. Aproximado: medidas internas, formas finas y colores (el documento es en blanco y negro; turquesa de marca Makita). Energía de impacto: sin dato en las fuentes."
+  },
+  {
+   "marca": "Makita",
+   "modelo": "HR2601",
+   "porta": "SDS-plus",
+   "capacidad": 26,
+   "potencia": 800,
+   "rpm": "0-1.200",
+   "golpes": "0-4.600",
+   "energia": null,
+   "peso": 2.9,
+   "largo": 361,
+   "alto": 209,
+   "ancho": 77,
+   "modos": 2,
+   "avt": true,
+   "nota": "Documentado: mismo documento que el HR2600. Agrega AVT: contrapeso con resorte amortiguador y placa, fijado a la carcasa interior con dos pernos M4x12 (Fig. 20), y cambia el amortiguador del perno de impacto (arandela 10 + resorte de compresión 20, caja de O-ring B, manguito 9B; Fig. 18B). Peso EPTA 2,9 kg. Aproximado: medidas internas, forma del contrapeso y colores. Energía de impacto: sin dato en las fuentes."
+  },
+  {
+   "marca": "Makita",
+   "modelo": "HR2470",
+   "porta": "SDS-plus",
+   "capacidad": 24,
+   "potencia": null,
+   "rpm": "0-1.100",
+   "golpes": "0-4.500",
+   "energia": null,
+   "peso": 2.9,
+   "largo": 370,
+   "alto": null,
+   "ancho": null,
+   "modos": 3,
+   "avt": false,
+   "nota": "Referencial: basado en la arquitectura del HR2600. Del manual de instrucciones del HR2470 (exacto): 24 mm en concreto, 0-1.100 rpm, 0-4.500 golpes/min, largo 370 mm, 2,9 kg, 3 modos con perilla rotatoria y botón de bloqueo, limitador de torque. El interior, los números de pieza (ref.) y los pasos son los del HR2600 y no están verificados para este modelo; el modelo se escala por el largo. La potencia no aparece en el manual consultado: sin dato en las fuentes."
+  },
+  {
+   "marca": "Kothman",
+   "modelo": "RK26",
+   "porta": "SDS-plus",
+   "capacidad": 26,
+   "potencia": 800,
+   "rpm": "0-1.300",
+   "golpes": "0-4.800",
+   "energia": null,
+   "peso": 2.9,
+   "largo": null,
+   "alto": null,
+   "ancho": null,
+   "modos": 3,
+   "avt": false,
+   "nota": "Referencial (suposición razonable): Kothman no publica despiece ni manual de servicio del RK-26. Datos de kothman.cl: 220 V, 800 W, 0-1.300 rpm, 0-4.800 golpes/min, 26 mm en concreto, 13 mm en acero, 32 mm en madera, 2,9 kg, SDS-plus, 3 modos (la descripción además menciona posicionar el cincel). Colores negro y rojo según las fotos de kothman.cl. Se modela con la arquitectura del HR2600 (plato oscilante, limitador de torque, motor en línea): interior, números de pieza y pasos son los del Makita y pueden no coincidir. Energía de impacto y largo: sin dato en las fuentes."
+  }
+ ],
+ "catalogo": {
+  "mango_lateral": [
+   "Empuñadura lateral",
+   null,
+   "Portabrocas SDS-plus"
+  ],
+  "tapa35": [
+   "Tapa 35 (guardapolvo)",
+   "1",
+   "Portabrocas SDS-plus"
+  ],
+  "resorte14": [
+   "Resorte de anillo 14 (negro) y arandela 16",
+   null,
+   "Portabrocas SDS-plus"
+  ],
+  "resorte15": [
+   "Resorte de anillo 15 (plateado)",
+   null,
+   "Portabrocas SDS-plus"
+  ],
+  "arandela17": [
+   "Arandela plana 17 y arandela de goma 16",
+   null,
+   "Portabrocas SDS-plus"
+  ],
+  "cubierta": [
+   "Cubierta del portabrocas",
+   null,
+   "Portabrocas SDS-plus"
+  ],
+  "bolas7": [
+   "Bolas de acero 7,0 (2)",
+   "26",
+   "Portabrocas SDS-plus"
+  ],
+  "anillo21": [
+   "Anillo 21, arandela guía y resorte cónico 21-29",
+   null,
+   "Portabrocas SDS-plus"
+  ],
+  "portaherramienta": [
+   "Portaherramienta completo",
+   "28",
+   "Portaherramienta y limitador de torque"
+  ],
+  "bolas4": [
+   "Bolas de acero 4 (4)",
+   null,
+   "Portaherramienta y limitador de torque"
+  ],
+  "brida": [
+   "Brida de arrastre",
+   "29",
+   "Portaherramienta y limitador de torque"
+  ],
+  "engranaje51": [
+   "Engranaje recto 51",
+   "30",
+   "Portaherramienta y limitador de torque"
+  ],
+  "pines6": [
+   "Pines 6 (6)",
+   null,
+   "Portaherramienta y limitador de torque"
+  ],
+  "arandela32": [
+   "Arandela plana 30 gruesa",
+   "32",
+   "Portaherramienta y limitador de torque"
+  ],
+  "resorte31": [
+   "Resorte de compresión 31",
+   null,
+   "Portaherramienta y limitador de torque"
+  ],
+  "spiro": [
+   "Arandela plana 30 fina y arandela Spiro lock 30",
+   null,
+   "Portaherramienta y limitador de torque"
+  ],
+  "arandela36": [
+   "Arandela plana 30 (contra la carcasa interior)",
+   "36",
+   "Portaherramienta y limitador de torque"
+  ],
+  "manguito9": [
+   "Manguito 9A",
+   null,
+   "Percusión"
+  ],
+  "perno": [
+   "Perno de impacto A",
+   "38",
+   "Percusión"
+  ],
+  "cojin": [
+   "Anillo 10A y anillo amortiguador 12",
+   null,
+   "Percusión"
+  ],
+  "caja_oring": [
+   "Caja de O-ring A",
+   null,
+   "Percusión"
+  ],
+  "oring9": [
+   "O-ring 9",
+   "42",
+   "Percusión"
+  ],
+  "resorte28": [
+   "Resorte de anillo 28",
+   null,
+   "Percusión"
+  ],
+  "martillo": [
+   "Martillo (striker)",
+   "44",
+   "Percusión"
+  ],
+  "oring175": [
+   "O-ring 17,5",
+   "45",
+   "Percusión"
+  ],
+  "piston": [
+   "Cilindro pistón",
+   "46",
+   "Percusión"
+  ],
+  "placa_guia": [
+   "Placa guía",
+   "47",
+   "Percusión"
+  ],
+  "junta_piston": [
+   "Unión del pistón (piston joint)",
+   null,
+   "Percusión"
+  ],
+  "resorte14c": [
+   "Resorte de compresión 14 y arandela plana 14",
+   null,
+   "Percusión"
+  ],
+  "engranaje10": [
+   "Engranaje recto 10 (eje del plato oscilante)",
+   "56",
+   "Plato oscilante (eje intermedio)"
+  ],
+  "leva": [
+   "Leva de embrague B",
+   null,
+   "Plato oscilante (eje intermedio)"
+  ],
+  "oscilante": [
+   "Rodamiento oscilante 10 (swash bearing)",
+   "58",
+   "Plato oscilante (eje intermedio)"
+  ],
+  "caja_rod": [
+   "Caja de rodamiento con rodamiento 608ZZ y arandela plana 8",
+   null,
+   "Plato oscilante (eje intermedio)"
+  ],
+  "reten": [
+   "Retén del rodamiento (bearing retainer)",
+   null,
+   "Plato oscilante (eje intermedio)"
+  ],
+  "helicoidal": [
+   "Engranaje helicoidal 26",
+   "64",
+   "Plato oscilante (eje intermedio)"
+  ],
+  "pernos_m4": [
+   "Pernos hexagonales M4x16 (2)",
+   null,
+   "Plato oscilante (eje intermedio)"
+  ],
+  "rod606": [
+   "Rodamiento 606ZZ",
+   null,
+   "Plato oscilante (eje intermedio)"
+  ],
+  "carcasa_eng": [
+   "Carcasa de engranajes completa con retén 25",
+   "16",
+   "Carcasas y selector de modo"
+  ],
+  "rod6806": [
+   "Rodamiento 6806LLU y manguito (cup sleeve)",
+   null,
+   "Carcasas y selector de modo"
+  ],
+  "empujador": [
+   "Empujador (push corn)",
+   "20",
+   "Carcasas y selector de modo"
+  ],
+  "resorte5": [
+   "Resorte de compresión 5",
+   "21",
+   "Carcasas y selector de modo"
+  ],
+  "oring21": [
+   "O-ring 21",
+   "23",
+   "Carcasas y selector de modo"
+  ],
+  "palanca": [
+   "Palanca de cambio B con resorte de lámina",
+   null,
+   "Carcasas y selector de modo"
+  ],
+  "tapa_palanca": [
+   "Tapa de la palanca de cambio B",
+   null,
+   "Carcasas y selector de modo"
+  ],
+  "carcasa_int": [
+   "Carcasa interior completa",
+   null,
+   "Carcasas y selector de modo"
+  ],
+  "oring68": [
+   "O-ring 68",
+   "65",
+   "Carcasas y selector de modo"
+  ],
+  "oring26": [
+   "O-ring 26",
+   "70",
+   "Motor, mango e interruptor"
+  ],
+  "reten12": [
+   "Retén 12 y manguito 9",
+   "71",
+   "Motor, mango e interruptor"
+  ],
+  "rod6000": [
+   "Rodamiento 6000LLB",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "inducido": [
+   "Inducido con ventilador",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "rod627": [
+   "Rodamiento 627DDW y arandela aislante",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "estator": [
+   "Estator (campo)",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "portaesc": [
+   "Unidad portaescobillas con resortes espirales",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "escobillas": [
+   "Escobillas de carbón (2)",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "arandela_ond": [
+   "Arandela ondulada 15",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "carcasa_motor": [
+   "Carcasa del motor con mango",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "tornillos30": [
+   "Tornillos 4x30 (4)",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "tapa_mango": [
+   "Tapa del mango",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "tornillos18": [
+   "Tornillos 4x18 (3)",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "interruptor": [
+   "Interruptor con gatillo y palanca de reversa",
+   null,
+   "Motor, mango e interruptor"
+  ],
+  "cable": [
+   "Cable de alimentación con protector",
+   null,
+   "Motor, mango e interruptor"
+  ]
+ },
+ "catalogoPorModelo": {
+  "HR2601": {
+   "manguito9": [
+    "Manguito 9B",
+    null,
+    "Percusión"
+   ],
+   "cojin": [
+    "Arandela 10 y resorte de compresión 20",
+    "40",
+    "Percusión"
+   ],
+   "caja_oring": [
+    "Caja de O-ring B",
+    null,
+    "Percusión"
+   ],
+   "contrapeso": [
+    "Contrapeso con placa, guía y pin 6 (AVT)",
+    null,
+    "Percusión"
+   ],
+   "pernos_m412": [
+    "Pernos hexagonales M4x12 (2)",
+    null,
+    "Percusión"
+   ]
+  },
+  "HR2470": {
+   "palanca": [
+    "Perilla de cambio de modo con botón de bloqueo",
+    null,
+    "Carcasas y selector de modo"
+   ],
+   "tapa_palanca": [
+    "Tapa de la perilla de cambio de modo",
+    null,
+    "Carcasas y selector de modo"
+   ]
+  },
+  "RK26": {
+   "palanca": [
+    "Perilla de cambio de modo con botón de bloqueo",
+    null,
+    "Carcasas y selector de modo"
+   ],
+   "tapa_palanca": [
+    "Tapa de la perilla de cambio de modo",
+    null,
+    "Carcasas y selector de modo"
+   ]
+  }
+ },
+ "piezas": {
+  "Empuñadura lateral": {
+   "funcion": "Segunda empuñadura; se monta en el cuello de la carcasa de engranajes y sujeta el tope de profundidad.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Revisar que apriete firme al girar la empuñadura.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no aprieta o está quebrada.",
+   "tip_taller": "Es equipo estándar (pág. 2). El peso EPTA del documento (2,8/2,9 kg) es con empuñadura lateral."
+  },
+  "Tapa 35 (guardapolvo) (1)": {
+   "funcion": "Tapa de goma delantera del portabrocas: deja pasar la broca y frena el polvo.",
+   "como_se_desgasta": "Se rompe el labio por donde entra la broca.",
+   "prueba": "Revisión visual del labio.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (código 286288-8).",
+   "tip_taller": "Al armar, untar el labio con grasa Makita RB No. 00 (Fig. 1, ítem 1)."
+  },
+  "Resorte de anillo 14 (negro) y arandela 16": {
+   "funcion": "Retiene el conjunto del portabrocas en la ranura del portaherramienta; la arandela 16 va sobre el resorte 15.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Revisar que no esté deformado y que asiente completo en la ranura.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (resorte 14: 233989-9).",
+   "tip_taller": "Se saca con alicate de anillos 1R003 con punta 1R212 (Fig. 2). Respetar el sentido de las piezas de la Fig. 5."
+  },
+  "Resorte de anillo 15 (plateado)": {
+   "funcion": "Segundo resorte de anillo del portabrocas; retiene la cubierta.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Revisar deformación.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (233992-0).",
+   "tip_taller": "Se saca igual que el 14 mientras se presiona la cubierta (Fig. 3)."
+  },
+  "Arandela plana 17 y arandela de goma 16": {
+   "funcion": "Arandelas entre la cubierta del portabrocas y el portaherramienta.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Revisar la goma.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (arandela de goma 16: 424364-2).",
+   "tip_taller": "Ver en la Fig. 5 el lado biselado de cada arandela."
+  },
+  "Cubierta del portabrocas": {
+   "funcion": "Manga que se tira hacia atrás para soltar la broca SDS-plus.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Debe volver sola a su posición.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Lado plano según la Fig. 5."
+  },
+  "Bolas de acero 7,0 (2) (26)": {
+   "funcion": "Bolas que traban la ranura cerrada del vástago SDS-plus de la broca.",
+   "como_se_desgasta": "Desgaste por el vástago de la broca.",
+   "prueba": "Revisión visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (216022-2, 2 piezas).",
+   "tip_taller": "Se sacan presionando el anillo 21 (Fig. 4). Untar con grasa Makita RB No. 00."
+  },
+  "Anillo 21, arandela guía y resorte cónico 21-29": {
+   "funcion": "Empujan las bolas de traba hacia la broca.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Revisar que el resorte devuelva el anillo.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Lado cóncavo/convexo de la arandela guía según la Fig. 5."
+  },
+  "Portaherramienta completo (28)": {
+   "funcion": "Tubo que gira con la broca: por fuera lleva el limitador de torque; por dentro, el perno de impacto y, atrás, el cilindro pistón.",
+   "como_se_desgasta": "Desgaste interno donde corre el cilindro pistón y en las ranuras SDS.",
+   "prueba": "Revisión visual de ranuras y del interior.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Lubricar (a) la periferia que toca la brida de arrastre y el engranaje 51 y (b) el interior donde corre el cilindro pistón, con grasa Makita RB No. 00. Código 140264-5 (HR2600) / 140265-3 (HR2601)."
+  },
+  "Bolas de acero 4 (4)": {
+   "funcion": "Bolas del limitador de torque, alojadas en el portaherramienta bajo la brida de arrastre.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Salen al desarmar el limitador (Fig. 15)."
+  },
+  "Brida de arrastre (29)": {
+   "funcion": "Brida de arrastre del limitador de torque: transmite el giro del engranaje 51 al portaherramienta mediante las bolas de 4 mm.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "2 g de grasa Makita RB No. 00 donde toca el engranaje 51 y los pines 6."
+  },
+  "Engranaje recto 51 (30)": {
+   "funcion": "Engranaje que recibe el giro del engranaje recto 10 y lo pasa a la brida de arrastre a través de los pines 6; patina si la broca se traba.",
+   "como_se_desgasta": "Desgaste de dientes.",
+   "prueba": "Revisión visual de dientes.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Engrasar el dentado con grasa Makita RB No. 00."
+  },
+  "Pines 6 (6)": {
+   "funcion": "Seis pines entre el engranaje 51 y la brida de arrastre del limitador de torque.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Fig. 15."
+  },
+  "Arandela plana 30 gruesa (32)": {
+   "funcion": "Arandela de apoyo del resorte del limitador de torque (más gruesa que las otras).",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar con grasa Makita RB No. 00 donde toca el engranaje 51 y los pines."
+  },
+  "Resorte de compresión 31": {
+   "funcion": "Resorte que fija el torque de deslizamiento del limitador.",
+   "como_se_desgasta": "Pierde carga con el uso.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "El texto (pág. 7) lo llama resorte de compresión 32; las Figs. 13 y 15 lo rotulan 31. Se comprime con 1R045 y 1R369."
+  },
+  "Arandela plana 30 fina y arandela Spiro lock 30": {
+   "funcion": "Arandela fina y arandela de traba Spiro lock que cierran el limitador de torque.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se suelta con destornillador fino desde el extremo superior (Fig. 14), con el resorte comprimido."
+  },
+  "Arandela plana 30 (contra la carcasa interior) (36)": {
+   "funcion": "Arandela entre el portaherramienta y la carcasa interior.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Cuidado de no perderla al sacar el portaherramienta (pág. 7). Untar con grasa Makita RB No. 00."
+  },
+  "Manguito 9A": {
+   "funcion": "Manguito guía del perno de impacto, del lado de la broca.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Pieza direccional (Fig. 18A/18B)."
+  },
+  "Perno de impacto A (38)": {
+   "funcion": "Perno de impacto: recibe el golpe del martillo y lo transmite a la broca.",
+   "como_se_desgasta": "Deformación de las caras de golpe.",
+   "prueba": "Revisión visual de las caras.",
+   "valor_esperado": "ø 9 mm adelante y ø 9,5 mm atrás (Fig. 18A/18B).",
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar entero con grasa Makita RB No. 00. Es direccional."
+  },
+  "Anillo 10A y anillo amortiguador 12": {
+   "funcion": "Anillo y amortiguador que frenan el perno de impacto cuando trabaja en vacío.",
+   "como_se_desgasta": "El anillo amortiguador se aplasta.",
+   "prueba": "Revisión visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (anillo amortiguador 12: 424267-0).",
+   "tip_taller": "Va dentro del portaherramienta (Fig. 18A)."
+  },
+  "Caja de O-ring A": {
+   "funcion": "Caja que aloja el O-ring 9 al fondo del perno de impacto.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Al desarmar, el resorte de anillo 28 se libera empujando esta caja con 1R388."
+  },
+  "O-ring 9 (42)": {
+   "funcion": "Sello del perno de impacto dentro de su caja.",
+   "como_se_desgasta": "Se gasta y deja pasar aire.",
+   "prueba": "Revisión visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (213073-6).",
+   "tip_taller": "Untar entero con grasa Makita RB No. 00."
+  },
+  "Resorte de anillo 28": {
+   "funcion": "Resorte de anillo que retiene la sección del perno de impacto en la ranura interior del portaherramienta.",
+   "como_se_desgasta": "Se deforma al sacarlo.",
+   "prueba": "Revisar que no esté deformado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "No reutilizarlo si está deformado o dañado (pág. 9). Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (233979-2).",
+   "tip_taller": "Se saca con 1R388 en tornillo de banco y destornillador por los agujeros laterales (Fig. 16). Al armar, la abertura no debe quedar frente a los agujeros (Fig. 19)."
+  },
+  "Martillo (striker) (44)": {
+   "funcion": "Martillo libre que corre dentro del cilindro pistón: el colchón de aire lo lanza contra el perno de impacto.",
+   "como_se_desgasta": "Desgaste de la cara de golpe y del diámetro.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar entero con grasa Makita RB No. 00."
+  },
+  "O-ring 17,5 (45)": {
+   "funcion": "Sello del martillo dentro del cilindro pistón; sin él no se forma el colchón de aire.",
+   "como_se_desgasta": "Desgaste por roce.",
+   "prueba": "Revisión visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Programa de mantención (pág. 12, Fig. 28): cambiarla junto con las escobillas (213258-4).",
+   "tip_taller": "Untar con grasa Makita RB No. 00."
+  },
+  "Cilindro pistón (46)": {
+   "funcion": "Cilindro pistón: lo mueve el rodamiento oscilante y en su interior el aire empuja al martillo.",
+   "como_se_desgasta": "Desgaste interior donde corre el martillo.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "19 g de grasa Makita RB No. 00 en total entre interior, periferia y dentados (tabla de lubricación). El agujero de alivio de aire puede ir a cualquier lado (Fig. 26)."
+  },
+  "Placa guía (47)": {
+   "funcion": "Placa que guía la unión del pistón en el extremo del cilindro pistón.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Lubricar donde toca la unión del pistón con grasa Makita RB No. 00."
+  },
+  "Unión del pistón (piston joint)": {
+   "funcion": "Pieza que une el poste del rodamiento oscilante con el cilindro pistón.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Alinear sus agujeros con la dirección del rodamiento oscilante (Fig. 26)."
+  },
+  "Resorte de compresión 14 y arandela plana 14": {
+   "funcion": "Resorte entre el saliente de la carcasa interior y la placa guía.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Fig. 26."
+  },
+  "Engranaje recto 10 (eje del plato oscilante) (56)": {
+   "funcion": "Eje intermedio: su dentado mueve el engranaje 51 (giro de la broca) y sus estrías llevan la leva de embrague B.",
+   "como_se_desgasta": "Desgaste del dentado.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "3 g de grasa Makita RB No. 00 en el dentado. Se saca a prensa desde la leva B, apoyando en 1R035."
+  },
+  "Leva de embrague B": {
+   "funcion": "Leva de embrague que el selector de modo desplaza: acoplada al rodamiento oscilante da percusión; desacoplada, solo giro.",
+   "como_se_desgasta": "Desgaste de los dientes de acople.",
+   "prueba": "Comprobar que acople con el rodamiento oscilante (Fig. 27).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Su ranura en V recibe la punta en V del empujador (Fig. 8)."
+  },
+  "Rodamiento oscilante 10 (swash bearing) (58)": {
+   "funcion": "Rodamiento de plato oscilante: transforma el giro del eje intermedio en el vaivén del cilindro pistón.",
+   "como_se_desgasta": "Desgaste del rodamiento y del poste.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Lubricar la parte del rodamiento (3 g) y la unión con el pistón con grasa Makita RB No. 00. Para sacarlo, inclinarlo empujando el cilindro pistón (Fig. 22)."
+  },
+  "Caja de rodamiento con rodamiento 608ZZ y arandela plana 8": {
+   "funcion": "Caja que aloja el rodamiento 608ZZ del eje intermedio.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Orden de armado: leva B, rodamiento oscilante, arandela plana 8 y caja, con 1R033, 1R026 y prensa."
+  },
+  "Retén del rodamiento (bearing retainer)": {
+   "funcion": "Retén del rodamiento en la caja.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Si se arma al revés, golpea el eje del inducido (Fig. 25)."
+  },
+  "Engranaje helicoidal 26 (64)": {
+   "funcion": "Engranaje que recibe el giro del piñón del eje del inducido.",
+   "como_se_desgasta": "Desgaste del dentado.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "3 g de grasa Makita RB No. 00 en el dentado. Va a presión: la cara con el centro más alto hacia el retén (Fig. 25)."
+  },
+  "Pernos hexagonales M4x16 (2)": {
+   "funcion": "Fijan la sección del plato oscilante a la carcasa interior.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "No reutilizarlos sin traba química ThreeBond 1321B/1342 o Loctite 242 (Fig. 21).",
+   "tip_taller": "Llave hexagonal 3 y punta 1R228."
+  },
+  "Rodamiento 606ZZ": {
+   "funcion": "Rodamiento delantero del eje intermedio, alojado en la carcasa de engranajes.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se saca con la propia sección del plato oscilante, metiendo el eje y moviéndolo (Fig. 23)."
+  },
+  "Carcasa de engranajes completa con retén 25 (16)": {
+   "funcion": "Carcasa delantera: aloja el portaherramienta, el rodamiento del eje intermedio y el selector de modo; lleva el retén 25 en el cuello.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Lubricar el retén 25 por dentro con grasa Makita RB No. 00."
+  },
+  "Rodamiento 6806LLU y manguito (cup sleeve)": {
+   "funcion": "Rodamiento y manguito del portaherramienta dentro de la carcasa de engranajes.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se extraen con 1R273 (tabla de herramientas, pág. 3). Su posición exacta es aproximada en el modelo."
+  },
+  "Empujador (push corn) (20)": {
+   "funcion": "Pieza con punta en V que la palanca de cambio empuja contra la leva de embrague B.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar con grasa Makita RB No. 00 donde toca la leva B."
+  },
+  "Resorte de compresión 5 (21)": {
+   "funcion": "Resorte del empujador.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar la periferia con grasa Makita RB No. 00."
+  },
+  "O-ring 21 (23)": {
+   "funcion": "Sello de la palanca de cambio.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar con aceite Makita VG100."
+  },
+  "Palanca de cambio B con resorte de lámina": {
+   "funcion": "Selector de modo del HR2600/HR2601: solo giro o giro con percusión.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Comprobar que funcione bien tras armar (pág. 6).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Armar a 45° (Fig. 7) con la V del empujador en la ranura en V de la leva B; la ranura de la palanca al centro del resorte de lámina (Fig. 8)."
+  },
+  "Tapa de la palanca de cambio B": {
+   "funcion": "Tapa que retiene la palanca de cambio.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se levanta por la muesca de la carcasa con destornillador fino (Fig. 6). Se monta con la palanca en modo percusión."
+  },
+  "Carcasa interior completa": {
+   "funcion": "Carcasa interior: soporta el rodamiento del inducido, la sección del plato oscilante y el cilindro pistón.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Antes de unirla a la carcasa de engranajes, verificar que la leva B acople con el rodamiento oscilante (Fig. 27)."
+  },
+  "O-ring 68 (65)": {
+   "funcion": "Sello entre la carcasa interior y la de engranajes.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Untar con aceite Makita VG100."
+  },
+  "O-ring 26 (70)": {
+   "funcion": "Retiene el rodamiento 6000LLB del inducido en la carcasa interior.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Por eso el inducido sale a mano, sin golpear (pág. 6)."
+  },
+  "Retén 12 y manguito 9 (71)": {
+   "funcion": "Retén del eje del inducido; trabaja sobre el manguito 9.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Aceite VG100 donde toca el manguito 9."
+  },
+  "Rodamiento 6000LLB": {
+   "funcion": "Rodamiento delantero del inducido.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se saca con el extractor 1R269."
+  },
+  "Inducido con ventilador": {
+   "funcion": "Rotor del motor; su eje termina en el piñón que engrana con el engranaje helicoidal 26.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se saca a mano de la carcasa de engranajes (pág. 6)."
+  },
+  "Rodamiento 627DDW y arandela aislante": {
+   "funcion": "Rodamiento trasero del inducido con su arandela aislante.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Salen juntos con 1R269."
+  },
+  "Estator (campo)": {
+   "funcion": "Bobinado de campo del motor dentro de la carcasa del motor.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "El documento no lo trata; forma y medidas aproximadas."
+  },
+  "Unidad portaescobillas con resortes espirales": {
+   "funcion": "Sostiene las escobillas contra el colector con resortes espirales.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se desliza a la mejor posición para trabajar (Fig. 9)."
+  },
+  "Escobillas de carbón (2)": {
+   "funcion": "Escobillas de carbón que llevan corriente al colector.",
+   "como_se_desgasta": "Se acortan con el uso.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "El documento las toma como referencia: al cambiarlas, cambiar también las piezas de la Fig. 28.",
+   "tip_taller": "Apartar los brazos de los resortes espirales antes de separarlas del colector (Fig. 9)."
+  },
+  "Arandela ondulada 15": {
+   "funcion": "Arandela ondulada en el fondo de la carcasa del motor (asiento del rodamiento trasero).",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "No perderla y no olvidar ponerla al armar (pág. 6)."
+  },
+  "Carcasa del motor con mango": {
+   "funcion": "Carcasa trasera con el mango tipo pistola; aloja el estator y el portaescobillas.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Al separarla, el inducido queda en la carcasa de engranajes (Fig. 10)."
+  },
+  "Tornillos 4x30 (4)": {
+   "funcion": "Unen la carcasa del motor a la carcasa de engranajes.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Fig. 10."
+  },
+  "Tapa del mango": {
+   "funcion": "Tapa trasera del mango; da acceso al portaescobillas.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Tres tornillos 4x18."
+  },
+  "Tornillos 4x18 (3)": {
+   "funcion": "Fijan la tapa del mango.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": null
+  },
+  "Interruptor con gatillo y palanca de reversa": {
+   "funcion": "Interruptor de velocidad variable con gatillo y reversa.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Cables negro y blanco tensos entre portaescobillas y sujetacables (Fig. D-2)."
+  },
+  "Cable de alimentación con protector": {
+   "funcion": "Cable de alimentación.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": "4,0 m en Europa y Norteamérica, 2,0 m en Australia y Brasil, 2,5 m en otros países.",
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": null
+  }
+ },
+ "piezasPorModelo": {
+  "HR2601": {
+   "Manguito 9B": {
+    "funcion": "Manguito guía del perno de impacto del HR2601.",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Direccional (Fig. 18B)."
+   },
+   "Arandela 10 y resorte de compresión 20 (40)": {
+    "funcion": "Arandela y resorte que amortiguan el perno de impacto en el HR2601 (reemplazan al anillo 10A y al anillo amortiguador 12).",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Untar la periferia del resorte 20 que toca el portaherramienta con grasa Makita RB No. 00."
+   },
+   "Caja de O-ring B": {
+    "funcion": "Caja de O-ring B del HR2601, con el O-ring 9 dentro.",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": null
+   },
+   "Contrapeso con placa, guía y pin 6 (AVT)": {
+    "funcion": "Absorbedor dinámico de vibración (AVT): un contrapeso con resorte que oscila contra la percusión.",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Solo HR2601: sale de la carcasa interior al quitar dos pernos M4x12 (Fig. 20)."
+   },
+   "Pernos hexagonales M4x12 (2)": {
+    "funcion": "Fijan el contrapeso a la carcasa interior (solo HR2601).",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": null
+   }
+  },
+  "HR2470": {
+   "Perilla de cambio de modo con botón de bloqueo": {
+    "funcion": "Selector rotatorio de 3 modos (solo giro, giro con percusión, solo percusión) con botón de bloqueo y posición O para orientar el cincel (manual del HR2470).",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Apretar el botón de bloqueo y girar la perilla al símbolo del modo.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Referencial: el desmontaje de la perilla no está publicado; se modela como la palanca B del HR2600."
+   },
+   "Tapa de la perilla de cambio de modo": {
+    "funcion": "Tapa de la perilla de cambio de modo.",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Referencial."
+   }
+  },
+  "RK26": {
+   "Perilla de cambio de modo con botón de bloqueo": {
+    "funcion": "Selector rotatorio de 3 modos (solo giro, giro con percusión, solo percusión) con botón de bloqueo y posición O para orientar el cincel (manual del HR2470).",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Apretar el botón de bloqueo y girar la perilla al símbolo del modo.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Referencial: el desmontaje de la perilla no está publicado; se modela como la palanca B del HR2600."
+   },
+   "Tapa de la perilla de cambio de modo": {
+    "funcion": "Tapa de la perilla de cambio de modo.",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Referencial."
+   }
+  }
+ },
+ "desarmado": [
+  {
+   "paso": 1,
+   "titulo": "Empuñadura lateral",
+   "instruccion": "Aflojar la empuñadura lateral girándola y sacarla por delante (manual de instrucciones, Fig. 9).",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [
+    "mango_lateral"
+   ],
+   "foco": [
+    "mango_lateral"
+   ]
+  },
+  {
+   "paso": 2,
+   "titulo": "Tapa 35",
+   "instruccion": "[3]-1 (1). Quitar la tapa 35 del portabrocas.",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [
+    "tapa35"
+   ],
+   "foco": [
+    "tapa35"
+   ]
+  },
+  {
+   "paso": 3,
+   "titulo": "Resorte de anillo 14",
+   "instruccion": "[3]-1 (2). Separar el resorte de anillo 14 (negro) de la ranura del portaherramienta con 1R003 y punta 1R212 (Fig. 2). Sale la arandela 16 que va sobre el resorte 15.",
+   "precaucion": null,
+   "herramienta": "1R003 + 1R212",
+   "quita": [
+    "resorte14"
+   ],
+   "foco": [
+    "resorte14"
+   ]
+  },
+  {
+   "paso": 4,
+   "titulo": "Resorte de anillo 15 y cubierta",
+   "instruccion": "[3]-1 (3). Quitar el resorte de anillo 15 (plateado) igual, presionando la cubierta (Fig. 3). Recoger la arandela plana 17 y la arandela de goma 16 entre cubierta y portaherramienta. Sale la cubierta.",
+   "precaucion": null,
+   "herramienta": "1R003 + 1R212",
+   "quita": [
+    "resorte15",
+    "arandela17",
+    "cubierta"
+   ],
+   "foco": [
+    "resorte15",
+    "arandela17",
+    "cubierta"
+   ]
+  },
+  {
+   "paso": 5,
+   "titulo": "Bolas 7,0 y anillo 21",
+   "instruccion": "[3]-1 (4). Sacar las dos bolas de 7,0 mm presionando el anillo 21 (Fig. 4). Salen el anillo 21, la arandela guía y el resorte cónico 21-29.",
+   "precaucion": "Al armar, respetar el sentido de cada pieza según la Fig. 5.",
+   "herramienta": "A mano",
+   "quita": [
+    "bolas7",
+    "anillo21"
+   ],
+   "foco": [
+    "bolas7",
+    "anillo21"
+   ]
+  },
+  {
+   "paso": 6,
+   "titulo": "Palanca de cambio B",
+   "instruccion": "[3]-3. Meter la punta de un destornillador fino en la muesca de la carcasa de engranajes y levantar un lado de la tapa de la palanca B (Fig. 6); repetir al otro lado y quitar la tapa. Sale la palanca B. Bajo ella, según la Fig. 1, van el O-ring 21, el resorte 5 y el empujador.",
+   "precaucion": "Al armar: palanca a 45° (Fig. 7), V del empujador en la ranura en V de la leva B, y tapa puesta con la palanca en modo percusión; verificar que funcione.",
+   "herramienta": "Destornillador paleta fino",
+   "quita": [
+    "tapa_palanca",
+    "palanca",
+    "oring21",
+    "resorte5",
+    "empujador"
+   ],
+   "foco": [
+    "tapa_palanca",
+    "palanca",
+    "oring21",
+    "resorte5",
+    "empujador"
+   ]
+  },
+  {
+   "paso": 7,
+   "titulo": "Tapa del mango",
+   "instruccion": "[3]-4 (1). Quitar los tres tornillos 4x18 y la tapa del mango.",
+   "precaucion": null,
+   "herramienta": "Destornillador cruz",
+   "quita": [
+    "tornillos18",
+    "tapa_mango"
+   ],
+   "foco": [
+    "tornillos18",
+    "tapa_mango"
+   ]
+  },
+  {
+   "paso": 8,
+   "titulo": "Escobillas",
+   "instruccion": "[3]-4 (2). Deslizar la unidad portaescobillas a la mejor posición, apartar los brazos de los resortes espirales y separar las escobillas del colector (Fig. 9).",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [],
+   "foco": [
+    "portaesc",
+    "escobillas"
+   ]
+  },
+  {
+   "paso": 9,
+   "titulo": "Carcasa del motor",
+   "instruccion": "[3]-4 (3). Quitar los cuatro tornillos 4x30 y separar la carcasa del motor de la carcasa de engranajes. El inducido queda en la carcasa de engranajes (Fig. 10).",
+   "precaucion": "No perder la arandela ondulada 15 del fondo de la carcasa del motor y ponerla al armar.",
+   "herramienta": "Destornillador cruz",
+   "quita": [
+    "tornillos30",
+    "carcasa_motor",
+    "estator",
+    "portaesc",
+    "escobillas",
+    "arandela_ond",
+    "interruptor",
+    "cable"
+   ],
+   "foco": [
+    "tornillos30",
+    "carcasa_motor",
+    "estator",
+    "portaesc",
+    "escobillas",
+    "arandela_ond",
+    "interruptor",
+    "cable"
+   ]
+  },
+  {
+   "paso": 10,
+   "titulo": "Inducido",
+   "instruccion": "[3]-4 (4). Sacar el inducido de la carcasa de engranajes tirando a mano.",
+   "precaucion": "El rodamiento 6000LLB va retenido en la carcasa interior con el O-ring 26: no hace falta golpear con martillo plástico.",
+   "herramienta": "A mano",
+   "quita": [
+    "inducido",
+    "rod6000",
+    "rod627"
+   ],
+   "foco": [
+    "inducido",
+    "oring26"
+   ]
+  },
+  {
+   "paso": 11,
+   "titulo": "Rodamientos del inducido",
+   "instruccion": "[3]-4 (5). Sacar el rodamiento 6000LLB con 1R269; sacar el 627DDW y la arandela aislante juntos con 1R269. Armar en orden inverso tras cambiar lo dañado.",
+   "precaucion": null,
+   "herramienta": "1R269",
+   "quita": [],
+   "foco": [
+    "rod6000",
+    "rod627"
+   ]
+  },
+  {
+   "paso": 12,
+   "titulo": "Separar carcasa de engranajes y carcasa interior",
+   "instruccion": "[3]-5 (3) y [3]-7 (1). Separar la sección de la carcasa de engranajes de la sección de la carcasa interior. El rodamiento 606ZZ queda en la carcasa de engranajes.",
+   "precaucion": "Al armar, verificar antes que la leva B acople con el rodamiento oscilante (Fig. 27).",
+   "herramienta": "A mano",
+   "quita": [
+    "carcasa_eng",
+    "rod6806",
+    "rod606"
+   ],
+   "foco": [
+    "carcasa_int",
+    "oring68"
+   ]
+  },
+  {
+   "paso": 13,
+   "titulo": "Portaherramienta completo",
+   "instruccion": "[3]-5 (4). Sacar el portaherramienta completo golpeando su punta (Fig. 11).",
+   "precaucion": "La arandela plana 30 va entre el portaherramienta y la carcasa interior: no perderla.",
+   "herramienta": "Martillo plástico",
+   "quita": [
+    "arandela36"
+   ],
+   "foco": [
+    "portaherramienta",
+    "arandela36"
+   ]
+  },
+  {
+   "paso": 14,
+   "titulo": "Limitador de torque",
+   "instruccion": "[3]-5 (5)-(6). Montar 1R045 y 1R369 en el portaherramienta (Fig. 12), comprimir el resorte (Fig. 13) y soltar la arandela Spiro lock 30 deslizando un destornillador fino desde su extremo superior (Fig. 14). Salen arandela fina, resorte, arandela gruesa, pines 6, engranaje 51, brida de arrastre y bolas de 4 mm (Fig. 15).",
+   "precaucion": null,
+   "herramienta": "1R045 + 1R369 + destornillador fino",
+   "quita": [
+    "spiro",
+    "resorte31",
+    "arandela32",
+    "pines6",
+    "engranaje51",
+    "brida",
+    "bolas4"
+   ],
+   "foco": [
+    "spiro",
+    "resorte31",
+    "arandela32",
+    "pines6",
+    "engranaje51",
+    "brida",
+    "bolas4"
+   ]
+  },
+  {
+   "paso": 15,
+   "titulo": "Resorte de anillo 28",
+   "instruccion": "[3]-6 (1)-(3). Meter 1R388 en el portaherramienta y apretarlo en tornillo de banco con los agujeros de acceso paralelos a las mordazas (Fig. 16). Llevar la abertura del resorte 28 a un agujero y empujarlo con destornillador por los dos agujeros, alternando, hasta sacarlo de la ranura interior.",
+   "precaucion": "No reutilizar el resorte 28 si quedó deformado o dañado.",
+   "herramienta": "1R388 + tornillo de banco + destornillador paleta",
+   "quita": [
+    "resorte28"
+   ],
+   "foco": [
+    "portaherramienta",
+    "caja_oring"
+   ]
+  },
+  {
+   "paso": 16,
+   "titulo": "Perno de impacto",
+   "instruccion": "[3]-6 (4). Sacar las piezas golpeando con destornillador cruz y martillo plástico desde el lado de la broca (Fig. 17): manguito 9, perno de impacto A, anillo 10A, anillo amortiguador 12, caja de O-ring y O-ring 9.",
+   "precaucion": "Al armar: piezas direccionales según Fig. 18; resorte 28 con un cilindro pistón de repuesto como guía y su abertura lejos de los agujeros (Fig. 19).",
+   "herramienta": "Destornillador cruz + martillo plástico",
+   "quita": [
+    "manguito9",
+    "perno",
+    "cojin",
+    "caja_oring",
+    "oring9"
+   ],
+   "foco": [
+    "manguito9",
+    "perno",
+    "cojin",
+    "caja_oring",
+    "oring9"
+   ]
+  },
+  {
+   "paso": 17,
+   "titulo": "Pernos M4x16",
+   "instruccion": "[3]-7 (2). Quitar los dos pernos hexagonales M4x16 con llave hexagonal 3 y 1R228 (Fig. 21).",
+   "precaucion": "Son pernos con traba química: no reutilizarlos sin ThreeBond 1321B/1342 o Loctite 242.",
+   "herramienta": "Llave hexagonal 3 + 1R228",
+   "quita": [
+    "pernos_m4"
+   ],
+   "foco": [
+    "pernos_m4"
+   ]
+  },
+  {
+   "paso": 18,
+   "titulo": "Sección del plato oscilante",
+   "instruccion": "[3]-7 (2). Empujar el cilindro pistón hacia la carcasa interior para inclinar el rodamiento oscilante 10 y sacar la sección horizontalmente, retirando el poste hacia el lado inclinado (Fig. 22). Aquí se muestra ya despiezada como en la Fig. 24.",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [
+    "engranaje10",
+    "leva",
+    "oscilante",
+    "caja_rod",
+    "reten",
+    "helicoidal"
+   ],
+   "foco": [
+    "piston"
+   ]
+  },
+  {
+   "paso": 19,
+   "titulo": "Rodamiento 606ZZ",
+   "instruccion": "[3]-7 (3). Meter el eje del engranaje 10 en el rodamiento 606ZZ de la carcasa de engranajes, moverlo adelante y atrás y golpear la carcasa con martillo plástico: el rodamiento sale con la sección (Fig. 23).",
+   "precaucion": null,
+   "herramienta": "Martillo plástico",
+   "quita": [],
+   "foco": [
+    "rod606",
+    "engranaje10"
+   ]
+  },
+  {
+   "paso": 20,
+   "titulo": "Leva de embrague B",
+   "instruccion": "[3]-7 (4). Apoyar la leva B en 1R035 y sacar a prensa el engranaje recto 10. Quedan sueltos rodamiento oscilante, arandela 8, caja con 608ZZ, retén y engranaje helicoidal 26 (Fig. 24).",
+   "precaucion": "Al armar: helicoidal 26 con la cara de centro más alto hacia el retén; si se invierte, el retén golpea el eje del inducido (Fig. 25).",
+   "herramienta": "1R035 + prensa",
+   "quita": [],
+   "foco": [
+    "leva",
+    "engranaje10",
+    "oscilante"
+   ]
+  },
+  {
+   "paso": 21,
+   "titulo": "Cilindro pistón y martillo",
+   "instruccion": "[3]-8 en orden inverso. Sacar el cilindro pistón con la placa guía y la unión del pistón, el martillo con su O-ring 17,5, y el resorte 14 con la arandela 14 del saliente de la carcasa interior (Fig. 26).",
+   "precaucion": "Al armar, alinear los agujeros de la unión con la dirección del rodamiento oscilante.",
+   "herramienta": "A mano",
+   "quita": [
+    "piston",
+    "martillo",
+    "oring175",
+    "placa_guia",
+    "junta_piston",
+    "resorte14c"
+   ],
+   "foco": [
+    "piston",
+    "martillo",
+    "oring175",
+    "placa_guia",
+    "junta_piston",
+    "resorte14c"
+   ]
+  },
+  {
+   "paso": 22,
+   "titulo": "Carcasa interior y sellos",
+   "instruccion": "Quedan la carcasa interior con el O-ring 68, el O-ring 26 y el retén 12 con su manguito 9, que la tabla de lubricación ([2]) pide untar con aceite VG100 al armar. El texto no describe su desarme.",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [
+    "oring68",
+    "oring26",
+    "reten12",
+    "carcasa_int"
+   ],
+   "foco": [
+    "oring68",
+    "oring26",
+    "reten12",
+    "carcasa_int"
+   ]
+  }
+ ],
+ "desarmados": {
+  "HR2600": [
+   {
+    "paso": 1,
+    "titulo": "Empuñadura lateral",
+    "instruccion": "Aflojar la empuñadura lateral girándola y sacarla por delante (manual de instrucciones, Fig. 9).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "mango_lateral"
+    ],
+    "foco": [
+     "mango_lateral"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Tapa 35",
+    "instruccion": "[3]-1 (1). Quitar la tapa 35 del portabrocas.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "tapa35"
+    ],
+    "foco": [
+     "tapa35"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Resorte de anillo 14",
+    "instruccion": "[3]-1 (2). Separar el resorte de anillo 14 (negro) de la ranura del portaherramienta con 1R003 y punta 1R212 (Fig. 2). Sale la arandela 16 que va sobre el resorte 15.",
+    "precaucion": null,
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte14"
+    ],
+    "foco": [
+     "resorte14"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Resorte de anillo 15 y cubierta",
+    "instruccion": "[3]-1 (3). Quitar el resorte de anillo 15 (plateado) igual, presionando la cubierta (Fig. 3). Recoger la arandela plana 17 y la arandela de goma 16 entre cubierta y portaherramienta. Sale la cubierta.",
+    "precaucion": null,
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ],
+    "foco": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Bolas 7,0 y anillo 21",
+    "instruccion": "[3]-1 (4). Sacar las dos bolas de 7,0 mm presionando el anillo 21 (Fig. 4). Salen el anillo 21, la arandela guía y el resorte cónico 21-29.",
+    "precaucion": "Al armar, respetar el sentido de cada pieza según la Fig. 5.",
+    "herramienta": "A mano",
+    "quita": [
+     "bolas7",
+     "anillo21"
+    ],
+    "foco": [
+     "bolas7",
+     "anillo21"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Palanca de cambio B",
+    "instruccion": "[3]-3. Meter la punta de un destornillador fino en la muesca de la carcasa de engranajes y levantar un lado de la tapa de la palanca B (Fig. 6); repetir al otro lado y quitar la tapa. Sale la palanca B. Bajo ella, según la Fig. 1, van el O-ring 21, el resorte 5 y el empujador.",
+    "precaucion": "Al armar: palanca a 45° (Fig. 7), V del empujador en la ranura en V de la leva B, y tapa puesta con la palanca en modo percusión; verificar que funcione.",
+    "herramienta": "Destornillador paleta fino",
+    "quita": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ],
+    "foco": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Tapa del mango",
+    "instruccion": "[3]-4 (1). Quitar los tres tornillos 4x18 y la tapa del mango.",
+    "precaucion": null,
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos18",
+     "tapa_mango"
+    ],
+    "foco": [
+     "tornillos18",
+     "tapa_mango"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Escobillas",
+    "instruccion": "[3]-4 (2). Deslizar la unidad portaescobillas a la mejor posición, apartar los brazos de los resortes espirales y separar las escobillas del colector (Fig. 9).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "portaesc",
+     "escobillas"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Carcasa del motor",
+    "instruccion": "[3]-4 (3). Quitar los cuatro tornillos 4x30 y separar la carcasa del motor de la carcasa de engranajes. El inducido queda en la carcasa de engranajes (Fig. 10).",
+    "precaucion": "No perder la arandela ondulada 15 del fondo de la carcasa del motor y ponerla al armar.",
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ],
+    "foco": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Inducido",
+    "instruccion": "[3]-4 (4). Sacar el inducido de la carcasa de engranajes tirando a mano.",
+    "precaucion": "El rodamiento 6000LLB va retenido en la carcasa interior con el O-ring 26: no hace falta golpear con martillo plástico.",
+    "herramienta": "A mano",
+    "quita": [
+     "inducido",
+     "rod6000",
+     "rod627"
+    ],
+    "foco": [
+     "inducido",
+     "oring26"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Rodamientos del inducido",
+    "instruccion": "[3]-4 (5). Sacar el rodamiento 6000LLB con 1R269; sacar el 627DDW y la arandela aislante juntos con 1R269. Armar en orden inverso tras cambiar lo dañado.",
+    "precaucion": null,
+    "herramienta": "1R269",
+    "quita": [],
+    "foco": [
+     "rod6000",
+     "rod627"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Separar carcasa de engranajes y carcasa interior",
+    "instruccion": "[3]-5 (3) y [3]-7 (1). Separar la sección de la carcasa de engranajes de la sección de la carcasa interior. El rodamiento 606ZZ queda en la carcasa de engranajes.",
+    "precaucion": "Al armar, verificar antes que la leva B acople con el rodamiento oscilante (Fig. 27).",
+    "herramienta": "A mano",
+    "quita": [
+     "carcasa_eng",
+     "rod6806",
+     "rod606"
+    ],
+    "foco": [
+     "carcasa_int",
+     "oring68"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Portaherramienta completo",
+    "instruccion": "[3]-5 (4). Sacar el portaherramienta completo golpeando su punta (Fig. 11).",
+    "precaucion": "La arandela plana 30 va entre el portaherramienta y la carcasa interior: no perderla.",
+    "herramienta": "Martillo plástico",
+    "quita": [
+     "arandela36"
+    ],
+    "foco": [
+     "portaherramienta",
+     "arandela36"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Limitador de torque",
+    "instruccion": "[3]-5 (5)-(6). Montar 1R045 y 1R369 en el portaherramienta (Fig. 12), comprimir el resorte (Fig. 13) y soltar la arandela Spiro lock 30 deslizando un destornillador fino desde su extremo superior (Fig. 14). Salen arandela fina, resorte, arandela gruesa, pines 6, engranaje 51, brida de arrastre y bolas de 4 mm (Fig. 15).",
+    "precaucion": null,
+    "herramienta": "1R045 + 1R369 + destornillador fino",
+    "quita": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ],
+    "foco": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Resorte de anillo 28",
+    "instruccion": "[3]-6 (1)-(3). Meter 1R388 en el portaherramienta y apretarlo en tornillo de banco con los agujeros de acceso paralelos a las mordazas (Fig. 16). Llevar la abertura del resorte 28 a un agujero y empujarlo con destornillador por los dos agujeros, alternando, hasta sacarlo de la ranura interior.",
+    "precaucion": "No reutilizar el resorte 28 si quedó deformado o dañado.",
+    "herramienta": "1R388 + tornillo de banco + destornillador paleta",
+    "quita": [
+     "resorte28"
+    ],
+    "foco": [
+     "portaherramienta",
+     "caja_oring"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Perno de impacto",
+    "instruccion": "[3]-6 (4). Sacar las piezas golpeando con destornillador cruz y martillo plástico desde el lado de la broca (Fig. 17): manguito 9, perno de impacto A, anillo 10A, anillo amortiguador 12, caja de O-ring y O-ring 9.",
+    "precaucion": "Al armar: piezas direccionales según Fig. 18; resorte 28 con un cilindro pistón de repuesto como guía y su abertura lejos de los agujeros (Fig. 19).",
+    "herramienta": "Destornillador cruz + martillo plástico",
+    "quita": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ],
+    "foco": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Pernos M4x16",
+    "instruccion": "[3]-7 (2). Quitar los dos pernos hexagonales M4x16 con llave hexagonal 3 y 1R228 (Fig. 21).",
+    "precaucion": "Son pernos con traba química: no reutilizarlos sin ThreeBond 1321B/1342 o Loctite 242.",
+    "herramienta": "Llave hexagonal 3 + 1R228",
+    "quita": [
+     "pernos_m4"
+    ],
+    "foco": [
+     "pernos_m4"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Sección del plato oscilante",
+    "instruccion": "[3]-7 (2). Empujar el cilindro pistón hacia la carcasa interior para inclinar el rodamiento oscilante 10 y sacar la sección horizontalmente, retirando el poste hacia el lado inclinado (Fig. 22). Aquí se muestra ya despiezada como en la Fig. 24.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "reten",
+     "helicoidal"
+    ],
+    "foco": [
+     "piston"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Rodamiento 606ZZ",
+    "instruccion": "[3]-7 (3). Meter el eje del engranaje 10 en el rodamiento 606ZZ de la carcasa de engranajes, moverlo adelante y atrás y golpear la carcasa con martillo plástico: el rodamiento sale con la sección (Fig. 23).",
+    "precaucion": null,
+    "herramienta": "Martillo plástico",
+    "quita": [],
+    "foco": [
+     "rod606",
+     "engranaje10"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "Leva de embrague B",
+    "instruccion": "[3]-7 (4). Apoyar la leva B en 1R035 y sacar a prensa el engranaje recto 10. Quedan sueltos rodamiento oscilante, arandela 8, caja con 608ZZ, retén y engranaje helicoidal 26 (Fig. 24).",
+    "precaucion": "Al armar: helicoidal 26 con la cara de centro más alto hacia el retén; si se invierte, el retén golpea el eje del inducido (Fig. 25).",
+    "herramienta": "1R035 + prensa",
+    "quita": [],
+    "foco": [
+     "leva",
+     "engranaje10",
+     "oscilante"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "Cilindro pistón y martillo",
+    "instruccion": "[3]-8 en orden inverso. Sacar el cilindro pistón con la placa guía y la unión del pistón, el martillo con su O-ring 17,5, y el resorte 14 con la arandela 14 del saliente de la carcasa interior (Fig. 26).",
+    "precaucion": "Al armar, alinear los agujeros de la unión con la dirección del rodamiento oscilante.",
+    "herramienta": "A mano",
+    "quita": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ],
+    "foco": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "Carcasa interior y sellos",
+    "instruccion": "Quedan la carcasa interior con el O-ring 68, el O-ring 26 y el retén 12 con su manguito 9, que la tabla de lubricación ([2]) pide untar con aceite VG100 al armar. El texto no describe su desarme.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ],
+    "foco": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ]
+   }
+  ],
+  "HR2601": [
+   {
+    "paso": 1,
+    "titulo": "Empuñadura lateral",
+    "instruccion": "Aflojar la empuñadura lateral girándola y sacarla por delante (manual de instrucciones, Fig. 9).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "mango_lateral"
+    ],
+    "foco": [
+     "mango_lateral"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Tapa 35",
+    "instruccion": "[3]-1 (1). Quitar la tapa 35 del portabrocas.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "tapa35"
+    ],
+    "foco": [
+     "tapa35"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Resorte de anillo 14",
+    "instruccion": "[3]-1 (2). Separar el resorte de anillo 14 (negro) de la ranura del portaherramienta con 1R003 y punta 1R212 (Fig. 2). Sale la arandela 16 que va sobre el resorte 15.",
+    "precaucion": null,
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte14"
+    ],
+    "foco": [
+     "resorte14"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Resorte de anillo 15 y cubierta",
+    "instruccion": "[3]-1 (3). Quitar el resorte de anillo 15 (plateado) igual, presionando la cubierta (Fig. 3). Recoger la arandela plana 17 y la arandela de goma 16 entre cubierta y portaherramienta. Sale la cubierta.",
+    "precaucion": null,
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ],
+    "foco": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Bolas 7,0 y anillo 21",
+    "instruccion": "[3]-1 (4). Sacar las dos bolas de 7,0 mm presionando el anillo 21 (Fig. 4). Salen el anillo 21, la arandela guía y el resorte cónico 21-29.",
+    "precaucion": "Al armar, respetar el sentido de cada pieza según la Fig. 5.",
+    "herramienta": "A mano",
+    "quita": [
+     "bolas7",
+     "anillo21"
+    ],
+    "foco": [
+     "bolas7",
+     "anillo21"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Palanca de cambio B",
+    "instruccion": "[3]-3. Meter la punta de un destornillador fino en la muesca de la carcasa de engranajes y levantar un lado de la tapa de la palanca B (Fig. 6); repetir al otro lado y quitar la tapa. Sale la palanca B. Bajo ella, según la Fig. 1, van el O-ring 21, el resorte 5 y el empujador.",
+    "precaucion": "Al armar: palanca a 45° (Fig. 7), V del empujador en la ranura en V de la leva B, y tapa puesta con la palanca en modo percusión; verificar que funcione.",
+    "herramienta": "Destornillador paleta fino",
+    "quita": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ],
+    "foco": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Tapa del mango",
+    "instruccion": "[3]-4 (1). Quitar los tres tornillos 4x18 y la tapa del mango.",
+    "precaucion": null,
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos18",
+     "tapa_mango"
+    ],
+    "foco": [
+     "tornillos18",
+     "tapa_mango"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Escobillas",
+    "instruccion": "[3]-4 (2). Deslizar la unidad portaescobillas a la mejor posición, apartar los brazos de los resortes espirales y separar las escobillas del colector (Fig. 9).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "portaesc",
+     "escobillas"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Carcasa del motor",
+    "instruccion": "[3]-4 (3). Quitar los cuatro tornillos 4x30 y separar la carcasa del motor de la carcasa de engranajes. El inducido queda en la carcasa de engranajes (Fig. 10).",
+    "precaucion": "No perder la arandela ondulada 15 del fondo de la carcasa del motor y ponerla al armar.",
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ],
+    "foco": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Inducido",
+    "instruccion": "[3]-4 (4). Sacar el inducido de la carcasa de engranajes tirando a mano.",
+    "precaucion": "El rodamiento 6000LLB va retenido en la carcasa interior con el O-ring 26: no hace falta golpear con martillo plástico.",
+    "herramienta": "A mano",
+    "quita": [
+     "inducido",
+     "rod6000",
+     "rod627"
+    ],
+    "foco": [
+     "inducido",
+     "oring26"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Rodamientos del inducido",
+    "instruccion": "[3]-4 (5). Sacar el rodamiento 6000LLB con 1R269; sacar el 627DDW y la arandela aislante juntos con 1R269. Armar en orden inverso tras cambiar lo dañado.",
+    "precaucion": null,
+    "herramienta": "1R269",
+    "quita": [],
+    "foco": [
+     "rod6000",
+     "rod627"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Separar carcasa de engranajes y carcasa interior",
+    "instruccion": "[3]-5 (3) y [3]-7 (1). Separar la sección de la carcasa de engranajes de la sección de la carcasa interior. El rodamiento 606ZZ queda en la carcasa de engranajes.",
+    "precaucion": "Al armar, verificar antes que la leva B acople con el rodamiento oscilante (Fig. 27).",
+    "herramienta": "A mano",
+    "quita": [
+     "carcasa_eng",
+     "rod6806",
+     "rod606"
+    ],
+    "foco": [
+     "carcasa_int",
+     "oring68"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Portaherramienta completo",
+    "instruccion": "[3]-5 (4). Sacar el portaherramienta completo golpeando su punta (Fig. 11).",
+    "precaucion": "La arandela plana 30 va entre el portaherramienta y la carcasa interior: no perderla.",
+    "herramienta": "Martillo plástico",
+    "quita": [
+     "arandela36"
+    ],
+    "foco": [
+     "portaherramienta",
+     "arandela36"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Limitador de torque",
+    "instruccion": "[3]-5 (5)-(6). Montar 1R045 y 1R369 en el portaherramienta (Fig. 12), comprimir el resorte (Fig. 13) y soltar la arandela Spiro lock 30 deslizando un destornillador fino desde su extremo superior (Fig. 14). Salen arandela fina, resorte, arandela gruesa, pines 6, engranaje 51, brida de arrastre y bolas de 4 mm (Fig. 15).",
+    "precaucion": null,
+    "herramienta": "1R045 + 1R369 + destornillador fino",
+    "quita": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ],
+    "foco": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Resorte de anillo 28",
+    "instruccion": "[3]-6 (1)-(3). Meter 1R388 en el portaherramienta y apretarlo en tornillo de banco con los agujeros de acceso paralelos a las mordazas (Fig. 16). Llevar la abertura del resorte 28 a un agujero y empujarlo con destornillador por los dos agujeros, alternando, hasta sacarlo de la ranura interior.",
+    "precaucion": "No reutilizar el resorte 28 si quedó deformado o dañado.",
+    "herramienta": "1R388 + tornillo de banco + destornillador paleta",
+    "quita": [
+     "resorte28"
+    ],
+    "foco": [
+     "portaherramienta",
+     "caja_oring"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Perno de impacto",
+    "instruccion": "[3]-6 (4). Sacar las piezas golpeando con destornillador cruz y martillo plástico desde el lado de la broca (Fig. 17): manguito 9, perno de impacto A, arandela 10, resorte de compresión 20, caja de O-ring y O-ring 9.",
+    "precaucion": "Al armar: piezas direccionales según Fig. 18; resorte 28 con un cilindro pistón de repuesto como guía y su abertura lejos de los agujeros (Fig. 19).",
+    "herramienta": "Destornillador cruz + martillo plástico",
+    "quita": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ],
+    "foco": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Contrapeso (solo HR2601)",
+    "instruccion": "[3]-7 (1). Quitar los dos pernos M4x12 y separar la sección del contrapeso de la carcasa interior (Fig. 20).",
+    "precaucion": null,
+    "herramienta": "Llave hexagonal",
+    "quita": [
+     "pernos_m412",
+     "contrapeso"
+    ],
+    "foco": [
+     "pernos_m412",
+     "contrapeso"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Pernos M4x16",
+    "instruccion": "[3]-7 (2). Quitar los dos pernos hexagonales M4x16 con llave hexagonal 3 y 1R228 (Fig. 21).",
+    "precaucion": "Son pernos con traba química: no reutilizarlos sin ThreeBond 1321B/1342 o Loctite 242.",
+    "herramienta": "Llave hexagonal 3 + 1R228",
+    "quita": [
+     "pernos_m4"
+    ],
+    "foco": [
+     "pernos_m4"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Sección del plato oscilante",
+    "instruccion": "[3]-7 (2). Empujar el cilindro pistón hacia la carcasa interior para inclinar el rodamiento oscilante 10 y sacar la sección horizontalmente, retirando el poste hacia el lado inclinado (Fig. 22). Aquí se muestra ya despiezada como en la Fig. 24.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "reten",
+     "helicoidal"
+    ],
+    "foco": [
+     "piston"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "Rodamiento 606ZZ",
+    "instruccion": "[3]-7 (3). Meter el eje del engranaje 10 en el rodamiento 606ZZ de la carcasa de engranajes, moverlo adelante y atrás y golpear la carcasa con martillo plástico: el rodamiento sale con la sección (Fig. 23).",
+    "precaucion": null,
+    "herramienta": "Martillo plástico",
+    "quita": [],
+    "foco": [
+     "rod606",
+     "engranaje10"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "Leva de embrague B",
+    "instruccion": "[3]-7 (4). Apoyar la leva B en 1R035 y sacar a prensa el engranaje recto 10. Quedan sueltos rodamiento oscilante, arandela 8, caja con 608ZZ, retén y engranaje helicoidal 26 (Fig. 24).",
+    "precaucion": "Al armar: helicoidal 26 con la cara de centro más alto hacia el retén; si se invierte, el retén golpea el eje del inducido (Fig. 25).",
+    "herramienta": "1R035 + prensa",
+    "quita": [],
+    "foco": [
+     "leva",
+     "engranaje10",
+     "oscilante"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "Cilindro pistón y martillo",
+    "instruccion": "[3]-8 en orden inverso. Sacar el cilindro pistón con la placa guía y la unión del pistón, el martillo con su O-ring 17,5, y el resorte 14 con la arandela 14 del saliente de la carcasa interior (Fig. 26).",
+    "precaucion": "Al armar, alinear los agujeros de la unión con la dirección del rodamiento oscilante.",
+    "herramienta": "A mano",
+    "quita": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ],
+    "foco": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ]
+   },
+   {
+    "paso": 23,
+    "titulo": "Carcasa interior y sellos",
+    "instruccion": "Quedan la carcasa interior con el O-ring 68, el O-ring 26 y el retén 12 con su manguito 9, que la tabla de lubricación ([2]) pide untar con aceite VG100 al armar. El texto no describe su desarme.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ],
+    "foco": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ]
+   }
+  ],
+  "HR2470": [
+   {
+    "paso": 1,
+    "titulo": "Empuñadura lateral",
+    "instruccion": "Aflojar la empuñadura lateral girándola y sacarla por delante (manual de instrucciones, Fig. 9).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "mango_lateral"
+    ],
+    "foco": [
+     "mango_lateral"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Tapa 35",
+    "instruccion": "[3]-1 (1). Quitar la tapa 35 del portabrocas.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "tapa35"
+    ],
+    "foco": [
+     "tapa35"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Resorte de anillo 14",
+    "instruccion": "[3]-1 (2). Separar el resorte de anillo 14 (negro) de la ranura del portaherramienta con 1R003 y punta 1R212 (Fig. 2). Sale la arandela 16 que va sobre el resorte 15.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte14"
+    ],
+    "foco": [
+     "resorte14"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Resorte de anillo 15 y cubierta",
+    "instruccion": "[3]-1 (3). Quitar el resorte de anillo 15 (plateado) igual, presionando la cubierta (Fig. 3). Recoger la arandela plana 17 y la arandela de goma 16 entre cubierta y portaherramienta. Sale la cubierta.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ],
+    "foco": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Bolas 7,0 y anillo 21",
+    "instruccion": "[3]-1 (4). Sacar las dos bolas de 7,0 mm presionando el anillo 21 (Fig. 4). Salen el anillo 21, la arandela guía y el resorte cónico 21-29.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar, respetar el sentido de cada pieza según la Fig. 5.",
+    "herramienta": "A mano",
+    "quita": [
+     "bolas7",
+     "anillo21"
+    ],
+    "foco": [
+     "bolas7",
+     "anillo21"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Perilla de cambio de modo",
+    "instruccion": "Referencial: el manual de instrucciones del HR2470 muestra una perilla rotatoria con botón de bloqueo (Figs. 6-8) y no publica su desmontaje. Se asume análogo a la palanca B del HR2600: levantar la tapa, sacar la perilla y, bajo ella, el O-ring, el resorte y el empujador.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar: palanca a 45° (Fig. 7), V del empujador en la ranura en V de la leva B, y tapa puesta con la palanca en modo percusión; verificar que funcione.",
+    "herramienta": "Destornillador paleta fino",
+    "quita": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ],
+    "foco": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Tapa del mango",
+    "instruccion": "[3]-4 (1). Quitar los tres tornillos 4x18 y la tapa del mango.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos18",
+     "tapa_mango"
+    ],
+    "foco": [
+     "tornillos18",
+     "tapa_mango"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Escobillas",
+    "instruccion": "[3]-4 (2). Deslizar la unidad portaescobillas a la mejor posición, apartar los brazos de los resortes espirales y separar las escobillas del colector (Fig. 9).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "portaesc",
+     "escobillas"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Carcasa del motor",
+    "instruccion": "[3]-4 (3). Quitar los cuatro tornillos 4x30 y separar la carcasa del motor de la carcasa de engranajes. El inducido queda en la carcasa de engranajes (Fig. 10).",
+    "precaucion": "Paso referencial tomado del HR2600. No perder la arandela ondulada 15 del fondo de la carcasa del motor y ponerla al armar.",
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ],
+    "foco": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Inducido",
+    "instruccion": "[3]-4 (4). Sacar el inducido de la carcasa de engranajes tirando a mano.",
+    "precaucion": "Paso referencial tomado del HR2600. El rodamiento 6000LLB va retenido en la carcasa interior con el O-ring 26: no hace falta golpear con martillo plástico.",
+    "herramienta": "A mano",
+    "quita": [
+     "inducido",
+     "rod6000",
+     "rod627"
+    ],
+    "foco": [
+     "inducido",
+     "oring26"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Rodamientos del inducido",
+    "instruccion": "[3]-4 (5). Sacar el rodamiento 6000LLB con 1R269; sacar el 627DDW y la arandela aislante juntos con 1R269. Armar en orden inverso tras cambiar lo dañado.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R269",
+    "quita": [],
+    "foco": [
+     "rod6000",
+     "rod627"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Separar carcasa de engranajes y carcasa interior",
+    "instruccion": "[3]-5 (3) y [3]-7 (1). Separar la sección de la carcasa de engranajes de la sección de la carcasa interior. El rodamiento 606ZZ queda en la carcasa de engranajes.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar, verificar antes que la leva B acople con el rodamiento oscilante (Fig. 27).",
+    "herramienta": "A mano",
+    "quita": [
+     "carcasa_eng",
+     "rod6806",
+     "rod606"
+    ],
+    "foco": [
+     "carcasa_int",
+     "oring68"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Portaherramienta completo",
+    "instruccion": "[3]-5 (4). Sacar el portaherramienta completo golpeando su punta (Fig. 11).",
+    "precaucion": "Paso referencial tomado del HR2600. La arandela plana 30 va entre el portaherramienta y la carcasa interior: no perderla.",
+    "herramienta": "Martillo plástico",
+    "quita": [
+     "arandela36"
+    ],
+    "foco": [
+     "portaherramienta",
+     "arandela36"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Limitador de torque",
+    "instruccion": "[3]-5 (5)-(6). Montar 1R045 y 1R369 en el portaherramienta (Fig. 12), comprimir el resorte (Fig. 13) y soltar la arandela Spiro lock 30 deslizando un destornillador fino desde su extremo superior (Fig. 14). Salen arandela fina, resorte, arandela gruesa, pines 6, engranaje 51, brida de arrastre y bolas de 4 mm (Fig. 15).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R045 + 1R369 + destornillador fino",
+    "quita": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ],
+    "foco": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Resorte de anillo 28",
+    "instruccion": "[3]-6 (1)-(3). Meter 1R388 en el portaherramienta y apretarlo en tornillo de banco con los agujeros de acceso paralelos a las mordazas (Fig. 16). Llevar la abertura del resorte 28 a un agujero y empujarlo con destornillador por los dos agujeros, alternando, hasta sacarlo de la ranura interior.",
+    "precaucion": "Paso referencial tomado del HR2600. No reutilizar el resorte 28 si quedó deformado o dañado.",
+    "herramienta": "1R388 + tornillo de banco + destornillador paleta",
+    "quita": [
+     "resorte28"
+    ],
+    "foco": [
+     "portaherramienta",
+     "caja_oring"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Perno de impacto",
+    "instruccion": "[3]-6 (4). Sacar las piezas golpeando con destornillador cruz y martillo plástico desde el lado de la broca (Fig. 17): manguito 9, perno de impacto A, anillo 10A, anillo amortiguador 12, caja de O-ring y O-ring 9.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar: piezas direccionales según Fig. 18; resorte 28 con un cilindro pistón de repuesto como guía y su abertura lejos de los agujeros (Fig. 19).",
+    "herramienta": "Destornillador cruz + martillo plástico",
+    "quita": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ],
+    "foco": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Pernos M4x16",
+    "instruccion": "[3]-7 (2). Quitar los dos pernos hexagonales M4x16 con llave hexagonal 3 y 1R228 (Fig. 21).",
+    "precaucion": "Paso referencial tomado del HR2600. Son pernos con traba química: no reutilizarlos sin ThreeBond 1321B/1342 o Loctite 242.",
+    "herramienta": "Llave hexagonal 3 + 1R228",
+    "quita": [
+     "pernos_m4"
+    ],
+    "foco": [
+     "pernos_m4"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Sección del plato oscilante",
+    "instruccion": "[3]-7 (2). Empujar el cilindro pistón hacia la carcasa interior para inclinar el rodamiento oscilante 10 y sacar la sección horizontalmente, retirando el poste hacia el lado inclinado (Fig. 22). Aquí se muestra ya despiezada como en la Fig. 24.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "reten",
+     "helicoidal"
+    ],
+    "foco": [
+     "piston"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Rodamiento 606ZZ",
+    "instruccion": "[3]-7 (3). Meter el eje del engranaje 10 en el rodamiento 606ZZ de la carcasa de engranajes, moverlo adelante y atrás y golpear la carcasa con martillo plástico: el rodamiento sale con la sección (Fig. 23).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "Martillo plástico",
+    "quita": [],
+    "foco": [
+     "rod606",
+     "engranaje10"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "Leva de embrague B",
+    "instruccion": "[3]-7 (4). Apoyar la leva B en 1R035 y sacar a prensa el engranaje recto 10. Quedan sueltos rodamiento oscilante, arandela 8, caja con 608ZZ, retén y engranaje helicoidal 26 (Fig. 24).",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar: helicoidal 26 con la cara de centro más alto hacia el retén; si se invierte, el retén golpea el eje del inducido (Fig. 25).",
+    "herramienta": "1R035 + prensa",
+    "quita": [],
+    "foco": [
+     "leva",
+     "engranaje10",
+     "oscilante"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "Cilindro pistón y martillo",
+    "instruccion": "[3]-8 en orden inverso. Sacar el cilindro pistón con la placa guía y la unión del pistón, el martillo con su O-ring 17,5, y el resorte 14 con la arandela 14 del saliente de la carcasa interior (Fig. 26).",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar, alinear los agujeros de la unión con la dirección del rodamiento oscilante.",
+    "herramienta": "A mano",
+    "quita": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ],
+    "foco": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "Carcasa interior y sellos",
+    "instruccion": "Quedan la carcasa interior con el O-ring 68, el O-ring 26 y el retén 12 con su manguito 9, que la tabla de lubricación ([2]) pide untar con aceite VG100 al armar. El texto no describe su desarme.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ],
+    "foco": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ]
+   }
+  ],
+  "RK26": [
+   {
+    "paso": 1,
+    "titulo": "Empuñadura lateral",
+    "instruccion": "Aflojar la empuñadura lateral girándola y sacarla por delante (manual de instrucciones, Fig. 9).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "mango_lateral"
+    ],
+    "foco": [
+     "mango_lateral"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Tapa 35",
+    "instruccion": "[3]-1 (1). Quitar la tapa 35 del portabrocas.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "tapa35"
+    ],
+    "foco": [
+     "tapa35"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Resorte de anillo 14",
+    "instruccion": "[3]-1 (2). Separar el resorte de anillo 14 (negro) de la ranura del portaherramienta con 1R003 y punta 1R212 (Fig. 2). Sale la arandela 16 que va sobre el resorte 15.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte14"
+    ],
+    "foco": [
+     "resorte14"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Resorte de anillo 15 y cubierta",
+    "instruccion": "[3]-1 (3). Quitar el resorte de anillo 15 (plateado) igual, presionando la cubierta (Fig. 3). Recoger la arandela plana 17 y la arandela de goma 16 entre cubierta y portaherramienta. Sale la cubierta.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R003 + 1R212",
+    "quita": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ],
+    "foco": [
+     "resorte15",
+     "arandela17",
+     "cubierta"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Bolas 7,0 y anillo 21",
+    "instruccion": "[3]-1 (4). Sacar las dos bolas de 7,0 mm presionando el anillo 21 (Fig. 4). Salen el anillo 21, la arandela guía y el resorte cónico 21-29.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar, respetar el sentido de cada pieza según la Fig. 5.",
+    "herramienta": "A mano",
+    "quita": [
+     "bolas7",
+     "anillo21"
+    ],
+    "foco": [
+     "bolas7",
+     "anillo21"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Perilla de cambio de modo",
+    "instruccion": "Referencial: el manual de instrucciones del HR2470 muestra una perilla rotatoria con botón de bloqueo (Figs. 6-8) y no publica su desmontaje. Se asume análogo a la palanca B del HR2600: levantar la tapa, sacar la perilla y, bajo ella, el O-ring, el resorte y el empujador.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar: palanca a 45° (Fig. 7), V del empujador en la ranura en V de la leva B, y tapa puesta con la palanca en modo percusión; verificar que funcione.",
+    "herramienta": "Destornillador paleta fino",
+    "quita": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ],
+    "foco": [
+     "tapa_palanca",
+     "palanca",
+     "oring21",
+     "resorte5",
+     "empujador"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Tapa del mango",
+    "instruccion": "[3]-4 (1). Quitar los tres tornillos 4x18 y la tapa del mango.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos18",
+     "tapa_mango"
+    ],
+    "foco": [
+     "tornillos18",
+     "tapa_mango"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Escobillas",
+    "instruccion": "[3]-4 (2). Deslizar la unidad portaescobillas a la mejor posición, apartar los brazos de los resortes espirales y separar las escobillas del colector (Fig. 9).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "portaesc",
+     "escobillas"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Carcasa del motor",
+    "instruccion": "[3]-4 (3). Quitar los cuatro tornillos 4x30 y separar la carcasa del motor de la carcasa de engranajes. El inducido queda en la carcasa de engranajes (Fig. 10).",
+    "precaucion": "Paso referencial tomado del HR2600. No perder la arandela ondulada 15 del fondo de la carcasa del motor y ponerla al armar.",
+    "herramienta": "Destornillador cruz",
+    "quita": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ],
+    "foco": [
+     "tornillos30",
+     "carcasa_motor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "arandela_ond",
+     "interruptor",
+     "cable"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Inducido",
+    "instruccion": "[3]-4 (4). Sacar el inducido de la carcasa de engranajes tirando a mano.",
+    "precaucion": "Paso referencial tomado del HR2600. El rodamiento 6000LLB va retenido en la carcasa interior con el O-ring 26: no hace falta golpear con martillo plástico.",
+    "herramienta": "A mano",
+    "quita": [
+     "inducido",
+     "rod6000",
+     "rod627"
+    ],
+    "foco": [
+     "inducido",
+     "oring26"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Rodamientos del inducido",
+    "instruccion": "[3]-4 (5). Sacar el rodamiento 6000LLB con 1R269; sacar el 627DDW y la arandela aislante juntos con 1R269. Armar en orden inverso tras cambiar lo dañado.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R269",
+    "quita": [],
+    "foco": [
+     "rod6000",
+     "rod627"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Separar carcasa de engranajes y carcasa interior",
+    "instruccion": "[3]-5 (3) y [3]-7 (1). Separar la sección de la carcasa de engranajes de la sección de la carcasa interior. El rodamiento 606ZZ queda en la carcasa de engranajes.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar, verificar antes que la leva B acople con el rodamiento oscilante (Fig. 27).",
+    "herramienta": "A mano",
+    "quita": [
+     "carcasa_eng",
+     "rod6806",
+     "rod606"
+    ],
+    "foco": [
+     "carcasa_int",
+     "oring68"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Portaherramienta completo",
+    "instruccion": "[3]-5 (4). Sacar el portaherramienta completo golpeando su punta (Fig. 11).",
+    "precaucion": "Paso referencial tomado del HR2600. La arandela plana 30 va entre el portaherramienta y la carcasa interior: no perderla.",
+    "herramienta": "Martillo plástico",
+    "quita": [
+     "arandela36"
+    ],
+    "foco": [
+     "portaherramienta",
+     "arandela36"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Limitador de torque",
+    "instruccion": "[3]-5 (5)-(6). Montar 1R045 y 1R369 en el portaherramienta (Fig. 12), comprimir el resorte (Fig. 13) y soltar la arandela Spiro lock 30 deslizando un destornillador fino desde su extremo superior (Fig. 14). Salen arandela fina, resorte, arandela gruesa, pines 6, engranaje 51, brida de arrastre y bolas de 4 mm (Fig. 15).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "1R045 + 1R369 + destornillador fino",
+    "quita": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ],
+    "foco": [
+     "spiro",
+     "resorte31",
+     "arandela32",
+     "pines6",
+     "engranaje51",
+     "brida",
+     "bolas4"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Resorte de anillo 28",
+    "instruccion": "[3]-6 (1)-(3). Meter 1R388 en el portaherramienta y apretarlo en tornillo de banco con los agujeros de acceso paralelos a las mordazas (Fig. 16). Llevar la abertura del resorte 28 a un agujero y empujarlo con destornillador por los dos agujeros, alternando, hasta sacarlo de la ranura interior.",
+    "precaucion": "Paso referencial tomado del HR2600. No reutilizar el resorte 28 si quedó deformado o dañado.",
+    "herramienta": "1R388 + tornillo de banco + destornillador paleta",
+    "quita": [
+     "resorte28"
+    ],
+    "foco": [
+     "portaherramienta",
+     "caja_oring"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Perno de impacto",
+    "instruccion": "[3]-6 (4). Sacar las piezas golpeando con destornillador cruz y martillo plástico desde el lado de la broca (Fig. 17): manguito 9, perno de impacto A, anillo 10A, anillo amortiguador 12, caja de O-ring y O-ring 9.",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar: piezas direccionales según Fig. 18; resorte 28 con un cilindro pistón de repuesto como guía y su abertura lejos de los agujeros (Fig. 19).",
+    "herramienta": "Destornillador cruz + martillo plástico",
+    "quita": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ],
+    "foco": [
+     "manguito9",
+     "perno",
+     "cojin",
+     "caja_oring",
+     "oring9"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Pernos M4x16",
+    "instruccion": "[3]-7 (2). Quitar los dos pernos hexagonales M4x16 con llave hexagonal 3 y 1R228 (Fig. 21).",
+    "precaucion": "Paso referencial tomado del HR2600. Son pernos con traba química: no reutilizarlos sin ThreeBond 1321B/1342 o Loctite 242.",
+    "herramienta": "Llave hexagonal 3 + 1R228",
+    "quita": [
+     "pernos_m4"
+    ],
+    "foco": [
+     "pernos_m4"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Sección del plato oscilante",
+    "instruccion": "[3]-7 (2). Empujar el cilindro pistón hacia la carcasa interior para inclinar el rodamiento oscilante 10 y sacar la sección horizontalmente, retirando el poste hacia el lado inclinado (Fig. 22). Aquí se muestra ya despiezada como en la Fig. 24.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "reten",
+     "helicoidal"
+    ],
+    "foco": [
+     "piston"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Rodamiento 606ZZ",
+    "instruccion": "[3]-7 (3). Meter el eje del engranaje 10 en el rodamiento 606ZZ de la carcasa de engranajes, moverlo adelante y atrás y golpear la carcasa con martillo plástico: el rodamiento sale con la sección (Fig. 23).",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "Martillo plástico",
+    "quita": [],
+    "foco": [
+     "rod606",
+     "engranaje10"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "Leva de embrague B",
+    "instruccion": "[3]-7 (4). Apoyar la leva B en 1R035 y sacar a prensa el engranaje recto 10. Quedan sueltos rodamiento oscilante, arandela 8, caja con 608ZZ, retén y engranaje helicoidal 26 (Fig. 24).",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar: helicoidal 26 con la cara de centro más alto hacia el retén; si se invierte, el retén golpea el eje del inducido (Fig. 25).",
+    "herramienta": "1R035 + prensa",
+    "quita": [],
+    "foco": [
+     "leva",
+     "engranaje10",
+     "oscilante"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "Cilindro pistón y martillo",
+    "instruccion": "[3]-8 en orden inverso. Sacar el cilindro pistón con la placa guía y la unión del pistón, el martillo con su O-ring 17,5, y el resorte 14 con la arandela 14 del saliente de la carcasa interior (Fig. 26).",
+    "precaucion": "Paso referencial tomado del HR2600. Al armar, alinear los agujeros de la unión con la dirección del rodamiento oscilante.",
+    "herramienta": "A mano",
+    "quita": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ],
+    "foco": [
+     "piston",
+     "martillo",
+     "oring175",
+     "placa_guia",
+     "junta_piston",
+     "resorte14c"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "Carcasa interior y sellos",
+    "instruccion": "Quedan la carcasa interior con el O-ring 68, el O-ring 26 y el retén 12 con su manguito 9, que la tabla de lubricación ([2]) pide untar con aceite VG100 al armar. El texto no describe su desarme.",
+    "precaucion": "Paso referencial tomado del HR2600.",
+    "herramienta": "A mano",
+    "quita": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ],
+    "foco": [
+     "oring68",
+     "oring26",
+     "reten12",
+     "carcasa_int"
+    ]
+   }
+  ]
+ }
+}

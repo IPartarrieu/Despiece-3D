@@ -3,10 +3,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import esmeril from './esmeril/index.js';
 import demoledor from './demoledor/index.js';
+import rotomartillo from './rotomartillo/index.js';
 
 const $ = s => document.querySelector(s);
-const HERR = [esmeril, demoledor];
-const PROXIMAS = ['Rotomartillo', 'Taladro'];
+const HERR = [esmeril, demoledor, rotomartillo];
+const PROXIMAS = ['Taladro'];
 const q = new URLSearchParams(location.search);   // ?herr=demoledor&marca=Makita&exp=1&corte&xray&paso=12&sel=estator&cam=x,y,z,tx,ty,tz&rapido
 const datos = {};                                  // data.json por herramienta, cargado una vez
 
