@@ -1,1 +1,1238 @@
-{"piezas": {"Cincel o puntero": {"funcion": "Transmite el golpe al material.", "como_se_desgasta": "Punta roma, cola gastada o con rebabas.", "prueba": "Mirar la cola y la punta; engrasar la cola antes de usar.", "valor_esperado": null, "cuando_cambiar": "Si la cola está deformada o con grietas, o la punta perdió el filo.", "tip_taller": "Makita incluye grasa para cincel en el equipo; la cola va engrasada.", "ubicacion": "Al frente, dentro del portaherramienta; es la parte que toca el material.", "material": "Acero (típico)."}, "Portaherramienta y retenedor": {"funcion": "Sujeta el cincel y permite que se deslice.", "como_se_desgasta": "Desgaste interno, sellos y retenes secos.", "prueba": "Insertar el cincel: debe entrar, trabarse y salir sin juego excesivo.", "valor_esperado": null, "cuando_cambiar": "Si el desgaste es marcado, DeWalt recomienda cambiar el conjunto completo.", "tip_taller": "Sellos, arandela y anillo elástico del portaherramienta no se reutilizan.", "ubicacion": "En la nariz del equipo, delante del cañón.", "material": "Acero y piezas plásticas (típico)."}, "Percutor intermedio": {"funcion": "Recibe el golpe del martillo y lo pasa al cincel.", "como_se_desgasta": "Anillos de la cabeza desgastados; golpeteo.", "prueba": "Revisar anillos: si asoma el O-ring naranja por el anillo de fluoruro, está gastado.", "valor_esperado": null, "cuando_cambiar": "Makita: cambiar todos los anillos del percutor si se ve el O-ring o al cambiar escobillas.", "tip_taller": "El anillo de fluoruro se calibra con manguito cónico (herramienta 1R214, unos 60 s).", "ubicacion": "Dentro del cañón, entre el martillo y la cola del cincel.", "material": "Acero (típico)."}, "Martillo": {"funcion": "Golpea al percutor intermedio impulsado por el colchón de aire.", "como_se_desgasta": "Raya o ovalización; O-ring gastado.", "prueba": "Revisar superficie y O-ring; debe deslizar libre en el cilindro engrasado.", "valor_esperado": null, "cuando_cambiar": "Si está rayado o el O-ring pierde ajuste; el O-ring se cambia siempre al abrir.", "tip_taller": "DeWalt: O-ring del martillo se reemplaza en cada servicio.", "ubicacion": "Dentro del cilindro, delante del pistón.", "material": "Acero (típico)."}, "Pistón": {"funcion": "Comprime el aire que empuja al martillo.", "como_se_desgasta": "O-ring gastado, rayas, grasa degradada.", "prueba": "Revisar O-ring y pared; debe deslizar suave en el cilindro.", "valor_esperado": null, "cuando_cambiar": "Con O-ring gastado la máquina pierde fuerza; cambiar O-ring y revisar pared.", "tip_taller": "La grasa vieja se vuelve pegajosa y frena al pistón y al martillo.", "ubicacion": "Dentro del cilindro, detrás del martillo, unido a la biela.", "material": "Acero o aleación (típico)."}, "Cilindro o cañón guía": {"funcion": "Guía al pistón y al martillo.", "como_se_desgasta": "Rayas, pérdida de ajuste.", "prueba": "Revisar pared interior y O-rings exteriores.", "valor_esperado": null, "cuando_cambiar": "DeWalt: cilindro o pistón gastado causa falta de potencia.", "tip_taller": "Empujar el martillo con objeto no metálico para no marcar el cilindro.", "ubicacion": "Detrás del portaherramienta, sobre el eje del cincel.", "material": "Acero (típico)."}, "Biela y excéntrico": {"funcion": "Convierte el giro en vaivén del pistón.", "como_se_desgasta": "Holgura del bulón, rodamiento de aguja seco.", "prueba": "Girar a mano: movimiento suave sin tope ni ruido.", "valor_esperado": null, "cuando_cambiar": "Si el bulón o el casquillo tienen holgura visible o ruido.", "tip_taller": "Al sacar el pistón con la biela, girar el cigüeñal hasta la posición más cercana al cañón.", "ubicacion": "En el cárter, entre el pistón y el cigüeñal.", "material": "Acero (típico)."}, "Eje intermedio y engranaje": {"funcion": "Reduce giro y mueve el cigüeñal.", "como_se_desgasta": "Dientes picados; falta de grasa.", "prueba": "Ver dientes y girar el conjunto engranado.", "valor_esperado": null, "cuando_cambiar": "Cambiar el juego completo si hay dientes dañados.", "tip_taller": "Cigüeñal con rodamientos no se cambia por separado: DeWalt cambia la carcasa.", "ubicacion": "En el cárter de engranajes, entre el motor y el cigüeñal.", "material": "Acero (típico)."}, "Piñón del inducido": {"funcion": "Tallado en el eje del inducido; engrana el reductor.", "como_se_desgasta": "Dientes gastados, ruido.", "prueba": "Ver dientes y probar engrane con el engranaje doble.", "valor_esperado": null, "cuando_cambiar": "Si hay dientes dañados se cambia el inducido completo.", "tip_taller": "Estrías del inducido engranan con el engranaje doble: alinearlas al montar.", "ubicacion": "En el extremo del eje del inducido, hacia el engranaje.", "material": "Acero (parte del eje)."}, "Inducido (rotor)": {"funcion": "Genera el giro del motor.", "como_se_desgasta": "Delgas quemadas, cortos, aislación dañada.", "prueba": "Medir resistencia del rotor; en Bosch GSH 10 E 230 V.", "valor_esperado": "0,875 a 1,135 ohm (115 V: 0,265 a 0,367)", "cuando_cambiar": "Fuera del rango, quemado o con cortos.", "tip_taller": "Solo vale como referencia de otro modelo; el rango de su equipo es del fabricante.", "ubicacion": "Dentro de la carcasa del motor.", "material": "Acero con cobre."}, "Estator": {"funcion": "Crea el campo magnético del motor.", "como_se_desgasta": "Bobina quemada, aislación.", "prueba": "Medir resistencia de una bobina; en Bosch GSH 10 E 230 V.", "valor_esperado": "0,759 a 0,997 ohm (115 V: 0,189 a 0,271)", "cuando_cambiar": "Fuera del rango o con olor a quemado.", "tip_taller": "Referencia de otro modelo; no vale para el Kothman.", "ubicacion": "Dentro de la carcasa del motor, rodea al inducido.", "material": "Acero con cobre (típico)."}, "Colector": {"funcion": "Entrega corriente al inducido.", "como_se_desgasta": "Desgaste, ranuras, quemaduras.", "prueba": "Inspección visual y medir diámetro.", "valor_esperado": null, "cuando_cambiar": "Bosch indica diámetro mínimo en su tabla, pero la celda va vacía.", "tip_taller": "No se publicó diámetro mínimo.", "ubicacion": "En el eje del inducido, extremo contrario al piñón.", "material": "Cobre."}, "Escobillas y portaescobillas": {"funcion": "Pasan la corriente al colector.", "como_se_desgasta": "Largo reducido, chispas.", "prueba": "Sacar y ver la punta aislante de resina del carbón.", "valor_esperado": "Makita: la punta de resina que toca el colector corta el motor", "cuando_cambiar": "Cambiar ambas escobillas a la vez, por pares iguales.", "tip_taller": "DeWalt: primer cambio a las 250 a 300 h; el portaescobillas no se vende suelto.", "ubicacion": "Junto al colector, bajo la tapa trasera.", "material": "Carbón y plástico."}, "Ventilador": {"funcion": "Enfría el motor.", "como_se_desgasta": "Aspas dañadas, tornillo flojo.", "prueba": "Girar a mano y ver aspas.", "valor_esperado": "Tornillo de fijación a 5 N·m en DeWalt D25900", "cuando_cambiar": "Si hay aspa rota o roce con el inducido.", "tip_taller": "Si el ventilador se suelta, el motor se acelera de más; sujetar con guantes: el borde corta.", "ubicacion": "En el eje del inducido, junto al estator.", "material": "Metal (DeWalt advierte borde cortante)."}, "Rodamientos": {"funcion": "Soportan inducido, cigüeñal y ejes.", "como_se_desgasta": "Ruido, juego, grasa seca.", "prueba": "Girarlos a mano: suaves, sin ruido.", "valor_esperado": null, "cuando_cambiar": "Si hay ruido, trabas o juego.", "tip_taller": "Rodamiento del inducido se saca con extractor o prensa; Makita usa tubos y extractores específicos.", "ubicacion": "En los extremos del inducido, el cigüeñal y los ejes.", "material": "Acero."}, "Carcasa de engranajes": {"funcion": "Aloja el reductor y la grasa.", "como_se_desgasta": "Fugas por sellos; contaminación.", "prueba": "Ver sellos y tapas; sin fugas.", "valor_esperado": null, "cuando_cambiar": "Cambiar sellos y O-rings al abrir; carcasa si hay daño.", "tip_taller": "Mantener la zona limpia: polvo y suciedad matan el cabezal.", "ubicacion": "Entre motor y cabezal.", "material": "Aluminio o fundición (típico)."}, "Carcasa del motor": {"funcion": "Aloja inducido y estator.", "como_se_desgasta": "Grietas, fugas de aire.", "prueba": "Inspección visual.", "valor_esperado": null, "cuando_cambiar": "Si está agrietada.", "tip_taller": "El estator sale golpeando suavemente en lados opuestos.", "ubicacion": "Parte trasera, tras el cárter.", "material": "Plástico o metal (típico)."}, "Interruptor": {"funcion": "Conecta y corta la corriente.", "como_se_desgasta": "Contactos quemados.", "prueba": "Continuidad entre bornes con gatillo accionado y en reposo.", "valor_esperado": null, "cuando_cambiar": "Si no conmuta o falla.", "tip_taller": "Fijar bien cables y la abrazadera al volver a montar.", "ubicacion": "En el mango trasero.", "material": "Plástico y contactos."}, "Mango trasero": {"funcion": "Soporta el equipo y aloja el interruptor.", "como_se_desgasta": "Tornillos flojos, carcasa partida.", "prueba": "Ver tornillos y grietas.", "valor_esperado": "Tornillos de la tapa del mango a 3 N·m en DeWalt D25900", "cuando_cambiar": "Cambiar si está partido.", "tip_taller": "Cable con su abrazadera: 1,8 N·m en DeWalt D25900.", "ubicacion": "Parte trasera del equipo.", "material": "Plástico."}, "Mango auxiliar": {"funcion": "Da segundo agarre.", "como_se_desgasta": "Rosca o abrazadera floja.", "prueba": "Probar que quede firme.", "valor_esperado": null, "cuando_cambiar": "Si patina o está agrietado.", "tip_taller": "Se retira primero (DeWalt).", "ubicacion": "Se fija al cuello delantero del equipo.", "material": "Plástico y acero."}, "Cable": {"funcion": "Alimenta el equipo.", "como_se_desgasta": "Cortes, pelado.", "prueba": "Continuidad de cada conductor.", "valor_esperado": null, "cuando_cambiar": "Si hay corte o aislación dañada.", "tip_taller": "Fijar con abrazadera.", "ubicacion": "Sale por el mango trasero.", "material": "Cobre y goma."}, "Amortiguación y sellos": {"funcion": "Reduce vibración y sella la grasa.", "como_se_desgasta": "Resortes cansados; O-rings resecos.", "prueba": "Ver resortes, contrapeso y O-rings.", "valor_esperado": "Cuatro tornillos del bloque antivibración a 17 N·m en DeWalt D25900", "cuando_cambiar": "Todos los O-rings abiertos se cambian.", "tip_taller": "Hay presión de resortes al abrir el bloque antivibración.", "ubicacion": "Entre el cabezal y el cárter, y en el mango.", "material": "Acero y goma."}}, "desarmado": [{"paso": 1, "titulo": "Preparar el equipo", "instruccion": "Desenchufe, saque el cincel y limpie el equipo por fuera. Trabaje en un lugar sin polvo.", "precaucion": "Polvo o suciedad dentro del cabezal causa fallas tempranas.", "herramienta": "—"}, {"paso": 2, "titulo": "Sacar el mango auxiliar", "instruccion": "Retire el mango lateral si lo tiene.", "precaucion": null, "herramienta": "—"}, {"paso": 3, "titulo": "Abrir el mango y soltar el cable", "instruccion": "Quite los tornillos de la tapa del mango, la abrazadera del cable y la del interruptor. Anote cómo van los cables.", "precaucion": "Fotografíe las conexiones antes de soltar.", "herramienta": "Torx T10, T15, T20 (DeWalt)"}, {"paso": 4, "titulo": "Sacar las escobillas", "instruccion": "Quite las tapas del portaescobillas, suelte el resorte y saque ambas escobillas.", "precaucion": "Cambie siempre las dos a la vez.", "herramienta": "Destornillador"}, {"paso": 5, "titulo": "Retirar el ventilador", "instruccion": "Suelte el tornillo y saque el ventilador sujetándolo por el borde.", "precaucion": "El borde del ventilador corta: use guantes.", "herramienta": "Torx"}, {"paso": 6, "titulo": "Separar el motor", "instruccion": "Quite los tornillos de la tapa trasera, suelte las escobillas del colector y separe la carcasa del motor del cárter.", "precaucion": null, "herramienta": "Llave hexagonal"}, {"paso": 7, "titulo": "Sacar el inducido", "instruccion": "Golpee con cuidado el borde del cárter para liberar el inducido, o empújelo con prensa y tubo.", "precaucion": "No golpear el eje ni el colector.", "herramienta": "Prensa, tubo"}, {"paso": 8, "titulo": "Desarmar el portaherramienta", "instruccion": "Retire el anillo elástico del collar con la herramienta del fabricante, luego manguito, resortes y trabas.", "precaucion": "El anillo elástico y la arandela no se reutilizan.", "herramienta": "Pinzas de anillos"}, {"paso": 9, "titulo": "Separar el cabezal del cárter", "instruccion": "Quite los pernos que unen el cañón o bloque antivibración con el cárter. Hay presión de resortes.", "precaucion": "El pistón queda expuesto: cubrir de polvo.", "herramienta": "Llave hexagonal"}, {"paso": 10, "titulo": "Sacar el percutor intermedio", "instruccion": "Empuje el percutor desde dentro del cañón con un destornillador desde el portaherramienta.", "precaucion": null, "herramienta": "Destornillador"}, {"paso": 11, "titulo": "Sacar cilindro y martillo", "instruccion": "Retire el cilindro; el martillo sale por el lado ancho empujándolo con algo no metálico.", "precaucion": "No acostar el cárter: puede caerse el pasador del antivibración (Makita).", "herramienta": "Varilla no metálica"}, {"paso": 12, "titulo": "Sacar el pistón con la biela", "instruccion": "Quite la tapa del cárter (crank cap); lleve el pistón a la posición más cercana al cañón y retírelo con la biela.", "precaucion": "Anote la posición de las arandelas del cárter.", "herramienta": "Llave especial de tapa"}, {"paso": 13, "titulo": "Retirar la grasa y abrir los engranajes", "instruccion": "Saque la tapa de engranajes y limpie la grasa vieja del cárter.", "precaucion": null, "herramienta": "Trapo"}, {"paso": 14, "titulo": "Sacar engranajes y cigüeñal", "instruccion": "Suelte el engranaje grande con la herramienta de apriete inverso y extraiga el engranaje doble con extractor; luego presione el cigüeñal.", "precaucion": "Los rodamientos del cigüeñal no se cambian por separado en DeWalt.", "herramienta": "Extractor, prensa"}, {"paso": 15, "titulo": "Sacar rodamientos y sellos", "instruccion": "Saque el rodamiento del inducido con extractor y retire el sello.", "precaucion": "Los sellos se cambian siempre.", "herramienta": "Extractor"}, {"paso": 16, "titulo": "Limpiar e inspeccionar", "instruccion": "Limpie y revise cada pieza (ver tabla de piezas). Tire los O-rings abiertos.", "precaucion": null, "herramienta": "—"}], "modelos": [{"marca": "Kothman", "modelo": "HK-17", "porta": "Hex 17 mm", "clase": "hex17", "peso": 6.5, "potencia": 1500, "energia": 17, "golpes": 2900, "vibracion": null, "nota": "Ficha de tienda propia (220 V). Peso 6,5 kg, mayor que los 5 a 6 kg de la flota. Sin vibración ni longitud publicadas. Código MAQ-KT-DM-HK17."}, {"marca": "Kothman", "modelo": "HK-25", "porta": "SDS-max", "clase": "sds", "peso": 10.4, "potencia": 1500, "energia": 25, "golpes": "hasta 1.900", "vibracion": null, "nota": "Ficha de tienda propia (220 V). Régimen variable hasta 1.900 golpes/min."}, {"marca": "Kothman", "modelo": "HK-55", "porta": "Hex 28 mm", "clase": "sds", "peso": 17.7, "potencia": 1600, "energia": 55, "golpes": 1450, "vibracion": null, "nota": "Ficha de tienda propia (220 V). Precio en la página figura como $0 (marcador)."}, {"marca": "Makita", "modelo": "HM0810T", "porta": "Hex 17 mm", "clase": "hex17", "peso": 6.0, "potencia": 900, "energia": 7.2, "golpes": 2900, "vibracion": "14 (K 1,5)", "nota": "Ficha oficial Makita UK. Presión sonora 92 dB(A). No se verificó venta en Chile."}, {"marca": "Makita", "modelo": "HM0810TA", "porta": "Hex 17 mm (no confirmado en el manual)", "clase": "hex17", "peso": 6.3, "potencia": null, "energia": null, "golpes": 2900, "vibracion": null, "nota": "Manual oficial: largo 428 mm, 2.900 golpes/min. Potencia y energía no figuran. El manual solo nombra el tipo de cincel; la medida del hex se asume por la familia, sin confirmar."}, {"marca": "Makita", "modelo": "HM1203C", "porta": "SDS-max", "clase": "sds", "peso": 9.7, "potencia": 1510, "energia": 19.1, "golpes": "950–1.900", "vibracion": "15,5 (K 1,5)", "nota": "Ficha oficial indica 150 W (error evidente); 1.510 W según distribuidor cutsmart.co.za. LED avisa cambio de escobillas. Presión sonora 81 dB(A)."}, {"marca": "Bosch", "modelo": "GSH 5 CE", "porta": "SDS-max", "clase": "sds", "peso": "6,1–6,2", "potencia": 1150, "energia": 8.3, "golpes": "1.300–2.900 (ficha UK); 1.510–2.870 (ficha SE)", "vibracion": "10,6 (ficha SE 2026); 11,0 (ficha 2017); K 1,5", "nota": "Fichas oficiales Bosch de distintos años. Vibration Control, rueda para regular golpes y 12 posiciones de cincel. Segunda ficha: https://www.xlbygg.se/media/attachments/750/9fd/7509fd47c1eff0cc7502ceda142743d0.pdf"}, {"marca": "Bosch", "modelo": "GSH 11 E", "porta": "SDS-max", "clase": "sds", "peso": 10.1, "potencia": 1500, "energia": "16,8 (ficha vigente); 25 (ficha antigua)", "golpes": "900–1.890", "vibracion": null, "nota": "Datos de la página Bosch según resumen de búsqueda; el valor de vibración está en el manual y no se pudo leer."}, {"marca": "Bosch", "modelo": "GSH 11 VC", "porta": "SDS-max", "clase": "sds", "peso": 11.4, "potencia": 1700, "energia": 23, "golpes": "900–1.700", "vibracion": null, "nota": "Datos de la página Bosch según resumen de búsqueda. Con Vibration Control."}, {"marca": "DeWalt", "modelo": "D25911K", "porta": "SDS-max", "clase": "sds", "peso": "11–12,7", "potencia": null, "energia": 27, "golpes": "810–1.620", "vibracion": "6,0 o 7,0 (la misma página da ambos)", "nota": "Motor sin escobillas. Peso, 11 kg en el título y 12,7 kg en Screwfix. No se confirmó potencia."}, {"marca": "DeWalt", "modelo": "D25960K", "porta": "1-1/8 pulgada hex", "clase": "sds", "peso": "18,1–18,4", "potencia": null, "energia": 35, "golpes": 1450, "vibracion": "6,8 (tienda)", "nota": "Datos de Lectura. DeWalt Canadá lo marca descontinuado. 1.000 W es potencia de salida, no de entrada."}, {"marca": "DeWalt", "modelo": "D25966 B2", "porta": "1-1/8 pulgada hex", "clase": "sds", "peso": 15, "potencia": 1800, "energia": 41, "golpes": null, "vibracion": null, "nota": "Solo el título del aviso en Falabella Chile (vendedor externo)."}, {"marca": "Hilti", "modelo": "TE 500-AVR", "porta": "SDS-max", "clase": "sds", "peso": null, "potencia": 1100, "energia": 7.5, "golpes": "3.180 (ficha Hilti SG); 2.760 (Lectura)", "vibracion": "10,1 (folleto Hilti, por orden de columnas)", "nota": "Potencia viene del manual TE 500 / TE 500-AVR. Golpes por minuto discrepan entre fuentes. Folleto no pudo abrirse directamente."}, {"marca": "Hilti", "modelo": "TE 700-AVR", "porta": "SDS-max", "clase": "sds", "peso": 7.9, "potencia": 1300, "energia": 11.5, "golpes": null, "vibracion": "6,5 (folleto Hilti)", "nota": "Datos de un extracto de manual y del folleto Hilti según resumen de búsqueda. Sistema AVR."}, {"marca": "Milwaukee", "modelo": "K 500 S", "porta": "SDS-max", "clase": "sds", "peso": 6.3, "potencia": 1300, "energia": 8.5, "golpes": 2840, "vibracion": "11,5 (K 1,9)", "nota": "Distribuidor europeo; el título del aviso dice 5 kg, la ficha 6,3 kg. Cable de 6 m."}, {"marca": "Milwaukee", "modelo": "K 700 S", "porta": "SDS-max", "clase": "sds", "peso": 7.8, "potencia": 1550, "energia": 11.9, "golpes": 2700, "vibracion": "9,1 (tienda)", "nota": "Datos de distribuidores. Milwaukee la clasifica en la clase de 7 kg. Vibración de https://imilwauke.pl/en/20091-k-700-s-sds-max-breaking-hammer-class-7-kg-1550-w-in-case-4933459148.html"}, {"marca": "Milwaukee", "modelo": "K 900 K", "porta": "K-Hex 21 mm", "clase": "sds", "peso": 11, "potencia": 1600, "energia": 20, "golpes": 1950, "vibracion": 11, "nota": "Golpes por minuto de Lectura."}, {"marca": "HiKOKI", "modelo": "H41SD", "porta": "Hex 17 mm", "clase": "hex17", "peso": 5.0, "potencia": 1050, "energia": null, "golpes": 3000, "vibracion": null, "nota": "Manual oficial: 5,0 kg sin cable ni empuñadura lateral, 3.000 golpes/min a plena carga, grasa 35 g. La energía no figura en el manual."}, {"marca": "Einhell", "modelo": "TE-DH 1027", "porta": "SDS-max", "clase": "sds", "peso": 10.8, "potencia": 1500, "energia": 32, "golpes": 1900, "vibracion": null, "nota": "Ficha oficial del fabricante. Empuñadura principal amortiguada; escobillas con corte automático. Sin valor de vibración."}, {"marca": "Total", "modelo": "TH215456", "porta": "Hex 30 mm", "clase": "sds", "peso": null, "potencia": 1700, "energia": 45, "golpes": 1400, "vibracion": null, "nota": "Aviso en Easy.cl (vendedor Construplaza, 6 meses de garantía). El peso varía entre 6 y 22,5 kg según avisos; no se informa. Detalles de Falabella/Ripley en búsqueda."}, {"marca": "Stanley", "modelo": "FATMAX SFMEH230K", "porta": "SDS-max", "clase": "sds", "peso": 10.5, "potencia": 1600, "energia": 15, "golpes": null, "vibracion": null, "nota": "Datos de un distribuidor (modelo STHM10K de la misma familia) y de la página de Stanley AU, que no pudo leerse."}, {"marca": "Metabo", "modelo": "MHE 56", "porta": "SDS-max", "clase": "sds", "peso": 6.3, "potencia": 1300, "energia": null, "golpes": 2840, "vibracion": null, "nota": "Manual Metabo. Empuñadura amortiguadora MVT. No se encontró energía por golpe ni vibración."}]}
+{
+ "modelos": [
+  {
+   "marca": "DeWalt",
+   "modelo": "D25900K",
+   "clase": "10 kg",
+   "porta": "SDS",
+   "peso": 10,
+   "potencia": null,
+   "energia": null,
+   "golpes": null,
+   "vibracion": null,
+   "nota": "Procedimiento de servicio ESSG del D25900K (63 págs.): clase 10 kg; corriente en vacío a velocidad máxima 3,2 a 5,2 A (230/240 V) y 7,0 a 8,5 A (115/120 V); grasa 83 g (5 g pistón, 39 g engranajes, 39 g cárter); escobillas cada 250 a 300 h. El documento llama \"SDS Spindle\" al husillo y no da potencia, energía, golpes ni vibración."
+  },
+  {
+   "marca": "DeWalt",
+   "modelo": "D25940K",
+   "clase": "12 kg",
+   "porta": "SDS",
+   "peso": 12,
+   "potencia": null,
+   "energia": null,
+   "golpes": null,
+   "vibracion": null,
+   "nota": "Repair pack ESSG del D25940K (59 págs.): clase 12 kg; corriente en vacío 3,2 a 5,2 A (230/240 V) y 6,4 a 9,1 A (115/120 V) tras 10 min en vacío; grasa 123 g (5 g pistón, 39 g engranajes, 79 g cárter); portaherramienta con 9 tornillos a 9 Nm; engranaje del cigüeñal a 18 Nm. No da potencia, energía, golpes ni vibración."
+  }
+ ],
+ "piezas": {
+  "Mango lateral (59)": {
+   "funcion": "Segunda empuñadura delantera para guiar el equipo.",
+   "como_se_desgasta": null,
+   "prueba": "Revisar que la abrazadera apriete firme.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la abrazadera no aprieta o el mango está quebrado.",
+   "tip_taller": "Es lo primero que sale en el desarme (pág. 9)."
+  },
+  "Tornillos del portaherramienta (102 ×6)": {
+   "funcion": "Fijan el portaherramienta al alojamiento delantero de la unidad antivibración.",
+   "como_se_desgasta": "Cabeza dañada por herramienta mal calzada.",
+   "prueba": "Apriete con destornillador de torque.",
+   "valor_esperado": "6 tornillos a 10 Nm, en la secuencia numerada de la pág. 61.",
+   "cuando_cambiar": "Si la cabeza o la rosca están dañadas.",
+   "tip_taller": "Apretar en secuencia cruzada; un apriete disparejo deja el portaherramienta torcido."
+  },
+  "Carcasa o brida del portaherramienta (103)": {
+   "funcion": "Cuerpo base del portaherramienta: se atornilla al alojamiento delantero y lleva la junta tórica 104 en su ranura.",
+   "como_se_desgasta": "Desgaste interno junto con el resto del portaherramienta.",
+   "prueba": "Revisar ranura de la junta y asiento del hexágono del husillo.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el desgaste del portaherramienta es grande, el documento recomienda cambiar el conjunto completo (111).",
+   "tip_taller": "Al armar, girar el husillo hasta que una esquina del hexágono quede alineada con un agujero de la base de la brida (pág. 47)."
+  },
+  "Manga giratoria con manga de bloqueo, resorte y guía (98, 99, 100, 101)": {
+   "funcion": "Manga que se gira para liberar el útil; dentro lleva la manga de bloqueo, el resorte de torsión y la guía de plástico blanco.",
+   "como_se_desgasta": "Resorte cansado: la manga no vuelve sola.",
+   "prueba": "Girarla a la derecha y soltar.",
+   "valor_esperado": "Debe volver sola por el resorte (pág. 50).",
+   "cuando_cambiar": "Si no gira o no vuelve.",
+   "tip_taller": "El resorte 99 está bajo tensión: hacer palanca con cuidado al sacarlo (pág. 14)."
+  },
+  "Bloqueo del útil (resortes, bujes y piezas de bloqueo) (93, 94, 95, 96, 97)": {
+   "funcion": "Retiene el útil en el husillo: dos piezas de bloqueo entran en las ranuras del husillo, empujadas por una arandela y resortes.",
+   "como_se_desgasta": "Piezas de bloqueo gastadas o resortes débiles: el útil queda suelto.",
+   "prueba": "Con el útil puesto, tirar de él: debe quedar retenido.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el útil se sale o tiene juego excesivo.",
+   "tip_taller": "Engrasar levemente las dos ranuras antes de poner las piezas de bloqueo (pág. 51)."
+  },
+  "Amortiguador y anillo de bloqueo (90, 92)": {
+   "funcion": "Amortiguador de goma del útil y anillo de bloqueo dentro del manguito deslizante.",
+   "como_se_desgasta": "La goma se aplasta o se agrieta.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "En el servicio mayor (el kit trae el amortiguador 90).",
+   "tip_taller": null
+  },
+  "Manguito deslizante (91)": {
+   "funcion": "Manguito negro que se tira hacia atrás para poner o sacar el útil.",
+   "como_se_desgasta": "Desgaste exterior por golpes.",
+   "prueba": "Tirarlo hacia atrás y soltar.",
+   "valor_esperado": "Debe volver a su posición inicial (pág. 57).",
+   "cuando_cambiar": "Si está roto o no vuelve.",
+   "tip_taller": "Se desarma con la herramienta de servicio del anillo elástico, sin apretar de más la tuerca (pág. 12)."
+  },
+  "Anillo elástico y arandela (88, 89)": {
+   "funcion": "Anillo elástico y arandela que retienen el manguito deslizante en el husillo.",
+   "como_se_desgasta": "Pierde tensión al sacarlo.",
+   "prueba": "Verificar que quede bien asentado en la ranura.",
+   "valor_esperado": "Al montarlo se oyen cuatro clics y la tuerca queda a ras con la barra roscada (pág. 56).",
+   "cuando_cambiar": "Siempre que se saque: no se reutilizan ni el anillo ni la arandela.",
+   "tip_taller": "Viene en el kit de primer servicio."
+  },
+  "Sello de goma frontal (87)": {
+   "funcion": "Sello de goma de la nariz: evita que entre polvo al portaherramienta.",
+   "como_se_desgasta": "Se agrieta o se deforma.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "En cada cambio de escobillas (servicio de rutina).",
+   "tip_taller": "Se saca tirándolo desde la punta del portaherramienta (pág. 10)."
+  },
+  "Husillo SDS (107)": {
+   "funcion": "Eje hueco que recibe el útil SDS y por dentro guía la pieza de golpeo; lleva un hexágono exterior.",
+   "como_se_desgasta": "Ranuras y alojamiento del útil gastados.",
+   "prueba": "Revisar ranuras y juego del útil.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si hay desgaste notorio (se recomienda el portaherramienta completo).",
+   "tip_taller": "El repuesto viene con el sello interior ya puesto; al reutilizarlo, cambiar sello y junta tórica."
+  },
+  "Sellos y juntas tóricas del portaherramienta (74, 104, 108, 109)": {
+   "funcion": "Juntas tóricas y sello del husillo y de la brida: mantienen la grasa dentro y el polvo fuera.",
+   "como_se_desgasta": "Se endurecen y pierden sello.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si se mueve al desarmar, se cambia: el documento exige reemplazar toda junta tórica que se haya tocado.",
+   "tip_taller": "Medidas que da el documento: junta de la brida 58 x 2 mm, junta del husillo 38 x 2,5 mm, junta interior 35 x 5 mm."
+  },
+  "Buje rodamiento de la pieza de golpeo (110)": {
+   "funcion": "Buje que guía la pieza de golpeo dentro del husillo.",
+   "como_se_desgasta": "Ovalado por el roce de la pieza de golpeo.",
+   "prueba": "Juego de la pieza de golpeo dentro del buje.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si hay juego.",
+   "tip_taller": "Puede salir apretado (pág. 10). Al armar, engrasar su diámetro exterior y empujar el diámetro menor hasta el tope."
+  },
+  "Buje, amortiguador y arandela de la pieza de golpeo (68, 69, 70)": {
+   "funcion": "Buje con amortiguador y arandela que rodea la pieza de golpeo y amortigua su retorno.",
+   "como_se_desgasta": "El amortiguador de goma se aplasta.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "En el servicio mayor (el kit trae el amortiguador 69).",
+   "tip_taller": "La arandela va con el cono interior hacia arriba (pág. 60)."
+  },
+  "Pieza de golpeo (67)": {
+   "funcion": "Pieza intermedia (\"beat piece\") que recibe el golpe del martillo y lo pasa al útil.",
+   "como_se_desgasta": "Cara de golpe deformada o con rebabas.",
+   "prueba": "Revisar ambas caras de impacto.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está deformada o agrietada.",
+   "tip_taller": "Engrasar hasta el resalte más pequeño antes de montarla; el conjunto lleva 7 g de grasa."
+  },
+  "Buje del alojamiento delantero con junta (71, 72)": {
+   "funcion": "Buje con junta tórica en la boca del alojamiento delantero; sostiene la pieza de golpeo.",
+   "como_se_desgasta": "Junta endurecida.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si se mueve al desarmar, se cambia: el documento exige reemplazar toda junta tórica que se haya tocado.",
+   "tip_taller": "Se monta con la junta hacia arriba (pág. 61)."
+  },
+  "Cubierta plástica antivibración (66)": {
+   "funcion": "Cubierta de plástico negro, partida, que envuelve el alojamiento delantero.",
+   "como_se_desgasta": "Se quiebra en la zona del corte.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está rota o no encaja con clic.",
+   "tip_taller": "Al montarla, la ranura angosta va hacia la caja de engranajes y se desliza hasta que haga clic (pág. 44)."
+  },
+  "Tornillos de la unidad antivibración (65 ×4)": {
+   "funcion": "Cuatro tornillos que unen la unidad antivibración a la carcasa principal.",
+   "como_se_desgasta": null,
+   "prueba": "Apriete con llave de torque.",
+   "valor_esperado": "17 Nm, apretando en esquinas opuestas.",
+   "cuando_cambiar": "Si la rosca está dañada.",
+   "tip_taller": "Al soltarlos, los resortes internos empujan el alojamiento: sujetarlo."
+  },
+  "Alojamiento delantero de la unidad antivibración (78)": {
+   "funcion": "Alojamiento metálico de la unidad antivibración: guarda el cilindro, el contrapeso y los resortes.",
+   "como_se_desgasta": "Desgaste en los dientes donde asienta el cilindro.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está agrietado.",
+   "tip_taller": "Al montar, el nervio angosto va hacia la caja de engranajes; meter el pistón en el cilindro y bajar sobre la carcasa (pág. 44)."
+  },
+  "Junta tórica de la carcasa principal (79)": {
+   "funcion": "Junta tórica entre la carcasa principal y la unidad antivibración.",
+   "como_se_desgasta": "Se endurece.",
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "Siempre que se separe la unidad antivibración, y en cada cambio de escobillas.",
+   "tip_taller": null
+  },
+  "Componentes antivibración (contrapeso, resortes, guías) (80, 81, 82, 83, 86)": {
+   "funcion": "Contrapeso de bronce entre dos resortes: oscila en contrafase y reduce la vibración que llega al mango.",
+   "como_se_desgasta": "Resortes cansados o guías gastadas.",
+   "prueba": "Inspección de resortes y guías.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si un resorte está roto o deformado.",
+   "tip_taller": "Lleva 39 g de grasa. Las guías van con el diámetro cónico dentro del contrapeso."
+  },
+  "Cilindro (75)": {
+   "funcion": "Tubo donde el pistón comprime el aire que lanza al martillo.",
+   "como_se_desgasta": "Rayado interior.",
+   "prueba": "Inspección del interior.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el equipo pierde fuerza y el interior está rayado (falla \"falta de potencia\").",
+   "tip_taller": "Se saca empujando el extremo ancho junto a los 4 agujeros; al armar, el diámetro delgado entra primero."
+  },
+  "Martillo (ariete) (76)": {
+   "funcion": "Martillo (ariete) que vuela por el colchón de aire y golpea la pieza de golpeo.",
+   "como_se_desgasta": "Junta tórica gastada y cara de golpe marcada.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la cara está deformada.",
+   "tip_taller": "Sacarlo empujando con un objeto no metálico desde el extremo ancho del cilindro."
+  },
+  "Juntas tóricas del cilindro y del martillo (73, 74, 77)": {
+   "funcion": "Juntas tóricas del cilindro (interior y exterior) y del martillo.",
+   "como_se_desgasta": "Pierden sello: el colchón de aire se debilita.",
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "En cada cambio de escobillas (servicio de rutina).",
+   "tip_taller": "Juntas gastadas en pistón y cilindro son la primera causa de falta de potencia según el documento."
+  },
+  "Tapa del mango con interruptor (19)": {
+   "funcion": "Tapa lateral del mango trasero: cubre el interruptor y el gatillo.",
+   "como_se_desgasta": null,
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está quebrada.",
+   "tip_taller": "Sale con 8 tornillos. Al armar: 6 tornillos (58) a 3 Nm y 2 tornillos (26) a 1,8 Nm."
+  },
+  "Mango trasero (mitad fija)": {
+   "funcion": "Mitad fija del mango en D donde va el gatillo.",
+   "como_se_desgasta": null,
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está quebrada.",
+   "tip_taller": "El documento no le asigna número propio en el procedimiento."
+  },
+  "Interruptor con adaptador y abrazadera (15, 18, 22, 24)": {
+   "funcion": "Interruptor principal con su adaptador, abrazadera y el cable al motor.",
+   "como_se_desgasta": "Contactos quemados.",
+   "prueba": "Continuidad con el gatillo apretado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no cierra o calienta.",
+   "tip_taller": "El adaptador se monta sobre el botón del interruptor hasta que haga clic."
+  },
+  "Gatillo con pasador, varilla y pines (12, 13, 14, 17)": {
+   "funcion": "Gatillo con su pasador, varilla actuadora y dos pines con resorte.",
+   "como_se_desgasta": "Varilla suelta o rota.",
+   "prueba": "Apretar y soltar el gatillo con la tapa abierta.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la varilla está rota: \"el equipo no parte\" puede ser la varilla desconectada o quebrada.",
+   "tip_taller": "Al sacar el gatillo saltan los dos pines con resorte (17): sujetarlos."
+  },
+  "Cable de alimentación con sujetacable (23, 25, 29)": {
+   "funcion": "Cable de alimentación con su sujetacable y la amarra del cable del interruptor.",
+   "como_se_desgasta": "Cortes en la salida del mango.",
+   "prueba": "Continuidad de cada conductor.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la cubierta está cortada.",
+   "tip_taller": "Sujetacable a 1,8 Nm. La amarra (23) se corta al desarmar."
+  },
+  "Tapa superior del motor (57)": {
+   "funcion": "Tapa superior amarilla: cubre el ventilador, el portaescobillas y la boca del cárter, y lleva dentro el módulo electrónico.",
+   "como_se_desgasta": null,
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está quebrada.",
+   "tip_taller": "5 tornillos, a 3 Nm al armar."
+  },
+  "Módulo electrónico (54)": {
+   "funcion": "Módulo electrónico de control de velocidad, montado dentro de la tapa del motor.",
+   "como_se_desgasta": "Falla electrónica.",
+   "prueba": "Corriente en vacío a velocidad máxima.",
+   "valor_esperado": "3,2 a 5,2 A en 230/240 V.",
+   "cuando_cambiar": "Si el motor no parte o no regula, con escobillas y motor en buen estado.",
+   "tip_taller": "Al armar, la \"D\" del eje del módulo calza con la \"D\" de la tapa."
+  },
+  "Ventilador con tornillo (10, 11)": {
+   "funcion": "Ventilador del motor sobre el eje del inducido; lleva un anillo magnético.",
+   "como_se_desgasta": "Se suelta en el eje.",
+   "prueba": "Revisar que esté firme.",
+   "valor_esperado": "Tornillo a 5 Nm.",
+   "cuando_cambiar": "Si le falta el anillo magnético o está dañado.",
+   "tip_taller": "El borde es muy filoso: usar guantes. Un ventilador suelto o sin anillo magnético hace que el motor se acelere."
+  },
+  "Portaescobillas con tornillos (3, 58)": {
+   "funcion": "Conjunto portaescobillas sobre el inducido; recibe los cables del campo y del interruptor.",
+   "como_se_desgasta": "Resortes cansados.",
+   "prueba": "Inspección de resortes y conexiones.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Los portaescobillas no se venden por separado.",
+   "tip_taller": "4 tornillos nuevos a 3 Nm. Los dos cables negros cortos van uno a cada lado por la ranura."
+  },
+  "Escobillas (8)": {
+   "funcion": "Escobillas de carbón que llevan corriente al colector.",
+   "como_se_desgasta": "Se acortan con el uso.",
+   "prueba": "Medir largo.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Cada 250 a 300 horas, en el servicio de rutina.",
+   "tip_taller": "Sacar con una llave Allen pequeña tirando el resorte; dejar el resorte apoyado al lado para montar."
+  },
+  "Rodamiento superior y aislante (4, 5)": {
+   "funcion": "Rodamiento superior del inducido dentro del aislante del portaescobillas.",
+   "como_se_desgasta": "Ruido o juego.",
+   "prueba": "Girar a mano.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si hace ruido.",
+   "tip_taller": null
+  },
+  "Estator y carcasa del motor con sello (2, 33)": {
+   "funcion": "Estator (campo) dentro de su carcasa del motor.",
+   "como_se_desgasta": "Bobina cortada o en corto.",
+   "prueba": "Corriente en vacío.",
+   "valor_esperado": "3,2 a 5,2 A en 230/240 V.",
+   "cuando_cambiar": "Si la corriente o la velocidad están fuera de rango.",
+   "tip_taller": "Sale golpeando suave en lados opuestos de la carcasa principal; se monta con la herramienta 559618-99 cuidando el sello 33."
+  },
+  "Inducido con anillo elástico (1, 16)": {
+   "funcion": "Rotor del motor; su extremo inferior estriado mueve el engranaje doble.",
+   "como_se_desgasta": "Colector gastado, bobinado dañado.",
+   "prueba": "Corriente en vacío.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la velocidad es incorrecta y el estator está bien.",
+   "tip_taller": "El anillo elástico 16 no se reutiliza; un inducido nuevo viene con el anillo puesto."
+  },
+  "Tapa del cárter y junta tórica (52, 53)": {
+   "funcion": "Tapa del cárter con su junta tórica.",
+   "como_se_desgasta": "Junta endurecida.",
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "La junta 52 se cambia siempre.",
+   "tip_taller": "3 tornillos a 3 Nm."
+  },
+  "Pistón con pasador, botones y junta (47, 48, 49, 51)": {
+   "funcion": "Pistón que comprime el aire en el cilindro; lleva pasador, botones blancos y junta tórica.",
+   "como_se_desgasta": "Junta gastada, falda rayada.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el equipo pierde potencia.",
+   "tip_taller": "Solo sale con la unidad antivibración fuera. Lleva 5 g de grasa."
+  },
+  "Biela (38)": {
+   "funcion": "Une el pasador del cigüeñal con el pistón.",
+   "como_se_desgasta": "Juego en los ojos.",
+   "prueba": "Mover con la mano.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si tiene juego.",
+   "tip_taller": "Engrasar el ojo grande antes de montar."
+  },
+  "Cigüeñal con sello (45, 46)": {
+   "funcion": "Cigüeñal vertical que convierte el giro en el vaivén del pistón.",
+   "como_se_desgasta": null,
+   "prueba": "Debe girar libre en sus rodamientos.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sus rodamientos no se cambian: si fallan, se cambia la carcasa completa.",
+   "tip_taller": "Se saca con prensa empujando desde afuera; el sello 46 debe estar puesto al montar."
+  },
+  "Tapa de la caja de engranajes y sello (30, 32)": {
+   "funcion": "Tapa amarilla inferior de la caja de engranajes con su sello.",
+   "como_se_desgasta": null,
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "El sello 32 se cambia al desarmar.",
+   "tip_taller": "Tornillos a 3 Nm. La caja lleva 39 g de grasa sobre los engranajes."
+  },
+  "Tapa interior ventilada (21)": {
+   "funcion": "Tapa interior ventilada sobre el extremo del inducido.",
+   "como_se_desgasta": null,
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está rota.",
+   "tip_taller": null
+  },
+  "Engranaje del cigüeñal (43)": {
+   "funcion": "Engranaje grande roscado en el cigüeñal.",
+   "como_se_desgasta": "Dientes gastados.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si hay dientes dañados.",
+   "tip_taller": "Rosca: se suelta en sentido antihorario con la plantilla 559617-99 y se aprieta a 14 Nm."
+  },
+  "Engranaje doble con rodamientos, espaciadores y anillo (37, 39, 40, 41, 42)": {
+   "funcion": "Engranaje doble: recibe el giro del inducido y lo pasa al engranaje del cigüeñal.",
+   "como_se_desgasta": "Dientes o rodamientos gastados.",
+   "prueba": "Girar a mano.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si hay ruido o dientes dañados.",
+   "tip_taller": "Se saca con extractor. Al armar: un rodamiento, los dos espaciadores (uno en la pista interior y otro en la exterior), el segundo rodamiento y el anillo."
+  },
+  "Rodamiento inferior del inducido con anillo y sello (34, 35, 36)": {
+   "funcion": "Rodamiento inferior del inducido con anillo y sello en la carcasa principal.",
+   "como_se_desgasta": "Ruido.",
+   "prueba": "Girar a mano.",
+   "valor_esperado": null,
+   "cuando_cambiar": "El sello 36 se cambia siempre.",
+   "tip_taller": "Se monta con la herramienta 559621-99, con grasa en el inserto metálico."
+  },
+  "Carcasa principal metálica (cárter y caja de engranajes) (44)": {
+   "funcion": "Carcasa metálica principal: cárter, asiento del motor y caja de engranajes.",
+   "como_se_desgasta": null,
+   "prueba": null,
+   "valor_esperado": null,
+   "cuando_cambiar": "Si fallan los rodamientos del cigüeñal (no se cambian por separado).",
+   "tip_taller": "El número de serie y la fecha van a la derecha, junto a la unidad antivibración; tras reparar se marca una \"R\"."
+  }
+ },
+ "piezasPorModelo": {
+  "D25940K": {
+   "Mango lateral (59)": {
+    "funcion": "Segunda empuñadura delantera para guiar el equipo.",
+    "como_se_desgasta": null,
+    "prueba": "Revisar que la abrazadera apriete firme.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la abrazadera no aprieta o el mango está quebrado.",
+    "tip_taller": "Es lo primero que sale en el desarme (pág. 9)."
+   },
+   "Tornillos del portaherramienta (102 ×9)": {
+    "funcion": "Fijan el portaherramienta al alojamiento delantero de la unidad antivibración.",
+    "como_se_desgasta": "Cabeza dañada por herramienta mal calzada.",
+    "prueba": "Apriete con destornillador de torque.",
+    "valor_esperado": "9 tornillos a 9 Nm, apretados dos veces en la secuencia de la pág. 57.",
+    "cuando_cambiar": "Si la cabeza o la rosca están dañadas.",
+    "tip_taller": "Apretar en secuencia y luego repetir la misma secuencia."
+   },
+   "Carcasa o brida del portaherramienta (97)": {
+    "funcion": "Cuerpo base del portaherramienta: se atornilla al alojamiento delantero y lleva la junta tórica 104 en su ranura.",
+    "como_se_desgasta": "Desgaste interno junto con el resto del portaherramienta.",
+    "prueba": "Revisar ranura de la junta y asiento del hexágono del husillo.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si el desgaste del portaherramienta es grande, el documento recomienda cambiar el conjunto completo (111).",
+    "tip_taller": "Al armar, girar el husillo hasta que una esquina del hexágono quede alineada con un agujero de la base de la brida (pág. 47)."
+   },
+   "Manga giratoria con manga de bloqueo, resorte y guía (99, 100)": {
+    "funcion": "Manga que se gira para liberar el útil; dentro lleva la manga de bloqueo, el resorte de torsión y la guía de plástico blanco.",
+    "como_se_desgasta": "Resorte cansado: la manga no vuelve sola.",
+    "prueba": "Girarla a la derecha y soltar.",
+    "valor_esperado": "Debe volver sola por el resorte (pág. 50).",
+    "cuando_cambiar": "Si no gira o no vuelve.",
+    "tip_taller": "Sacarla puede ser muy difícil y dañarla (pág. 14)."
+   },
+   "Bloqueo del útil (resortes, bujes y piezas de bloqueo) (101, 102, 103, 106)": {
+    "funcion": "Retiene el útil en el husillo: dos piezas de bloqueo entran en las ranuras del husillo, empujadas por una arandela y resortes.",
+    "como_se_desgasta": "Piezas de bloqueo gastadas o resortes débiles: el útil queda suelto.",
+    "prueba": "Con el útil puesto, tirar de él: debe quedar retenido.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si el útil se sale o tiene juego excesivo.",
+    "tip_taller": "Engrasar levemente las dos ranuras antes de poner las piezas de bloqueo (pág. 51)."
+   },
+   "Amortiguador y anillo de bloqueo (105, 108)": {
+    "funcion": "Amortiguador de goma del útil y anillo de bloqueo dentro del manguito deslizante.",
+    "como_se_desgasta": "La goma se aplasta o se agrieta.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "En el servicio mayor (el kit trae el amortiguador 90).",
+    "tip_taller": null
+   },
+   "Manguito deslizante (107)": {
+    "funcion": "Manguito negro que se tira hacia atrás para poner o sacar el útil.",
+    "como_se_desgasta": "Desgaste exterior por golpes.",
+    "prueba": "Tirarlo hacia atrás y soltar.",
+    "valor_esperado": "Debe volver a su posición inicial (pág. 57).",
+    "cuando_cambiar": "Si está roto o no vuelve.",
+    "tip_taller": "Se desarma con la herramienta de servicio del anillo elástico, sin apretar de más la tuerca (pág. 12)."
+   },
+   "Anillo elástico y arandela (109, 110)": {
+    "funcion": "Anillo elástico y arandela que retienen el manguito deslizante en el husillo.",
+    "como_se_desgasta": "Pierde tensión al sacarlo.",
+    "prueba": "Verificar que quede bien asentado en la ranura.",
+    "valor_esperado": "Al montarlo se oyen cuatro clics y la tuerca queda a ras con la barra roscada (pág. 56).",
+    "cuando_cambiar": "Siempre que se saque: no se reutilizan ni el anillo ni la arandela.",
+    "tip_taller": "Viene en el kit de primer servicio."
+   },
+   "Sello de goma frontal (111)": {
+    "funcion": "Sello de goma de la nariz: evita que entre polvo al portaherramienta.",
+    "como_se_desgasta": "Se agrieta o se deforma.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "En cada cambio de escobillas (servicio de rutina).",
+    "tip_taller": "Se saca tirándolo desde la punta del portaherramienta (pág. 10)."
+   },
+   "Husillo SDS (94)": {
+    "funcion": "Eje hueco que recibe el útil SDS y por dentro guía la pieza de golpeo; lleva un hexágono exterior.",
+    "como_se_desgasta": "Ranuras y alojamiento del útil gastados.",
+    "prueba": "Revisar ranuras y juego del útil.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si hay desgaste notorio (se recomienda el portaherramienta completo).",
+    "tip_taller": "El repuesto viene con el sello 92 y el soporte 93 (el soporte no va en unidades posteriores)."
+   },
+   "Sellos y juntas tóricas del portaherramienta (77, 92, 93, 95, 96)": {
+    "funcion": "Juntas tóricas y sello del husillo y de la brida: mantienen la grasa dentro y el polvo fuera.",
+    "como_se_desgasta": "Se endurecen y pierden sello.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si se mueve al desarmar, se cambia: el documento exige reemplazar toda junta tórica que se haya tocado.",
+    "tip_taller": "Medidas que da el documento: junta de la brida 58 x 2 mm, junta del husillo 38 x 2,5 mm, junta interior 35 x 5 mm."
+   },
+   "Buje rodamiento de la pieza de golpeo (90)": {
+    "funcion": "Buje que guía la pieza de golpeo dentro del husillo.",
+    "como_se_desgasta": "Ovalado por el roce de la pieza de golpeo.",
+    "prueba": "Juego de la pieza de golpeo dentro del buje.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si hay juego.",
+    "tip_taller": "Puede salir apretado (pág. 10). Al armar, engrasar su diámetro exterior y empujar el diámetro menor hasta el tope."
+   },
+   "Buje, amortiguador y arandela de la pieza de golpeo (68, 69, 70)": {
+    "funcion": "Buje con amortiguador y arandela que rodea la pieza de golpeo y amortigua su retorno.",
+    "como_se_desgasta": "El amortiguador de goma se aplasta.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "En el servicio mayor (el kit trae el amortiguador 69).",
+    "tip_taller": "La arandela va con el cono interior hacia arriba (pág. 60)."
+   },
+   "Pieza de golpeo (67)": {
+    "funcion": "Pieza intermedia (\"beat piece\") que recibe el golpe del martillo y lo pasa al útil.",
+    "como_se_desgasta": "Cara de golpe deformada o con rebabas.",
+    "prueba": "Revisar ambas caras de impacto.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está deformada o agrietada.",
+    "tip_taller": "Engrasar hasta el resalte más pequeño antes de montarla; el conjunto lleva 7 g de grasa."
+   },
+   "Buje del alojamiento delantero con junta (71, 72)": {
+    "funcion": "Buje con junta tórica en la boca del alojamiento delantero; sostiene la pieza de golpeo.",
+    "como_se_desgasta": "Junta endurecida.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si se mueve al desarmar, se cambia: el documento exige reemplazar toda junta tórica que se haya tocado.",
+    "tip_taller": "Se monta con la junta hacia arriba (pág. 61)."
+   },
+   "Cubierta plástica antivibración (66)": {
+    "funcion": "Cubierta de plástico negro, partida, que envuelve el alojamiento delantero.",
+    "como_se_desgasta": "Se quiebra en la zona del corte.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota o no encaja con clic.",
+    "tip_taller": "En el D25940K se saca después de separar la unidad antivibración, deslizándola fuera del alojamiento (pág. 15)."
+   },
+   "Tornillos de la unidad antivibración (65 ×4)": {
+    "funcion": "Cuatro tornillos que unen la unidad antivibración a la carcasa principal.",
+    "como_se_desgasta": null,
+    "prueba": "Apriete con llave de torque.",
+    "valor_esperado": "17 Nm, apretando en esquinas opuestas.",
+    "cuando_cambiar": "Si la rosca está dañada.",
+    "tip_taller": "Al soltarlos, los resortes internos empujan el alojamiento: sujetarlo."
+   },
+   "Alojamiento delantero de la unidad antivibración (78/80)": {
+    "funcion": "Alojamiento metálico de la unidad antivibración: guarda el cilindro, el contrapeso y los resortes.",
+    "como_se_desgasta": "Desgaste en los dientes donde asienta el cilindro.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está agrietado.",
+    "tip_taller": "Al montar, el nervio angosto va hacia la caja de engranajes; meter el pistón en el cilindro y bajar sobre la carcasa (pág. 44)."
+   },
+   "Junta tórica de la carcasa principal (79)": {
+    "funcion": "Junta tórica entre la carcasa principal y la unidad antivibración.",
+    "como_se_desgasta": "Se endurece.",
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "Siempre que se separe la unidad antivibración, y en cada cambio de escobillas.",
+    "tip_taller": null
+   },
+   "Componentes antivibración (contrapeso, resortes, guías) (80/84, 81, 82, 83)": {
+    "funcion": "Contrapeso de bronce entre dos resortes: oscila en contrafase y reduce la vibración que llega al mango.",
+    "como_se_desgasta": "Resortes cansados o guías gastadas.",
+    "prueba": "Inspección de resortes y guías.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si un resorte está roto o deformado.",
+    "tip_taller": "Lleva 39 g de grasa. Las guías van con el diámetro cónico dentro del contrapeso."
+   },
+   "Cilindro (75)": {
+    "funcion": "Tubo donde el pistón comprime el aire que lanza al martillo.",
+    "como_se_desgasta": "Rayado interior.",
+    "prueba": "Inspección del interior.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si el equipo pierde fuerza y el interior está rayado (falla \"falta de potencia\").",
+    "tip_taller": "Se saca empujando el extremo ancho junto a los 4 agujeros; al armar, el diámetro delgado entra primero."
+   },
+   "Martillo (ariete) (76)": {
+    "funcion": "Martillo (ariete) que vuela por el colchón de aire y golpea la pieza de golpeo.",
+    "como_se_desgasta": "Junta tórica gastada y cara de golpe marcada.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la cara está deformada.",
+    "tip_taller": "Sacarlo empujando con un objeto no metálico desde el extremo ancho del cilindro."
+   },
+   "Juntas tóricas del cilindro y del martillo (71, 74, 77)": {
+    "funcion": "Juntas tóricas del cilindro (interior y exterior) y del martillo.",
+    "como_se_desgasta": "Pierden sello: el colchón de aire se debilita.",
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "En cada cambio de escobillas (servicio de rutina).",
+    "tip_taller": "Juntas gastadas en pistón y cilindro son la primera causa de falta de potencia según el documento."
+   },
+   "Tapa del mango con interruptor (19)": {
+    "funcion": "Tapa lateral del mango trasero: cubre el interruptor y el gatillo.",
+    "como_se_desgasta": null,
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está quebrada.",
+    "tip_taller": "Sale con 8 tornillos. Al armar: 6 tornillos (58) a 3 Nm y 2 tornillos (26) a 1,8 Nm."
+   },
+   "Mango trasero (mitad fija)": {
+    "funcion": "Mitad fija del mango en D donde va el gatillo.",
+    "como_se_desgasta": null,
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está quebrada.",
+    "tip_taller": "El documento no le asigna número propio en el procedimiento."
+   },
+   "Interruptor con adaptador y abrazadera (15, 18, 22, 24)": {
+    "funcion": "Interruptor principal con su adaptador, abrazadera y el cable al motor.",
+    "como_se_desgasta": "Contactos quemados.",
+    "prueba": "Continuidad con el gatillo apretado.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no cierra o calienta.",
+    "tip_taller": "El adaptador se monta sobre el botón del interruptor hasta que haga clic."
+   },
+   "Gatillo con pasador, varilla y pines (12, 13, 14, 17)": {
+    "funcion": "Gatillo con su pasador, varilla actuadora y dos pines con resorte.",
+    "como_se_desgasta": "Varilla suelta o rota.",
+    "prueba": "Apretar y soltar el gatillo con la tapa abierta.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la varilla está rota: \"el equipo no parte\" puede ser la varilla desconectada o quebrada.",
+    "tip_taller": "Al sacar el gatillo saltan los dos pines con resorte (17): sujetarlos."
+   },
+   "Cable de alimentación con sujetacable (23, 25, 29)": {
+    "funcion": "Cable de alimentación con su sujetacable y la amarra del cable del interruptor.",
+    "como_se_desgasta": "Cortes en la salida del mango.",
+    "prueba": "Continuidad de cada conductor.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la cubierta está cortada.",
+    "tip_taller": "Sujetacable a 1,8 Nm. La amarra (23) se corta al desarmar."
+   },
+   "Tapa superior del motor (57)": {
+    "funcion": "Tapa superior amarilla: cubre el ventilador, el portaescobillas y la boca del cárter, y lleva dentro el módulo electrónico.",
+    "como_se_desgasta": null,
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está quebrada.",
+    "tip_taller": "5 tornillos, a 3 Nm al armar."
+   },
+   "Módulo electrónico (54)": {
+    "funcion": "Módulo electrónico de control de velocidad, montado dentro de la tapa del motor.",
+    "como_se_desgasta": "Falla electrónica.",
+    "prueba": "Corriente en vacío a velocidad máxima.",
+    "valor_esperado": "3,2 a 5,2 A en 230/240 V; 6,4 a 9,1 A en 115/120 V, tras 10 min en vacío.",
+    "cuando_cambiar": "Si el motor no parte o no regula, con escobillas y motor en buen estado.",
+    "tip_taller": "Al armar, la \"D\" del eje del módulo calza con la \"D\" de la tapa."
+   },
+   "Ventilador con tornillo (10, 11)": {
+    "funcion": "Ventilador del motor sobre el eje del inducido; lleva un anillo magnético.",
+    "como_se_desgasta": "Se suelta en el eje.",
+    "prueba": "Revisar que esté firme.",
+    "valor_esperado": "Tornillo a 5 Nm.",
+    "cuando_cambiar": "Si le falta el anillo magnético o está dañado.",
+    "tip_taller": "El borde es muy filoso: usar guantes. Un ventilador suelto o sin anillo magnético hace que el motor se acelere."
+   },
+   "Portaescobillas con tornillos (3, 58)": {
+    "funcion": "Conjunto portaescobillas sobre el inducido; recibe los cables del campo y del interruptor.",
+    "como_se_desgasta": "Resortes cansados.",
+    "prueba": "Inspección de resortes y conexiones.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Los portaescobillas no se venden por separado.",
+    "tip_taller": "4 tornillos nuevos a 3 Nm. Los dos cables negros cortos van uno a cada lado por la ranura."
+   },
+   "Escobillas (8)": {
+    "funcion": "Escobillas de carbón que llevan corriente al colector.",
+    "como_se_desgasta": "Se acortan con el uso.",
+    "prueba": "Medir largo.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Cada 250 a 300 horas, en el servicio de rutina.",
+    "tip_taller": "Sacar con una llave Allen pequeña tirando el resorte; dejar el resorte apoyado al lado para montar."
+   },
+   "Rodamiento superior y aislante (4, 5)": {
+    "funcion": "Rodamiento superior del inducido dentro del aislante del portaescobillas.",
+    "como_se_desgasta": "Ruido o juego.",
+    "prueba": "Girar a mano.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si hace ruido.",
+    "tip_taller": null
+   },
+   "Estator y carcasa del motor con sello (2, 33)": {
+    "funcion": "Estator (campo) dentro de su carcasa del motor.",
+    "como_se_desgasta": "Bobina cortada o en corto.",
+    "prueba": "Corriente en vacío.",
+    "valor_esperado": "3,2 a 5,2 A en 230/240 V.",
+    "cuando_cambiar": "Si la corriente o la velocidad están fuera de rango.",
+    "tip_taller": "Sale golpeando suave en lados opuestos de la carcasa principal; se monta con la herramienta 559618-99 cuidando el sello 33."
+   },
+   "Inducido con anillo elástico (1, 16)": {
+    "funcion": "Rotor del motor; su extremo inferior estriado mueve el engranaje doble.",
+    "como_se_desgasta": "Colector gastado, bobinado dañado.",
+    "prueba": "Corriente en vacío.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la velocidad es incorrecta y el estator está bien.",
+    "tip_taller": "El anillo elástico 16 no se reutiliza; un inducido nuevo viene con el anillo puesto."
+   },
+   "Tapa del cárter y junta tórica (52, 53)": {
+    "funcion": "Tapa del cárter con su junta tórica.",
+    "como_se_desgasta": "Junta endurecida.",
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "La junta 52 se cambia siempre.",
+    "tip_taller": "3 tornillos a 3 Nm."
+   },
+   "Pistón con pasador, botones y junta (47, 48, 49, 51)": {
+    "funcion": "Pistón que comprime el aire en el cilindro; lleva pasador, botones blancos y junta tórica.",
+    "como_se_desgasta": "Junta gastada, falda rayada.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si el equipo pierde potencia.",
+    "tip_taller": "Solo sale con la unidad antivibración fuera. 5 g de grasa entre pistón y biela; el cárter lleva 79 g."
+   },
+   "Biela (38)": {
+    "funcion": "Une el pasador del cigüeñal con el pistón.",
+    "como_se_desgasta": "Juego en los ojos.",
+    "prueba": "Mover con la mano.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si tiene juego.",
+    "tip_taller": "Engrasar el ojo grande antes de montar."
+   },
+   "Cigüeñal con sello (45, 46)": {
+    "funcion": "Cigüeñal vertical que convierte el giro en el vaivén del pistón.",
+    "como_se_desgasta": null,
+    "prueba": "Debe girar libre en sus rodamientos.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sus rodamientos no se cambian: si fallan, se cambia la carcasa completa.",
+    "tip_taller": "Se saca con prensa empujando desde afuera; el sello 46 debe estar puesto al montar."
+   },
+   "Tapa de la caja de engranajes y sello (30, 32)": {
+    "funcion": "Tapa amarilla inferior de la caja de engranajes con su sello.",
+    "como_se_desgasta": null,
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "El sello 32 se cambia al desarmar.",
+    "tip_taller": "Tornillos a 3 Nm. La caja lleva 39 g de grasa sobre los engranajes."
+   },
+   "Tapa interior ventilada (21)": {
+    "funcion": "Tapa interior ventilada sobre el extremo del inducido.",
+    "como_se_desgasta": null,
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota.",
+    "tip_taller": null
+   },
+   "Engranaje del cigüeñal (43)": {
+    "funcion": "Engranaje grande roscado en el cigüeñal.",
+    "como_se_desgasta": "Dientes gastados.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si hay dientes dañados.",
+    "tip_taller": "Rosca: se suelta en sentido antihorario con la plantilla 559617-99 y se aprieta a 18 Nm."
+   },
+   "Engranaje doble con rodamientos, espaciadores y anillo (37, 39, 40, 41, 42)": {
+    "funcion": "Engranaje doble: recibe el giro del inducido y lo pasa al engranaje del cigüeñal.",
+    "como_se_desgasta": "Dientes o rodamientos gastados.",
+    "prueba": "Girar a mano.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si hay ruido o dientes dañados.",
+    "tip_taller": "Se saca con extractor. Al armar: un rodamiento, los dos espaciadores (uno en la pista interior y otro en la exterior), el segundo rodamiento y el anillo."
+   },
+   "Rodamiento inferior del inducido con anillo y sello (34, 35, 36)": {
+    "funcion": "Rodamiento inferior del inducido con anillo y sello en la carcasa principal.",
+    "como_se_desgasta": "Ruido.",
+    "prueba": "Girar a mano.",
+    "valor_esperado": null,
+    "cuando_cambiar": "El sello 36 se cambia siempre.",
+    "tip_taller": "Se monta con la herramienta 559621-99, con grasa en el inserto metálico."
+   },
+   "Carcasa principal metálica (cárter y caja de engranajes) (44)": {
+    "funcion": "Carcasa metálica principal: cárter, asiento del motor y caja de engranajes.",
+    "como_se_desgasta": null,
+    "prueba": null,
+    "valor_esperado": null,
+    "cuando_cambiar": "Si fallan los rodamientos del cigüeñal (no se cambian por separado).",
+    "tip_taller": "El número de serie y la fecha van a la derecha, junto a la unidad antivibración; tras reparar se marca una \"R\"."
+   }
+  }
+ },
+ "desarmado": [
+  {
+   "paso": 1,
+   "titulo": "Sacar el mango lateral",
+   "instruccion": "Desenchufar y retirar el mango lateral (59) si está puesto. (pág. 9)",
+   "precaucion": "Trabajar limpio: polvo dentro del portaherramienta, la unidad antivibración o la caja de engranajes causa fallas tempranas.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 2,
+   "titulo": "Quitar el portaherramienta",
+   "instruccion": "Soltar los seis tornillos (102) y retirar el portaherramienta (111). Puede hacer falta un destornillador plano para separarlo con suavidad de la unidad antivibración. (pág. 9)",
+   "precaucion": "Las piezas internas se caen del portaherramienta.",
+   "herramienta": "Destornillador Torx y destornillador plano"
+  },
+  {
+   "paso": 3,
+   "titulo": "Sacar el buje del alojamiento",
+   "instruccion": "Sacar el buje (72) desde dentro del alojamiento y retirar la junta tórica. (pág. 9)",
+   "precaucion": null,
+   "herramienta": "—"
+  },
+  {
+   "paso": 4,
+   "titulo": "Sacar la pieza de golpeo",
+   "instruccion": "Retirar desde dentro del portaherramienta la pieza de golpeo y sus bujes (67, 68, 69, 70). (pág. 9)",
+   "precaucion": null,
+   "herramienta": "—"
+  },
+  {
+   "paso": 5,
+   "titulo": "Sacar el rodamiento de la pieza de golpeo",
+   "instruccion": "Sacar el buje rodamiento (110) del husillo (107) y la junta tórica (109). (pág. 10)",
+   "precaucion": "Puede salir apretado.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 6,
+   "titulo": "Quitar el sello frontal",
+   "instruccion": "Tirar el sello de goma (87) desde la punta del portaherramienta. (pág. 10)",
+   "precaucion": null,
+   "herramienta": "—"
+  },
+  {
+   "paso": 7,
+   "titulo": "Montar en la plantilla",
+   "instruccion": "Fijar la herramienta 559619-99 en el tornillo de banco, poner el inserto en el husillo, bajar el portaherramienta, poner la pieza de tres patas sobre el manguito deslizante (91) y apretar la tuerca hasta que la arandela (89) libere el anillo elástico. (pág. 11-12)",
+   "precaucion": "El inserto debe quedar dentro del husillo para no dañar el sello. No apretar de más.",
+   "herramienta": "Herramienta 559619-99, tornillo de banco"
+  },
+  {
+   "paso": 8,
+   "titulo": "Sacar anillo y manguito",
+   "instruccion": "Con pinzas de anillos y un destornillador fino, sacar el anillo elástico de su ranura. Retirar la tuerca y la pieza de tres patas, el anillo, el manguito deslizante, la arandela (89), el anillo de goma (90) y el anillo de bloqueo (92). (pág. 12)",
+   "precaucion": "No reutilizar el anillo elástico ni la arandela.",
+   "herramienta": "Pinzas de anillos, destornillador plano pequeño"
+  },
+  {
+   "paso": 9,
+   "titulo": "Sacar el bloqueo del útil",
+   "instruccion": "Sacar el resorte (93) y el buje (94); empujar el buje (96) y retirar las dos piezas de bloqueo, el buje y el resorte cónico (97). Sacar el portaherramienta de la plantilla y luego el inserto. (pág. 13)",
+   "precaucion": "El inserto debe seguir dentro hasta que el portaherramienta salga de la rosca de la plantilla.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 10,
+   "titulo": "Separar la manga giratoria",
+   "instruccion": "Levantar la carcasa con la manga giratoria del husillo (107). Sacar la guía (98), hacer palanca para sacar el resorte (99) y retirar la manga (100). (pág. 14)",
+   "precaucion": "El resorte 99 está bajo tensión.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 11,
+   "titulo": "Sacar la manga giratoria y las juntas",
+   "instruccion": "Sacar la manga giratoria (101) de la carcasa y las juntas tóricas (104) y (74). Si el husillo se reutiliza, cambiar su junta (74) y el sello (108). (pág. 15)",
+   "precaucion": "Toda junta tórica que se mueva se cambia.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 12,
+   "titulo": "Quitar la cubierta plástica",
+   "instruccion": "Abrir la cubierta (66) por su corte y deslizarla fuera del alojamiento (78). (pág. 16)",
+   "precaucion": null,
+   "herramienta": "—"
+  },
+  {
+   "paso": 13,
+   "titulo": "Separar la unidad antivibración",
+   "instruccion": "Soltar los 4 tornillos (65) y separar con cuidado la unidad antivibración de la carcasa del motor. Retirar la junta tórica (79). (pág. 16)",
+   "precaucion": "Los resortes internos empujan el alojamiento y pueden saltar piezas. El pistón queda expuesto: taparlo.",
+   "herramienta": "Torx y destornillador plano ancho"
+  },
+  {
+   "paso": 14,
+   "titulo": "Sacar los componentes antivibración",
+   "instruccion": "Retirar de dentro del alojamiento las guías, los resortes y el contrapeso (80, 81, 82, 83, 86). (pág. 17)",
+   "precaucion": null,
+   "herramienta": "—"
+  },
+  {
+   "paso": 15,
+   "titulo": "Sacar el cilindro",
+   "instruccion": "Empujar la parte expuesta del cilindro (75) en el extremo ancho del alojamiento, junto a los 4 agujeros. (pág. 17)",
+   "precaucion": null,
+   "herramienta": "—"
+  },
+  {
+   "paso": 16,
+   "titulo": "Sacar el martillo",
+   "instruccion": "Empujar el martillo (76) desde el extremo ancho del cilindro. Sacar la junta (77) del martillo y las juntas exterior (74) e interior (73) del cilindro. (pág. 17)",
+   "precaucion": "Usar un objeto no metálico para no dañar cilindro ni martillo.",
+   "herramienta": "Objeto no metálico"
+  },
+  {
+   "paso": 17,
+   "titulo": "Abrir el mango",
+   "instruccion": "Quitar la tapa del mango (19), 8 tornillos. Sacar el adaptador (15) del interruptor y la varilla actuadora (14) del gatillo. (pág. 18)",
+   "precaucion": "Toda junta tórica que se mueva se cambia.",
+   "herramienta": "Destornillador Torx"
+  },
+  {
+   "paso": 18,
+   "titulo": "Sacar el interruptor",
+   "instruccion": "Quitar el sujetacable (25), 2 tornillos, y la abrazadera del interruptor (24), 1 tornillo. Cortar la amarra (23). Sacar el interruptor (22) desconectando el cable del motor (18) y el cable de alimentación (29). (pág. 18)",
+   "precaucion": null,
+   "herramienta": "Destornillador Torx, alicate de corte"
+  },
+  {
+   "paso": 19,
+   "titulo": "Sacar el gatillo",
+   "instruccion": "Sacar el pasador (12) y retirar el gatillo (13). (pág. 18)",
+   "precaucion": "Los dos pines (17) saltan al sacar el gatillo.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 20,
+   "titulo": "Quitar la tapa del motor",
+   "instruccion": "Quitar la tapa superior del motor (57), 5 tornillos, y el módulo electrónico (54), 2 tornillos, desde dentro de la tapa. (pág. 19)",
+   "precaucion": null,
+   "herramienta": "Destornillador Torx"
+  },
+  {
+   "paso": 21,
+   "titulo": "Sacar el ventilador",
+   "instruccion": "Soltar el tornillo (11), tomar el ventilador por el borde y levantarlo (10). (pág. 19)",
+   "precaucion": "El borde del ventilador es muy filoso: usar guantes.",
+   "herramienta": "Destornillador Torx, guantes"
+  },
+  {
+   "paso": 22,
+   "titulo": "Soltar los cables del portaescobillas",
+   "instruccion": "Retirar los dos terminales del portaescobillas soltando sus clips y el cable del interruptor (18). (pág. 19)",
+   "precaucion": null,
+   "herramienta": "Alicate de punta larga"
+  },
+  {
+   "paso": 23,
+   "titulo": "Sacar las escobillas",
+   "instruccion": "Tirar el resorte con una llave Allen pequeña y sacar cada escobilla (8), desconectándola del portaescobillas. (pág. 20)",
+   "precaucion": null,
+   "herramienta": "Llave Allen pequeña"
+  },
+  {
+   "paso": 24,
+   "titulo": "Sacar el portaescobillas",
+   "instruccion": "Desconectar los dos cables negros cortos, soltar los 4 tornillos (58) y levantar el portaescobillas (3) del eje del inducido. Empujar fuera el rodamiento (5) y el aislante (4). (pág. 20)",
+   "precaucion": "Los portaescobillas no se venden por separado.",
+   "herramienta": "Destornillador Torx"
+  },
+  {
+   "paso": 25,
+   "titulo": "Sacar el estator",
+   "instruccion": "Sacar el campo con su carcasa (2) golpeando suave en lados opuestos de la carcasa principal (44). Retirar el sello (33). (pág. 21)",
+   "precaucion": null,
+   "herramienta": "Martillo de cara blanda"
+  },
+  {
+   "paso": 26,
+   "titulo": "Quitar la tapa del cárter",
+   "instruccion": "Quitar la tapa (53), 3 tornillos, y la junta tórica (52). (pág. 21)",
+   "precaucion": "La junta 52 se cambia siempre.",
+   "herramienta": "Destornillador Torx"
+  },
+  {
+   "paso": 27,
+   "titulo": "Sacar pistón y biela",
+   "instruccion": "Girar el cigüeñal hasta que la biela pueda levantarse y sacar el pistón (51) con la biela por el frente de la carcasa. Para desarmar, empujar el pasador (47), sacar los botones (48) y la junta (49). (pág. 21)",
+   "precaucion": "Solo es posible con la unidad antivibración fuera.",
+   "herramienta": "—"
+  },
+  {
+   "paso": 28,
+   "titulo": "Abrir la caja de engranajes",
+   "instruccion": "Dar vuelta la carcasa. Quitar la tapa de engranajes (30), el sello (32) y la tapa (21). (pág. 22)",
+   "precaucion": null,
+   "herramienta": "Destornillador Torx"
+  },
+  {
+   "paso": 29,
+   "titulo": "Sacar el inducido",
+   "instruccion": "Sacar el anillo elástico (16) de la ranura del eje, abriéndolo lo justo para pasar las estrías, y empujar el inducido a través del rodamiento con prensa y tubo. (pág. 22)",
+   "precaucion": "El anillo 16 no se reutiliza.",
+   "herramienta": "Pinzas de anillos, prensa"
+  },
+  {
+   "paso": 30,
+   "titulo": "Soltar el engranaje del cigüeñal",
+   "instruccion": "Montar la carcasa en la plantilla 559617-99 (el pasador del cigüeñal en su rebaje), calzar el dado en el engranaje grande (43) y soltarlo en sentido antihorario. (pág. 23)",
+   "precaucion": null,
+   "herramienta": "Plantilla 559617-99, tornillo de banco, llave"
+  },
+  {
+   "paso": 31,
+   "titulo": "Sacar el engranaje doble",
+   "instruccion": "Sacar el engranaje doble (42) con extractor. Retirar el anillo (37) y empujar los rodamientos (41) y espaciadores (39, 40) desde el lado del engranaje grande. (pág. 23-24)",
+   "precaucion": null,
+   "herramienta": "Extractor de dos patas, prensa"
+  },
+  {
+   "paso": 32,
+   "titulo": "Sacar el cigüeñal",
+   "instruccion": "Sacar la carcasa de la plantilla y retirar el cigüeñal con prensa, empujando desde afuera. (pág. 24)",
+   "precaucion": "Los rodamientos del cigüeñal no se cambian: si fallan, se cambia la carcasa completa.",
+   "herramienta": "Prensa"
+  },
+  {
+   "paso": 33,
+   "titulo": "Sacar el rodamiento del inducido",
+   "instruccion": "Sacar el anillo (34), extraer con prensa el rodamiento del inducido (35) y sacar el sello (36). (pág. 25)",
+   "precaucion": "El sello 36 se cambia siempre.",
+   "herramienta": "Pinzas de anillos, prensa"
+  }
+ ],
+ "desarmados": {
+  "D25940K": [
+   {
+    "paso": 1,
+    "titulo": "Sacar el mango lateral",
+    "instruccion": "Desenchufar y retirar el mango lateral (59) si está puesto. (pág. 9)",
+    "precaucion": "Trabajar limpio: polvo dentro del portaherramienta, la unidad antivibración o la caja de engranajes causa fallas tempranas.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 2,
+    "titulo": "Quitar el portaherramienta",
+    "instruccion": "Soltar los nueve tornillos (102) y retirar el portaherramienta de la unidad antivibración. (pág. 9)",
+    "precaucion": "Las piezas internas se caen del portaherramienta.",
+    "herramienta": "Destornillador Torx"
+   },
+   {
+    "paso": 3,
+    "titulo": "Sacar el buje del alojamiento",
+    "instruccion": "Sacar el buje (72) desde dentro del alojamiento; retirar y desechar las juntas tóricas del alojamiento y del buje plástico. (pág. 9)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 4,
+    "titulo": "Sacar la pieza de golpeo",
+    "instruccion": "Retirar desde dentro del portaherramienta la pieza de golpeo y sus bujes (67, 68, 69, 70). (pág. 9)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 5,
+    "titulo": "Sacar el rodamiento de la pieza de golpeo",
+    "instruccion": "Sacar el buje rodamiento (90) del husillo (94) y desechar la junta tórica (77). (pág. 10)",
+    "precaucion": "Puede salir apretado.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 6,
+    "titulo": "Quitar el sello frontal",
+    "instruccion": "Tirar el sello de goma (111) desde la punta del portaherramienta y desecharlo. (pág. 10)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 7,
+    "titulo": "Montar en la plantilla",
+    "instruccion": "Fijar la herramienta 559629-99 (o el kit 559630-99) en el tornillo de banco, poner el inserto en el husillo, bajar el portaherramienta, poner la pieza de tres patas sobre el manguito deslizante (107) y apretar la tuerca hasta que la arandela (109) libere el anillo elástico (110). (págs. 11-12)",
+    "precaucion": "Todas las juntas y sellos se cambian. El inserto debe quedar dentro del husillo. No apretar de más.",
+    "herramienta": "Herramienta 559629-99 o kit 559630-99, tornillo de banco"
+   },
+   {
+    "paso": 8,
+    "titulo": "Sacar anillo y manguito",
+    "instruccion": "Sacar el anillo elástico de su ranura con pinzas y un destornillador fino. Retirar la tuerca y la pieza de tres patas, el anillo, el manguito deslizante, la arandela (109), el tope de goma (108) y el anillo de bloqueo (105). (pág. 12)",
+    "precaucion": "No reutilizar el anillo elástico ni la arandela.",
+    "herramienta": "Pinzas de anillos, destornillador plano pequeño"
+   },
+   {
+    "paso": 9,
+    "titulo": "Sacar el bloqueo del útil",
+    "instruccion": "Sacar el resorte (101); empujar el buje (102) y retirar la pieza de bloqueo (103) y el buje. Sacar el portaherramienta de la plantilla y luego el inserto. (pág. 13)",
+    "precaucion": "El inserto debe seguir dentro hasta que el portaherramienta salga de la rosca de la plantilla.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 10,
+    "titulo": "Sacar el husillo",
+    "instruccion": "Sacar la manga (100) de dentro de la manga giratoria (99). Apoyar el extremo angosto del husillo en el banco, empujar la carcasa hacia abajo y retirar el husillo (94). Si se reutiliza, cambiar la junta (95), el sello (92) y el soporte del sello (93). (pág. 14)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 11,
+    "titulo": "Sacar la manga giratoria y las juntas",
+    "instruccion": "Sacar la junta tórica (96) de dentro de la carcasa y retirar la manga giratoria (99). (pág. 14)",
+    "precaucion": "Sacar la manga giratoria puede ser muy difícil y dañarla.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 12,
+    "titulo": "Separar la unidad antivibración",
+    "instruccion": "Soltar los 4 tornillos (65) y separar con cuidado la unidad antivibración de la carcasa del motor. Retirar la junta tórica (79). (pág. 15)",
+    "precaucion": "Los resortes internos empujan el alojamiento y pueden saltar piezas. Pistón, cilindro y cárter quedan expuestos: protegerlos del polvo.",
+    "herramienta": "Torx y destornillador plano ancho"
+   },
+   {
+    "paso": 13,
+    "titulo": "Quitar la cubierta plástica",
+    "instruccion": "Abrir la cubierta (66) por su corte y deslizarla fuera del alojamiento (80). (pág. 15)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 14,
+    "titulo": "Sacar los componentes antivibración",
+    "instruccion": "Retirar de dentro del alojamiento los componentes antivibración (81, 82, 83, 84) y sacar las dos guías (82) del contrapeso. (pág. 16)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 15,
+    "titulo": "Sacar el cilindro",
+    "instruccion": "Con el extremo angosto del alojamiento sobre el banco, empujar la parte expuesta del cilindro (75) en el extremo ancho, junto a los 4 agujeros; sale por el extremo angosto. (pág. 16)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 16,
+    "titulo": "Sacar el martillo",
+    "instruccion": "Empujar el martillo (76) desde el extremo ancho del cilindro. Sacar la junta (77) del martillo y las juntas interior y exterior (71) y (74) del cilindro. (pág. 17)",
+    "precaucion": "Usar un objeto no metálico para no dañar cilindro ni martillo.",
+    "herramienta": "Objeto no metálico"
+   },
+   {
+    "paso": 17,
+    "titulo": "Abrir el mango",
+    "instruccion": "Quitar la tapa del mango (19), 8 tornillos. Sacar el adaptador (15) del interruptor y la varilla actuadora (14) del gatillo. (pág. 18)",
+    "precaucion": "Todas las juntas y sellos se cambian.",
+    "herramienta": "Destornillador Torx"
+   },
+   {
+    "paso": 18,
+    "titulo": "Sacar el interruptor",
+    "instruccion": "Quitar el sujetacable (25), 2 tornillos, y la abrazadera del interruptor (24), 1 tornillo. Cortar la amarra (23). Sacar el interruptor (22) desconectando el cable del motor (18) y el cable de alimentación (29). (pág. 18)",
+    "precaucion": null,
+    "herramienta": "Destornillador Torx, alicate de corte"
+   },
+   {
+    "paso": 19,
+    "titulo": "Sacar el gatillo",
+    "instruccion": "Sacar el pasador (12) y retirar el gatillo (13). (pág. 18)",
+    "precaucion": "Los dos pines (17) saltan al sacar el gatillo.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 20,
+    "titulo": "Quitar la tapa del motor",
+    "instruccion": "Quitar la tapa superior del motor (57), 5 tornillos, y el módulo electrónico (54), 2 tornillos, desde dentro de la tapa. (pág. 19)",
+    "precaucion": null,
+    "herramienta": "Destornillador Torx"
+   },
+   {
+    "paso": 21,
+    "titulo": "Sacar el ventilador",
+    "instruccion": "Soltar el tornillo (11), tomar el ventilador por el borde y levantarlo (10). (pág. 19)",
+    "precaucion": "El borde del ventilador es muy filoso: usar guantes.",
+    "herramienta": "Destornillador Torx, guantes"
+   },
+   {
+    "paso": 22,
+    "titulo": "Soltar los cables del portaescobillas",
+    "instruccion": "Retirar los dos terminales del portaescobillas soltando sus clips y el cable del interruptor (18). (pág. 19)",
+    "precaucion": null,
+    "herramienta": "Alicate de punta larga"
+   },
+   {
+    "paso": 23,
+    "titulo": "Sacar las escobillas",
+    "instruccion": "Tirar el resorte con una llave Allen pequeña y sacar cada escobilla (8), desconectándola del portaescobillas. (pág. 20)",
+    "precaucion": null,
+    "herramienta": "Llave Allen pequeña"
+   },
+   {
+    "paso": 24,
+    "titulo": "Sacar el portaescobillas",
+    "instruccion": "Desconectar los dos cables negros cortos, soltar los 4 tornillos (58), que se cambian, y levantar el portaescobillas (3) del eje del inducido. Empujar fuera el rodamiento (5) y el aislante (4). (pág. 20)",
+    "precaucion": "Los portaescobillas no se venden por separado.",
+    "herramienta": "Destornillador Torx"
+   },
+   {
+    "paso": 25,
+    "titulo": "Sacar el estator",
+    "instruccion": "Sacar el campo con su carcasa (2) golpeando suave en lados opuestos de la carcasa principal (44). Retirar el sello (33). (pág. 21)",
+    "precaucion": null,
+    "herramienta": "Martillo de cara blanda"
+   },
+   {
+    "paso": 26,
+    "titulo": "Quitar la tapa del cárter",
+    "instruccion": "Quitar la tapa (53), 3 tornillos, y la junta tórica (52). (pág. 21)",
+    "precaucion": "La junta 52 se cambia siempre.",
+    "herramienta": "Destornillador Torx"
+   },
+   {
+    "paso": 27,
+    "titulo": "Sacar pistón y biela",
+    "instruccion": "Girar el cigüeñal hasta que la biela pueda levantarse y sacar el pistón (51) con la biela por el frente de la carcasa. Para desarmar, empujar el pasador (47), sacar los botones (48) y la junta (49). (pág. 21)",
+    "precaucion": "Solo es posible con la unidad antivibración fuera.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 28,
+    "titulo": "Abrir la caja de engranajes",
+    "instruccion": "Dar vuelta la carcasa. Quitar la tapa de engranajes (30), el sello (32) y la tapa (21). (pág. 22)",
+    "precaucion": null,
+    "herramienta": "Destornillador Torx"
+   },
+   {
+    "paso": 29,
+    "titulo": "Sacar el inducido",
+    "instruccion": "Empujar el inducido a través del rodamiento con prensa y tubo. (pág. 22)",
+    "precaucion": null,
+    "herramienta": "Prensa"
+   },
+   {
+    "paso": 30,
+    "titulo": "Soltar el engranaje del cigüeñal",
+    "instruccion": "Con la barra puesta bajo la plantilla 559617-99 y esta en el tornillo de banco, montar la carcasa (el pasador del cigüeñal en su rebaje), calzar el dado en el engranaje grande (43) y soltarlo en sentido antihorario. (pág. 23)",
+    "precaucion": null,
+    "herramienta": "Plantilla 559617-99, tornillo de banco, llave"
+   },
+   {
+    "paso": 31,
+    "titulo": "Sacar el engranaje doble",
+    "instruccion": "Sacar el engranaje doble (42) con extractor. Retirar el anillo (37) y empujar los rodamientos (41) y espaciadores (39, 40) desde el lado del engranaje grande. (pág. 23-24)",
+    "precaucion": null,
+    "herramienta": "Extractor de dos patas, prensa"
+   },
+   {
+    "paso": 32,
+    "titulo": "Sacar el cigüeñal",
+    "instruccion": "Sacar la carcasa de la plantilla y retirar el cigüeñal con prensa, empujando desde afuera. (pág. 24)",
+    "precaucion": "Los rodamientos del cigüeñal no se cambian: si fallan, se cambia la carcasa completa.",
+    "herramienta": "Prensa"
+   },
+   {
+    "paso": 33,
+    "titulo": "Sacar el rodamiento del inducido",
+    "instruccion": "Sacar el anillo (34), extraer con prensa el rodamiento del inducido (35) y sacar el sello (36). (pág. 25)",
+    "precaucion": "El sello 36 se cambia siempre.",
+    "herramienta": "Pinzas de anillos, prensa"
+   }
+  ]
+ }
+}

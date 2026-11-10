@@ -1,233 +1,216 @@
-// Modelo procedural del demoledor eléctrico liviano (tipo Makita HM0810 / Kothman HK17). Unidades: cm.
-// Eje del cincel y del cañón = X (el cincel hacia +X, y=0, z=0). Motor vertical bajo el cárter (eje en x=-5.2),
-// eje intermedio vertical en x=-1.2, mango en D atrás (-X). Se construye en medidas de 5-6 kg y se escala con k.
+// Demoledor DeWalt D25900K (10 kg) y D25940K (12 kg), según los procedimientos de servicio ESSG
+// "Full Strip down and Re-assembly" (63 y 59 páginas). Unidades: cm. Eje del cincel = X (frente hacia +X), y hacia arriba,
+// lado del logo hacia +z.
+// EXACTO (del documento): qué piezas hay, cómo se ordenan (foto de corte de la pág. 1 y fotos del desarme) y el sentido y orden
+// en que salen. APROXIMADO: las medidas. El documento no trae medidas externas: la escala sale de la foto de la pág. 1 y de las
+// juntas tóricas que sí tienen medida (brida 58 x 2 mm, husillo 38 x 2,5 mm, buje 43 x 5,5 mm); el D25940K se escala por peso.
 import * as THREE from 'three';
-import { PI, V, mat, acero, aluminio, cobre, goma, negro, marfil, mesh, cil, caja, rev, tornillo, laminas, alambre, textoEtiqueta, rodamiento } from '../lib.js';
+import { PI, V, mat, acero, cobre, goma, mesh, cil, caja, rev, tornillo, laminas, alambre, lienzo, rr } from '../lib.js';
 
-const XM = -5.2, XG = -1.2; // ejes del motor y del eje intermedio
+const XM = -4.4, XC = 3.7, XG = -0.75; // ejes verticales: inducido, cigüeñal, engranaje doble
 
-function rr(x0, y0, x1, y1, r) { // rectángulo redondeado como Shape
-  const s = new THREE.Shape();
-  s.moveTo(x0 + r, y0); s.lineTo(x1 - r, y0); s.quadraticCurveTo(x1, y0, x1, y0 + r); s.lineTo(x1, y1 - r); s.quadraticCurveTo(x1, y1, x1 - r, y1);
-  s.lineTo(x0 + r, y1); s.quadraticCurveTo(x0, y1, x0, y1 - r); s.lineTo(x0, y0 + r); s.quadraticCurveTo(x0, y0, x0 + r, y0);
-  return s;
-}
+// números de pieza de cada modelo [D25900K, D25940K] (el D25940K renumera el portaherramienta y la antivibración)
+const REF = {"mango_lateral":["59","59"],"tornillos_porta":["102 ×6","102 ×9"],"brida":["103","97"],"manga_giratoria":["98, 99, 100, 101","99, 100"],"bloqueo":["93, 94, 95, 96, 97","101, 102, 103, 106"],"amortiguador_th":["90, 92","105, 108"],"manguito":["91","107"],"anillo_elastico":["88, 89","109, 110"],"sello_frontal":["87","111"],"husillo":["107","94"],"sellos_th":["74, 104, 108, 109","77, 92, 93, 95, 96"],"rodamiento_golpeo":["110","90"],"buje_golpeo":["68, 69, 70","68, 69, 70"],"pieza_golpeo":["67","67"],"buje72":["71, 72","71, 72"],"cubierta":["66","66"],"tornillos65":["65 ×4","65 ×4"],"carcasa_delantera":["78","78/80"],"junta79":["79","79"],"antivibracion":["80, 81, 82, 83, 86","80/84, 81, 82, 83"],"cilindro":["75","75"],"martillo":["76","76"],"juntas_cil":["73, 74, 77","71, 74, 77"],"tapa_mango":["19","19"],"mango":[null,null],"interruptor":["15, 18, 22, 24","15, 18, 22, 24"],"gatillo":["12, 13, 14, 17","12, 13, 14, 17"],"cable":["23, 25, 29","23, 25, 29"],"tapa_motor":["57","57"],"electronica":["54","54"],"ventilador":["10, 11","10, 11"],"portaescobillas":["3, 58","3, 58"],"escobillas":["8","8"],"rodamiento5":["4, 5","4, 5"],"estator":["2, 33","2, 33"],"inducido":["1, 16","1, 16"],"tapa_sa":["52, 53","52, 53"],"piston":["47, 48, 49, 51","47, 48, 49, 51"],"biela":["38","38"],"cigueñal":["45, 46","45, 46"],"tapa_engranajes":["30, 32","30, 32"],"tapa21":["21","21"],"engranaje_cig":["43","43"],"engranaje_doble":["37, 39, 40, 41, 42","37, 39, 40, 41, 42"],"rodamiento_inducido":["34, 35, 36","34, 35, 36"],"carcasa_principal":["44","44"]};
+
 function engranaje(n, r, h, y0, x, z, m) { // engranaje recto con eje Y
   const s = new THREE.Shape(), p = PI * 2 / n, pt = (a, rad) => [rad * Math.cos(a), rad * Math.sin(a)];
-  for (let i = 0; i < n; i++) {
-    const a = i * p;
-    for (const [da, rad] of [[0, r - 0.3], [0.2, r], [0.5, r], [0.7, r - 0.3]]) { const [px, py] = pt(a + da * p, rad); (i === 0 && da === 0) ? s.moveTo(px, py) : s.lineTo(px, py); }
-  }
+  for (let i = 0; i < n; i++) for (const [da, rad] of [[0, r - 0.25], [0.2, r], [0.5, r], [0.7, r - 0.25]]) { const [px, py] = pt((i + da) * p, rad); (i === 0 && da === 0) ? s.moveTo(px, py) : s.lineTo(px, py); }
   s.closePath();
   const g = new THREE.ExtrudeGeometry(s, { depth: h, bevelEnabled: false }); g.rotateX(-PI / 2); g.translate(0, y0, 0);
   return mesh(g, m, x, 0, z);
 }
-const estriasY = (r, largo, y0) => { // agarre estriado con eje Y, base en y0
-  const o = [[0.01, 0]]; for (let i = 0; i <= Math.floor(largo / 0.3); i++) o.push([r + (i % 2 ? 0.05 : 0), 0.15 + i * 0.3]);
-  o.push([r - 0.1, largo + 0.3], [r * 0.6, largo + 0.55], [0.01, largo + 0.65]);
-  return o.map(([a, b]) => [a, b + y0]);
+const tuboX = (x0, x1, ro, ri, m, seg = 40) => rev([[ri, x0], [ro, x0], [ro, x1], [ri, x1], [ri, x0]], 'x', m, seg);
+const tuboY = (y0, y1, ro, ri, m, x, z, seg = 40) => rev([[ri, y0], [ro, y0], [ro, y1], [ri, y1], [ri, y0]], 'y', m, seg, x, 0, z);
+const aroX = (x, r, t, m) => mesh(new THREE.TorusGeometry(r, t, 8, 40), m, x, 0, 0).rotateY(PI / 2);
+const aroY = (x, y, z, r, t, m) => mesh(new THREE.TorusGeometry(r, t, 8, 40), m, x, y, z).rotateX(PI / 2);
+function resorteX(x0, x1, r, vueltas, rw, m) { // resorte helicoidal con eje X
+  const pts = [], N = vueltas * 16;
+  for (let i = 0; i <= N; i++) { const t = i / N, a = t * vueltas * PI * 2; pts.push(V(x0 + (x1 - x0) * t, r * Math.cos(a), r * Math.sin(a))); }
+  return mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), N * 2, rw, 6), m);
+}
+const perfil = (pts, prof, z0, m, bisel = 0.5) => { // perfil lateral (plano XY) extruido en z, con canto redondeado
+  const s = new THREE.Shape(); pts.forEach(([x, y], i) => (i ? s.lineTo(x, y) : s.moveTo(x, y)));
+  const g = new THREE.ExtrudeGeometry(s, { depth: prof - 2 * bisel, bevelEnabled: true, bevelSize: bisel, bevelThickness: bisel, bevelSegments: 4, curveSegments: 16 });
+  g.translate(0, 0, z0 + bisel); return mesh(g, m);
 };
-
-// Estilo base (valores genéricos). Cada marca en index.js sobrescribe solo los rasgos con evidencia.
-const DEF = {
-  mangoCol: '#2b2e33', carter: null /* null = aluminio sin pintar */, mango: 'D' /* 'D' cerrado | 'T' abierto | 'goma' D con empuñadura de goma */,
-  topes: null /* color de los topes de goma o null */, tapon: '#f2c230', seguro: { forma: 'anillo', color: '#8b9198' },
-  aux: { disco: true, color: '#222528' }, rejillas: true, etiqueta: { y: -8.4, esc: 1 },
+const planta = (x0, x1, z0, z1, r, y0, h, m) => { // rectángulo redondeado en planta (XZ) con alto h desde y0
+  const g = new THREE.ExtrudeGeometry(rr(x0, z0, x1, z1, r), { depth: h, bevelEnabled: false, curveSegments: 10 }); g.rotateX(PI / 2); g.translate(0, y0 + h, 0);
+  return mesh(g, m);
 };
-const num = (v, d) => { // "11–12,7" -> 11,85; null -> d
-  const n = String(v ?? '').match(/\d+(?:,\d+)?/g); return n ? n.reduce((a, x) => a + parseFloat(x.replace(',', '.')), 0) / n.length : d;
-};
-const acota = (v, a, b) => Math.min(b, Math.max(a, v));
 
 export function construir(cfg) {
-  const E = { ...DEF, ...cfg.estilo }; for (const q of ['seguro', 'aux', 'etiqueta']) E[q] = { ...DEF[q], ...cfg.estilo?.[q] };
-  const m = cfg.m || {};
-  const sds = cfg.clase === 'sds';
-  const peso = num(m.peso, sds ? 10.5 : 6), pot = num(m.potencia, sds ? 1500 : 1000);
-  const k = acota(1 + (peso - 6) * 0.075, 0.9, 1.7); // escala continua según el peso (6 kg = 1; 10 kg = 1,3)
-  const fb = acota(0.92 + 0.08 * (pot - 1000) / 600, 0.9, 1.12), fm = acota(0.94 + 0.06 * (pot - 1000) / 600, 0.92, 1.1); // cañón y motor según potencia
-  const ptxt = String(m.porta || '');
-  const porta = /K-Hex/i.test(ptxt) ? 'khex' : /SDS/i.test(ptxt) ? 'sds' : /\b30\b/.test(ptxt) ? 'hex30' : /28|1-1\/8/.test(ptxt) ? 'hex28' : /17/.test(ptxt) ? 'hex17' : (sds ? 'sds' : 'hex17');
-  const rv = { hex17: 0.98, sds: 0.9, hex28: 1.62, hex30: 1.73, khex: 1.21 }[porta]; // radio del vástago (hex: circunscrito)
-  const ro = Math.max(2.55, rv + 1.2);
-  const color = cfg.color;
+  const m = cfg.m || {}, E = cfg.estilo || {};
+  const d40 = m.modelo === 'D25940K', iR = d40 ? 1 : 0;
+  const k = d40 ? Math.cbrt(12 / 10) : 1; // ponytail: el 12 kg se escala parejo por peso (≈ +6 %); el documento no da sus medidas
+  const amarillo = () => mat(E.color || '#f2b200', { metalness: 0.05, roughness: 0.45 });
+  const negro = () => mat(E.negro || '#1c1d20', { metalness: 0.1, roughness: 0.7 });
+  const fundicion = () => mat(E.carter || '#b7bbc0', { metalness: 0.7, roughness: 0.42 });
+  const blanco = () => mat('#ecebe4', { metalness: 0, roughness: 0.6 });
+  const laton = () => acero('#c9a24a', { metalness: 0.85, roughness: 0.32 });
+  const ac = () => acero('#b4b9c0');
+  const tor = () => goma('#121315');
   const parts = {};
-  const ajB = g => g.scale.set(1, fb, fb); // percusión: diámetro del cañón
-  const ajM = g => { g.scale.set(fm, 1, fm); g.position.x = XM * (1 - fm); }; // motor: diámetro alrededor de su eje
-  const add = (id, nombre, grupo, items, shell = false, aj = null) => {
+  const add = (id, base, grupo, items, shell = false) => {
     const its = items.map(([objs, dir]) => {
-      const g = new THREE.Group(); [].concat(objs).forEach(o => g.add(o)); if (aj) aj(g);
-      const w = new THREE.Group(); w.add(g); w.scale.setScalar(k);
-      return { obj: w, dir: dir.clone().multiplyScalar(k) };
+      const g = new THREE.Group(); [].concat(objs).forEach(o => g.add(o)); g.scale.setScalar(k);
+      return { obj: g, dir: dir.clone().multiplyScalar(k) };
     });
     const mats = [];
     its.forEach(i => i.obj.traverse(o => { if (o.material) { o.userData.pid = id; mats.push(o.material); } }));
-    parts[id] = { id, nombre, grupo, items: its, mats, shell };
+    const ref = REF[id]?.[iR] ?? null;
+    parts[id] = { id, nombre: ref ? `${base} (${ref})` : base, ref, grupo, items: its, mats, shell };
   };
-  const G1 = 'Percusión', G2 = 'Transmisión', G3 = 'Motor', G4 = 'Carcasas y mangos';
-  const cuerpo = () => mat(color, { metalness: 0.08, roughness: 0.5 });
-  const plastico = () => goma(E.mangoCol);
-  const gris = () => mat('#7d838b', { metalness: 0.75, roughness: 0.4 });
-  const cromo = () => acero('#cfd3d8', { metalness: 0.8, roughness: 0.28 });
+  const G1 = 'Portaherramienta', G2 = 'Percusión y antivibración', G3 = 'Cárter y transmisión', G4 = 'Motor', G5 = 'Mango e interruptor';
 
-  // ---------- percusión (eje X) ----------
-  add('cincel', 'Cincel o puntero', G1, [[(() => {
-    const o = [];
-    o.push(cil('x', rv, rv, 27.5, 35.25, 0, 0, cromo(), porta === 'sds' ? 28 : 6)); // vástago: redondo con ranuras (SDS-max) o hexagonal
-    o.push(cil('x', 0.12, rv, 8, 53, 0, 0, acero('#9ea4ab'), porta === 'sds' ? 28 : 6), cil('x', rv + 0.12, rv + 0.12, 0.35, 28.5, 0, 0, acero('#7d838b'), porta === 'sds' ? 28 : 6)); // cono de la punta y resalto
-    if (porta === 'sds') for (const s of [1, -1]) o.push(caja(5, 0.5, 0.12, 24.5, 0, s * rv, mat('#2a2d31'))); // ranuras abiertas del SDS-max
-    else o.push(mesh(new THREE.TorusGeometry(rv + 0.02, 0.05, 6, 20), mat('#2a2d31'), 22.6, 0, 0).rotateY(PI / 2)); // ranura de retención
-    if (porta === 'khex') o.push(cil('x', rv + 0.25, rv + 0.25, 0.5, 25.5, 0, 0, acero('#9ea4ab'), 6)); // collarín del K-Hex
-    return o;
-  })(), V(30, 0, 0)]]);
-  add('portaherramienta', 'Portaherramienta y retenedor', G1, [[[
-    rev([[ro, 22], [ro, 26], [ro - 0.2, 26.2], [ro - 0.2, 30]], 'x', acero('#6f757c', { metalness: 0.6 }), 40),
-    rev([[rv + 0.07, 22], [rv + 0.07, 30]], 'x', acero('#4a4f56'), 6, 0, 0, 0),
-    ...(E.seguro.forma === 'palanca' // seguro: anillo deslizante o palanca
-      ? [cil('x', ro + 0.25, ro + 0.25, 0.8, 26.6, 0, 0, acero(E.seguro.color), 40, true), caja(0.8, 0.5, 2.6, 27.2, ro + 0.7, 0, acero(E.seguro.color))]
-      : [cil('x', ro + 0.45, ro + 0.45, 1.4, 26.6, 0, 0, acero(E.seguro.color), 40, true), caja(1.4, 0.7, 1.4, 26.6, ro + 0.65, 0, acero('#40454b')), cil('y', 0.35, 0.35, 0.5, 26.6, ro + 1.15, 0, acero('#c4c8cd'), 12)]),
-  ], V(16, 0, 0)]], false, ajB);
-  add('intermedio', 'Percutor intermedio', G1, [[[
-    cil('x', 0.98, 0.98, 8.5, 19.75, 0, 0, cromo(), 6), cil('x', 1.5, 1.5, 0.6, 16, 0, 0, cromo(), 32), cil('x', 1.15, 1.15, 0.5, 23.5, 0, 0, cromo(), 6),
-  ], V(9, 0, 0)]], false, ajB);
-  add('martillo', 'Martillo', G1, [[[
-    cil('x', 1.55, 1.55, 5, 13, 0, 0, cromo(), 32),
-    ...[11.0, 15.0].map(x => mesh(new THREE.TorusGeometry(1.55, 0.06, 6, 28), acero('#7d838b'), x, 0, 0).rotateY(PI / 2)),
-  ], V(4, 9, 0)]], false, ajB);
-  add('piston', 'Pistón', G1, [[[
-    rev([[0.01, 4], [1.8, 4], [1.8, 10.5], [1.6, 10.5], [1.6, 6], [0.01, 6]], 'x', acero('#b9bec5'), 40),
-    ...[9.4, 8.7].map(x => mesh(new THREE.TorusGeometry(1.8, 0.07, 6, 28), negro(), x, 0, 0).rotateY(PI / 2)),
-    cil('y', 0.45, 0.45, 3.2, 5.0, 0, 0, cromo(), 16),
-  ], V(0, 9, 0)]], false, ajB);
-  add('cilindro', 'Cilindro o cañón guía', G1, [-1, 1].map(s => [(() => {
-    const ph = s > 0 ? -PI / 2 : PI / 2, o = [
-      rev([[2.7, 5], [2.7, 20], [3.2, 20.1], [3.2, 22], [2.95, 22], [2.45, 22], [2.45, 5], [2.7, 5]], 'x', plastico(), 48, 0, 0, 0, ph, PI),
-      rev([[2.78, 8], [2.78, 8.4], [2.78, 12], [2.78, 12.4]], 'x', goma('#1c1e21'), 40, 0, 0, 0, ph, PI),
-    ];
-    if (E.rejillas) for (let i = 0; i < 4; i++) o.push(caja(0.18, 1.5, 0.05, 9 + i * 0.8, 0, s * 2.74, negro())); // ranuras de ventilación
-    return o;
-  })(), V(0, 0, s * 7)]), true, ajB);
-  add('amortiguacion', 'Amortiguación y sellos', G1, [
-    [[rev([[2.9, 4.6], [3.1, 4.9], [3.1, 6.3], [2.8, 6.6]], 'x', goma('#1c1e21'), 40), ...[6.8, 7.3].map(x => mesh(new THREE.TorusGeometry(2.75, 0.1, 8, 36), goma('#d9a521'), x, 0, 0).rotateY(PI / 2))], V(6, 6, 0)],
-    [[rev([[2.2, 29.6], [1.9, 30.6], [1.4, 31.6]], 'x', goma('#1c1e21'), 32)], V(22, 7, 0)],
-  ], false, ajB);
+  // ================= portaherramienta (sale entero hacia +X al soltar sus tornillos) =================
+  add('brida', 'Carcasa o brida del portaherramienta', G1, [[[
+    rev([[2.95, 23.6], [4.45, 23.6], [4.45, 24.4], [4.15, 24.6], [3.95, 26.7], [2.95, 26.7], [2.95, 23.6]], 'x', fundicion(), 48),
+    ...Array.from({ length: 12 }, (_, i) => { const a = i / 12 * PI * 2; return caja(2.0, 0.35, 0.25, 25.5, 4.05 * Math.cos(a), 4.05 * Math.sin(a), fundicion()).rotateX(-a); }),
+  ], V(14, 0, 0)]], true);
+  const nT = d40 ? 9 : 6;
+  add('tornillos_porta', 'Tornillos del portaherramienta', G1, [[Array.from({ length: nT }, (_, i) => { const a = (i + 0.5) / nT * PI * 2; return tornillo('x', 24.45, 3.75 * Math.cos(a), 3.75 * Math.sin(a), 0.22); }), V(17, 0, 0)]]);
+  add('manga_giratoria', 'Manga giratoria con manga de bloqueo, resorte y guía', G1, [[[
+    rev([[3.0, 26.7], [4.3, 26.7], [4.35, 27.2], [4.35, 30.4], [4.1, 30.9], [3.0, 30.9], [3.0, 26.7]], 'x', negro(), 48),
+    ...Array.from({ length: 8 }, (_, i) => { const a = i / 8 * PI * 2; return caja(1.8, 0.7, 0.4, 28.8, 4.32 * Math.cos(a), 4.32 * Math.sin(a), mat('#3a3c40')).rotateX(-a); }),
+    resorteX(27.2, 28.6, 2.75, 3, 0.07, acero('#8d939a')), tuboX(28.6, 30.4, 2.7, 2.25, blanco()),
+  ], V(17, 0, 0)]], true);
+  add('bloqueo', 'Bloqueo del útil (resortes, bujes y piezas de bloqueo)', G1, [[[
+    resorteX(30.9, 32.2, 2.0, 4, 0.06, acero('#8d939a')), tuboX(32.2, 32.6, 2.3, 1.55, ac()), tuboX(32.6, 33.3, 2.2, 1.55, goma('#2a2c30')),
+    caja(1.0, 0.45, 0.5, 31.5, 0, 1.5, ac()), caja(1.0, 0.45, 0.5, 31.5, 0, -1.5, ac()),
+  ], V(19, -5.5, 0)]]);
+  add('amortiguador_th', 'Amortiguador y anillo de bloqueo', G1, [[[tuboX(33.4, 34.2, 2.6, 1.3, goma('#2a2c30')), tuboX(34.2, 34.7, 2.5, 1.3, ac())], V(21, 5.5, 0)]]);
+  add('manguito', 'Manguito deslizante', G1, [[[
+    rev([[2.7, 30.9], [4.15, 30.9], [4.15, 33.5], [3.85, 35.2], [2.7, 35.2], [2.7, 30.9]], 'x', negro(), 48),
+    ...[31.6, 32.3, 33.0].map(x => aroX(x, 4.15, 0.12, mat('#2c2e32'))),
+  ], V(21, 0, 0)]], true);
+  add('anillo_elastico', 'Anillo elástico y arandela', G1, [[[tuboX(34.8, 35.05, 1.95, 1.25, ac()), aroX(35.15, 1.6, 0.09, acero('#6f757c'))], V(23, -5, 0)]]);
+  add('sello_frontal', 'Sello de goma frontal', G1, [[[rev([[1.25, 35.2], [3.75, 35.2], [3.3, 36.3], [2.4, 36.6], [1.25, 36.6], [1.25, 35.2]], 'x', goma('#202124'), 40)], V(25, 0, 0)]]);
+  add('husillo', 'Husillo SDS', G1, [[[
+    rev([[2.1, 23.7], [2.9, 23.7], [2.9, 26.2], [2.4, 26.6], [2.4, 29.0], [2.0, 29.4], [2.0, 35.9], [0.95, 35.9], [0.95, 27.0], [2.1, 26.4], [2.1, 23.7]], 'x', acero('#c8ccd1', { metalness: 0.8, roughness: 0.28 }), 48),
+    cil('x', 2.55, 2.55, 2.0, 27.9, 0, 0, acero('#aeb3ba'), 6), // hexágono exterior
+    caja(4.0, 0.25, 0.5, 33.0, 0, 1.9, mat('#3a3d42')), caja(4.0, 0.25, 0.5, 33.0, 0, -1.9, mat('#3a3d42')), // ranuras
+  ], V(24, -15, 0)]]);
+  add('sellos_th', 'Sellos y juntas tóricas del portaherramienta', G1, [[[aroX(24.5, 4.15, 0.1, tor()), aroX(29.2, 2.45, 0.12, tor()), aroX(27.4, 1.1, 0.25, tor()), aroX(26.6, 1.6, 0.25, tor())], V(20, 6.5, 0)]]);
+  add('rodamiento_golpeo', 'Buje rodamiento de la pieza de golpeo', G1, [[[tuboX(25.9, 27.0, 2.05, 1.15, acero('#9aa0a7'))], V(16, -15, 0)]]);
+  add('buje_golpeo', 'Buje, amortiguador y arandela de la pieza de golpeo', G1, [[[tuboX(23.8, 25.9, 2.05, 1.6, ac()), tuboX(24.2, 25.4, 1.6, 1.15, goma('#2a2c30')), tuboX(23.8, 24.2, 1.6, 1.15, ac())], V(4, -15, 0)]]);
+  add('pieza_golpeo', 'Pieza de golpeo', G1, [[[
+    rev([[0.01, 21.6], [1.35, 21.6], [1.45, 22.2], [1.45, 23.2], [1.1, 23.5], [1.1, 29.4], [0.9, 29.7], [0.01, 29.7]], 'x', acero('#c3c7cc', { metalness: 0.8 }), 32),
+    aroX(24.8, 1.12, 0.06, acero('#7b8188')),
+  ], V(9, -15, 0)]]);
 
-  // ---------- transmisión ----------
-  add('biela', 'Biela y excéntrico', G2, [[(() => {
-    const s = new THREE.Shape(); s.absarc(-0.3, 0, 1.3, 0, PI * 2, false); s.holes.push(new THREE.Path().absarc(-0.3, 0, 0.6, 0, PI * 2, true));
-    const brazo = new THREE.Shape(); brazo.moveTo(-0.3, 0.55); brazo.lineTo(5, 0.4); brazo.lineTo(5, -0.4); brazo.lineTo(-0.3, -0.55);
-    const g1 = new THREE.ExtrudeGeometry(s, { depth: 0.8, bevelEnabled: false, curveSegments: 28 }), g2 = new THREE.ExtrudeGeometry(brazo, { depth: 0.8, bevelEnabled: false });
-    const peq = new THREE.Shape(); peq.absarc(5, 0, 0.9, 0, PI * 2, false); peq.holes.push(new THREE.Path().absarc(5, 0, 0.45, 0, PI * 2, true));
-    const g3 = new THREE.ExtrudeGeometry(peq, { depth: 0.8, bevelEnabled: false, curveSegments: 24 });
-    return [g1, g2, g3].map(g => { g.rotateX(PI / 2); g.translate(0, 0.4, 0); return mesh(g, acero('#9aa0a8', { metalness: 0.7 })); })
-      .concat([cil('y', 0.55, 0.55, 2.2, XG + 0.9, 0.2, 0, cromo(), 20), cil('y', 1.4, 1.4, 0.25, XG, 1.3, 0, acero('#6f757c'), 32)]);
-  })(), V(0, 9, 0)]]);
-  const diente = () => mat('#8b9198', { metalness: 0.8, roughness: 0.35 });
-  add('eje_intermedio', 'Eje intermedio y engranaje', G2, [[[
-    cil('y', 0.6, 0.6, 5.6, XG, 0.7, 0, cromo(), 20),
-    engranaje(36, 3.0, 1.0, -2.2, XG, 0, diente()), cil('y', 1.4, 1.4, 0.4, XG, -1.0, 0, acero('#6f757c'), 28),
-  ], V(0, 5, 0)]]);
-  add('pinon', 'Piñón del inducido', G2, [[[
-    engranaje(12, 1.05, 1.0, -2.2, XM, 0, diente()), cil('y', 0.6, 0.6, 0.5, XM, -0.9, 0, acero('#9aa0a8'), 20),
-  ], V(0, 13, 0)]]);
+  // ================= unidad antivibración (alojamiento delantero 78) =================
+  add('buje72', 'Buje del alojamiento delantero con junta', G2, [[[tuboX(22.2, 23.55, 2.6, 1.55, mat('#2b2d31', { roughness: 0.5 })), aroX(23.3, 2.35, 0.2, tor())], V(16, 7, 0)]]);
+  add('cubierta', 'Cubierta plástica antivibración', G2, [[[
+    rev([[5.45, 11.6], [5.45, 18.5], [4.95, 21.4], [4.6, 21.4], [5.1, 18.5], [5.1, 11.6], [5.45, 11.6]], 'x', negro(), 48, 0, 0, 0, 0.12, PI * 2 - 0.24),
+    ...[13.0, 14.6, 16.2].map(x => aroX(x, 5.47, 0.1, mat('#2c2e32'))),
+  ], V(2, -13, 0)]], true);
+  const scuad = s => s.map(([a, b]) => [a, b]); // (solo legibilidad)
+  add('carcasa_delantera', 'Alojamiento delantero de la unidad antivibración', G2, [[[
+    rev(scuad([[2.95, 23.6], [3.55, 23.6], [3.95, 22.6], [4.6, 20.5], [4.95, 18], [5.05, 11.6], [5.05, 10.6], [4.45, 10.6], [4.45, 12], [4.3, 20], [2.95, 22.8], [2.95, 23.6]]), 'x', fundicion(), 48),
+    perfil([[9.6, -5.3], [10.6, -5.3], [10.6, 5.3], [9.6, 5.3]], 10.6, -5.3, fundicion(), 0.4), // brida cuadrada de 4 agujeros
+    ...[-1, 1].flatMap(s => [caja(6.5, 0.5, 0.35, 15.5, s * 4.95, 0, mat('#2a2c30')), caja(6.5, 0.35, 0.5, 15.5, 0, s * 4.95, mat('#2a2c30'))]), // ranuras
+  ], V(12, 0, 0)]], true);
+  add('tornillos65', 'Tornillos de la unidad antivibración', G2, [[[-1, 1].flatMap(a => [-1, 1].map(b => tornillo('x', 10.65, a * 4.4, b * 4.4, 0.3))), V(17, 0, 0)]]);
+  add('junta79', 'Junta tórica de la carcasa principal', G2, [[[aroX(9.7, 3.4, 0.16, tor())], V(5, 0, 0)]]);
+  add('antivibracion', 'Componentes antivibración (contrapeso, resortes, guías)', G2, [[[
+    tuboX(11.2, 11.7, 4.3, 3.0, blanco()), resorteX(11.7, 14.4, 3.65, 3, 0.2, acero('#7d838b')),
+    tuboX(14.4, 18.0, 4.2, 3.05, laton()), tuboX(14.2, 14.6, 3.05, 2.75, blanco()), tuboX(17.8, 18.2, 3.05, 2.75, blanco()),
+    resorteX(18.0, 20.4, 3.55, 3, 0.2, acero('#7d838b')), tuboX(20.4, 20.9, 4.0, 2.9, blanco()),
+  ], V(12, 10.5, 0)]]);
+  add('cilindro', 'Cilindro', G2, [[[
+    rev([[2.15, 8.2], [3.0, 8.2], [3.0, 11.0], [2.65, 11.4], [2.65, 22.2], [2.15, 22.2], [2.15, 8.2]], 'x', acero('#c5c9ce', { metalness: 0.75 }), 40),
+    ...[13, 16.5, 19.5].flatMap(x => [1, -1].map(s => cil('z', 0.22, 0.22, 0.1, x, s * 2.66, 0, mat('#2a2c30'), 12).rotateX(0))),
+  ], V(16, -8, 0)]]);
+  add('martillo', 'Martillo (ariete)', G2, [[[rev([[0.01, 15.0], [2.1, 15.0], [2.1, 16.0], [1.95, 16.2], [1.95, 16.6], [2.1, 16.8], [2.1, 19.0], [1.6, 19.3], [0.01, 19.3]], 'x', acero('#d2d5da', { metalness: 0.8 }), 32)], V(26, -8, 0)]]);
+  add('juntas_cil', 'Juntas tóricas del cilindro y del martillo', G2, [[[aroX(9.0, 3.0, 0.14, tor()), aroX(21.0, 2.15, 0.1, tor()), aroX(16.4, 2.0, 0.12, tor())], V(16, -8, 0)]]);
+  add('mango_lateral', 'Mango lateral', G2, [[[
+    tuboX(19.0, 20.8, 5.25, 4.95, acero('#40454b')), caja(1.8, 1.6, 1.8, 19.9, 0, 5.7, acero('#40454b')),
+    cil('z', 1.4, 1.5, 11, 19.9, 0, 11.8, negro(), 24), cil('z', 1.6, 1.6, 0.8, 19.9, 0, 17.6, negro(), 24),
+  ], V(0, 0, 14)]]);
 
-  // ---------- motor (eje Y, en x = XM) ----------
-  const lam = laminas(), wire = alambre();
-  add('estator', 'Estator', G3, [[[
-    cil('y', 3.3, 3.3, 4.2, XM, -7.6, 0, mat('#fff', { map: lam, metalness: 0.7, roughness: 0.45 }), 48, true),
-    cil('y', 2.65, 2.65, 4.2, XM, -7.6, 0, mat('#8a9097', { metalness: 0.7, roughness: 0.5 }), 48, true),
-    caja(0.7, 5.4, 1.8, XM + 2.9, -7.6, 0, mat('#fff', { map: wire, metalness: 0.9, roughness: 0.35 })), caja(0.7, 5.4, 1.8, XM - 2.9, -7.6, 0, mat('#fff', { map: wire, metalness: 0.9, roughness: 0.35 })),
-  ], V(9, -2, 0)]], false, ajM);
-  const bob = () => mat('#fff', { map: wire, metalness: 0.9, roughness: 0.35 });
-  add('inducido', 'Inducido (rotor)', G3, [[[
-    cil('y', 0.5, 0.5, 13, XM, -6.9, 0, acero('#c4c8cd', { metalness: 0.8 }), 20),
-    cil('y', 2.5, 2.5, 3.6, XM, -7.6, 0, mat('#fff', { map: lam, metalness: 0.7, roughness: 0.45 }), 40),
-    cil('y', 2.58, 2.58, 0.6, XM, -9.7, 0, bob(), 36), cil('y', 2.58, 2.58, 0.6, XM, -5.5, 0, bob(), 36),
-    ...Array.from({ length: 12 }, (_, i) => { const a = i / 12 * PI * 2; const b = caja(0.22, 3.6, 0.06, XM + 2.5 * Math.cos(a), -7.6, 2.5 * Math.sin(a), mat('#25282c')); b.rotation.y = -a; return b; }),
-  ], V(0, -12, 0)]], false, ajM);
-  add('colector', 'Colector', G3, [[(() => {
-    const o = [cil('y', 1.1, 1.1, 1.2, XM, -11.3, 0, cobre(), 36)];
-    for (let i = 0; i < 24; i++) { const a = i / 24 * PI * 2; const b = caja(0.06, 1.22, 0.12, XM + 1.12 * Math.cos(a), -11.3, 1.12 * Math.sin(a), mat('#1b1b1b')); b.rotation.y = -a; o.push(b); }
-    return o;
-  })(), V(0, -17, 0)]], false, ajM);
-  add('ventilador', 'Ventilador', G3, [[(() => {
-    const o = [cil('y', 2.7, 2.7, 0.1, XM, -4.6, 0, marfil(), 40), cil('y', 0.8, 0.8, 0.6, XM, -4.5, 0, marfil(), 20)];
-    for (let i = 0; i < 12; i++) { const g = new THREE.Group(); g.rotation.y = i / 12 * PI * 2; g.position.set(XM, -4.2, 0); const b = caja(1.0, 0.7, 0.06, 1.8, 0, 0, marfil()); b.rotation.x = 0.4; g.add(b); o.push(g); }
-    return o;
-  })(), V(0, -8, 0)]], false, ajM);
-  const lado = (s) => [[
-    cil('z', 0.7, 0.7, 1.4, XM, -11.3, s * 1.9, mat('#b8a05a', { metalness: 0.8, roughness: 0.4 }), 4, true),
-    caja(0.8, 0.8, 1.2, XM, -11.3, s * 1.75, mat('#2a2a2a', { metalness: 0.1, roughness: 0.8 })),
-    ...Array.from({ length: 6 }, (_, i) => mesh(new THREE.TorusGeometry(0.33, 0.05, 6, 18), acero('#c4c8cd'), XM, -11.3, s * (2.2 + 0.18 * i))),
-    cil('z', 0.7, 0.7, 0.6, XM, -11.3, s * 3.7, mat('#222', { metalness: 0, roughness: 0.6 }), 24), caja(1.0, 0.12, 0.07, XM, -11.3, s * 4.03, mat('#000')),
-  ], V(0, 0, s * 12)];
-  add('escobillas', 'Escobillas y portaescobillas', G3, [lado(1), lado(-1)], false, ajM);
-  add('rodamientos', 'Rodamientos', G3, [
-    [[rodamiento('y', 1.2, 0.6, 0.6, XG, 1.9, 0)], V(0, 26, 0)],
-    [[rodamiento('y', 1.2, 0.6, 0.6, XG, -3.0, 0)], V(0, 10.5, 0)],
-    [[rodamiento('y', 1.3, 0.5, 0.6, XM, -2.9, 0)], V(0, -6, 0)],
-    [[rodamiento('y', 1.3, 0.5, 0.6, XM, -13.3, 0)], V(0, -22, 0)],
-  ]);
+  // ================= cárter, cigüeñal y caja de engranajes =================
+  const logo = lienzo(512, 128, (g, w, h) => { g.fillStyle = '#1c1d20'; g.font = 'italic bold 104px sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('DEWALT', w / 2, h / 2 + 4); });
+  add('carcasa_principal', 'Carcasa principal metálica (cárter y caja de engranajes)', G3, [[[
+    perfil([[-9.3, -7.0], [8.0, -7.0], [8.0, 3.0], [-9.3, 3.0]], 9.8, -4.9, fundicion(), 0.8),
+    perfil([[8.0, -5.2], [9.6, -5.2], [9.6, 5.0], [8.0, 5.0]], 10.4, -5.2, fundicion(), 0.3), // asiento de la unidad antivibración
+    tuboY(3.0, 3.5, 3.9, 3.3, fundicion(), XC, 0), // boca del cárter
+    ...[-5.6, -4.6, -3.6, -2.6].flatMap(y => [1, -1].map(s => caja(13.5, 0.45, 0.35, -0.6, y, s * 4.95, fundicion()))), // aletas
+    mesh(new THREE.PlaneGeometry(7.6, 1.9), mat('#ffffff', { map: logo, alphaTest: 0.5, metalness: 0.3, roughness: 0.5 }), -0.4, 1.4, 4.92),
+  ], V(0, 0, 0)]], true);
+  add('tapa_sa', 'Tapa del cárter y junta tórica', G3, [[[cil('y', 3.75, 3.75, 0.55, XC, 3.75, 0, acero('#9ea3aa')), aroY(XC, 3.4, 0, 3.3, 0.12, tor()), ...[0, 1, 2].map(i => tornillo('y', XC + 3.1 * Math.cos(i * 2.1 + 0.5), 4.05, 3.1 * Math.sin(i * 2.1 + 0.5), 0.2))], V(0, 14, 0)]]);
+  add('piston', 'Pistón con pasador, botones y junta', G3, [[[
+    rev([[0.01, 9.0], [2.12, 9.0], [2.12, 11.6], [1.7, 11.6], [1.7, 9.5], [0.01, 9.5]], 'x', acero('#a9aeb5'), 32),
+    aroX(9.4, 2.1, 0.11, tor()), cil('z', 0.42, 0.42, 4.1, 10.4, 0, 0, acero('#d0d3d8'), 16),
+    cil('z', 0.45, 0.45, 0.25, 10.4, 0, 2.08, blanco(), 16), cil('z', 0.45, 0.45, 0.25, 10.4, 0, -2.08, blanco(), 16),
+  ], V(8, 0, 0)]]);
+  add('biela', 'Biela', G3, [[[
+    tuboY(-0.4, 0.4, 1.05, 0.55, acero('#8f959c'), XC + 1.3, 0), tuboY(-0.35, 0.35, 0.65, 0.42, acero('#8f959c'), 10.4, 0),
+    caja(4.3, 0.6, 0.8, (XC + 1.3 + 10.4) / 2 + 0.1, 0, 0, acero('#8f959c')),
+  ], V(8, 0, 0)]]);
+  add('cigueñal', 'Cigüeñal con sello', G3, [[[
+    cil('y', 0.85, 0.85, 8.6, XC, -5.3, 0, acero('#b9bec4')), cil('y', 2.4, 2.4, 0.7, XC, -0.85, 0, acero('#9da3aa')),
+    cil('y', 0.52, 0.52, 1.3, XC + 1.3, 0.1, 0, acero('#cfd3d8')), aroY(XC, -2.4, 0, 1.0, 0.15, tor()),
+  ], V(0, 9, 0)]]);
+  add('engranaje_cig', 'Engranaje del cigüeñal', G3, [[[engranaje(40, 3.35, 1.0, -9.0, XC, 0, acero('#a7adb4')), cil('y', 0.9, 0.9, 1.1, XC, -8.5, 0, acero('#6d737a'), 6)], V(0, -5, 0)]]);
+  add('engranaje_doble', 'Engranaje doble con rodamientos, espaciadores y anillo', G3, [[[
+    engranaje(36, 2.9, 0.95, -7.65, XG, 0, acero('#b0b6bd')), engranaje(12, 1.05, 1.35, -9.0, XG, 0, acero('#9aa0a7')),
+    tuboY(-7.7, -6.6, 0.9, 0.45, mat('#2f6a3a', { metalness: 0.3 }), XG, 0),
+  ], V(-2.5, -2.5, 0)]]);
+  add('tapa21', 'Tapa interior ventilada', G3, [[[planta(-9.0, 1.4, -4.3, 4.3, 1.0, -9.6, 0.25, negro()), ...[-6, -4.5, -3, -1.5].map(x => caja(0.6, 0.05, 5.2, x, -9.33, 0, mat('#0c0d0f')))], V(0, -6, 0)]]);
+  add('tapa_engranajes', 'Tapa de la caja de engranajes y sello', G3, [[[
+    planta(-9.3, 8.0, -5.0, 5.0, 2.0, -12.0, 5.0, amarillo()), aroY(-0.6, -7.05, 0, 4.6, 0.1, tor()),
+    ...[[-8.3, 4], [-8.3, -4], [7.0, 4], [7.0, -4], [-0.6, 4.3], [-0.6, -4.3]].map(([x, z]) => { const t = tornillo('y', x, -12.02, z, 0.22); t.rotation.x = PI; return t; }),
+  ], V(0, -12, 0)]], true);
 
-  // ---------- carcasas y mangos ----------
-  const aluc = E.carter ? mat(E.carter, { metalness: 0.15, roughness: 0.5 }) : aluminio();
-  add('carcasa_engranajes', 'Carcasa de engranajes', G4, [
-    [(() => { // cuerpo del cárter y nariz de unión con el cañón
-      const g = new THREE.ExtrudeGeometry(rr(-9, -3.2, 5, 2.2, 1.0), { depth: 7.4, bevelEnabled: true, bevelSize: 0.4, bevelThickness: 0.4, bevelSegments: 3, curveSegments: 12 }); g.translate(0, 0, -3.7);
-      return [mesh(g, aluc), cil('x', 3.3, 3.3, 3, 4.2, 0, 0, aluc, 48, true), cil('x', 3.45, 3.45, 0.5, 5.0, 0, 0, mat('#6f757c', { metalness: 0.5 }), 48),
-        ...[[-8, 1.0], [-8, -2.0], [4, 1.8], [4, -2.6]].flatMap(([x, y]) => [tornillo('z', x, y, 4.15, 0.22), tornillo('-z', x, y, -4.15, 0.22)])];
-    })(), V(0, 0, 0)],
-    [(() => { // tapa superior con el tapón de la manivela
-      const g = new THREE.ExtrudeGeometry(rr(-9, 2.2, 5, 4.2, 0.8), { depth: 7.4, bevelEnabled: true, bevelSize: 0.4, bevelThickness: 0.4, bevelSegments: 3, curveSegments: 12 }); g.translate(0, 0, -3.7);
-      const o = [mesh(g, aluc), cil('y', 2.5, 2.5, 0.3, XG, 4.9, 0, negro(), 40), cil('y', 1.9, 1.9, 0.05, XG, 5.08, 0, mat(E.tapon, { metalness: 0, roughness: 0.6 }), 36)];
-      for (let i = 0; i < 6; i++) o.push(tornillo('y', -7.5 + i * 2.6, 4.9, i % 2 ? 3.1 : -3.1, 0.2));
-      return o;
-    })(), V(0, 17, 0)],
-  ], true);
-  const motorEt = textoEtiqueta(cfg.etiqueta || '');
-  const perfilM = [[4.2, -3.2], [4.25, -4], [4.15, -9], [4.0, -13.5], [3.2, -14.6], [1.5, -15.0], [0.1, -15.1]];
-  const ptsM = [...perfilM, ...perfilM.slice().reverse().map(([r, y]) => [Math.max(r - 0.25, 0.05), y])];
-  add('carcasa_motor', 'Carcasa del motor', G3, [-1, 1].map(s => [(() => {
-    const ph = s > 0 ? -PI / 2 : PI / 2, o = [rev(ptsM, 'y', cuerpo(), 48, XM, 0, 0, ph, PI)];
-    for (let i = 0; i < 5; i++) for (const a of [0.45, -0.45]) { const v = caja(0.12, 0.9, 0.05, XM + 4.1 * Math.sin(a) * 0 + (i - 2) * 0.35, -13.6, 0, negro()); v.visible = false; }
-    if (E.rejillas) for (let i = 0; i < 6; i++) { const v = caja(0.9, 0.12, 0.05, XM + (i - 2.5) * 0.0, -4.4 - i * 0.3, s * 4.2, negro()); o.push(v); } // rejillas de aire bajo el cárter
-    for (const [x, y] of [[XM + 2.4, -4.2], [XM - 2.4, -4.2], [XM, -12.6]]) o.push(tornillo(s > 0 ? 'z' : '-z', x, y, s * Math.sqrt(Math.max(4.1 * 4.1 - (x - XM) ** 2, 1)), 0.2));
-    if (cfg.etiqueta) { const p = mesh(new THREE.PlaneGeometry(5.2 * E.etiqueta.esc, 0.98 * E.etiqueta.esc), new THREE.MeshBasicMaterial({ map: motorEt, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 }), XM, E.etiqueta.y, s * 4.28); if (s < 0) p.rotation.y = PI; o.push(p); }
-    return o;
-  })(), V(0, 0, s * 8)]), true, ajM);
-  const asa = rr(-17.6, -3.2, -8.6, 6.4, 2.6), hueco = new THREE.Path(rr(-15.0, -1.6, -10.9, 4.4, 1.3).getPoints(16).reverse());
-  asa.holes.push(hueco);
-  const tope = (x, y, z, r = 0.9) => mesh(new THREE.SphereGeometry(r, 16, 12), goma(E.topes), x, y, z); // tope de goma
-  add('mango_trasero', 'Mango trasero', G4, [-1, 1].map(s => [(() => {
-    if (E.mango === 'T') { // abierto tipo T: vástago hacia atrás y barra transversal
-      const st = rr(-15.4, -0.2, -8.6, 3.4, 1.0), g = new THREE.ExtrudeGeometry(st, { depth: 2.5, bevelEnabled: true, bevelSize: 0.35, bevelThickness: 0.35, bevelSegments: 3, curveSegments: 12 }); g.translate(0, 0, s > 0 ? 0.05 : -2.55);
-      const o = [mesh(g, plastico()), cil('z', 1.7, 1.7, 7, -16.4, 1.6, s * 3.5, goma(E.mangoCol), 24), cil('z', 1.78, 1.78, 4.4, -16.4, 1.6, s * 3.6, goma('#3a3e44'), 24, true), tornillo('z', -10.0, 3.2, s * 3.25, 0.2)];
-      if (E.topes) o.push(tope(-16.4, 1.6, s * 7.2, 1.3));
-      return o;
-    }
-    const g = new THREE.ExtrudeGeometry(asa, { depth: 2.5, bevelEnabled: true, bevelSize: 0.35, bevelThickness: 0.35, bevelSegments: 3, curveSegments: 20 }); g.translate(0, 0, s > 0 ? 0.05 : -2.55);
-    const o = [mesh(g, plastico()), ...[0.9, 2.2, 3.5].map(y => caja(0.12, 0.2, 5.2, -16.7, -1 + y, 0, goma('#3a3e44'))), tornillo('z', -16.2, 5.2, s * 3.25, 0.2), tornillo('z', -10.0, 5.2, s * 3.25, 0.2)];
-    if (E.mango === 'goma') o.push(caja(3.0, 6.4, 2.45, -16.3, 1.6, s * 1.3, goma('#3a3e44'))); // empuñadura de goma sobre el agarre
-    if (E.topes) o.push(tope(-17.3, -2.4, s * 1.2), tope(-17.3, 5.6, s * 1.2));
-    return o;
-  })(), V(0, 0, s * 7)]), true);
-  add('interruptor', 'Interruptor', G3, [[[
-    caja(4.0, 1.2, 2.2, -12.8, 5.5, 0, mat('#cfd0d2', { metalness: 0, roughness: 0.6 })),
-    caja(1.5, 2.2, 1.6, -12.4, 3.6, 0, mat('#22252a')), caja(0.5, 0.9, 1.7, -12.4, 3.2, 0, mat('#f26b21', { metalness: 0.1, roughness: 0.5 })),
-    cil('x', 0.4, 0.4, 0.6, -10.8, 4.6, 0, mat('#d63a2f', { metalness: 0.1 }), 16),
-    caja(0.15, 0.4, 0.3, -10.5, 5.9, 0.6, cobre()), caja(0.15, 0.4, 0.3, -10.5, 5.9, -0.6, cobre()),
-  ], V(-3, -9, 0)]]);
-  const curva = new THREE.CatmullRomCurve3([V(-18.5, 0.5, 0), V(-21, 0.2, 0.3), V(-24, -2.4, 1.8), V(-28, -6.5, 0.6)]);
-  add('cable', 'Cable', G3, [[[
-    mesh(new THREE.TubeGeometry(curva, 48, 0.5, 12), goma('#18191c')),
-    rev([[0.5, -19.7], [0.7, -19.4], [0.9, -19.0], [1.1, -18.5], [1.2, -18.0], [1.4, -17.5]], 'x', goma('#1a1b1e'), 24, 0, 0.5, 0),
-  ], V(-12, -4, 0)]]);
-  add('mango_auxiliar', 'Mango auxiliar', G4, [[[
-    rev([[2.95, 17], [2.95, 20.5], [2.7, 20.5], [2.7, 17]], 'x', acero('#40454b'), 40, 0, 0, 0),
-    caja(1.8, 1.4, 1.6, 18.8, 3.2, 0, acero('#40454b')), cil('z', 0.4, 0.4, 2.2, 18.8, 3.2, 0, acero('#c4c8cd'), 12),
-    ...(E.aux.disco ? [cil('y', 3.2, 3.2, 0.3, 18.8, 4.2, 0, goma('#222528'), 36)] : []), // disco protector de la mano
-    rev(estriasY(1.3, 10, 4.35), 'y', goma(E.aux.color), 24, 18.8, 0, 0),
-  ], V(0, 0, 12)]]);
+  // ================= motor (vertical, detrás del cárter) =================
+  add('rodamiento_inducido', 'Rodamiento inferior del inducido con anillo y sello', G4, [[[tuboY(-5.4, -4.6, 1.2, 0.48, acero('#c3c8ce', { metalness: 0.8 }), XM, 0), aroY(XM, -4.5, 0, 1.0, 0.07, acero('#6f757c')), aroY(XM, -5.55, 0, 0.8, 0.12, tor())], V(-3.5, -6, 0)]]);
+  const nucleo = new THREE.MeshStandardMaterial({ map: laminas(), metalness: 0.6, roughness: 0.4 });
+  add('inducido', 'Inducido con anillo elástico', G4, [[[
+    cil('y', 0.45, 0.45, 13.2, XM, -1.0, 0, acero('#c9cdd2')), cil('y', 2.5, 2.5, 5.0, XM, -1.1, 0, nucleo),
+    cil('y', 2.25, 2.25, 0.8, XM, -4.0, 0, new THREE.MeshStandardMaterial({ map: alambre(), metalness: 0.7, roughness: 0.35 })), cil('y', 2.25, 2.25, 0.8, XM, 1.8, 0, new THREE.MeshStandardMaterial({ map: alambre(), metalness: 0.7, roughness: 0.35 })),
+    cil('y', 1.3, 1.3, 1.4, XM, 2.75, 0, cobre()), cil('y', 0.75, 0.75, 1.6, XM, -6.8, 0, acero('#9aa0a7'), 10), aroY(XM, -5.9, 0, 0.5, 0.06, acero('#5d636a')),
+  ], V(0, 4, 0)]]);
+  add('estator', 'Estator y carcasa del motor con sello', G4, [[[
+    tuboY(-4.2, 2.6, 3.9, 2.6, acero('#8c9299', { metalness: 0.6 }), XM, 0), tuboY(1.6, 2.5, 3.2, 2.6, cobre(), XM, 0), aroY(XM, -4.25, 0, 3.6, 0.12, tor()),
+  ], V(0, 12, 0)]], true);
+  add('portaescobillas', 'Portaescobillas con tornillos', G4, [[[
+    tuboY(2.6, 3.9, 3.9, 1.5, blanco(), XM, 0), caja(1.7, 1.1, 1.4, XM + 2.3, 3.2, 0, blanco()), caja(1.7, 1.1, 1.4, XM - 2.3, 3.2, 0, blanco()),
+    ...[0, 1, 2, 3].map(i => tornillo('y', XM + 3.2 * Math.cos(i * PI / 2 + PI / 4), 3.93, 3.2 * Math.sin(i * PI / 2 + PI / 4), 0.2)),
+  ], V(0, 16, 0)]]);
+  add('escobillas', 'Escobillas', G4, [[caja(1.0, 0.7, 0.8, XM + 1.9, 2.75, 0, mat('#2b2b2b', { roughness: 0.9 })), V(3.5, 16, 0)], [caja(1.0, 0.7, 0.8, XM - 1.9, 2.75, 0, mat('#2b2b2b', { roughness: 0.9 })), V(-3.5, 16, 0)]]);
+  add('rodamiento5', 'Rodamiento superior y aislante', G4, [[[tuboY(3.9, 4.6, 1.45, 0.5, blanco(), XM, 0), tuboY(3.95, 4.55, 1.05, 0.45, acero('#c3c8ce', { metalness: 0.8 }), XM, 0)], V(0, 17.5, 0)]]);
+  add('ventilador', 'Ventilador con tornillo', G4, [[[
+    cil('y', 3.6, 3.6, 0.15, XM, 4.75, 0, negro()), cil('y', 1.0, 1.0, 1.1, XM, 5.3, 0, negro()),
+    ...Array.from({ length: 12 }, (_, i) => caja(2.5, 1.0, 0.12, XM + 2.25 * Math.cos(i * PI / 6), 5.3, 2.25 * Math.sin(i * PI / 6), negro()).rotateY(-i * PI / 6)),
+    tornillo('y', XM, 5.88, 0, 0.32),
+  ], V(0, 19, 0)]]);
+  add('tapa_motor', 'Tapa superior del motor', G4, [[[
+    perfil([[-9.3, 3.0], [-9.3, 8.4], [-8.4, 9.3], [0.4, 9.3], [2.6, 8.5], [9.2, 4.6], [9.6, 3.0]], 9.8, -4.9, amarillo(), 0.9),
+    ...[[-8.2, 3.4], [-8.2, -3.4], [-1.0, 4.0], [-1.0, -4.0], [5.5, 0]].map(([x, z]) => tornillo('y', x, x > 3 ? 7.05 : 9.32, z, 0.22)),
+  ], V(0, 23, 0)]], true);
+  add('electronica', 'Módulo electrónico', G4, [[[caja(3.6, 1.6, 3.0, 1.2, 7.3, 0, mat('#25272b')), cil('y', 0.35, 0.35, 0.6, 1.2, 8.3, 0, blanco(), 12)], V(0, 23, 8)]]);
+
+  // ================= mango trasero e interruptor =================
+  const asa = rr(-16.9, -10.0, -8.9, 9.3, 1.9); asa.holes.push(rr(-13.7, -7.3, -10.4, 6.8, 1.3));
+  const medio = (z0, prof, m) => { const g = new THREE.ExtrudeGeometry(asa, { depth: prof - 0.7, bevelEnabled: true, bevelSize: 0.35, bevelThickness: 0.35, bevelSegments: 3, curveSegments: 16 }); g.translate(0, 0, z0 + 0.35); return mesh(g, m); };
+  const agarre = (z0) => { const g = new THREE.ExtrudeGeometry(rr(-17.1, -6.6, -13.5, 6.0, 1.5), { depth: 2.15, bevelEnabled: true, bevelSize: 0.3, bevelThickness: 0.3, bevelSegments: 3 }); g.translate(0, 0, z0); return mesh(g, negro()); };
+  add('mango', 'Mango trasero (mitad fija)', G5, [[[medio(-2.5, 2.5, amarillo()), agarre(-2.45)], V(0, 0, 0)]], true);
+  add('tapa_mango', 'Tapa del mango con interruptor', G5, [[[medio(0, 2.5, amarillo()), agarre(0.3), ...[[-15.5, 8.2], [-11.2, 8.2], [-15.5, -8.8], [-11.2, -8.8], [-15.8, 0], [-9.7, 5], [-9.7, -5], [-9.7, 0]].map(([x, y]) => tornillo('z', x, y, 2.5, 0.2))], V(0, 0, 9)]], true);
+  add('interruptor', 'Interruptor con adaptador y abrazadera', G5, [[[
+    caja(3.2, 1.6, 2.6, -13.0, 7.75, 0, mat('#cfd0d2', { roughness: 0.6 })), caja(0.8, 0.8, 1.2, -13.6, 6.95, 0, mat('#3d3f44')),
+    caja(3.6, 0.25, 2.9, -13.0, 8.65, 0, acero('#6d737a')), caja(0.2, 0.5, 0.3, -11.3, 7.9, 0.6, cobre()), caja(0.2, 0.5, 0.3, -11.3, 7.9, -0.6, cobre()),
+    mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([V(-11.2, 7.9, 0.5), V(-9.6, 6.5, 1.5), V(-8.6, 4.2, 2.0)]), 16, 0.18, 8), mat('#1f4ea8')),
+  ], V(-2, 0, 6)]]);
+  add('gatillo', 'Gatillo con pasador, varilla y pines', G5, [[[
+    perfil([[-13.75, 5.6], [-13.0, 5.4], [-12.85, 3.0], [-13.2, 1.6], [-13.75, 1.6]], 1.2, -0.6, negro(), 0.15),
+    cil('z', 0.14, 0.14, 1.6, -13.4, 5.2, 0, acero('#c9cdd2'), 10), cil('y', 0.12, 0.12, 1.5, -13.5, 6.1, 0, acero('#9aa0a7'), 8),
+  ], V(-3, -2, 4)]]);
+  const cord = new THREE.CatmullRomCurve3([V(-10.6, -9.5, 0), V(-11.2, -12.5, 0.3), V(-13, -16, 1.2), V(-16.5, -19, 0.5)]);
+  add('cable', 'Cable de alimentación con sujetacable', G5, [[[
+    mesh(new THREE.TubeGeometry(cord, 40, 0.45, 10), goma('#18191c')),
+    rev([[0.5, -13.0], [0.75, -12.4], [0.95, -11.5], [1.1, -10.6], [1.2, -10.0]], 'y', goma('#1a1b1e'), 20, -10.6, 0, 0),
+    caja(1.8, 0.5, 2.6, -10.9, -9.2, 0, mat('#3d3f44')),
+  ], V(-6, -6, 0)]]);
 
   return { k, parts };
 }

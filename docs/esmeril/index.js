@@ -1,38 +1,36 @@
 import { construir } from './modelo.js';
 
+const GA = 'GA4530';
+const n = (v, u) => v == null ? 'sin dato en las fuentes' : `${String(v).replace('.', ',')} ${u}`;
+
 export default {
   id: 'esmeril', nombre: 'Esmeril angular', datos: new URL('data.json', import.meta.url), construir,
-  // colores referenciales por marca (no son medidas ni fichas oficiales)
-  color: { Makita: '#00909e', Bosch: '#1e6fb5', DeWalt: '#f5c518', Milwaukee: '#d71f26', Hilti: '#d2051e', 'Black+Decker': '#f26b21', Stanley: '#f9c80e', Kothman: '#e0662a', Genérica: '#4f6f8f' },
-  // Estilo por marca. Solo se fijó lo que las fichas o fotos respaldan (colores de marca, cabezal plano de Bosch GWS 7-115 y DeWalt, cuerpo
-  // amarillo de DeWalt, rojo y negro de Milwaukee, ajuste sin llave y mango rotable en Hilti); el resto es una aproximación genérica.
-  estilos: {
-    Genérica: { color: '#4f6f8f' },
-    Makita: { color: '#00909e', c2: '#26292d', cabezal: 'metal', forma: 'redondo', agarre: 'banda', grosor: 0.96 },
-    Bosch: { color: '#1e6fb5', c2: '#23272c', cabezal: 'color', forma: 'plano', agarre: 'banda', ventilas: 'ambas' },
-    DeWalt: { color: '#f5c518', c2: '#1d1f22', cabezal: 'color', forma: 'plano', agarre: 'total', cola: 'goma' },
-    Milwaukee: { color: '#d71f26', c2: '#1d1f22', cabezal: 'metal', forma: 'cuadrado', agarre: 'total', ventilas: 'ambas' },
-    Hilti: { color: '#d2051e', c2: '#2b2e33', cabezal: 'color', forma: 'redondo', agarre: 'banda', grosor: 1.1, sinllave: true },
-    'Black+Decker': { color: '#f26b21', c2: '#1d1f22', cabezal: 'color', forma: 'redondo', agarre: 'ninguno', cola: 'goma' },
-    Stanley: { color: '#f9c80e', c2: '#1d1f22', cabezal: 'metal', forma: 'redondo', agarre: 'ninguno', cola: 'goma' },
-    Kothman: { color: '#e0662a', c2: '#26292d', cabezal: 'metal', forma: 'redondo', agarre: 'banda' },
-  },
-  opciones: [
-    { k: 'disco', titulo: 'Diámetro del disco', ops: [[115, '115 mm', '4½"'], [125, '125 mm', '5"'], [180, '180 mm', '7"'], [230, '230 mm', '9"']] },
-    { k: 'bateria', titulo: 'Alimentación', ops: [[0, 'Cable', 'con escobillas'], [1, 'Batería', 'sin escobillas']] },
-    { k: 'gatillo', titulo: 'Interruptor', ops: [[0, 'Paleta'], [1, 'Gatillo']] },
-  ],
-  cfg0: { disco: 115, bateria: 0, gatillo: 0 },
-  // el interruptor sale de la ficha; estos dos modelos no lo traen en los datos pero las fichas del fabricante los muestran con gatillo
-  deModelo: m => ({ disco: m.disco, bateria: m.bateria ? 1 : 0, gatillo: /gatillo/i.test(m.interruptor || '') || ['AG 230-24D', 'DWE4557'].includes(m.modelo) ? 1 : 0 }),
-  ficha: m => [['Modelo', `${m.marca} ${m.modelo}`], ['Disco', `${m.disco} mm`], ['Potencia', `${m.potencia ?? '—'} W`], ['Velocidad', `${m.rpm ?? '—'} rpm`], ['Peso', `${m.peso ?? '—'} kg`], ['Rosca', m.rosca ?? '—']],
+  // turquesa Makita: fotos del GA4030K (misma carcasa, guía iFixit); rojo y negro Milwaukee: foto de la página 2 del despiece 2880-20
+  color: { Makita: '#1595a0', Milwaukee: '#c8202a', Genérica: '#4f6f8f' },
+  estilos: { Makita: { color: '#1595a0' }, Milwaukee: { color: '#c8202a', c2: '#1d1f22' } },
+  opciones: [], cfg0: {}, deModelo: () => ({}),   // disco, interruptor y alimentación los define cada modelo
+  ficha: m => [['Modelo', `${m.marca} ${m.modelo}`], ['Disco', `${m.disco} mm`], ['Potencia', n(m.potencia, 'W')], ['Velocidad', n(m.rpm, 'rpm')], ['Peso', n(m.peso, 'kg')],
+    ['Largo', n(m.largo, 'mm')], ['Rosca', m.rosca ?? 'sin dato'], ['Alimentación', m.bateria ? 'Batería M18 (motor sin escobillas)' : 'Cable (motor con escobillas)'], ['Interruptor', m.interruptor ?? 'sin dato']],
   nombreModelo: x => `${x.modelo} · ${x.disco} mm`,
-  resumen: cfg => `Configuración personalizada de ${cfg.disco} mm.`,
-  aviso: 'El modelo 3D es esquemático. El modelo elegido define el diámetro del disco, el interruptor, la alimentación y el grosor del cuerpo (según su potencia); la marca define colores, forma del cabezal y agarres de forma aproximada, no como réplica exacta.',
-  // pasos del desarme (data.desarmado) -> piezas que salen y piezas que se resaltan
-  QUITA: { 1: ['cable', 'bateria'], 3: ['tuerca', 'disco'], 4: ['brida_int', 'protector'], 5: ['mango'], 6: ['escobillas'], 10: ['carcasa'], 11: ['interruptor', 'estator'], 12: ['inducido', 'ventilador', 'colector'], 13: ['pinon', 'rodamientos'], 15: ['husillo', 'corona', 'boton'] },
-  FOCO: { 7: ['escobillas'], 8: ['escobillas', 'interruptor'], 9: ['cabezal'], 14: ['rodamientos'] },
-  extra: { bateria: { funcion: 'Entrega la energía; reemplaza al cable y a las escobillas (motor sin escobillas).', como_se_desgasta: 'Pierde capacidad con los ciclos de carga y el calor.', prueba: 'Medir el voltaje en reposo y bajo carga; revisar los contactos.', valor_esperado: null, cuando_cambiar: 'Si se descarga muy rápido, se hincha o se calienta al cargar.', tip_taller: null } },
-  vista: { pos: [16, 14, 30], tgt: [-6, 1.5, 0] },
-  etiqueta: (marca, m) => m ? `${marca} ${m.modelo}`.slice(0, 26).toUpperCase() : marca === 'Genérica' ? '' : marca.toUpperCase(),
+  resumen: () => '',
+  aviso: 'Solo se modelan equipos con despiece oficial completo. Son exactos la lista de piezas, sus números (ref.), cómo se arman y el orden en que salen; las medidas son aproximadas, tomadas a ojo de los dibujos (salvo el largo de 266 mm del GA4530), y los colores salen de fotos, no de los despieces. El orden de desarme es deducido: ningún fabricante lo publica para estos modelos.',
+  // pasos reales de cada modelo (data.desarmados) -> piezas que salen y piezas que se resaltan
+  QUITA: m => m?.modelo === GA ? {
+    2: ['tuerca', 'disco'], 3: ['brida'], 4: ['mango'], 5: ['protector', 't33'],
+    6: ['t29', 'cajarod', 'husillo', 'corona', 'rod6201', 'anillo24', 'arandela26', 'oring27', 'laberinto', 'anillo21', 'rod696'],
+    8: ['tapa', 't55'], 9: ['t56', 'porta40', 'porta51', 'carbones'], 10: ['t45', 'prensacable', 'interruptor', 'protcable', 'cable'],
+    11: ['perilla', 'palanca', 'resorte52'], 12: ['t15'],
+    13: ['caja', 'inducido', 'ventilador', 'guia', 'anillo22', 'rod629', 'oring9', 'pinon', 'tuercaM6', 'aislante', 'rod607', 'goma3', 'boton', 'resorte14', 'perno17', 'oring16', 'pasador19'],
+    15: ['t37', 'campo', 'deflector'],
+  } : {
+    1: ['bateria'], 2: ['tuerca18', 'disco', 'brida17'], 3: ['mango47'], 4: ['protector48'],
+    5: ['t12', 'cubo53', 'oring8', 'traba20', 'resorte19', 't21'], 7: ['tuerca28', 'pinon29'], 8: ['t24'], 9: ['caja56', 'rod25', 'retenedor26', 't27'],
+    10: ['t37', 't35', 'cubierta38'], 11: ['rotor31', 'rod32', 'arandela30'], 12: ['paleta60', 'resorte43', 'polvo45'], 13: ['electronica54'],
+  },
+  FOCO: m => m?.modelo === GA ? {
+    1: ['cable'], 2: ['tuerca', 'disco', 'boton'], 7: ['pinon', 'corona', 'caja'], 13: ['caja', 'inducido', 'pinon', 'tuercaM6', 'anillo22'],
+    14: ['boton', 'resorte14', 'perno17', 'oring16', 'pasador19'], 16: ['caja', 'pinon', 'corona'],
+  } : { 6: ['pinon29', 'caja56', 'cubo53'], 14: ['caja56', 'pinon29', 'electronica54'] },
+  vista: { pos: [12, 13, -36], tgt: [-9, 1, 0] },
+  etiqueta: (marca, m) => m ? `${marca} ${m.modelo}`.slice(0, 26).toUpperCase() : '',
 };

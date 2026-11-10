@@ -37,12 +37,18 @@ const monto = {};       // fracción de explosión actual por pieza
 
 async function elegirHerramienta(h) {
   herr = h; DATA = datos[h.id] ??= await (await fetch(h.datos)).json();
-  Object.assign(st, { marca: 'Genérica', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1 }); st.oculta.clear();
+  Object.assign(st, { marca: '', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1 }); st.oculta.clear();
+  cambiarMarca(DATA.modelos[0].marca);
   for (const k in monto) delete monto[k];
   vistaInicial(); reconstruir();
   document.querySelectorAll('.herr .chip[data-h]').forEach(c => c.classList.toggle('on', c.dataset.h === h.id));
 }
 
+// pasos de desarme, piezas que salen y fichas propios de cada modelo (si los trae), o los generales de la herramienta
+const pasosDe = () => DATA.desarmados?.[st.modelo?.modelo] || DATA.desarmado;
+const quitaDe = () => (typeof herr.QUITA === 'function' ? herr.QUITA(st.modelo) : herr.QUITA);
+const focoDe = () => (typeof herr.FOCO === 'function' ? herr.FOCO(st.modelo) : herr.FOCO);
+const fichaPieza = nombre => DATA.piezasPorModelo?.[st.modelo?.modelo]?.[nombre] || DATA.piezas[nombre];
 function aplicarModelo(m) { st.modelo = m; if (m) Object.assign(st.cfg, herr.deModelo(m)); }
 function cambiarMarca(marca) { // una marca trae solo sus modelos: se parte por el primero
   st.marca = marca;
@@ -62,8 +68,8 @@ function reconstruir() {
 
 // ---------- apariencia: rayos X, aislar, selección, hover, foco de paso ----------
 function aparienciaPiezas() {
-  const pasoN = st.paso >= 0 ? DATA.desarmado[st.paso].paso : 0;
-  const foco = new Set(st.paso >= 0 ? (herr.FOCO[pasoN] || herr.QUITA[pasoN] || []) : []);
+  const pasoN = st.paso >= 0 ? pasosDe()[st.paso].paso : 0;
+  const foco = new Set(st.paso >= 0 ? (focoDe()[pasoN] || quitaDe()[pasoN] || []) : []);
   for (const p of Object.values(modelo.parts)) {
     let op = 1;
     if (st.xray && p.shell) op = 0.22;
@@ -79,7 +85,7 @@ function ui() { uiEquipo(); uiPiezas(); uiDesarme(); }
 const seg = (id, ops, val) => `<div class="seg" id="${id}">${ops.map(([v, t, s]) => `<button data-v="${v}" class="${String(v) === String(val) ? 'on' : ''}">${t}${s ? `<small>${s}</small>` : ''}</button>`).join('')}</div>`;
 
 function uiEquipo() {
-  const marcas = ['Genérica', ...new Set(DATA.modelos.map(m => m.marca))];
+  const marcas = [...new Set(DATA.modelos.map(m => m.marca))];
   const mods = DATA.modelos.filter(m => m.marca === st.marca);
   const m = st.modelo;
   $('#eq').innerHTML = `
@@ -107,7 +113,7 @@ function uiEquipo() {
 function uiPiezas() {
   const grupos = {};
   for (const p of Object.values(modelo.parts)) (grupos[p.grupo] ??= []).push(p);
-  const s = st.sel && modelo.parts[st.sel], d = s && (DATA.piezas[s.nombre] || herr.extra?.[s.id]);
+  const s = st.sel && modelo.parts[st.sel], d = s && (fichaPieza(s.nombre) || herr.extra?.[s.id]);
   $('#pz').innerHTML = Object.entries(grupos).map(([g, ps]) => `<h3>${g}</h3>` + ps.map(p =>
     `<div class="fila ${p.id === st.sel ? 'sel' : ''}" data-id="${p.id}"><button class="ojo" data-ojo="${p.id}" title="Mostrar u ocultar">${st.oculta.has(p.id) ? '◌' : '●'}</button><span>${p.nombre}</span></div>`).join('')).join('') +
     (d ? `<div class="ficha"><h4>${s.nombre}</h4><p><b>Función.</b> ${d.funcion}</p><p><b>Cómo se desgasta.</b> ${d.como_se_desgasta}</p><p><b>Cómo probarla.</b> ${d.prueba}${d.valor_esperado ? ` (${d.valor_esperado})` : ''}</p><p><b>Cuándo cambiarla.</b> ${d.cuando_cambiar}</p>${d.tip_taller ? `<p><b>Tip de taller.</b> ${d.tip_taller}</p>` : ''}</div>` : '<p class="nota">Toca una pieza en la lista o en el modelo para ver su ficha.</p>');
@@ -119,7 +125,7 @@ function uiPiezas() {
 }
 
 function uiDesarme() {
-  const P = DATA.desarmado, i = st.paso, p = P[i];
+  const P = pasosDe(), i = st.paso, p = P[i];
   $('#ds').innerHTML = `<div class="nav"><button class="b" id="ant" ${i < 0 ? 'disabled' : ''}>◀ Anterior</button><button class="b" id="sig" ${i >= P.length - 1 ? 'disabled' : ''}>${i < 0 ? 'Empezar' : 'Siguiente'} ▶</button><button class="b" id="fin" ${i < 0 ? 'disabled' : ''}>Salir</button></div>
    <div class="prog"><i style="width:${(i + 1) / P.length * 100}%"></i></div>
    ${p ? `<div class="paso"><b>Paso ${p.paso} de ${P.length} · ${p.titulo}</b><p>${p.instruccion}</p>${p.precaucion ? `<p class="adv">⚠ ${p.precaucion}</p>` : ''}<p class="nota">Herramienta: ${p.herramienta}</p></div>` : `<p class="nota">Recorre el desarme paso a paso: las piezas se van separando en el modelo y se resaltan las que intervienen en cada paso. Las instrucciones vienen del manual de ${herr.nombre.toLowerCase()}.</p>`}
@@ -185,7 +191,8 @@ cv.addEventListener('pointermove', e => {
 // ---------- bucle ----------
 function quitadas() { // piezas desmontadas hasta el paso actual
   const s = new Set();
-  for (let j = 0; j <= st.paso; j++) (herr.QUITA[DATA.desarmado[j].paso] || []).forEach(x => s.add(x));
+  const P = pasosDe(), Q = quitaDe();
+  for (let j = 0; j <= st.paso; j++) (Q[P[j].paso] || []).forEach(x => s.add(x));
   return s;
 }
 function bucle() {
