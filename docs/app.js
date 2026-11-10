@@ -1,16 +1,14 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { construir } from './modelo.js';
+import esmeril from './esmeril/index.js';
+import demoledor from './demoledor/index.js';
 
 const $ = s => document.querySelector(s);
-const DATA = await (await fetch('data.json')).json();
-// colores referenciales por marca (no son medidas ni fichas oficiales)
-const COLOR = { Makita: '#00909e', Bosch: '#1e6fb5', DeWalt: '#f5c518', Milwaukee: '#d71f26', Hilti: '#d2051e', 'Black+Decker': '#f26b21', Stanley: '#f9c80e', Kothman: '#e0662a', Genérica: '#4f6f8f' };
-const DISCOS = [[115, '4½"'], [125, '5"'], [180, '7"'], [230, '9"']];
-// pasos del desarme (data.desarmado) -> piezas que salen y piezas que se resaltan
-const QUITA = { 1: ['cable', 'bateria'], 3: ['tuerca', 'disco'], 4: ['brida_int', 'protector'], 5: ['mango'], 6: ['escobillas'], 10: ['carcasa'], 11: ['interruptor', 'estator'], 12: ['inducido', 'ventilador', 'colector'], 13: ['pinon', 'rodamientos'], 15: ['husillo', 'corona', 'boton'] };
-const FOCO = { 7: ['escobillas'], 8: ['escobillas', 'interruptor'], 9: ['cabezal'], 14: ['rodamientos'] };
+const HERR = [esmeril, demoledor];
+const PROXIMAS = ['Rotomartillo', 'Taladro'];
+const q = new URLSearchParams(location.search);   // ?herr=demoledor&marca=Makita&exp=1&corte&xray&paso=12&sel=estator&cam=x,y,z,tx,ty,tz&rapido
+const datos = {};                                  // data.json por herramienta, cargado una vez
 
 // ---------- escena ----------
 const cv = $('#c');
@@ -20,43 +18,43 @@ renderer.localClippingEnabled = true;
 const scene = new THREE.Scene();
 scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
 const sol = new THREE.DirectionalLight(0xffffff, 1.4); sol.position.set(10, 25, 15); scene.add(sol);
-const cam = new THREE.PerspectiveCamera(40, 1, 0.1, 400);
+const cam = new THREE.PerspectiveCamera(40, 1, 0.1, 600);
 const ctl = new OrbitControls(cam, cv); ctl.enableDamping = true;
-const VISTA0 = { pos: new THREE.Vector3(16, 14, 30), tgt: new THREE.Vector3(-6, 1.5, 0) };
 const plano = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);
-function vistaInicial() { cam.position.copy(VISTA0.pos); ctl.target.copy(VISTA0.tgt); tgtGoal = null; }
 let tgtGoal = null;
-vistaInicial();
+function vistaInicial() { cam.position.fromArray(herr.vista.pos); ctl.target.fromArray(herr.vista.tgt); tgtGoal = null; }
 function ajustar() { const r = $('#vista').getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
 addEventListener('resize', ajustar); ajustar();
 
 // ---------- estado ----------
-const st = { marca: 'Genérica', modelo: null, disco: 115, bateria: false, gatillo: false, exp: 0, corte: false, xray: false, aislar: false, sel: null, oculta: new Set(), paso: -1, tab: 'eq' };
-let modelo = null, grupo = null;
+let herr = HERR.find(h => h.id === q.get('herr')) || esmeril, DATA;
+const st = { marca: 'Genérica', modelo: null, cfg: {}, exp: 0, corte: false, xray: false, aislar: false, sel: null, oculta: new Set(), paso: -1 };
+let modelo = null, grupo = null, hover = null;
 const monto = {};       // fracción de explosión actual por pieza
-let hover = null;
 
-const num = v => (v == null ? '—' : v);
-function aplicarModelo(m) {
-  st.modelo = m;
-  if (m) {
-    st.disco = m.disco; st.bateria = m.bateria;
-    st.gatillo = /gatillo/i.test(m.interruptor || '');
-  }
+async function elegirHerramienta(h) {
+  herr = h; DATA = datos[h.id] ??= await (await fetch(h.datos)).json();
+  Object.assign(st, { marca: 'Genérica', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1 }); st.oculta.clear();
+  for (const k in monto) delete monto[k];
+  vistaInicial(); reconstruir();
+  document.querySelectorAll('.herr .chip[data-h]').forEach(c => c.classList.toggle('on', c.dataset.h === h.id));
 }
+
+function aplicarModelo(m) { st.modelo = m; if (m) Object.assign(st.cfg, herr.deModelo(m)); }
 
 function reconstruir() {
   if (grupo) scene.remove(grupo);
-  modelo = construir({ disco: st.disco, color: COLOR[st.marca] || COLOR.Genérica, bateria: st.bateria, gatillo: st.gatillo, etiqueta: st.modelo ? `${st.marca} ${st.modelo.modelo}`.slice(0, 26).toUpperCase() : st.marca === 'Genérica' ? '' : st.marca.toUpperCase() });
+  modelo = herr.construir({ ...st.cfg, color: herr.color[st.marca] || herr.color.Genérica, etiqueta: herr.etiqueta(st.marca, st.modelo) });
   grupo = new THREE.Group(); scene.add(grupo);
-  for (const p of Object.values(modelo.parts)) { monto[p.id] ??= 0; p.items.forEach(i => grupo.add(i.obj)); p.mats.forEach(m => { m.userData.op = 1; }); }
+  for (const p of Object.values(modelo.parts)) { monto[p.id] ??= 0; p.items.forEach(i => grupo.add(i.obj)); }
   if (st.sel && !modelo.parts[st.sel]) st.sel = null;
   aparienciaPiezas(); ui();
 }
 
 // ---------- apariencia: rayos X, aislar, selección, hover, foco de paso ----------
 function aparienciaPiezas() {
-  const foco = new Set(st.paso >= 0 ? (FOCO[DATA.desarmado[st.paso].paso] || QUITA[DATA.desarmado[st.paso].paso] || []) : []);
+  const pasoN = st.paso >= 0 ? DATA.desarmado[st.paso].paso : 0;
+  const foco = new Set(st.paso >= 0 ? (herr.FOCO[pasoN] || herr.QUITA[pasoN] || []) : []);
   for (const p of Object.values(modelo.parts)) {
     let op = 1;
     if (st.xray && p.shell) op = 0.22;
@@ -77,25 +75,24 @@ function uiEquipo() {
   const m = st.modelo;
   $('#eq').innerHTML = `
    <h3>Marca</h3><select id="marca">${marcas.map(x => `<option ${x === st.marca ? 'selected' : ''}>${x}</option>`).join('')}</select>
-   ${st.marca === 'Genérica' ? '' : `<h3>Modelo</h3><select id="mod"><option value="">Personalizado</option>${mods.map((x, i) => `<option value="${i}" ${x === m ? 'selected' : ''}>${x.modelo} · ${x.disco} mm</option>`).join('')}</select>`}
-   <h3>Diámetro del disco</h3>${seg('sdisco', DISCOS.map(([mm, p]) => [mm, mm + ' mm', p]), st.disco)}
-   <h3>Alimentación</h3>${seg('sbat', [[0, 'Cable', 'con escobillas'], [1, 'Batería', 'sin escobillas']], st.bateria ? 1 : 0)}
-   <h3>Interruptor</h3>${seg('sgat', [[0, 'Paleta'], [1, 'Gatillo']], st.gatillo ? 1 : 0)}
+   ${st.marca === 'Genérica' ? '' : `<h3>Modelo</h3><select id="mod"><option value="">Personalizado</option>${mods.map((x, i) => `<option value="${i}" ${x === m ? 'selected' : ''}>${herr.nombreModelo(x)}</option>`).join('')}</select>`}
+   ${herr.opciones.map(o => `<h3>${o.titulo}</h3>${seg('op_' + o.k, o.ops, st.cfg[o.k])}`).join('')}
    <h3>Ficha</h3>
-   ${m ? `<dl><dt>Modelo</dt><dd>${m.marca} ${m.modelo}</dd><dt>Disco</dt><dd>${m.disco} mm</dd><dt>Potencia</dt><dd>${num(m.potencia)} W</dd><dt>Velocidad</dt><dd>${num(m.rpm)} rpm</dd><dt>Peso</dt><dd>${num(m.peso)} kg</dd><dt>Rosca</dt><dd>${num(m.rosca)}</dd></dl><p class="nota">${m.nota || ''}</p>`
-        : `<p class="nota">Configuración personalizada de ${st.disco} mm. Elige una marca y un modelo para ver su ficha.</p>`}
-   <p class="nota">El modelo 3D es esquemático: las piezas y su disposición son las del esmeril angular típico; las proporciones se escalan con el diámetro y los colores de marca son referenciales.</p>`;
+   ${m ? `<dl>${herr.ficha(m).map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl><p class="nota">${m.nota || ''}</p>`
+        : `<p class="nota">${herr.resumen(st.cfg)} Elige una marca y un modelo para ver su ficha.</p>`}
+   <p class="nota">${herr.aviso}</p>`;
   $('#marca').onchange = e => { st.marca = e.target.value; st.modelo = null; reconstruir(); };
   if ($('#mod')) $('#mod').onchange = e => { aplicarModelo(e.target.value === '' ? null : mods[+e.target.value]); reconstruir(); };
-  $('#sdisco').onclick = e => { const v = e.target.closest('button')?.dataset.v; if (v) { st.disco = +v; st.modelo = null; reconstruir(); } };
-  $('#sbat').onclick = e => { const v = e.target.closest('button')?.dataset.v; if (v != null) { st.bateria = v === '1'; st.modelo = null; reconstruir(); } };
-  $('#sgat').onclick = e => { const v = e.target.closest('button')?.dataset.v; if (v != null) { st.gatillo = v === '1'; st.modelo = null; reconstruir(); } };
+  for (const o of herr.opciones) $('#op_' + o.k).onclick = e => {
+    const v = e.target.closest('button')?.dataset.v; if (v == null) return;
+    st.cfg[o.k] = typeof herr.cfg0[o.k] === 'number' ? +v : v; st.modelo = null; reconstruir();
+  };
 }
 
 function uiPiezas() {
   const grupos = {};
   for (const p of Object.values(modelo.parts)) (grupos[p.grupo] ??= []).push(p);
-  const s = st.sel && modelo.parts[st.sel], d = s && (DATA.piezas[s.nombre] || BATERIA[s.id]);
+  const s = st.sel && modelo.parts[st.sel], d = s && (DATA.piezas[s.nombre] || herr.extra?.[s.id]);
   $('#pz').innerHTML = Object.entries(grupos).map(([g, ps]) => `<h3>${g}</h3>` + ps.map(p =>
     `<div class="fila ${p.id === st.sel ? 'sel' : ''}" data-id="${p.id}"><button class="ojo" data-ojo="${p.id}" title="Mostrar u ocultar">${st.oculta.has(p.id) ? '◌' : '●'}</button><span>${p.nombre}</span></div>`).join('')).join('') +
     (d ? `<div class="ficha"><h4>${s.nombre}</h4><p><b>Función.</b> ${d.funcion}</p><p><b>Cómo se desgasta.</b> ${d.como_se_desgasta}</p><p><b>Cómo probarla.</b> ${d.prueba}${d.valor_esperado ? ` (${d.valor_esperado})` : ''}</p><p><b>Cuándo cambiarla.</b> ${d.cuando_cambiar}</p>${d.tip_taller ? `<p><b>Tip de taller.</b> ${d.tip_taller}</p>` : ''}</div>` : '<p class="nota">Toca una pieza en la lista o en el modelo para ver su ficha.</p>');
@@ -105,13 +102,12 @@ function uiPiezas() {
     const f = e.target.closest('[data-id]'); if (f) seleccionar(f.dataset.id);
   };
 }
-const BATERIA = { bateria: { funcion: 'Entrega la energía; reemplaza al cable y a las escobillas (motor sin escobillas).', como_se_desgasta: 'Pierde capacidad con los ciclos de carga y el calor.', prueba: 'Medir el voltaje en reposo y bajo carga; revisar los contactos.', valor_esperado: null, cuando_cambiar: 'Si se descarga muy rápido, se hincha o se calienta al cargar.', tip_taller: null } };
 
 function uiDesarme() {
   const P = DATA.desarmado, i = st.paso, p = P[i];
   $('#ds').innerHTML = `<div class="nav"><button class="b" id="ant" ${i < 0 ? 'disabled' : ''}>◀ Anterior</button><button class="b" id="sig" ${i >= P.length - 1 ? 'disabled' : ''}>${i < 0 ? 'Empezar' : 'Siguiente'} ▶</button><button class="b" id="fin" ${i < 0 ? 'disabled' : ''}>Salir</button></div>
    <div class="prog"><i style="width:${(i + 1) / P.length * 100}%"></i></div>
-   ${p ? `<div class="paso"><b>Paso ${p.paso} de ${P.length} · ${p.titulo}</b><p>${p.instruccion}</p>${p.precaucion ? `<p class="adv">⚠ ${p.precaucion}</p>` : ''}<p class="nota">Herramienta: ${p.herramienta}</p></div>` : '<p class="nota">Recorre el desarme paso a paso: las piezas se van separando en el modelo y se resaltan las que intervienen en cada paso. Las instrucciones vienen del manual del esmeril angular.</p>'}
+   ${p ? `<div class="paso"><b>Paso ${p.paso} de ${P.length} · ${p.titulo}</b><p>${p.instruccion}</p>${p.precaucion ? `<p class="adv">⚠ ${p.precaucion}</p>` : ''}<p class="nota">Herramienta: ${p.herramienta}</p></div>` : `<p class="nota">Recorre el desarme paso a paso: las piezas se van separando en el modelo y se resaltan las que intervienen en cada paso. Las instrucciones vienen del manual de ${herr.nombre.toLowerCase()}.</p>`}
    <h3>Todos los pasos</h3>${P.map((x, j) => `<div class="fila ${j === i ? 'sel' : ''}" data-p="${j}"><span>${x.paso}. ${x.titulo}</span></div>`).join('')}`;
   $('#ant').onclick = () => irPaso(i - 1); $('#sig').onclick = () => irPaso(i + 1); $('#fin').onclick = () => irPaso(-1);
   $('#ds').onclick = e => { const f = e.target.closest('[data-p]'); if (f) irPaso(+f.dataset.p); };
@@ -128,12 +124,14 @@ function seleccionar(id) {
   aparienciaPiezas(); uiPiezas();
 }
 document.querySelector('.tabs').onclick = e => {
-  const t = e.target.dataset.t; if (!t) return; st.tab = t;
+  const t = e.target.dataset.t; if (!t) return;
   document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
   document.querySelectorAll('.pg').forEach(p => p.classList.toggle('on', p.id === t));
 };
 const verTab = t => document.querySelector(`.tabs [data-t=${t}]`).click();
 
+$('.herr').innerHTML = HERR.map(h => `<button class="chip ${h === herr ? 'on' : ''}" data-h="${h.id}">${h.nombre}</button>`).join('') + PROXIMAS.map(n => `<span class="chip" title="Próximamente">${n}</span>`).join('');
+$('.herr').onclick = e => { const h = HERR.find(x => x.id === e.target.dataset.h); if (h && h !== herr) elegirHerramienta(h); };
 $('#exp').oninput = e => { st.exp = +e.target.value; };
 $('#corte').onchange = e => { st.corte = e.target.checked; aparienciaPiezas(); };
 $('#cortePos').oninput = e => { plano.constant = +e.target.value; };
@@ -170,15 +168,15 @@ cv.addEventListener('pointermove', e => {
 });
 
 // ---------- bucle ----------
-function pasoFin() { // piezas desmontadas hasta el paso actual
+function quitadas() { // piezas desmontadas hasta el paso actual
   const s = new Set();
-  for (let j = 0; j <= st.paso; j++) (QUITA[DATA.desarmado[j].paso] || []).forEach(x => s.add(x));
+  for (let j = 0; j <= st.paso; j++) (herr.QUITA[DATA.desarmado[j].paso] || []).forEach(x => s.add(x));
   return s;
 }
 function bucle() {
-  const quitadas = st.paso >= 0 ? pasoFin() : null;
+  const qs = st.paso >= 0 ? quitadas() : null;
   for (const p of Object.values(modelo.parts)) {
-    const meta = quitadas ? (quitadas.has(p.id) ? 1 : 0) : st.exp;
+    const meta = qs ? (qs.has(p.id) ? 1 : 0) : st.exp;
     monto[p.id] += (meta - monto[p.id]) * 0.12;
     p.items.forEach(i => { i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id); });
   }
@@ -186,10 +184,12 @@ function bucle() {
   ctl.update(); renderer.render(scene, cam);
   requestAnimationFrame(bucle);
 }
-const q = new URLSearchParams(location.search);   // ?disco=230&marca=Makita&exp=1&corte=1&xray=1&paso=11&sel=estator
+
+// ---------- arranque (con parámetros de la URL para pruebas) ----------
+await elegirHerramienta(herr);
 if (q.get('marca')) st.marca = q.get('marca');
-if (q.get('disco')) st.disco = +q.get('disco');
-if (q.get('bateria')) st.bateria = true;
+for (const o of herr.opciones) if (q.has(o.k)) st.cfg[o.k] = typeof herr.cfg0[o.k] === 'number' ? +q.get(o.k) : q.get(o.k);
+if (q.get('modelo')) { const m = DATA.modelos.find(x => x.marca === st.marca && x.modelo === q.get('modelo')); if (m) aplicarModelo(m); }
 st.exp = +(q.get('exp') || 0); st.corte = q.has('corte'); st.xray = q.has('xray');
 if (q.get('paso')) st.paso = +q.get('paso') - 1;
 if (q.get('sel')) st.sel = q.get('sel');
