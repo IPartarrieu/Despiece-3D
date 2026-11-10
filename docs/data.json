@@ -1,0 +1,493 @@
+{
+"piezas": {
+"Disco abrasivo": {
+"funcion": "Corta o desbasta.",
+"como_se_desgasta": "Desgaste, grietas, golpes, humedad.",
+"prueba": "Inspección visual y golpe suave al disco colgado: debe sonar claro.",
+"valor_esperado": null,
+"cuando_cambiar": "Si está agrietado, astillado, golpeado o caído en uso; reemplazar siempre un disco que se cayó.",
+"tip_taller": "Revisar la velocidad máxima impresa contra la del equipo."
+},
+"Protector": {
+"funcion": "Retiene fragmentos y chispas si el disco se rompe.",
+"como_se_desgasta": "Golpes, deformación, tornillo o palanca de ajuste flojos.",
+"prueba": "Inspección visual y probar que la sujeción no gire sola.",
+"valor_esperado": null,
+"cuando_cambiar": "Si está rajado, deformado o no queda firme.",
+"tip_taller": "Con disco de desbaste el lado cerrado va hacia el operador; con disco de corte usar el protector especial."
+},
+"Brida interior": {
+"funcion": "Apoya y centra el disco.",
+"como_se_desgasta": "Rebabas, polvo pegado, deformación.",
+"prueba": "Limpiar y revisar a la vista; apoyar sobre una cara plana.",
+"valor_esperado": null,
+"cuando_cambiar": "Si está deformada, con rebabas o dañada.",
+"tip_taller": "Usar solo bridas del fabricante para el equipo; limpiar brida, tuerca y husillo antes de montar."
+},
+"Brida exterior o tuerca": {
+"funcion": "Aprieta el disco contra la brida interior.",
+"como_se_desgasta": "Rosca dañada, polvo apretado, cara marcada.",
+"prueba": "Enroscar a mano en el husillo: debe correr sin trabas.",
+"valor_esperado": null,
+"cuando_cambiar": "Si la rosca o la cara de apoyo están dañadas.",
+"tip_taller": "Con discos de desbaste de más de 7 mm la tuerca Makita se coloca invertida; no mezclar tuerca \"super flange\" con \"Ezynut\"."
+},
+"Husillo": {
+"funcion": "Eje de salida que lleva el disco (M14 o 5/8\" según modelo).",
+"como_se_desgasta": "Doblez por golpes, rosca dañada, juego por rodamientos.",
+"prueba": "Girar a mano y mirar la punta con una regla o comparador; revisar rosca.",
+"valor_esperado": null,
+"cuando_cambiar": "Si está doblado o con rosca dañada.",
+"tip_taller": "En Milwaukee el cubo del husillo se vende como conjunto con corona y rodamiento."
+},
+"Botón de bloqueo": {
+"funcion": "Traba el husillo para cambiar el disco.",
+"como_se_desgasta": "Resorte vencido, diente roto por accionarlo con el eje girando.",
+"prueba": "Con el equipo desenchufado, pulsarlo y girar el husillo: debe trabarse y soltar.",
+"valor_esperado": null,
+"cuando_cambiar": "Si no traba o no suelta.",
+"tip_taller": "Pulsar solo con el husillo detenido; si no, se daña la máquina."
+},
+"Rodamientos": {
+"funcion": "Sostienen el husillo y el eje del inducido (dos en el cabezal, uno detrás en el inducido).",
+"como_se_desgasta": "Polvo, falta de grasa, calor y golpes: ruido, juego, calentamiento.",
+"prueba": "Girar a mano con el rodamiento limpio: debe girar libre y silencioso, sin juego ni aspereza.",
+"valor_esperado": null,
+"cuando_cambiar": "Si hay ruido, aspereza, juego o calentamiento.",
+"tip_taller": "Usar rodamiento sellado igual al original (Makita GA4030: 607LLB); golpear parejo y cerca del eje."
+},
+"Corona": {
+"funcion": "Engranaje cónico del husillo que recibe el giro.",
+"como_se_desgasta": "Dientes picados o rotos, grasa seca o contaminada.",
+"prueba": "Mirar los dientes con grasa limpia y girar el conjunto a mano: engrane suave.",
+"valor_esperado": null,
+"cuando_cambiar": "Si los dientes están picados, rotos o comidos.",
+"tip_taller": "En Milwaukee es parte del conjunto cubo del husillo."
+},
+"Piñón": {
+"funcion": "Engranaje de la punta del inducido.",
+"como_se_desgasta": "Dientes comidos, afloja su tuerca por vibración.",
+"prueba": "Inspección visual de los dientes y del asiento en el eje.",
+"valor_esperado": null,
+"cuando_cambiar": "Si presenta dientes comidos o daño en el asiento.",
+"tip_taller": "Se retira con la tuerca (10 mm en DeWalt D28110; M5 en Milwaukee); par de apriete no publicado."
+},
+"Cabezal": {
+"funcion": "Aloja engranajes y husillo con grasa.",
+"como_se_desgasta": "Grasa seca o contaminada, grietas de caída.",
+"prueba": "Revisar el color y la limpieza de la grasa al abrir; buscar grietas.",
+"valor_esperado": null,
+"cuando_cambiar": "Si está rajado o el asiento de rodamientos tiene juego.",
+"tip_taller": "Si calienta, limpiar la grasa vieja con suciedad y reengrasar."
+},
+"Ventilador": {
+"funcion": "Mueve el aire que enfría el motor.",
+"como_se_desgasta": "Aspas rotas por palanca al separar el cabezal; rejillas tapadas.",
+"prueba": "Girar el inducido y revisar aspas; ver rejillas libres.",
+"valor_esperado": null,
+"cuando_cambiar": "Si las aspas están rotas o sueltas.",
+"tip_taller": "Al separar el cabezal no meter el destornillador profundo: se rompen las aspas."
+},
+"Estator": {
+"funcion": "Crea el campo magnético; dos bobinas.",
+"como_se_desgasta": "Bobina quemada por sobrecarga o polvo conductor.",
+"prueba": "Multímetro: continuidad en cada bobina y aislación a masa.",
+"valor_esperado": null,
+"cuando_cambiar": "Si hay bobina cortada, quemada o a masa.",
+"tip_taller": "Milwaukee lo vende como conjunto \"campo\"; comparar con una unidad buena del mismo modelo."
+},
+"Inducido": {
+"funcion": "Rotor con piñón; gira dentro del estator.",
+"como_se_desgasta": "Bobinas quemadas o en corto, colector golpeado.",
+"prueba": "Multímetro: resistencia entre delgas a 180 grados, entre delgas adyacentes y delgas contra núcleo.",
+"valor_esperado": "Lecturas similares entre todos los pares; sin continuidad delga-núcleo.",
+"cuando_cambiar": "Si una lectura cae, sube mucho o hay continuidad a masa.",
+"tip_taller": "El valor absoluto no se publica sin conocer el diseño; se compara entre pares."
+},
+"Colector": {
+"funcion": "Entrega la corriente a las bobinas.",
+"como_se_desgasta": "Ovalado, ennegrecido, delgas golpeadas por escobillas.",
+"prueba": "Inspección visual: superficie lisa; buscar quemaduras y delgas dañadas.",
+"valor_esperado": null,
+"cuando_cambiar": "Si hay delgas rotas, quemaduras profundas u ovalización marcada.",
+"tip_taller": "Revisarlo siempre que se cambien escobillas."
+},
+"Escobillas y portaescobillas": {
+"funcion": "Llevan la corriente al colector por contacto.",
+"como_se_desgasta": "Se gastan; la punta aislante de resina toca el colector y corta el motor (Makita).",
+"prueba": "Sacarlas y medir el largo; revisar que corran libres en el portaescobillas y el resorte.",
+"valor_esperado": null,
+"cuando_cambiar": "Al cortar el motor o ante chispas; cambiar las dos juntas y del mismo tipo.",
+"tip_taller": "Makita GA4530: cambio solo por servicio autorizado; GA7020/GA9020: se cambian con destornillador."
+},
+"Carcasa del motor": {
+"funcion": "Protege y aloja el motor; sirve de agarre.",
+"como_se_desgasta": "Rajaduras por golpes y calor.",
+"prueba": "Inspección visual; probar ajuste de las mitades.",
+"valor_esperado": null,
+"cuando_cambiar": "Si hay rajadura o falta de aislación en la zona de conductores.",
+"tip_taller": "No usar bencina, diluyente ni alcohol: deforman el plástico."
+},
+"Interruptor": {
+"funcion": "Enciende y apaga; con traba o bloqueo.",
+"como_se_desgasta": "Contactos quemados, resorte débil.",
+"prueba": "Multímetro: continuidad entre bornes con el gatillo accionado y abierto en reposo.",
+"valor_esperado": null,
+"cuando_cambiar": "Si no parte, no apaga o se pega.",
+"tip_taller": "Revisar movimiento del interruptor y traba antes de energizar al cerrar."
+},
+"Cable": {
+"funcion": "Alimenta la máquina.",
+"como_se_desgasta": "Corte, pelado, tirones, daño por disco.",
+"prueba": "Multímetro: continuidad de cada conductor; revisar la cubierta.",
+"valor_esperado": null,
+"cuando_cambiar": "Si está pelado o cortado; cambiarlo completo.",
+"tip_taller": "Bosch: el cambio de cable debe hacerlo un servicio autorizado."
+},
+"Empuñadura lateral": {
+"funcion": "Segundo punto de apoyo y control.",
+"como_se_desgasta": "Rosca pasada.",
+"prueba": "Atornillar y verificar que quede firme.",
+"valor_esperado": null,
+"cuando_cambiar": "Si la rosca está dañada o queda floja.",
+"tip_taller": "Debe quedar firme antes de cada uso."
+}
+},
+"desarmado": [
+{
+"paso": 1,
+"titulo": "Desconectar y preparar",
+"instruccion": "Desenchufe el cable y deje el equipo sobre un paño limpio. Mantenga el cable fuera del paso.",
+"precaucion": "Nunca trabaje con el equipo enchufado, ni para probar el interruptor.",
+"herramienta": "—"
+},
+{
+"paso": 2,
+"titulo": "Fotografiar el equipo",
+"instruccion": "Tome fotos de la guarda, la posición de la empuñadura y, luego, del interior en cada etapa.",
+"precaucion": null,
+"herramienta": "Celular"
+},
+{
+"paso": 3,
+"titulo": "Retirar el disco",
+"instruccion": "Pulse el botón de bloqueo del husillo detenido y afloje la tuerca con la llave; retire tuerca, disco y brida exterior.",
+"precaucion": "Pulsar el bloqueo solo con el eje detenido.",
+"herramienta": "Llave de tuerca"
+},
+{
+"paso": 4,
+"titulo": "Retirar brida interior y guarda",
+"instruccion": "Saque la brida interior. Suelte el tornillo o la palanca de la guarda y gírela hasta la muesca para extraerla.",
+"precaucion": null,
+"herramienta": "Destornillador PH2"
+},
+{
+"paso": 5,
+"titulo": "Quitar la empuñadura lateral",
+"instruccion": "Desatornille la empuñadura lateral del cabezal.",
+"precaucion": null,
+"herramienta": "A mano"
+},
+{
+"paso": 6,
+"titulo": "Abrir las tapas de escobillas",
+"instruccion": "Quite las tapas del portaescobillas con un destornillador y libere el resorte de cada escobilla.",
+"precaucion": "Los resortes saltan: sujete la tapa.",
+"herramienta": "Destornillador plano"
+},
+{
+"paso": 7,
+"titulo": "Retirar y revisar las escobillas",
+"instruccion": "Extraiga ambas escobillas, anote su posición, mida su largo y revise el colector. Si el aislante de resina quedó expuesto, estaban al límite.",
+"precaucion": "Si cambia una, cambie las dos y del mismo tipo.",
+"herramienta": "Calibre o regla"
+},
+{
+"paso": 8,
+"titulo": "Soltar los conectores",
+"instruccion": "Con pinzas finas libere los conectores de las escobillas y de los cables que cruzan la carcasa.",
+"precaucion": "Fotografíe antes de soltar cada cable.",
+"herramienta": "Pinzas de punta larga"
+},
+{
+"paso": 9,
+"titulo": "Soltar los tornillos del cabezal",
+"instruccion": "Quite los cuatro tornillos que unen el cuerpo del motor con el cabezal (Torx T15 en DeWalt, T20 M4 en Milwaukee, PH2 en Makita GA4030).",
+"precaucion": null,
+"herramienta": "Torx o PH2"
+},
+{
+"paso": 10,
+"titulo": "Separar el cabezal",
+"instruccion": "Tire del cabezal en línea y, si se pega, haga palanca suave en la unión sin meter el destornillador hondo.",
+"precaucion": "No dañar las aspas del ventilador.",
+"herramienta": "Destornillador plano"
+},
+{
+"paso": 11,
+"titulo": "Abrir la carcasa y desconectar el interruptor",
+"instruccion": "Si va a probar el interruptor, el cable o el estator, abra las mitades de la carcasa y desconecte el interruptor y el cable, anotando el paso de cada cable.",
+"precaucion": "Fotografíe el recorrido: los cables deben volver por el mismo camino.",
+"herramienta": "Torx T20 / T10"
+},
+{
+"paso": 12,
+"titulo": "Extraer el inducido",
+"instruccion": "Saque el inducido (con piñón y rodamiento) del cuerpo; si hace falta probar el estator, retire también el conjunto del campo.",
+"precaucion": "Sin golpes: el colector y el eje se dañan con facilidad.",
+"herramienta": "A mano"
+},
+{
+"paso": 13,
+"titulo": "Retirar piñón y placa del rodamiento",
+"instruccion": "Quite la placa de retención del rodamiento. Afloje la tuerca del piñón (10 mm en DeWalt, M5 en Milwaukee) y saque el piñón.",
+"precaucion": "Par de apriete no publicado: anotar la sensación de apriete.",
+"herramienta": "Llave 10 mm"
+},
+{
+"paso": 14,
+"titulo": "Extraer el rodamiento del inducido",
+"instruccion": "Con extractor y prensa, saque el rodamiento sin forzar el eje; sin extractor, apoye un perno en la pista interior y golpee suave.",
+"precaucion": "Aplique la fuerza sobre la pista interior.",
+"herramienta": "Extractor / martillo"
+},
+{
+"paso": 15,
+"titulo": "Sacar el husillo y limpiar el cabezal",
+"instruccion": "Retire el conjunto del husillo con corona y su rodamiento; elimine la grasa vieja (Milwaukee pide quitar 90 a 95 por ciento) y limpie.",
+"precaucion": "En Milwaukee el cubo del husillo se cambia como conjunto.",
+"herramienta": "Brocha, paño"
+}
+],
+"modelos": [
+{
+"marca": "Makita",
+"modelo": "GA4530",
+"disco": 115,
+"potencia": 720,
+"rpm": 11000,
+"peso": 1.8,
+"rosca": "M14",
+"interruptor": null,
+"nota": "Inducción con barniz contra el polvo, engranajes cónicos y bloqueo de husillo",
+"bateria": false
+},
+{
+"marca": "Makita",
+"modelo": "GA7050",
+"disco": 180,
+"potencia": 2000,
+"rpm": 8500,
+"peso": "3,98–5,0",
+"rosca": "M14 x 2",
+"interruptor": "Paleta",
+"nota": "Protector, mango lateral y cable de 2,5 m",
+"bateria": false
+},
+{
+"marca": "Makita",
+"modelo": "GA9050",
+"disco": 230,
+"potencia": 2000,
+"rpm": 6600,
+"peso": "4,6–6,9",
+"rosca": "M14",
+"interruptor": "Gatillo",
+"nota": "Motor de 2.000 W, doble aislación, versiones 110/240 V",
+"bateria": false
+},
+{
+"marca": "Kothman",
+"modelo": "GK-115",
+"disco": 115,
+"potencia": 850,
+"rpm": null,
+"peso": null,
+"rosca": null,
+"interruptor": null,
+"nota": "Caja de engranajes metálica (según la tienda)",
+"bateria": false
+},
+{
+"marca": "Kothman",
+"modelo": "GK-115H",
+"disco": 115,
+"potencia": 1000,
+"rpm": 11000,
+"peso": 1.8,
+"rosca": null,
+"interruptor": "Paleta con seguro, sin enclavamiento",
+"nota": "Caja metálica, rodamientos y carbones de calidad superior, 220 V",
+"bateria": false
+},
+{
+"marca": "Kothman",
+"modelo": "GK-7",
+"disco": 180,
+"potencia": 2300,
+"rpm": 7700,
+"peso": 5.3,
+"rosca": null,
+"interruptor": null,
+"nota": "Autobloqueo para cambiar disco, mango antivibración, 220 V",
+"bateria": false
+},
+{
+"marca": "Kothman",
+"modelo": "GIK-115 (batería 21 V)",
+"disco": 115,
+"potencia": null,
+"rpm": 10000,
+"peso": "1,98",
+"rosca": null,
+"interruptor": null,
+"nota": "Brushless, 21 V, dos baterías de 4,0 Ah, arranque suave, cargador y maletín",
+"bateria": true
+},
+{
+"marca": "Hilti",
+"modelo": "AG 230-24D",
+"disco": 230,
+"potencia": 2400,
+"rpm": 6500,
+"peso": 6.5,
+"rosca": "M14",
+"interruptor": "Hombre muerto",
+"nota": "Profundidad de corte de 68 mm, control activo de torque, empuñadura giratoria",
+"bateria": false
+},
+{
+"marca": "Black+Decker",
+"modelo": "G720",
+"disco": 115,
+"potencia": 820,
+"rpm": null,
+"peso": null,
+"rosca": null,
+"interruptor": null,
+"nota": "Mango lateral de 3 posiciones y bloqueo de husillo",
+"bateria": false
+},
+{
+"marca": "DeWalt",
+"modelo": "DWE4120",
+"disco": 115,
+"potencia": 900,
+"rpm": 11800,
+"peso": null,
+"rosca": "M14",
+"interruptor": null,
+"nota": "Marcada como descontinuada en el sitio de servicio de DeWalt",
+"bateria": false
+},
+{
+"marca": "DeWalt",
+"modelo": "DWE4557",
+"disco": 180,
+"potencia": 2400,
+"rpm": 8500,
+"peso": "5,5",
+"rosca": null,
+"interruptor": null,
+"nota": "Datos de tiendas, no de ficha oficial",
+"bateria": false
+},
+{
+"marca": "DeWalt",
+"modelo": "DWE4559",
+"disco": 230,
+"potencia": 2400,
+"rpm": 6500,
+"peso": null,
+"rosca": null,
+"interruptor": null,
+"nota": "Sin peso informado",
+"bateria": false
+},
+{
+"marca": "DeWalt",
+"modelo": "DWE490",
+"disco": 230,
+"potencia": 2000,
+"rpm": 6600,
+"peso": 5.2,
+"rosca": "M14",
+"interruptor": null,
+"nota": "230 V, 9,2 A, 50 Hz",
+"bateria": false
+},
+{
+"marca": "Bosch",
+"modelo": "GWS 850",
+"disco": 115,
+"potencia": 850,
+"rpm": 11000,
+"peso": 2.0,
+"rosca": "M14",
+"interruptor": "Bloqueable",
+"nota": "220 V, variante 06013775N0 de Chile",
+"bateria": false
+},
+{
+"marca": "Bosch",
+"modelo": "GWS 7-115",
+"disco": 115,
+"potencia": 720,
+"rpm": 11000,
+"peso": 1.9,
+"rosca": "M14",
+"interruptor": null,
+"nota": "Datos de una copia de la ficha técnica Bosch",
+"bateria": false
+},
+{
+"marca": "Bosch",
+"modelo": "GWS 2000-180",
+"disco": 180,
+"potencia": 2000,
+"rpm": 8500,
+"peso": 5.0,
+"rosca": "M14",
+"interruptor": null,
+"nota": "Potencia útil de 1.280 W",
+"bateria": false
+},
+{
+"marca": "Bosch",
+"modelo": "GWS 22-230",
+"disco": 230,
+"potencia": 2200,
+"rpm": 6500,
+"peso": "5,2–5,5",
+"rosca": "M14",
+"interruptor": null,
+"nota": "Rodamientos sellados y engranaje reforzado (según listado)",
+"bateria": false
+},
+{
+"marca": "Milwaukee",
+"modelo": "M18 FUEL 2880-20",
+"disco": 115,
+"potencia": null,
+"rpm": 8500,
+"peso": null,
+"rosca": "5/8\"-11 UNC",
+"interruptor": "Paleta",
+"nota": "Brushless, freno RAPIDSTOP (menos de 2 s) y embrague electrónico anticontragolpe",
+"bateria": true
+},
+{
+"marca": "Stanley",
+"modelo": "SG7115",
+"disco": 115,
+"potencia": 750,
+"rpm": 12000,
+"peso": null,
+"rosca": "M14 x 2",
+"interruptor": null,
+"nota": "Datos de tiendas, no de ficha Stanley",
+"bateria": false
+}
+]
+}
