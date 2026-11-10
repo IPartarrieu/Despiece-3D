@@ -57,7 +57,7 @@ export function etiquetaDisco(mm) { // rótulo del disco
   });
 }
 export function textoEtiqueta(txt, fondoTransp = true) {
-  return lienzo(512, 96, (g, w, h) => { g.clearRect(0, 0, w, h); g.fillStyle = 'rgba(255,255,255,.92)'; g.font = 'bold 54px sans-serif'; g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillText(txt, 12, 52); });
+  return lienzo(512, 96, (g, w, h) => { g.clearRect(0, 0, w, h); g.fillStyle = 'rgba(255,255,255,.92)'; let px = 54; g.font = `bold ${px}px sans-serif`; while (g.measureText(txt).width > 488 && px > 16) g.font = `bold ${--px}px sans-serif`; g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillText(txt, 12, 52); });
 }
 
 export function rodamiento(eje, ro, ri, w, x, y, z) {
@@ -76,3 +76,11 @@ export function rodamiento(eje, ro, ri, w, x, y, z) {
   return g;
 }
 
+
+// rectángulo redondeado como Shape (plano XY)
+export function rr(x0, y0, x1, y1, r) {
+  const s = new THREE.Shape();
+  s.moveTo(x0 + r, y0); s.lineTo(x1 - r, y0); s.quadraticCurveTo(x1, y0, x1, y0 + r); s.lineTo(x1, y1 - r); s.quadraticCurveTo(x1, y1, x1 - r, y1);
+  s.lineTo(x0 + r, y1); s.quadraticCurveTo(x0, y1, x0, y1 - r); s.lineTo(x0, y0 + r); s.quadraticCurveTo(x0, y0, x0 + r, y0);
+  return s;
+}

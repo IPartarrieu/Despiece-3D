@@ -1,7 +1,7 @@
 // Modelo procedural del esmeril angular. Unidades: cm. Eje del motor = X (el cabezal en x=0, el motor hacia -X),
 // eje del husillo = Y (el disco abajo). Se construye en medidas de un esmeril de 115 mm y se escala con k.
 import * as THREE from 'three';
-import { PI, V, mat, acero, aluminio, cobre, goma, negro, marfil, mesh, cil, caja, rev, tornillo, lienzo, laminas, alambre, etiquetaDisco, textoEtiqueta, rodamiento } from '../lib.js';
+import { PI, V, mat, acero, aluminio, cobre, goma, negro, marfil, mesh, cil, caja, rev, tornillo, lienzo, laminas, alambre, etiquetaDisco, textoEtiqueta, rodamiento, rr } from '../lib.js';
 
 const YM = 2.3; // altura del eje del motor
 
@@ -9,6 +9,11 @@ export function construir(cfg) {
   const k = 1 + 0.4 * (cfg.disco - 115) / 115;   // escala del cuerpo según el diámetro
   const Rb = cfg.disco / 20 / k;                  // radio del disco en medidas base
   const color = cfg.color;
+  // estilo de marca (colores y formas) y medidas del modelo (potencia -> grosor del cuerpo)
+  const e = { c2: '#2b2e33', cabezal: 'metal', forma: 'redondo', grosor: 1, agarre: 'banda', cola: 'goma', ventilas: 'delanteras', sinllave: false, ...(cfg.estilo || {}) };
+  if (/sin herramienta|sin llave|one-touch/i.test(cfg.m?.nota || '')) e.sinllave = true;
+  const Pot = Number(cfg.m?.potencia) || { 115: 850, 125: 1200, 180: 2000, 230: 2100 }[cfg.disco] || 1000;
+  const rs = Math.min(1.22, Math.max(1, (0.96 + (Pot - 700) / 1800 * 0.3) * e.grosor)), rn = Math.min(rs, 1.08);
   const parts = {};
   // items: [[objetos, dirección de desmontaje], ...] (varios items = la pieza se separa en trozos)
   const add = (id, nombre, grupo, items, shell = false) => {
@@ -24,7 +29,7 @@ export function construir(cfg) {
 
   // ---- disco y fijación ----
   add('disco', 'Disco abrasivo', G1, [[[
-    rev([[Rb - 0.03, -2.2], [Rb, -2.17], [Rb, -1.93], [Rb - 0.03, -1.9], [0.8, -1.9], [0.8, -2.2], [Rb - 0.03, -2.2]], 'y', mat('#2a3940', { metalness: 0, roughness: 0.9 }), 72),
+    rev([[Rb - 0.03, -2.2], [Rb, -2.17], [Rb, -1.93], [Rb - 0.03, -1.9], [0.8, -1.9], [0.8, -2.2], [Rb - 0.03, -2.2]], 'y', mat('#41575f', { metalness: 0, roughness: 0.9 }), 72),
     (() => { const c = mesh(new THREE.CircleGeometry(Rb - 0.03, 72), mat('#fff', { map: etiquetaDisco(cfg.disco), metalness: 0, roughness: 0.85 }), 0, -1.895, 0); c.rotation.x = -PI / 2; return c; })(),
   ], V(0, -8.3, 0)]]);
   add('tuerca', 'Brida exterior o tuerca', G1, [[(() => {
@@ -45,6 +50,7 @@ export function construir(cfg) {
       cil('y', R2, R2, 0.15, 0, -1.4, 0, prot, 72, false, PI, PI),                                                             // tapa
       cil('y', 2.2, 2.2, 0.55, 0, -1.25, 0, prot, 40, true),                                                                   // collar
       caja(0.8, 0.5, 0.7, 2.45, -1.2, 0, prot), cil('x', 0.17, 0.17, 0.5, 2.9, -1.2, 0, acero('#333'), 12),                    // oreja y tornillo del collar
+      ...(e.sinllave ? [caja(1.2, 0.3, 2.6, 2.6, -1.0, 0, mat(e.c2)), caja(0.5, 0.9, 0.5, 3.1, -1.0, 1.1, mat(e.c2))] : []),
       caja(0.4, 0.15, 0.6, -R2 + 0.15, -2.35, 0, mat('#d9a521', { metalness: 0.1 })),                                           // marca de ajuste
     ];
     return o;
@@ -76,12 +82,21 @@ export function construir(cfg) {
   })(), V(0, 6.5, 0)]]);
 
   // ---- cabezal ----
-  const cab = aluminio();
+  const cab = e.cabezal === 'metal' ? aluminio() : mat(e.cabezal === 'color' ? color : e.cabezal, { metalness: 0.25, roughness: 0.45 });
+  const cuerpoCabezal = () => {
+    if (e.forma === 'cuadrado') { // cabezal prismático de aristas redondeadas
+      const g = new THREE.ExtrudeGeometry(rr(-2.95, -2.95, 2.95, 2.95, 1.3), { depth: 4.9, bevelEnabled: true, bevelSize: 0.35, bevelThickness: 0.4, bevelSegments: 3, curveSegments: 14 });
+      g.rotateX(-PI / 2); g.translate(0, -0.7, 0);
+      return [mesh(g, cab), rev([[2.3, -1.1], [2.0, -1.35], [0.9, -1.35], [0.9, -1.1]], 'y', cab, 40)];
+    }
+    const sup = e.forma === 'plano' ? [[0.01, 4.9], [2.7, 4.88], [2.95, 4.7], [3.0, 4.3]] : [[0.01, 4.95], [1.6, 4.9], [2.4, 4.7], [2.8, 4.3]];
+    return [rev([...sup, [3.0, 3.6], [3.0, 0.2], [2.95, -0.4], [2.6, -0.9], [2.1, -1.1], [2.0, -1.35], [0.9, -1.35], [0.9, -1.1]], 'y', cab, 64)];
+  };
   add('cabezal', 'Cabezal', G1, [[(() => {
     const o = [
-      rev([[0.01, 4.95], [1.6, 4.9], [2.4, 4.7], [2.8, 4.3], [3.0, 3.6], [3.0, 0.2], [2.95, -0.4], [2.6, -0.9], [2.1, -1.1], [2.0, -1.35], [0.9, -1.35], [0.9, -1.1]], 'y', cab, 64),
-      rev([[2.55, 0], [2.6, -0.5], [2.65, -2.5], [2.75, -3.8], [2.9, -4.3]], 'x', cab, 56, 0, YM, 0),   // cuello del cabezal hacia el motor
-      cil('x', 2.95, 2.95, 0.3, -4.4, YM, 0, mat('#6f757c', { metalness: 0.5 }), 56),                    // aro de unión con la carcasa
+      ...cuerpoCabezal(),
+      rev([[2.55 * rn, 0], [2.6 * rn, -0.5], [2.65 * rn, -2.5], [2.75 * rn, -3.8], [2.9 * rn, -4.3]], 'x', cab, 56, 0, YM, 0),   // cuello del cabezal hacia el motor
+      cil('x', 2.95 * rn, 2.95 * rn, 0.3, -4.4, YM, 0, mat('#6f757c', { metalness: 0.5 }), 56),                    // aro de unión con la carcasa
       cil('y', 1.15, 1.15, 0.1, 1.0, 4.95, 0, mat('#6f757c', { metalness: 0.5 }), 32),                   // tapa de grasa superior
       cil('y', 3.02, 3.02, 0.12, 0, 0.0, 0, mat('#6f757c', { metalness: 0.5 }), 64),                     // nervio perimetral
     ];
@@ -109,22 +124,24 @@ export function construir(cfg) {
 
   // ---- carcasa ----
   const cuerpo = () => mat(color, { metalness: 0.08, roughness: 0.5 });
-  const perfil = [[0.1, -15.75], [1.2, -15.6], [2.0, -15.2], [2.5, -14.5], [2.75, -13.4], [2.88, -11.5], [2.93, -9], [2.93, -7], [2.88, -5.5], [2.86, -4.6], [2.86, -4.2]];
+  const perfil = [[0.1, -15.75], [1.2, -15.6], [2.0, -15.2], [2.5, -14.5], [2.75, -13.4], [2.88, -11.5], [2.93, -9], [2.93, -7], [2.88, -5.5], [2.86, -4.6], [2.86, -4.2]].map(([r, y]) => [r * rs, y]);
   const pts = [...perfil, ...perfil.slice().reverse().map(([r, y]) => [Math.max(r - 0.22, 0.05), y])];
-  const ondas = []; for (let i = 0; i <= 44; i++) ondas.push([2.975 + (i % 2 ? 0.035 : 0), -12.6 + i * 0.14]);
-  const agarre = [...ondas, [2.9, -6.44], ...[...ondas].reverse().map(([r, y]) => [2.9, y])];
+  const rAt = x => { for (let i = 0; i < perfil.length - 1; i++) { const [r0, y0] = perfil[i], [r1, y1] = perfil[i + 1]; if (x >= y0 && x <= y1) return r0 + (r1 - r0) * (x - y0) / (y1 - y0); } return perfil.at(-1)[0]; };
+  const [g0, g1] = e.agarre === 'total' ? [-14.6, -5.6] : [-12.6, -6.44];   // tramo recubierto de goma
+  const ondas = []; for (let x = g0, i = 0; x <= g1; x += 0.14, i++) ondas.push([rAt(x) + 0.045 + (i % 2 ? 0.035 : 0), x]);
+  const agarre = [...ondas, ...[...ondas].reverse().map(([r, y]) => [rAt(y) - 0.02, y])];
   const etiq = textoEtiqueta(cfg.etiqueta || '');
   const mitad = (s) => {
     const ph = s > 0 ? -PI / 2 : PI / 2, o = [
       rev(pts, 'x', cuerpo(), 48, 0, YM, 0, ph, PI),
-      rev(agarre, 'x', goma('#2b2e33'), 48, 0, YM, 0, ph, PI),
-      rev([[2.25, -15.76], [2.0, -15.45], [1.3, -15.65]], 'x', goma('#2b2e33'), 32, 0, YM, 0, ph, PI),
+      ...(e.agarre === 'ninguno' ? [] : [rev(agarre, 'x', goma(e.c2), 48, 0, YM, 0, ph, PI)]),
+      rev([[2.25 * rs, -15.76], [2.0 * rs, -15.45], [1.3 * rs, -15.65]], 'x', e.cola === 'color' ? cuerpo() : goma(e.c2), 32, 0, YM, 0, ph, PI),
     ];
-    for (let i = 0; i < 7; i++) for (const a of [0.5, -0.5]) { // rejillas de ventilación junto al cabezal
-      const v = caja(0.12, 0.8, 0.05, -4.9 - i * 0.2, YM + 2.88 * Math.sin(a), s * 2.88 * Math.cos(a), negro()); v.rotation.x = s > 0 ? -a : PI + a; o.push(v);
+    for (const [x0, n, paso] of [...(e.ventilas !== 'traseras' ? [[-4.9, 7, -0.2]] : []), ...(e.ventilas !== 'delanteras' ? [[-13.2, 6, -0.2]] : [])]) for (let i = 0; i < n; i++) for (const a of [0.5, -0.5]) { // rejillas de ventilación
+      const x = x0 + i * paso, r = rAt(x), v = caja(0.12, 0.8, 0.05, x, YM + r * Math.sin(a), s * r * Math.cos(a), negro()); v.rotation.x = s > 0 ? -a : PI + a; o.push(v);
     }
-    for (const [x0, y0] of [[-5.2, 1.9], [-5.2, -1.9], [-14.0, 0.0]]) o.push(tornillo(s > 0 ? 'z' : '-z', x0, YM + y0, s * Math.sqrt(2.9 * 2.9 - y0 * y0)));
-    if (cfg.etiqueta) { const p = mesh(new THREE.PlaneGeometry(3.6, 0.68), new THREE.MeshBasicMaterial({ map: etiq, transparent: true, depthWrite: false, side: THREE.FrontSide, polygonOffset: true, polygonOffsetFactor: -2 }), -9.7, YM + 0.2, s * 3.0); if (s < 0) p.rotation.y = PI; o.push(p); }
+    for (const [x0, y0] of [[-5.2, 1.9], [-5.2, -1.9], [-14.0, 0.0]]) o.push(tornillo(s > 0 ? 'z' : '-z', x0, YM + y0, s * Math.sqrt(2.9 * 2.9 * rs * rs - y0 * y0)));
+    if (cfg.etiqueta) { const p = mesh(new THREE.PlaneGeometry(3.6, 0.68), new THREE.MeshBasicMaterial({ map: etiq, transparent: true, depthWrite: false, side: THREE.FrontSide, polygonOffset: true, polygonOffsetFactor: -2 }), -9.7, YM + 0.2, s * (rAt(-9.7) + 0.08)); if (s < 0) p.rotation.y = PI; o.push(p); }
     return o;
   };
   add('carcasa', 'Carcasa del motor', G2, [[mitad(1), V(0, 0, 7)], [mitad(-1), V(0, 0, -7)]], true);
