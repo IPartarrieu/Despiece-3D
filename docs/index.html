@@ -44,6 +44,9 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:0}dt{color:va
 .paso .adv{color:#f87171}
 .nav{display:flex;gap:8px;align-items:center}.nav button{flex:1;cursor:pointer}
 .prog{height:4px;background:var(--line);border-radius:4px;margin:10px 0}.prog i{display:block;height:100%;background:var(--acc);border-radius:4px}
+button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;background:var(--acc);color:#1a1200;border-color:var(--acc);font-weight:600}
+.ley{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mut);margin-top:4px}.ley i{width:12px;height:12px;border-radius:50%;flex:none}
+.ctrl{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:12px;color:var(--mut)}.ctrl button{cursor:pointer}.ctrl label{display:flex;gap:6px;align-items:center}
 @media (max-width:800px){
  #app{grid-template-columns:1fr;grid-template-rows:auto 52vh 1fr}
  header{grid-column:1}aside{border-left:0;border-top:1px solid var(--line)}
@@ -73,10 +76,11 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:0}dt{color:va
   </div>
  </div>
  <aside>
-  <div class="tabs"><button data-t="eq" class="on">Equipo</button><button data-t="pz">Piezas</button><button data-t="ds">Desarme</button></div>
+  <div class="tabs"><button data-t="eq" class="on">Equipo</button><button data-t="pz">Piezas</button><button data-t="ds">Desarme</button><button data-t="fn">Funciona</button></div>
   <div class="pg on" id="eq"></div>
   <div class="pg" id="pz"></div>
   <div class="pg" id="ds"></div>
+  <div class="pg" id="fn"></div>
  </aside>
 </div>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>

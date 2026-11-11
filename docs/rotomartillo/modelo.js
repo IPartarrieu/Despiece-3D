@@ -5,6 +5,7 @@
 // figuras y de las designaciones: rodamientos 6000, 608, 606, 627, 6806; perno ø 9/9,5 mm; arandelas 30), formas finas y colores.
 // Las direcciones de explosión llevan cada pieza por donde sale en el desarme y la dejan en tres filas como la Fig. 1.
 import * as THREE from 'three';
+import { vivoRoto } from './vivo.js';
 import { PI, V, mat, acero, goma, mesh, cil, caja, rev, tornillo, rodamiento, laminas, alambre, lienzo } from '../lib.js';
 
 const CAT = await (await fetch(new URL('data.json', import.meta.url))).json();
@@ -128,11 +129,10 @@ export function construir(cfg) {
   ], V(6, R4, 0)]]);
   add('leva', [[[tuboX(1.15, 1.9, 0.75, 0.3, ac('#a3a9b0'), YS), ...[0, 1, 2, 3].map(i => caja(0.2, 0.25, 0.25, 1.08, YS + 0.55 * Math.cos(i * PI / 2), 0.55 * Math.sin(i * PI / 2), ac('#a3a9b0'))),
     aroX(1.6, 0.76, 0.05, mat('#2a2c30'), YS)], V(2.8, R4, 0)]]);
-  const osc = new THREE.Group();
-  osc.add(tuboX(-0.35, 0.35, 1.0, 0.75, ac('#b9bec4')), tuboX(-0.3, 0.3, 0.7, 0.3, ac('#d0d3d8')));
-  osc.add(cil('y', 0.17, 0.17, 2.0, 0, 1.9, 0, brill(), 12)); // poste hacia la unión del pistón
-  osc.position.set(0.55, YS, 0); osc.rotation.z = 0.32;
-  add('oscilante', [[[osc], V(0.6, R4, 0)]]);
+  // dos items: aro interior (gira inclinado con el eje intermedio) y aro exterior con su poste (solo cabecea); ver vivo.js
+  const osc = (...o) => { const g = new THREE.Group(); g.add(...o); g.position.set(0.55, YS, 0); g.rotation.z = 0.32; return g; };
+  add('oscilante', [[[osc(tuboX(-0.3, 0.3, 0.7, 0.3, ac('#d0d3d8')))], V(0.6, R4, 0)],
+    [[osc(tuboX(-0.35, 0.35, 1.0, 0.75, ac('#b9bec4')), cil('y', 0.17, 0.17, 2.0, 0, 1.9, 0, brill(), 12))], V(0.6, R4, 0)]]); // poste hacia la unión del pistón
   add('caja_rod', [[[tuboX(0.02, 0.1, 0.6, 0.28, ac(), YS), tuboX(-0.85, -0.05, 1.15, 0.28, mat('#5a5f66', { metalness: 0.5 }), YS),
     caja(0.3, 0.6, 3.6, -0.5, YS, 0, mat('#5a5f66', { metalness: 0.5 })), rodamiento('x', 1.1, 0.4, 0.6, -0.45, YS, 0)], V(-1.5, R4, 0)]]);
   add('reten', [[[caja(0.15, 1.6, 2.4, -0.98, YS - 0.1, 0, ac('#8d939a'))], V(-3.5, R4, 0)]]);
@@ -200,5 +200,5 @@ export function construir(cfg) {
     caja(0.3, 0.5, 1.0, -12.2, -6.75, 2.2, negro()), caja(0.3, 0.5, 1.0, -12.2, -6.75, -2.2, negro())], V(-26, -4, 0)]]);
   const cord = new THREE.CatmullRomCurve3([V(-17.3, -16.5, 0), V(-18.0, -18.0, 0), V(-19.6, -20.0, 0), V(-23.0, -21.5, 0)]);
   add('cable', [[[mesh(new THREE.TubeGeometry(cord, 40, 0.4, 10), goma('#18191c')), rev([[0.45, -19.6], [0.7, -18.6], [0.85, -17.6], [0.95, -17.0]], 'y', goma('#1a1b1e'), 20, -17.3, 0, 0).rotateZ(0.35)], V(-26, -2, 0)]]);
-  return { k, parts };
+  return { k, parts, vivo: vivoRoto(parts, k, m) };
 }

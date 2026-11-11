@@ -3,6 +3,7 @@
 // La lista no trae medidas: todas las dimensiones son aproximadas a partir del dibujo y de la foto de la página 2.
 import * as THREE from 'three';
 import { YM, cuadro, piezas, alu, brillo, tornillos, perno, arandela, oring, rodamiento, corona, pinon, disco, tuercaBrida, protector, V, PI, mat, acero, mesh, cil, caja, rev, tornillo } from './comun.js';
+import { vivoM18 } from './vivo.js';
 import { goma, negro, laminas, alambre, textoEtiqueta } from '../lib.js';
 
 export function m18fuel(cfg) {
@@ -42,6 +43,7 @@ export function m18fuel(cfg) {
     rev([[1.0, -1.25], [2.05, -1.25], [2.1, -0.62], [2.6, -0.6], [2.6, -0.25], [1.0, -0.25]], 'y', mat('#a7adb4', { metalness: 0.6 }), 48),
     ...[[1.95, 1.95], [1.95, -1.95], [-1.95, 1.95], [-1.95, -1.95]].map(([x, z]) => cil('y', 0.42, 0.42, 0.3, x, -0.42, z, alu(), 16)),
     rodamiento('y', 1.6, 0.6, 1.0, 0, -0.8, 0),
+  ], V(0, -9, 0)], [[   // segundo elemento de la pieza: husillo y corona, los que giran
     rev([[0.01, -2.75], [0.76, -2.75], [0.79, -2.65], [0.79, -1.5], [0.6, -1.45], [0.6, 1.0], [0.45, 1.05], [0.45, 2.9], [0.01, 2.9]], 'y', brillo(), 32),
     ...corona(1.4, 1.95, 30),
   ], V(0, -9, 0)]]);
@@ -105,6 +107,6 @@ export function m18fuel(cfg) {
     caja(8.2, 3.8, 7.4, -23.0, YM - 5.3, 0, mat('#1d1f22', { metalness: 0.1, roughness: 0.6 })), caja(8.25, 1.0, 7.45, -23.0, YM - 6.7, 0, mat(cfg.color)),
     caja(0.08, 1.2, 4.0, -27.13, YM - 5.0, 0, mat('#555a60')),
   ], V(-9, 0, 0)]]);
-  return { k: 1, parts };
+  return { k: 1, parts, vivo: vivoM18() };
 }
 

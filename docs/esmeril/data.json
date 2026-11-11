@@ -691,5 +691,406 @@
    "precaucion": "Antes de enchufar, compruebe que el interruptor vuelve a apagado.",
    "herramienta": "—"
   }
- ]
+ ],
+ "funcionamiento": {
+  "GA4530": [
+   {
+    "titulo": "Cable e interruptor",
+    "texto": "La corriente alterna de la red entra por el cable y llega al interruptor PS10 (43). La perilla (49) mueve la palanca larga (53), que cierra el interruptor; el resorte (52) lo devuelve al soltar. Con el circuito cerrado, la corriente sigue hacia el motor. Las bolitas amarillas muestran el camino completo: cable, interruptor, bobinas del campo, carbón, inducido, otro carbón y vuelta al cable.",
+    "piezas": [
+     "cable",
+     "protcable",
+     "prensacable",
+     "interruptor",
+     "perilla",
+     "palanca",
+     "resorte52",
+     "campo",
+     "porta40",
+     "porta51",
+     "carbones",
+     "inducido"
+    ],
+    "vidrio": [
+     "campo"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se muestra en un solo sentido; en la red alterna cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "El campo se vuelve un imán",
+    "texto": "Antes de llegar al inducido, la corriente recorre las dos bobinas del campo (estator, 1), enrolladas sobre un núcleo de chapas. Cada bobina crea un flujo magnético y los dos suman: queda un polo norte y un polo sur enfrentados, con el inducido en medio. Las líneas azules cruzan el inducido y vuelven por el núcleo. Como las bobinas del campo están en serie con el inducido, el campo se forma con la misma corriente que alimenta al inducido.",
+    "piezas": [
+     "campo",
+     "inducido"
+    ],
+    "vidrio": [
+     "campo"
+    ],
+    "foco": [
+     "campo"
+    ],
+    "capas": [
+     "corriente",
+     "campo"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Líneas de campo magnético (de norte a sur a través del inducido)"
+     ],
+     [
+      "#ffc83d",
+      "Corriente por las bobinas del campo"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Carbones y colector",
+    "texto": "Los dos carbones (41), empujados por un resorte dentro de su portaescobillas (40 y 51), rozan el colector, el cilindro de cobre del extremo del inducido. El colector está dividido en delgas aisladas entre sí, y cada delga va a una bobina del inducido. Así la corriente entra al inducido por un carbón y sale por el otro. El roce desgasta los carbones: son la pieza de desgaste del motor.",
+    "piezas": [
+     "carbones",
+     "porta40",
+     "porta51",
+     "inducido"
+    ],
+    "foco": [
+     "carbones"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente: entra por el carbón superior y sale por el inferior"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "La fuerza que hace girar el inducido",
+    "texto": "Un conductor con corriente dentro de un campo magnético recibe una fuerza F = B · I · L, perpendicular al campo y a la corriente. Bajo el polo norte la corriente del inducido va hacia el cabezal y bajo el polo sur va hacia la tapa trasera, de modo que las dos fuerzas apuntan en sentidos opuestos y forman un par que gira el inducido (flecha blanca).",
+    "piezas": [
+     "campo",
+     "inducido"
+    ],
+    "vidrio": [
+     "campo"
+    ],
+    "capas": [
+     "campo",
+     "conductores",
+     "fuerza",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ff9f43",
+      "Corriente del inducido hacia el cabezal"
+     ],
+     [
+      "#4dd0ff",
+      "Corriente del inducido hacia la tapa trasera"
+     ],
+     [
+      "#ff5470",
+      "Fuerza sobre los conductores"
+     ],
+     [
+      "#6aa9ff",
+      "Campo magnético"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El colector invierte la corriente",
+    "texto": "Cuando una bobina del inducido pasa por la línea de los carbones, el colector invierte el sentido de su corriente: fíjate cómo cada flecha cambia de color al cruzar la línea del carbón. Así el conductor que pasa del polo norte al sur cambia de corriente justo cuando cambia de polo, y la fuerza sigue empujando hacia el mismo lado. Sin colector el inducido se detendría tras media vuelta. El mismo principio explica por qué este motor funciona con corriente alterna: al invertirse la red cambian a la vez el campo y la corriente del inducido, y el par conserva el sentido.",
+    "piezas": [
+     "inducido",
+     "carbones",
+     "porta40",
+     "porta51",
+     "campo"
+    ],
+    "vidrio": [
+     "campo"
+    ],
+    "foco": [
+     "carbones"
+    ],
+    "capas": [
+     "conductores",
+     "campo",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ff9f43",
+      "Corriente hacia el cabezal"
+     ],
+     [
+      "#4dd0ff",
+      "Corriente hacia la tapa trasera (se invierte al pasar por los carbones)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Ventilador",
+    "texto": "El ventilador (7) va en el mismo eje del inducido. Aspira aire por la tapa trasera, lo pasa sobre el colector, el inducido y el campo, y lo expulsa por las rendijas de la carcasa. Sin ese aire el bobinado se recalienta y se quema; por eso no hay que tapar la rejilla trasera ni dejar que se llene de polvo. La ruta del aire es la típica de estas máquinas: el despiece no la dibuja.",
+    "piezas": [
+     "ventilador",
+     "inducido",
+     "campo",
+     "tapa",
+     "carcasa"
+    ],
+    "vidrio": [
+     "campo",
+     "tapa",
+     "carcasa"
+    ],
+    "foco": [
+     "ventilador"
+    ],
+    "capas": [
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#7dd3fc",
+      "Aire de enfriamiento"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Piñón y corona: reducción",
+    "texto": "El extremo del eje del inducido termina en un piñón cónico espiral de 10 dientes (11) que engrana con una corona de 37 dientes (23), fijada al husillo. La relación es 37/10 = 3,7: el husillo gira 3,7 veces más lento que el inducido y con más fuerza, y el giro se desvía 90° hacia abajo. Con las 11.000 rpm que indica el manual en el husillo, el inducido gira a unas 40.700 rpm (cálculo, no dato del fabricante).",
+    "piezas": [
+     "pinon",
+     "corona",
+     "husillo",
+     "inducido",
+     "tuercaM6",
+     "rod6201",
+     "rod696",
+     "rod629",
+     "caja"
+    ],
+    "vidrio": [
+     "caja"
+    ],
+    "foco": [
+     "pinon",
+     "corona"
+    ],
+    "capas": [],
+    "leyenda": [],
+    "giro": true
+   },
+   {
+    "titulo": "Husillo, brida y disco",
+    "texto": "El husillo (32) sale por la caja de engranajes. La brida interior (A06) y la tuerca (A07) aprietan el disco (A04) y lo hacen girar con el husillo, a las 11.000 rpm del manual. Para apretar o aflojar la tuerca se traba el husillo con el botón (13), que entra en un agujero del husillo.",
+    "piezas": [
+     "husillo",
+     "corona",
+     "brida",
+     "tuerca",
+     "disco",
+     "boton",
+     "protector",
+     "caja"
+    ],
+    "vidrio": [
+     "caja"
+    ],
+    "foco": [
+     "disco"
+    ],
+    "capas": [],
+    "leyenda": [],
+    "giro": true
+   }
+  ],
+  "M18 FUEL 2880-20": [
+   {
+    "titulo": "Batería e interruptor",
+    "texto": "La batería M18 entrega corriente continua a los terminales del conjunto electrónico (54). Al apretar la paleta (60) se activa el interruptor que va en ese conjunto; el resorte (43) devuelve la paleta al soltarla y la traba (lock-off) impide el arranque accidental. Aquí no hay colector ni carbones: la corriente pasa primero por la placa de potencia y esta la reparte a los devanados del estator.",
+    "piezas": [
+     "bateria",
+     "paleta60",
+     "resorte43",
+     "electronica54"
+    ],
+    "vidrio": [
+     "electronica54"
+    ],
+    "foco": [
+     "paleta60"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente continua de la batería hacia la electrónica y los devanados"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Rotor de imanes",
+    "texto": "El rotor (31) lleva imanes permanentes, así que no necesita corriente para magnetizarse. Eso elimina el colector y los carbones: es lo que distingue al motor sin escobillas. Todo el trabajo de conmutar lo hace la electrónica. En la animación se dibujan 4 imanes (rojo: polo norte, azul: polo sur); el número real de polos no figura en la lista de piezas.",
+    "piezas": [
+     "rotor31",
+     "electronica54"
+    ],
+    "vidrio": [
+     "electronica54"
+    ],
+    "foco": [
+     "rotor31"
+    ],
+    "capas": [
+     "hall"
+    ],
+    "leyenda": [
+     [
+      "#ff6b6b",
+      "Imán con su polo norte hacia afuera"
+     ],
+     [
+      "#5aa0ff",
+      "Imán con su polo sur hacia afuera"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Sensores Hall",
+    "texto": "La placa Hall del conjunto electrónico lleva sensores que detectan el paso de los imanes y avisan a la electrónica en qué posición está el rotor. Cada sensor se enciende con el color del polo que pasa frente a él. Con esa información la electrónica sabe qué bobinas energizar en cada instante.",
+    "piezas": [
+     "rotor31",
+     "electronica54"
+    ],
+    "vidrio": [
+     "electronica54"
+    ],
+    "foco": [
+     "electronica54"
+    ],
+    "capas": [
+     "hall"
+    ],
+    "leyenda": [
+     [
+      "#ff6b6b",
+      "Sensor frente a un polo norte"
+     ],
+     [
+      "#5aa0ff",
+      "Sensor frente a un polo sur"
+     ],
+     [
+      "#59616b",
+      "Sin imán cerca"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Campo giratorio",
+    "texto": "La placa de potencia energiza en secuencia pares de dientes del estator. El par activo crea un norte y un sur que atraen a los imanes del rotor; cuando el rotor se acerca, la electrónica pasa al par siguiente y el campo \"se adelanta\" otra vez. Así el rotor sigue un campo que gira, sin contacto eléctrico. Cambiando la corriente la electrónica controla velocidad y par. El estator se dibuja con 6 dientes como esquema: la lista de piezas no da su número.",
+    "piezas": [
+     "rotor31",
+     "electronica54"
+    ],
+    "vidrio": [
+     "electronica54"
+    ],
+    "foco": [
+     "electronica54"
+    ],
+    "capas": [
+     "fase"
+    ],
+    "leyenda": [
+     [
+      "#ff6b6b",
+      "Diente energizado como norte"
+     ],
+     [
+      "#5aa0ff",
+      "Diente energizado como sur"
+     ],
+     [
+      "#ffffff",
+      "Dirección del campo del estator"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Piñón y corona: reducción",
+    "texto": "El piñón cónico (29, 11 dientes en el modelo) engrana con la corona del conjunto cubo (53, 30 dientes en el modelo). La relación es de unas 2,7 a 1: el husillo gira más lento y con más fuerza que el rotor, y el giro se desvía 90° hacia abajo. Con las 8.500 rpm de la página del producto en el husillo, el rotor gira a unas 23.200 rpm (cálculo con los dientes del modelo, que son aproximados).",
+    "piezas": [
+     "rotor31",
+     "pinon29",
+     "tuerca28",
+     "cubo53",
+     "caja56"
+    ],
+    "vidrio": [
+     "caja56"
+    ],
+    "foco": [
+     "pinon29"
+    ],
+    "capas": [],
+    "leyenda": [],
+    "giro": true
+   },
+   {
+    "titulo": "Husillo y disco",
+    "texto": "El husillo del conjunto cubo (53) lleva la brida de apoyo (17) y la tuerca de brida (18), que aprietan el disco y lo hacen girar con el husillo. El botón de bloqueo de la caja (56) traba el husillo para cambiar el disco.",
+    "piezas": [
+     "cubo53",
+     "brida17",
+     "tuerca18",
+     "disco",
+     "protector48",
+     "caja56"
+    ],
+    "vidrio": [
+     "caja56"
+    ],
+    "foco": [
+     "disco"
+    ],
+    "capas": [],
+    "leyenda": [],
+    "giro": true
+   }
+  ]
+ }
 }

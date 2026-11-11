@@ -32,13 +32,16 @@ addEventListener('resize', ajustar); ajustar();
 
 // ---------- estado ----------
 let herr = HERR.find(h => h.id === q.get('herr')) || esmeril, DATA;
-const st = { marca: 'Genérica', modelo: null, cfg: {}, exp: 0, corte: false, xray: false, aislar: false, sel: null, oculta: new Set(), paso: -1 };
+const st = { marca: 'Genérica', modelo: null, cfg: {}, exp: 0, corte: false, xray: false, aislar: false, sel: null, oculta: new Set(), paso: -1, func: false, fp: 0, play: true, vel: 1, tenue: true };
 let modelo = null, grupo = null, hover = null;
 const monto = {};       // fracción de explosión actual por pieza
+const anim = { t: 0, ang: 0 };   // reloj del modo funcionamiento (t: flujos; ang: giro de referencia)
+let giroDe = {}, moverDe = {};   // id de pieza -> giros (modelo.vivo.giros) y vaivenes (modelo.vivo.mover) que la mueven
+const qg = new THREE.Quaternion(), dg = new THREE.Vector3();
 
 async function elegirHerramienta(h) {
   herr = h; DATA = datos[h.id] ??= await (await fetch(h.datos)).json();
-  Object.assign(st, { marca: '', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1 }); st.oculta.clear();
+  Object.assign(st, { marca: '', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1, func: false, fp: 0 }); st.oculta.clear();
   cambiarMarca(DATA.modelos[0].marca);
   for (const k in monto) delete monto[k];
   vistaInicial(); reconstruir();
@@ -49,6 +52,8 @@ async function elegirHerramienta(h) {
 const pasosDe = () => DATA.desarmados?.[st.modelo?.modelo] || DATA.desarmado;
 const quitaDe = () => (typeof herr.QUITA === 'function' ? herr.QUITA(st.modelo) : herr.QUITA);
 const focoDe = () => (typeof herr.FOCO === 'function' ? herr.FOCO(st.modelo) : herr.FOCO);
+const etapasDe = () => DATA.funcionamiento?.[st.modelo?.modelo];
+const etapaAct = () => (st.func ? etapasDe()?.[st.fp] : null);
 const fichaPieza = nombre => DATA.piezasPorModelo?.[st.modelo?.modelo]?.[nombre] || DATA.piezas[nombre];
 function aplicarModelo(m) { st.modelo = m; if (m) Object.assign(st.cfg, herr.deModelo(m)); }
 function cambiarMarca(marca) { // una marca trae solo sus modelos: se parte por el primero
@@ -63,6 +68,11 @@ function reconstruir() {
   modelo = herr.construir({ ...st.cfg, estilo, m: st.modelo, color: estilo.color || herr.color[st.marca] || herr.color.Genérica, etiqueta: herr.etiqueta(st.marca, st.modelo) });
   grupo = new THREE.Group(); scene.add(grupo);
   for (const p of Object.values(modelo.parts)) { monto[p.id] ??= 0; p.items.forEach(i => grupo.add(i.obj)); }
+  giroDe = {}; moverDe = {};
+  for (const [lista, mapa] of [[modelo.vivo?.giros, giroDe], [modelo.vivo?.mover, moverDe]]) for (const g of lista || []) for (const s of g.ids) { const [id, i] = s.split(':'); (mapa[id] ??= []).push({ g, i: i == null ? null : +i }); }
+  for (const c of Object.values(modelo.vivo?.capas || {})) { c.visible = false; grupo.add(c); }
+  if (st.func && !etapasDe()) st.func = false;
+  st.fp = Math.min(st.fp, (etapasDe()?.length || 1) - 1);
   if (st.sel && !modelo.parts[st.sel]) st.sel = null;
   aparienciaPiezas(); ui();
 }
@@ -70,10 +80,12 @@ function reconstruir() {
 // ---------- apariencia: rayos X, aislar, selección, hover, foco de paso ----------
 function aparienciaPiezas() {
   const pasoN = st.paso >= 0 ? pasosDe()[st.paso].paso : 0;
-  const foco = new Set(st.paso >= 0 ? (focoDe()[pasoN] || quitaDe()[pasoN] || []) : []);
+  const et = etapaAct(), activas = et?.piezas && new Set(et.piezas), vidrio = new Set(et?.vidrio || []);
+  const foco = new Set(st.paso >= 0 ? (focoDe()[pasoN] || quitaDe()[pasoN] || []) : et?.foco || []);
   for (const p of Object.values(modelo.parts)) {
     let op = 1;
     if (st.xray && p.shell) op = 0.22;
+    if (activas && st.tenue) op = activas.has(p.id) ? (vidrio.has(p.id) ? 0.3 : 1) : p.shell ? 0.05 : 0.1;
     if (st.aislar && st.sel && p.id !== st.sel) op = Math.min(op, 0.12);
     const brillo = p.id === st.sel ? [0x3b82f6, 0.55] : foco.has(p.id) ? [0xf5a524, 0.5] : p.id === hover ? [0x3b82f6, 0.25] : [0, 0];
     for (const m of p.mats) { m.transparent = op < 1; m.opacity = op; if (m.emissive) { m.depthWrite = op >= 1; m.emissive.setHex(brillo[0]); m.emissiveIntensity = brillo[1]; } }
@@ -82,7 +94,7 @@ function aparienciaPiezas() {
 }
 
 // ---------- interfaz ----------
-function ui() { uiEquipo(); uiPiezas(); uiDesarme(); }
+function ui() { uiEquipo(); uiPiezas(); uiDesarme(); uiFuncion(); }
 const seg = (id, ops, val) => `<div class="seg" id="${id}">${ops.map(([v, t, s]) => `<button data-v="${v}" class="${String(v) === String(val) ? 'on' : ''}">${t}${s ? `<small>${s}</small>` : ''}</button>`).join('')}</div>`;
 
 function uiEquipo() {
@@ -133,9 +145,39 @@ function uiDesarme() {
    <h3>Todos los pasos</h3>${P.map((x, j) => `<div class="fila ${j === i ? 'sel' : ''}" data-p="${j}"><span>${x.paso}. ${x.titulo}</span></div>`).join('')}`;
   $('#ant').onclick = () => irPaso(i - 1); $('#sig').onclick = () => irPaso(i + 1); $('#fin').onclick = () => irPaso(-1);
   $('#ds').onclick = e => { const f = e.target.closest('[data-p]'); if (f) irPaso(+f.dataset.p); };
-  $('#exp').disabled = i >= 0;
+  $('#exp').disabled = i >= 0 || st.func;
 }
-function irPaso(i) { st.paso = i; aparienciaPiezas(); uiDesarme(); }
+function irPaso(i) { if (i >= 0 && st.func) { st.func = false; uiFuncion(); } st.paso = i; aparienciaPiezas(); uiDesarme(); }
+
+// ---------- funcionamiento: etapas con capas animadas (corriente, campo, fuerza, giro de las piezas) ----------
+function setFunc(on) {
+  st.func = on;
+  if (on) { st.paso = -1; st.exp = 0; $('#exp').value = 0; }
+  aparienciaPiezas(); uiFuncion(); uiDesarme();
+}
+function irEtapa(i) { st.fp = Math.max(0, Math.min(i, etapasDe().length - 1)); aparienciaPiezas(); uiFuncion(); }
+function uiFuncion() {
+  const E = etapasDe(), e = E?.[st.fp], p = $('#fn');
+  if (!E) { p.innerHTML = '<p class="nota">Este modelo aún no tiene la animación de funcionamiento.</p>'; return; }
+  p.innerHTML = `<button class="b grande" id="fnOn">${st.func ? '■ Salir del funcionamiento' : '▶ Ver cómo funciona'}</button>` + (st.func ? `
+   <div class="nav"><button class="b" id="fnAnt" ${st.fp <= 0 ? 'disabled' : ''}>◀ Anterior</button><button class="b" id="fnSig" ${st.fp >= E.length - 1 ? 'disabled' : ''}>Siguiente ▶</button></div>
+   <div class="prog"><i style="width:${(st.fp + 1) / E.length * 100}%"></i></div>
+   <div class="paso"><b>Etapa ${st.fp + 1} de ${E.length} · ${e.titulo}</b><p>${e.texto}</p>
+    ${(e.leyenda || []).map(([c, t]) => `<div class="ley"><i style="background:${c}"></i>${t}</div>`).join('')}</div>
+   <div class="ctrl"><button class="b" id="fnPlay">${st.play ? '❚❚ Pausa' : '▶ Seguir'}</button><label>Velocidad <input id="fnVel" type="range" min="0.2" max="2.5" step="0.1" value="${st.vel}"></label></div>
+   <label class="ctrl"><input id="fnTen" type="checkbox" ${st.tenue ? 'checked' : ''}> Atenuar las piezas que no intervienen</label>
+   <p class="nota">La velocidad de giro es solo ilustrativa. Arrastra para rotar el modelo mientras corre la animación.</p>
+   <h3>Todas las etapas</h3>${E.map((x, j) => `<div class="fila ${j === st.fp ? 'sel' : ''}" data-e="${j}"><span>${j + 1}. ${x.titulo}</span></div>`).join('')}`
+   : `<p class="nota">Recorre, etapa por etapa, cómo funciona el equipo: por dónde pasa la corriente, cómo se forma el campo magnético, qué fuerza mueve el motor y cómo llega el giro al disco. Las piezas que intervienen se destacan y el resto queda atenuado.</p>
+      <h3>Etapas</h3>${E.map((x, j) => `<div class="fila" data-e="${j}"><span>${j + 1}. ${x.titulo}</span></div>`).join('')}`);
+  $('#fnOn').onclick = () => setFunc(!st.func);
+  p.onclick = ev => { const f = ev.target.closest('[data-e]'); if (f) { if (!st.func) setFunc(true); irEtapa(+f.dataset.e); } };
+  if (!st.func) return;
+  $('#fnAnt').onclick = () => irEtapa(st.fp - 1); $('#fnSig').onclick = () => irEtapa(st.fp + 1);
+  $('#fnPlay').onclick = ev => { st.play = !st.play; ev.target.textContent = st.play ? '❚❚ Pausa' : '▶ Seguir'; };
+  $('#fnVel').oninput = ev => { st.vel = +ev.target.value; };
+  $('#fnTen').onchange = ev => { st.tenue = ev.target.checked; aparienciaPiezas(); };
+}
 
 function seleccionar(id) {
   st.sel = st.sel === id ? null : id;
@@ -196,13 +238,24 @@ function quitadas() { // piezas desmontadas hasta el paso actual
   for (let j = 0; j <= st.paso; j++) (Q[P[j].paso] || []).forEach(x => s.add(x));
   return s;
 }
+let ultimo = performance.now();
 function bucle() {
+  const ahora = performance.now(), dt = Math.min((ahora - ultimo) / 1000, 0.1); ultimo = ahora;
+  const et = etapaAct();
+  if (st.func && st.play) { anim.t += dt * st.vel; if (et?.giro) anim.ang += dt * st.vel * 4; }
   const qs = st.paso >= 0 ? quitadas() : null;
   for (const p of Object.values(modelo.parts)) {
-    const meta = qs ? (qs.has(p.id) ? 1 : 0) : st.exp;
+    const meta = st.func ? 0 : qs ? (qs.has(p.id) ? 1 : 0) : st.exp;
     monto[p.id] += (meta - monto[p.id]) * 0.12;
-    p.items.forEach(i => { i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id); });
+    p.items.forEach((i, j) => {
+      i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id);
+      const G = st.func && giroDe[p.id]?.find(x => x.i == null || x.i === j);
+      if (G) { qg.setFromAxisAngle(G.g.e, anim.ang * G.g.k); dg.copy(G.g.c).applyQuaternion(qg).negate().add(G.g.c); i.obj.quaternion.copy(qg); i.obj.position.add(dg); }
+      else i.obj.quaternion.identity();
+      if (st.func) for (const M of moverDe[p.id] || []) if (M.i == null || M.i === j) i.obj.position.addScaledVector(M.g.eje, M.g.f(anim));
+    });
   }
+  for (const [n, c] of Object.entries(modelo.vivo?.capas || {})) { c.visible = !!et?.capas?.includes(n); if (c.visible) c.userData.tick?.(anim); }
   if (tgtGoal) { ctl.target.lerp(tgtGoal, 0.1); if (ctl.target.distanceTo(tgtGoal) < 0.02) tgtGoal = null; }
   ctl.update(); luzCam.position.copy(cam.position); renderer.render(scene, cam);
   requestAnimationFrame(bucle);
@@ -215,9 +268,13 @@ for (const o of herr.opciones) if (q.has(o.k)) st.cfg[o.k] = typeof herr.cfg0[o.
 if (q.get('modelo')) { const m = DATA.modelos.find(x => x.marca === st.marca && x.modelo === q.get('modelo')); if (m) aplicarModelo(m); }
 st.exp = +(q.get('exp') || 0); st.corte = q.has('corte'); st.xray = q.has('xray');
 if (q.get('paso')) st.paso = +q.get('paso') - 1;
+if (q.has('func') && etapasDe()) { st.func = true; st.paso = -1; st.fp = (+q.get('etapa') || 1) - 1; st.exp = 0; }
+if (q.has('pausa')) st.play = false;
+anim.t = +q.get('t') || 0; anim.ang = +q.get('ang') || 0;
 if (q.get('sel')) st.sel = q.get('sel');
 $('#exp').value = st.exp; $('#corte').checked = st.corte; $('#xray').checked = st.xray;
 if (q.get('cam')) { const c = q.get('cam').split(',').map(Number); cam.position.set(c[0], c[1], c[2]); ctl.target.set(c[3], c[4], c[5]); }
 reconstruir();
+if (st.func) verTab('fn');
 if (q.has('rapido')) for (const id in monto) monto[id] = 1;
 bucle();

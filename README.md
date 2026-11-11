@@ -14,6 +14,7 @@ Los modelos referenciales usan la arquitectura de un modelo documentado y lo dic
 
 - Rotar, acercar y mover con el mouse; clic en una pieza para ver su ficha.
 - Explosión, corte, rayos X y aislar pieza; desarme paso a paso por modelo.
-- Parámetros en la URL: `?herr=demoledor&modelo=D25940K`, `?marca=Makita`, `exp=1`, `corte`, `xray`, `paso=12`, `sel=<id>`, `cam=x,y,z,tx,ty,tz`.
+- Pestaña «Funciona»: el equipo en marcha, etapa por etapa (por dónde pasa la corriente, cómo se forma el campo magnético, qué fuerza mueve el motor, cómo llega el giro al disco). Las piezas que intervienen se destacan, el resto se atenúa, y se pueden pausar y ajustar la velocidad. Las velocidades de la animación son ilustrativas.
+- Parámetros en la URL: `?herr=demoledor&modelo=D25940K`, `?marca=Makita`, `exp=1`, `corte`, `xray`, `paso=12`, `sel=<id>`, `cam=x,y,z,tx,ty,tz`, `func=1&etapa=3` (modo funcionamiento), `pausa`, `ang=`, `t=`.
 
-Estructura: cada herramienta vive en `docs/<herramienta>/` (`modelo.js`, `data.json`, `index.js`) y se registra en `app.js`; los helpers 3D comunes están en `lib.js`. Probar en local: `cd docs && python3 -m http.server`. Los modelos son procedurales, no un CAD de fabricante.
+Estructura: cada herramienta vive en `docs/<herramienta>/` (`modelo.js`, `data.json`, `index.js`) y se registra en `app.js`; el modo funcionamiento usa las etapas de `data.json` (`funcionamiento`) y las capas animadas del modelo (`vivo`: `capas`, `giros`, `mover`; helpers en `vivo.js`); los helpers 3D comunes están en `lib.js`. Probar en local: `cd docs && python3 -m http.server`. Los modelos son procedurales, no un CAD de fabricante.

@@ -5,6 +5,7 @@
 // en que salen. APROXIMADO: las medidas. El documento no trae medidas externas: la escala sale de la foto de la pág. 1 y de las
 // juntas tóricas que sí tienen medida (brida 58 x 2 mm, husillo 38 x 2,5 mm, buje 43 x 5,5 mm); el D25940K se escala por peso.
 import * as THREE from 'three';
+import { vivoDemoledor } from './vivo.js';
 import { PI, V, mat, acero, cobre, goma, mesh, cil, caja, rev, tornillo, laminas, alambre, lienzo, rr } from '../lib.js';
 
 const XM = -4.4, XC = 3.7, XG = -0.75; // ejes verticales: inducido, cigüeñal, engranaje doble
@@ -114,8 +115,9 @@ export function construir(cfg) {
   add('junta79', 'Junta tórica de la carcasa principal', G2, [[[aroX(9.7, 3.4, 0.16, tor())], V(5, 0, 0)]]);
   add('antivibracion', 'Componentes antivibración (contrapeso, resortes, guías)', G2, [[[
     tuboX(11.2, 11.7, 4.3, 3.0, blanco()), resorteX(11.7, 14.4, 3.65, 3, 0.2, acero('#7d838b')),
-    tuboX(14.4, 18.0, 4.2, 3.05, laton()), tuboX(14.2, 14.6, 3.05, 2.75, blanco()), tuboX(17.8, 18.2, 3.05, 2.75, blanco()),
     resorteX(18.0, 20.4, 3.55, 3, 0.2, acero('#7d838b')), tuboX(20.4, 20.9, 4.0, 2.9, blanco()),
+  ], V(12, 10.5, 0)], [[ // item 1: contrapeso con sus guías, lo único que oscila en el modo funcionamiento
+    tuboX(14.4, 18.0, 4.2, 3.05, laton()), tuboX(14.2, 14.6, 3.05, 2.75, blanco()), tuboX(17.8, 18.2, 3.05, 2.75, blanco()),
   ], V(12, 10.5, 0)]]);
   add('cilindro', 'Cilindro', G2, [[[
     rev([[2.15, 8.2], [3.0, 8.2], [3.0, 11.0], [2.65, 11.4], [2.65, 22.2], [2.15, 22.2], [2.15, 8.2]], 'x', acero('#c5c9ce', { metalness: 0.75 }), 40),
@@ -212,5 +214,5 @@ export function construir(cfg) {
     caja(1.8, 0.5, 2.6, -10.9, -9.2, 0, mat('#3d3f44')),
   ], V(-6, -6, 0)]]);
 
-  return { k, parts };
+  return { k, parts, vivo: vivoDemoledor(k) };
 }

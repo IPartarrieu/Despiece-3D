@@ -1234,5 +1234,565 @@
     "herramienta": "Pinzas de anillos, prensa"
    }
   ]
+ },
+ "funcionamiento": {
+  "D25900K": [
+   {
+    "titulo": "Cable, gatillo e interruptor",
+    "texto": "La corriente de la red entra por el cable, que baja por el mango en D, y llega al interruptor (22). Al apretar el gatillo (13), la varilla actuadora (14) cierra el interruptor; el manual pone la varilla suelta o rota como causa de que el equipo no parta. Del interruptor la corriente pasa al módulo electrónico (54), dentro de la tapa del motor, y de ahí al campo y a las escobillas. El manual no trae el esquema eléctrico: el recorrido de la línea amarilla es aproximado.",
+    "piezas": [
+     "cable",
+     "mango",
+     "tapa_mango",
+     "gatillo",
+     "interruptor",
+     "electronica",
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "mango",
+     "tapa_mango",
+     "estator"
+    ],
+    "foco": [
+     "gatillo",
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red alterna cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor de escobillas",
+    "texto": "El motor es universal, de escobillas, y va vertical: su eje queda en ángulo recto con el cincel. La corriente recorre el campo del estator (2) y, por las escobillas (8), entra al colector del inducido (1). La fuerza entre el campo y la corriente de las bobinas del inducido lo hace girar, apoyado en el rodamiento superior (5) y el inferior (35). Las escobillas se gastan con el roce: el manual las revisa cada 250 a 300 horas. Prueba en vacío a velocidad máxima: 3,2 a 5,2 A en 230/240 V; si está fuera de rango, revisar inducido, campo o electrónica.",
+    "piezas": [
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido",
+     "rodamiento5",
+     "rodamiento_inducido",
+     "ventilador"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente por el campo, las escobillas y el inducido (recorrido aproximado)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido (el manual no lo indica)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Control electrónico de velocidad",
+    "texto": "El módulo electrónico (54) va atornillado dentro de la tapa superior (57). Regula la velocidad del motor: según la tabla de fallas, si al ventilador (10) le falta su anillo magnético o el ventilador queda suelto en el eje, el motor gira demasiado rápido. O sea, la electrónica mide la velocidad a través de ese anillo, por eso el tornillo del ventilador (11) debe quedar bien apretado. Dónde está el sensor y cómo regula el módulo no está documentado; el dibujo es ilustrativo. El ventilador también mueve el aire que enfría el motor (recorrido no documentado).",
+    "piezas": [
+     "electronica",
+     "tapa_motor",
+     "ventilador",
+     "inducido",
+     "portaescobillas"
+    ],
+    "vidrio": [
+     "tapa_motor"
+    ],
+    "foco": [
+     "electronica",
+     "ventilador"
+    ],
+    "capas": [
+     "sensor",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Imanes del anillo (polos N y S, cantidad ilustrativa)"
+     ],
+     [
+      "#4ade80",
+      "Lectura de velocidad por el módulo (ubicación aproximada)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Reducción por engranajes",
+    "texto": "El extremo inferior del inducido es un piñón estriado que engrana con el engranaje doble (42), montado en dos rodamientos (41). El piñón chico del engranaje doble mueve el engranaje del cigüeñal (43), que va roscado al cigüeñal a 14 Nm. Son dos etapas de reducción: el cigüeñal gira mucho más lento que el motor y con más fuerza. La caja lleva 39 g de grasa y la cierra la tapa inferior (30). El manual no da los dientes ni la relación; la animación usa la del dibujo, cerca de 1:13 (aproximada).",
+    "piezas": [
+     "inducido",
+     "engranaje_doble",
+     "engranaje_cig",
+     "cigueñal",
+     "tapa_engranajes",
+     "tapa21",
+     "rodamiento_inducido",
+     "carcasa_principal"
+    ],
+    "vidrio": [
+     "tapa_engranajes",
+     "carcasa_principal"
+    ],
+    "foco": [
+     "engranaje_doble",
+     "engranaje_cig"
+    ],
+    "capas": [
+     "reduccion"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Sentido de giro de cada engranaje: cada par que engrana invierte el giro"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Cigüeñal y biela",
+    "texto": "El cigüeñal (45) termina arriba en un pasador excéntrico. La biela (38) une ese pasador con el pasador (47) del pistón (51), así el giro se vuelve un ida y vuelta del pistón dentro del cilindro (75): una vuelta del cigüeñal, un golpe. El cárter lleva 39 g de grasa y el pistón 5 g; la tapa (53) lo cierra con su junta tórica. Aproximado: la biela del dibujo se desplaza sin inclinarse y la carrera sale del dibujo, no del manual.",
+    "piezas": [
+     "cigueñal",
+     "engranaje_cig",
+     "biela",
+     "piston",
+     "cilindro",
+     "tapa_sa",
+     "carcasa_principal"
+    ],
+    "vidrio": [
+     "cilindro",
+     "carcasa_principal"
+    ],
+    "foco": [
+     "biela",
+     "piston"
+    ],
+    "capas": [
+     "biela"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Recorrido del pasador del cigüeñal"
+     ],
+     [
+      "#ff9f43",
+      "Sentido en que se mueve el pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire",
+    "texto": "El pistón nunca toca al martillo (76). Entre los dos queda aire encerrado en el cilindro, sellado por las juntas tóricas del pistón, del martillo y del cilindro. Cuando el pistón avanza comprime ese aire y el colchón lanza al martillo hacia adelante; cuando retrocede, el vacío que deja tira del martillo de vuelta. Por eso la primera causa de falta de potencia en la tabla de fallas son las juntas gastadas del pistón y del cilindro: si el aire se escapa, el martillo pega débil. Esas juntas se cambian en cada cambio de escobillas, con 10 g de grasa entre martillo y cilindro. El cilindro tiene agujeros (al armar sale grasa por ellos); su función no está documentada. El desfase entre pistón y martillo de la animación es aproximado.",
+    "piezas": [
+     "piston",
+     "biela",
+     "cilindro",
+     "martillo",
+     "juntas_cil"
+    ],
+    "vidrio": [
+     "cilindro"
+    ],
+    "foco": [
+     "piston",
+     "martillo"
+    ],
+    "capas": [
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Aire comprimido: empuja el martillo hacia adelante"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío: tira del martillo hacia atrás"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Golpe: martillo, pieza de golpeo y herramienta",
+    "texto": "Al final de su vuelo el martillo golpea la pieza de golpeo (67), una pieza intermedia que pasa el golpe al extremo de la herramienta. La herramienta no queda fija: se desliza dentro del husillo (107), retenida por las piezas de bloqueo que entran en sus ranuras, y vuelve atrás cuando el operador apoya el equipo. El buje con amortiguador (68, 69, 70) guía la pieza de golpeo y amortigua su retorno. Ningún engranaje llega al husillo: el equipo solo golpea, no gira la herramienta. El cincel es de referencia (no viene en el despiece) y el avance de la pieza de golpeo está exagerado.",
+    "piezas": [
+     "martillo",
+     "cilindro",
+     "pieza_golpeo",
+     "buje_golpeo",
+     "rodamiento_golpeo",
+     "buje72",
+     "husillo",
+     "bloqueo"
+    ],
+    "vidrio": [
+     "cilindro",
+     "husillo"
+    ],
+    "foco": [
+     "martillo",
+     "pieza_golpeo"
+    ],
+    "capas": [
+     "impacto",
+     "util"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Golpe del martillo, que sigue por la pieza de golpeo hasta la herramienta"
+     ],
+     [
+      "#7f8b98",
+      "Cincel de referencia"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Unidad antivibración",
+    "texto": "Delante del cárter, alrededor del cilindro, va un contrapeso de bronce (83) entre dos resortes (81), con sus guías (80, 82 y 86), dentro del alojamiento delantero (78). Cada golpe sacude la carcasa; el contrapeso, colgado de los resortes, oscila en sentido contrario y se lleva parte de esa vibración antes de que llegue al mango. El manual no da la masa ni la rigidez de los resortes. Los resortes van precargados: al soltar los 4 tornillos (65) empujan el alojamiento hacia afuera (advertencia del manual). En la animación el movimiento del contrapeso está exagerado y su desfase es ilustrativo.",
+    "piezas": [
+     "antivibracion",
+     "carcasa_delantera",
+     "cubierta",
+     "tornillos65",
+     "cilindro",
+     "carcasa_principal",
+     "mango",
+     "tapa_mango"
+    ],
+    "vidrio": [
+     "carcasa_delantera",
+     "cubierta",
+     "carcasa_principal",
+     "mango",
+     "tapa_mango"
+    ],
+    "foco": [
+     "antivibracion"
+    ],
+    "capas": [
+     "antivib"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Movimiento del contrapeso"
+     ],
+     [
+      "#ff5470",
+      "Sacudida de la carcasa, en sentido contrario"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "D25940K": [
+   {
+    "titulo": "Cable, gatillo e interruptor",
+    "texto": "La corriente de la red entra por el cable, que baja por el mango en D, y llega al interruptor (22). Al apretar el gatillo (13), la varilla actuadora (14) cierra el interruptor; el manual pone la varilla suelta o rota como causa de que el equipo no parta. Del interruptor la corriente pasa al módulo electrónico (54), dentro de la tapa del motor, y de ahí al campo y a las escobillas. El manual no trae el esquema eléctrico: el recorrido de la línea amarilla es aproximado.",
+    "piezas": [
+     "cable",
+     "mango",
+     "tapa_mango",
+     "gatillo",
+     "interruptor",
+     "electronica",
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "mango",
+     "tapa_mango",
+     "estator"
+    ],
+    "foco": [
+     "gatillo",
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red alterna cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor de escobillas",
+    "texto": "El motor es universal, de escobillas, y va vertical: su eje queda en ángulo recto con el cincel. La corriente recorre el campo del estator (2) y, por las escobillas (8), entra al colector del inducido (1). La fuerza entre el campo y la corriente de las bobinas del inducido lo hace girar, apoyado en el rodamiento superior (5) y el inferior (35). Las escobillas se gastan con el roce: el manual las revisa cada 250 a 300 horas. Prueba en vacío a velocidad máxima: 3,2 a 5,2 A en 230/240 V; si está fuera de rango, revisar inducido, campo o electrónica.",
+    "piezas": [
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido",
+     "rodamiento5",
+     "rodamiento_inducido",
+     "ventilador"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente por el campo, las escobillas y el inducido (recorrido aproximado)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido (el manual no lo indica)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Control electrónico de velocidad",
+    "texto": "El módulo electrónico (54) va atornillado dentro de la tapa superior (57). Regula la velocidad del motor: según la tabla de fallas, si al ventilador (10) le falta su anillo magnético o el ventilador queda suelto en el eje, el motor gira demasiado rápido. O sea, la electrónica mide la velocidad a través de ese anillo, por eso el tornillo del ventilador (11) debe quedar bien apretado. Dónde está el sensor y cómo regula el módulo no está documentado; el dibujo es ilustrativo. El ventilador también mueve el aire que enfría el motor (recorrido no documentado).",
+    "piezas": [
+     "electronica",
+     "tapa_motor",
+     "ventilador",
+     "inducido",
+     "portaescobillas"
+    ],
+    "vidrio": [
+     "tapa_motor"
+    ],
+    "foco": [
+     "electronica",
+     "ventilador"
+    ],
+    "capas": [
+     "sensor",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Imanes del anillo (polos N y S, cantidad ilustrativa)"
+     ],
+     [
+      "#4ade80",
+      "Lectura de velocidad por el módulo (ubicación aproximada)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Reducción por engranajes",
+    "texto": "El extremo inferior del inducido es un piñón estriado que engrana con el engranaje doble (42), montado en dos rodamientos (41). El piñón chico del engranaje doble mueve el engranaje del cigüeñal (43), que va roscado al cigüeñal a 18 Nm. Son dos etapas de reducción: el cigüeñal gira mucho más lento que el motor y con más fuerza. La caja lleva 39 g de grasa y la cierra la tapa inferior (30). El manual no da los dientes ni la relación; la animación usa la del dibujo, cerca de 1:13 (aproximada).",
+    "piezas": [
+     "inducido",
+     "engranaje_doble",
+     "engranaje_cig",
+     "cigueñal",
+     "tapa_engranajes",
+     "tapa21",
+     "rodamiento_inducido",
+     "carcasa_principal"
+    ],
+    "vidrio": [
+     "tapa_engranajes",
+     "carcasa_principal"
+    ],
+    "foco": [
+     "engranaje_doble",
+     "engranaje_cig"
+    ],
+    "capas": [
+     "reduccion"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Sentido de giro de cada engranaje: cada par que engrana invierte el giro"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Cigüeñal y biela",
+    "texto": "El cigüeñal (45) termina arriba en un pasador excéntrico. La biela (38) une ese pasador con el pasador (47) del pistón (51), así el giro se vuelve un ida y vuelta del pistón dentro del cilindro (75): una vuelta del cigüeñal, un golpe. El cárter lleva 79 g de grasa y el pistón 5 g; la tapa (53) lo cierra con su junta tórica. Aproximado: la biela del dibujo se desplaza sin inclinarse y la carrera sale del dibujo, no del manual.",
+    "piezas": [
+     "cigueñal",
+     "engranaje_cig",
+     "biela",
+     "piston",
+     "cilindro",
+     "tapa_sa",
+     "carcasa_principal"
+    ],
+    "vidrio": [
+     "cilindro",
+     "carcasa_principal"
+    ],
+    "foco": [
+     "biela",
+     "piston"
+    ],
+    "capas": [
+     "biela"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Recorrido del pasador del cigüeñal"
+     ],
+     [
+      "#ff9f43",
+      "Sentido en que se mueve el pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire",
+    "texto": "El pistón nunca toca al martillo (76). Entre los dos queda aire encerrado en el cilindro, sellado por las juntas tóricas del pistón, del martillo y del cilindro. Cuando el pistón avanza comprime ese aire y el colchón lanza al martillo hacia adelante; cuando retrocede, el vacío que deja tira del martillo de vuelta. Por eso la primera causa de falta de potencia en la tabla de fallas son las juntas gastadas del pistón y del cilindro: si el aire se escapa, el martillo pega débil. Esas juntas se cambian en cada cambio de escobillas, con 11 g de grasa entre martillo y cilindro. El cilindro tiene agujeros (al armar sale grasa por ellos); su función no está documentada. El desfase entre pistón y martillo de la animación es aproximado.",
+    "piezas": [
+     "piston",
+     "biela",
+     "cilindro",
+     "martillo",
+     "juntas_cil"
+    ],
+    "vidrio": [
+     "cilindro"
+    ],
+    "foco": [
+     "piston",
+     "martillo"
+    ],
+    "capas": [
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Aire comprimido: empuja el martillo hacia adelante"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío: tira del martillo hacia atrás"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Golpe: martillo, pieza de golpeo y herramienta",
+    "texto": "Al final de su vuelo el martillo golpea la pieza de golpeo (67), una pieza intermedia que pasa el golpe al extremo de la herramienta. La herramienta no queda fija: se desliza dentro del husillo (94), retenida por las piezas de bloqueo que entran en sus ranuras, y vuelve atrás cuando el operador apoya el equipo. El buje con amortiguador (68, 69, 70) guía la pieza de golpeo y amortigua su retorno. Ningún engranaje llega al husillo: el equipo solo golpea, no gira la herramienta. El cincel es de referencia (no viene en el despiece) y el avance de la pieza de golpeo está exagerado.",
+    "piezas": [
+     "martillo",
+     "cilindro",
+     "pieza_golpeo",
+     "buje_golpeo",
+     "rodamiento_golpeo",
+     "buje72",
+     "husillo",
+     "bloqueo"
+    ],
+    "vidrio": [
+     "cilindro",
+     "husillo"
+    ],
+    "foco": [
+     "martillo",
+     "pieza_golpeo"
+    ],
+    "capas": [
+     "impacto",
+     "util"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Golpe del martillo, que sigue por la pieza de golpeo hasta la herramienta"
+     ],
+     [
+      "#7f8b98",
+      "Cincel de referencia"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Unidad antivibración",
+    "texto": "Delante del cárter, alrededor del cilindro, va un contrapeso de bronce (83) entre dos resortes (81), con sus guías (80/84 y 82), dentro del alojamiento delantero (78). Cada golpe sacude la carcasa; el contrapeso, colgado de los resortes, oscila en sentido contrario y se lleva parte de esa vibración antes de que llegue al mango. El manual no da la masa ni la rigidez de los resortes. Los resortes van precargados: al soltar los 4 tornillos (65) empujan el alojamiento hacia afuera (advertencia del manual). En la animación el movimiento del contrapeso está exagerado y su desfase es ilustrativo.",
+    "piezas": [
+     "antivibracion",
+     "carcasa_delantera",
+     "cubierta",
+     "tornillos65",
+     "cilindro",
+     "carcasa_principal",
+     "mango",
+     "tapa_mango"
+    ],
+    "vidrio": [
+     "carcasa_delantera",
+     "cubierta",
+     "carcasa_principal",
+     "mango",
+     "tapa_mango"
+    ],
+    "foco": [
+     "antivibracion"
+    ],
+    "capas": [
+     "antivib"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Movimiento del contrapeso"
+     ],
+     [
+      "#ff5470",
+      "Sacudida de la carcasa, en sentido contrario"
+     ]
+    ],
+    "giro": true
+   }
+  ]
  }
 }

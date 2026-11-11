@@ -2835,5 +2835,1351 @@
     ]
    }
   ]
+ },
+ "funcionamiento": {
+  "HR2600": [
+   {
+    "titulo": "Cable e interruptor",
+    "texto": "La corriente alterna entra por el cable y llega al interruptor del mango. El gatillo cierra el circuito y regula la velocidad; la palanca de reversa del mismo interruptor invierte el giro. Con el gatillo apretado, la corriente recorre las bobinas del campo, un carbón, el inducido, el otro carbón y vuelve por el interruptor al cable. Es un motor universal con doble aislación; en algunos países el interruptor lleva además un supresor de ruido (Fig. D-1).",
+    "piezas": [
+     "cable",
+     "interruptor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red de 50 Hz cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor universal: campo, carbones e inducido",
+    "texto": "Las bobinas del campo (estator) van en serie con el inducido: la misma corriente las vuelve un imán con un polo norte y uno sur enfrentados. Los dos carbones, apretados por los resortes espirales del portaescobillas, rozan el colector y pasan la corriente a las bobinas del inducido. Bajo cada polo la corriente de los conductores va en sentidos opuestos y el campo los empuja hacia lados contrarios: eso da el par. El colector va cambiando qué bobinas reciben corriente, así el par no cambia de sentido; y como campo e inducido se invierten juntos con la alterna, el motor gira siempre hacia el mismo lado. El ventilador del inducido aspira aire por las rendijas de la carcasa y lo pasa por el motor (ruta del aire no documentada, se dibuja la habitual). El dibujo usa 12 conductores: el número real de bobinas no está en las fuentes.",
+    "piezas": [
+     "estator",
+     "inducido",
+     "portaesc",
+     "escobillas",
+     "rod6000",
+     "rod627"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "campo",
+     "conductores",
+     "fuerza",
+     "sentido",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Líneas de campo magnético (de norte a sur a través del inducido)"
+     ],
+     [
+      "#ff9f43",
+      "Corriente hacia adelante en los conductores"
+     ],
+     [
+      "#4dd0ff",
+      "Corriente hacia atrás"
+     ],
+     [
+      "#ff5470",
+      "Fuerza sobre los conductores"
+     ],
+     [
+      "#7dd3fc",
+      "Aire de enfriamiento (ruta típica)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Piñón, engranaje helicoidal 26 y eje intermedio",
+    "texto": "El eje del inducido termina en un piñón tallado que engrana con el engranaje helicoidal 26 (64), montado a presión en el eje del engranaje recto 10 (56): es el eje intermedio. Esta primera reducción baja la velocidad, sube el par e invierte el sentido. El eje intermedio apoya en el rodamiento 608ZZ de la caja de rodamiento y en el 606ZZ de la carcasa de engranajes. Desde aquí el giro se reparte en dos ramas: la rotación de la broca (engranaje 10 a engranaje 51) y la percusión (rodamiento oscilante). Si el engranaje 26 se monta al revés, el retén del rodamiento roza el eje del inducido (Fig. 25). La relación piñón/engranaje 26 no está en las fuentes: la de la animación es ilustrativa.",
+    "piezas": [
+     "inducido",
+     "helicoidal",
+     "engranaje10",
+     "caja_rod",
+     "reten",
+     "rod606",
+     "rod6000",
+     "carcasa_int"
+    ],
+    "vidrio": [
+     "carcasa_int"
+    ],
+    "foco": [
+     "helicoidal",
+     "engranaje10"
+    ],
+    "capas": [
+     "transmision"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Giro del piñón del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rama rotativa y limitador de torque",
+    "texto": "El dentado del engranaje 10 mueve el engranaje recto 51 (30), que va sobre el portaherramienta. El 51 pasa el giro a la brida de arrastre (29) por seis pines 6, y la brida al portaherramienta (28) por cuatro bolas de 4 mm. El resorte de compresión 31, cerrado con arandelas y la arandela Spiro lock 30, mantiene ese acople apretado: si la broca se traba, el par supera lo que aguanta el resorte y el engranaje 51 patina en vez de dar el tirón al operador. En el portabrocas, las bolas 7,0 entran en las ranuras cerradas del vástago SDS-plus: lo retienen pero lo dejan correr adelante y atrás con cada golpe. Según la ficha (0-1.200 rpm y 0-4.600 golpes/min), el eje intermedio da unas 3,8 vueltas por vuelta de la broca, un golpe por vuelta. Cómo deslizan los pines contra la brida no está descrito en el documento (aproximado).",
+    "piezas": [
+     "engranaje10",
+     "engranaje51",
+     "pines6",
+     "brida",
+     "bolas4",
+     "arandela32",
+     "resorte31",
+     "spiro",
+     "portaherramienta",
+     "rod6806",
+     "cubierta",
+     "bolas7",
+     "anillo21"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "engranaje51",
+     "resorte31"
+    ],
+    "capas": [
+     "limitador",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ff5470",
+      "Empuje del resorte 31 sobre el engranaje 51"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia; no es pieza del modelo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rodamiento oscilante: del giro al vaivén",
+    "texto": "En el mismo eje intermedio va el rodamiento oscilante 10 (58), con el aro interior inclinado respecto al eje. La leva de embrague B, en las estrías del engranaje 10, lo acopla al eje (Fig. 27). Al girar, la inclinación da la vuelta y el aro exterior, que no puede girar porque su poste entra en la unión del pistón, solo cabecea adelante y atrás. El poste empuja y tira del cilindro pistón (46) por la unión del pistón y la placa guía: cada vuelta del eje intermedio es una ida y vuelta del pistón, o sea un golpe. El resorte de compresión 14 va entre la carcasa interior y la placa guía. La carrera dibujada (unos 11 mm) es aproximada.",
+    "piezas": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "piston",
+     "junta_piston",
+     "placa_guia",
+     "resorte14c"
+    ],
+    "vidrio": [
+     "piston"
+    ],
+    "foco": [
+     "oscilante"
+    ],
+    "capas": [
+     "oscilante"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del aro interior con el eje intermedio"
+     ],
+     [
+      "#ffffff",
+      "Vaivén del poste y del cilindro pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire y martillo",
+    "texto": "El martillo (44) corre libre dentro del cilindro pistón, sellado por el O-ring 17,5 (45). Pistón y martillo no se tocan: entre el fondo del pistón y el martillo queda aire encerrado. Cuando el pistón avanza comprime ese aire y lanza el martillo hacia adelante; cuando retrocede, el vacío lo trae de vuelta. Por eso el martillo va atrasado respecto al pistón. Si el O-ring 17,5 se gasta, el aire se escapa y el equipo gira pero golpea débil o no golpea: Makita lo manda cambiar junto con los carbones (Fig. 28). El atraso y la carrera del martillo dibujados son aproximados.",
+    "piezas": [
+     "piston",
+     "martillo",
+     "oring175",
+     "junta_piston",
+     "oscilante",
+     "portaherramienta",
+     "perno"
+    ],
+    "vidrio": [
+     "piston",
+     "portaherramienta"
+    ],
+    "foco": [
+     "martillo",
+     "oring175"
+    ],
+    "capas": [
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff7a45",
+      "Aire comprimido: empuja el martillo"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío: tira el martillo hacia atrás"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perno de impacto y broca",
+    "texto": "El martillo no toca la broca: golpea el perno de impacto A (38), que pasa el golpe al extremo del vástago. Alrededor del perno, el manguito 9A guía al perno; el anillo 10A y el anillo amortiguador 12 lo frenan cuando trabaja en vacío, y la caja de O-ring A con el O-ring 9 sella el paso (Fig. 18A); el resorte de anillo 28 retiene todo en el portaherramienta. La broca corre unos milímetros dentro del portabrocas, así recibe el golpe mientras sigue girando. El anillo amortiguador 12, el O-ring 9 y el resorte de anillo 28 se cambian con los carbones (Fig. 28). La broca dibujada es solo de referencia; el avance del perno en la animación es aproximado.",
+    "piezas": [
+     "martillo",
+     "perno",
+     "manguito9",
+     "cojin",
+     "caja_oring",
+     "oring9",
+     "resorte28",
+     "portaherramienta",
+     "cubierta",
+     "bolas7"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "perno"
+    ],
+    "capas": [
+     "broca",
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Golpe que llega a la broca"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Palanca de cambio: solo giro o giro con percusión",
+    "texto": "El HR2600 tiene dos modos: solo giro y giro con percusión. La palanca de cambio B mueve el empujador (20), cuya punta en V calza en la ranura en V de la leva de embrague B (Figs. 7 y 8). En giro con percusión la leva queda acoplada al rodamiento oscilante (Fig. 27). En solo giro la palanca la separa: el rodamiento oscilante deja de recibir giro y el pistón se detiene, mientras el engranaje 10 sigue moviendo el engranaje 51 y la broca. El documento no da el recorrido de la leva: el desplazamiento dibujado es aproximado.",
+    "piezas": [
+     "palanca",
+     "tapa_palanca",
+     "empujador",
+     "resorte5",
+     "leva",
+     "oscilante",
+     "engranaje10",
+     "engranaje51",
+     "piston",
+     "portaherramienta"
+    ],
+    "vidrio": [
+     "portaherramienta"
+    ],
+    "foco": [
+     "palanca",
+     "leva"
+    ],
+    "capas": [
+     "soloGiro",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Desplazamiento de la leva de embrague B (aproximado)"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "HR2601": [
+   {
+    "titulo": "Cable e interruptor",
+    "texto": "La corriente alterna entra por el cable y llega al interruptor del mango. El gatillo cierra el circuito y regula la velocidad; la palanca de reversa del mismo interruptor invierte el giro. Con el gatillo apretado, la corriente recorre las bobinas del campo, un carbón, el inducido, el otro carbón y vuelve por el interruptor al cable. Es un motor universal con doble aislación; en algunos países el interruptor lleva además un supresor de ruido (Fig. D-1).",
+    "piezas": [
+     "cable",
+     "interruptor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red de 50 Hz cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor universal: campo, carbones e inducido",
+    "texto": "Las bobinas del campo (estator) van en serie con el inducido: la misma corriente las vuelve un imán con un polo norte y uno sur enfrentados. Los dos carbones, apretados por los resortes espirales del portaescobillas, rozan el colector y pasan la corriente a las bobinas del inducido. Bajo cada polo la corriente de los conductores va en sentidos opuestos y el campo los empuja hacia lados contrarios: eso da el par. El colector va cambiando qué bobinas reciben corriente, así el par no cambia de sentido; y como campo e inducido se invierten juntos con la alterna, el motor gira siempre hacia el mismo lado. El ventilador del inducido aspira aire por las rendijas de la carcasa y lo pasa por el motor (ruta del aire no documentada, se dibuja la habitual). El dibujo usa 12 conductores: el número real de bobinas no está en las fuentes.",
+    "piezas": [
+     "estator",
+     "inducido",
+     "portaesc",
+     "escobillas",
+     "rod6000",
+     "rod627"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "campo",
+     "conductores",
+     "fuerza",
+     "sentido",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Líneas de campo magnético (de norte a sur a través del inducido)"
+     ],
+     [
+      "#ff9f43",
+      "Corriente hacia adelante en los conductores"
+     ],
+     [
+      "#4dd0ff",
+      "Corriente hacia atrás"
+     ],
+     [
+      "#ff5470",
+      "Fuerza sobre los conductores"
+     ],
+     [
+      "#7dd3fc",
+      "Aire de enfriamiento (ruta típica)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Piñón, engranaje helicoidal 26 y eje intermedio",
+    "texto": "El eje del inducido termina en un piñón tallado que engrana con el engranaje helicoidal 26 (64), montado a presión en el eje del engranaje recto 10 (56): es el eje intermedio. Esta primera reducción baja la velocidad, sube el par e invierte el sentido. El eje intermedio apoya en el rodamiento 608ZZ de la caja de rodamiento y en el 606ZZ de la carcasa de engranajes. Desde aquí el giro se reparte en dos ramas: la rotación de la broca (engranaje 10 a engranaje 51) y la percusión (rodamiento oscilante). Si el engranaje 26 se monta al revés, el retén del rodamiento roza el eje del inducido (Fig. 25). La relación piñón/engranaje 26 no está en las fuentes: la de la animación es ilustrativa.",
+    "piezas": [
+     "inducido",
+     "helicoidal",
+     "engranaje10",
+     "caja_rod",
+     "reten",
+     "rod606",
+     "rod6000",
+     "carcasa_int"
+    ],
+    "vidrio": [
+     "carcasa_int"
+    ],
+    "foco": [
+     "helicoidal",
+     "engranaje10"
+    ],
+    "capas": [
+     "transmision"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Giro del piñón del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rama rotativa y limitador de torque",
+    "texto": "El dentado del engranaje 10 mueve el engranaje recto 51 (30), que va sobre el portaherramienta. El 51 pasa el giro a la brida de arrastre (29) por seis pines 6, y la brida al portaherramienta (28) por cuatro bolas de 4 mm. El resorte de compresión 31, cerrado con arandelas y la arandela Spiro lock 30, mantiene ese acople apretado: si la broca se traba, el par supera lo que aguanta el resorte y el engranaje 51 patina en vez de dar el tirón al operador. En el portabrocas, las bolas 7,0 entran en las ranuras cerradas del vástago SDS-plus: lo retienen pero lo dejan correr adelante y atrás con cada golpe. Según la ficha (0-1.200 rpm y 0-4.600 golpes/min), el eje intermedio da unas 3,8 vueltas por vuelta de la broca, un golpe por vuelta. Cómo deslizan los pines contra la brida no está descrito en el documento (aproximado).",
+    "piezas": [
+     "engranaje10",
+     "engranaje51",
+     "pines6",
+     "brida",
+     "bolas4",
+     "arandela32",
+     "resorte31",
+     "spiro",
+     "portaherramienta",
+     "rod6806",
+     "cubierta",
+     "bolas7",
+     "anillo21"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "engranaje51",
+     "resorte31"
+    ],
+    "capas": [
+     "limitador",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ff5470",
+      "Empuje del resorte 31 sobre el engranaje 51"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia; no es pieza del modelo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rodamiento oscilante: del giro al vaivén",
+    "texto": "En el mismo eje intermedio va el rodamiento oscilante 10 (58), con el aro interior inclinado respecto al eje. La leva de embrague B, en las estrías del engranaje 10, lo acopla al eje (Fig. 27). Al girar, la inclinación da la vuelta y el aro exterior, que no puede girar porque su poste entra en la unión del pistón, solo cabecea adelante y atrás. El poste empuja y tira del cilindro pistón (46) por la unión del pistón y la placa guía: cada vuelta del eje intermedio es una ida y vuelta del pistón, o sea un golpe. El resorte de compresión 14 va entre la carcasa interior y la placa guía. La carrera dibujada (unos 11 mm) es aproximada.",
+    "piezas": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "piston",
+     "junta_piston",
+     "placa_guia",
+     "resorte14c"
+    ],
+    "vidrio": [
+     "piston"
+    ],
+    "foco": [
+     "oscilante"
+    ],
+    "capas": [
+     "oscilante"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del aro interior con el eje intermedio"
+     ],
+     [
+      "#ffffff",
+      "Vaivén del poste y del cilindro pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire y martillo",
+    "texto": "El martillo (44) corre libre dentro del cilindro pistón, sellado por el O-ring 17,5 (45). Pistón y martillo no se tocan: entre el fondo del pistón y el martillo queda aire encerrado. Cuando el pistón avanza comprime ese aire y lanza el martillo hacia adelante; cuando retrocede, el vacío lo trae de vuelta. Por eso el martillo va atrasado respecto al pistón. Si el O-ring 17,5 se gasta, el aire se escapa y el equipo gira pero golpea débil o no golpea: Makita lo manda cambiar junto con los carbones (Fig. 28). El atraso y la carrera del martillo dibujados son aproximados.",
+    "piezas": [
+     "piston",
+     "martillo",
+     "oring175",
+     "junta_piston",
+     "oscilante",
+     "portaherramienta",
+     "perno"
+    ],
+    "vidrio": [
+     "piston",
+     "portaherramienta"
+    ],
+    "foco": [
+     "martillo",
+     "oring175"
+    ],
+    "capas": [
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff7a45",
+      "Aire comprimido: empuja el martillo"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío: tira el martillo hacia atrás"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perno de impacto y broca",
+    "texto": "El martillo no toca la broca: golpea el perno de impacto A (38), que pasa el golpe al extremo del vástago. Alrededor del perno, el manguito 9B guía al perno; la arandela 10 y el resorte de compresión 20 lo amortiguan, y la caja de O-ring B con el O-ring 9 sella el paso (Fig. 18B); el resorte de anillo 28 retiene todo en el portaherramienta. La broca corre unos milímetros dentro del portabrocas, así recibe el golpe mientras sigue girando. El O-ring 9 y el resorte de anillo 28 se cambian con los carbones (Fig. 28). La broca dibujada es solo de referencia; el avance del perno en la animación es aproximado.",
+    "piezas": [
+     "martillo",
+     "perno",
+     "manguito9",
+     "cojin",
+     "caja_oring",
+     "oring9",
+     "resorte28",
+     "portaherramienta",
+     "cubierta",
+     "bolas7"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "perno"
+    ],
+    "capas": [
+     "broca",
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Golpe que llega a la broca"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "AVT: contrapeso antivibración",
+    "texto": "El HR2601 suma AVT, un absorbedor dinámico de vibración: un contrapeso con resorte, placa, guía y pin 6, fijado a la carcasa interior con dos pernos M4x12 (Fig. 20). El contrapeso oscila adelante y atrás contra la vibración que deja cada golpe, y al mango llega menos. Además cambia el amortiguador del perno de impacto (arandela 10 y resorte de compresión 20, Fig. 18B). La amplitud y la fase del contrapeso en la animación son ilustrativas.",
+    "piezas": [
+     "contrapeso",
+     "pernos_m412",
+     "carcasa_int",
+     "piston",
+     "martillo",
+     "cojin"
+    ],
+    "vidrio": [
+     "carcasa_int",
+     "piston"
+    ],
+    "foco": [
+     "contrapeso"
+    ],
+    "capas": [
+     "avt",
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Oscilación del contrapeso (ilustrativa)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Palanca de cambio: solo giro o giro con percusión",
+    "texto": "El HR2601 tiene dos modos: solo giro y giro con percusión. La palanca de cambio B mueve el empujador (20), cuya punta en V calza en la ranura en V de la leva de embrague B (Figs. 7 y 8). En giro con percusión la leva queda acoplada al rodamiento oscilante (Fig. 27). En solo giro la palanca la separa: el rodamiento oscilante deja de recibir giro y el pistón se detiene, mientras el engranaje 10 sigue moviendo el engranaje 51 y la broca. El documento no da el recorrido de la leva: el desplazamiento dibujado es aproximado.",
+    "piezas": [
+     "palanca",
+     "tapa_palanca",
+     "empujador",
+     "resorte5",
+     "leva",
+     "oscilante",
+     "engranaje10",
+     "engranaje51",
+     "piston",
+     "portaherramienta"
+    ],
+    "vidrio": [
+     "portaherramienta"
+    ],
+    "foco": [
+     "palanca",
+     "leva"
+    ],
+    "capas": [
+     "soloGiro",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Desplazamiento de la leva de embrague B (aproximado)"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "HR2470": [
+   {
+    "titulo": "Cable e interruptor",
+    "texto": "La corriente alterna entra por el cable y llega al interruptor del mango. El gatillo cierra el circuito y regula la velocidad; la palanca de reversa del mismo interruptor invierte el giro. Con el gatillo apretado, la corriente recorre las bobinas del campo, un carbón, el inducido, el otro carbón y vuelve por el interruptor al cable. Es un motor universal con doble aislación; en algunos países el interruptor lleva además un supresor de ruido (Fig. D-1). Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "cable",
+     "interruptor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red de 50 Hz cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor universal: campo, carbones e inducido",
+    "texto": "Las bobinas del campo (estator) van en serie con el inducido: la misma corriente las vuelve un imán con un polo norte y uno sur enfrentados. Los dos carbones, apretados por los resortes espirales del portaescobillas, rozan el colector y pasan la corriente a las bobinas del inducido. Bajo cada polo la corriente de los conductores va en sentidos opuestos y el campo los empuja hacia lados contrarios: eso da el par. El colector va cambiando qué bobinas reciben corriente, así el par no cambia de sentido; y como campo e inducido se invierten juntos con la alterna, el motor gira siempre hacia el mismo lado. El ventilador del inducido aspira aire por las rendijas de la carcasa y lo pasa por el motor (ruta del aire no documentada, se dibuja la habitual). El dibujo usa 12 conductores: el número real de bobinas no está en las fuentes. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "estator",
+     "inducido",
+     "portaesc",
+     "escobillas",
+     "rod6000",
+     "rod627"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "campo",
+     "conductores",
+     "fuerza",
+     "sentido",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Líneas de campo magnético (de norte a sur a través del inducido)"
+     ],
+     [
+      "#ff9f43",
+      "Corriente hacia adelante en los conductores"
+     ],
+     [
+      "#4dd0ff",
+      "Corriente hacia atrás"
+     ],
+     [
+      "#ff5470",
+      "Fuerza sobre los conductores"
+     ],
+     [
+      "#7dd3fc",
+      "Aire de enfriamiento (ruta típica)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Piñón, engranaje helicoidal 26 y eje intermedio",
+    "texto": "El eje del inducido termina en un piñón tallado que engrana con el engranaje helicoidal 26 (64), montado a presión en el eje del engranaje recto 10 (56): es el eje intermedio. Esta primera reducción baja la velocidad, sube el par e invierte el sentido. El eje intermedio apoya en el rodamiento 608ZZ de la caja de rodamiento y en el 606ZZ de la carcasa de engranajes. Desde aquí el giro se reparte en dos ramas: la rotación de la broca (engranaje 10 a engranaje 51) y la percusión (rodamiento oscilante). Si el engranaje 26 se monta al revés, el retén del rodamiento roza el eje del inducido (Fig. 25). La relación piñón/engranaje 26 no está en las fuentes: la de la animación es ilustrativa. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "inducido",
+     "helicoidal",
+     "engranaje10",
+     "caja_rod",
+     "reten",
+     "rod606",
+     "rod6000",
+     "carcasa_int"
+    ],
+    "vidrio": [
+     "carcasa_int"
+    ],
+    "foco": [
+     "helicoidal",
+     "engranaje10"
+    ],
+    "capas": [
+     "transmision"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Giro del piñón del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rama rotativa y limitador de torque",
+    "texto": "El dentado del engranaje 10 mueve el engranaje recto 51 (30), que va sobre el portaherramienta. El 51 pasa el giro a la brida de arrastre (29) por seis pines 6, y la brida al portaherramienta (28) por cuatro bolas de 4 mm. El resorte de compresión 31, cerrado con arandelas y la arandela Spiro lock 30, mantiene ese acople apretado: si la broca se traba, el par supera lo que aguanta el resorte y el engranaje 51 patina en vez de dar el tirón al operador. En el portabrocas, las bolas 7,0 entran en las ranuras cerradas del vástago SDS-plus: lo retienen pero lo dejan correr adelante y atrás con cada golpe. Según la ficha (0-1.200 rpm y 0-4.600 golpes/min), el eje intermedio da unas 3,8 vueltas por vuelta de la broca, un golpe por vuelta. Cómo deslizan los pines contra la brida no está descrito en el documento (aproximado). Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "engranaje10",
+     "engranaje51",
+     "pines6",
+     "brida",
+     "bolas4",
+     "arandela32",
+     "resorte31",
+     "spiro",
+     "portaherramienta",
+     "rod6806",
+     "cubierta",
+     "bolas7",
+     "anillo21"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "engranaje51",
+     "resorte31"
+    ],
+    "capas": [
+     "limitador",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ff5470",
+      "Empuje del resorte 31 sobre el engranaje 51"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia; no es pieza del modelo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rodamiento oscilante: del giro al vaivén",
+    "texto": "En el mismo eje intermedio va el rodamiento oscilante 10 (58), con el aro interior inclinado respecto al eje. La leva de embrague B, en las estrías del engranaje 10, lo acopla al eje (Fig. 27). Al girar, la inclinación da la vuelta y el aro exterior, que no puede girar porque su poste entra en la unión del pistón, solo cabecea adelante y atrás. El poste empuja y tira del cilindro pistón (46) por la unión del pistón y la placa guía: cada vuelta del eje intermedio es una ida y vuelta del pistón, o sea un golpe. El resorte de compresión 14 va entre la carcasa interior y la placa guía. La carrera dibujada (unos 11 mm) es aproximada. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "piston",
+     "junta_piston",
+     "placa_guia",
+     "resorte14c"
+    ],
+    "vidrio": [
+     "piston"
+    ],
+    "foco": [
+     "oscilante"
+    ],
+    "capas": [
+     "oscilante"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del aro interior con el eje intermedio"
+     ],
+     [
+      "#ffffff",
+      "Vaivén del poste y del cilindro pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire y martillo",
+    "texto": "El martillo (44) corre libre dentro del cilindro pistón, sellado por el O-ring 17,5 (45). Pistón y martillo no se tocan: entre el fondo del pistón y el martillo queda aire encerrado. Cuando el pistón avanza comprime ese aire y lanza el martillo hacia adelante; cuando retrocede, el vacío lo trae de vuelta. Por eso el martillo va atrasado respecto al pistón. Si el O-ring 17,5 se gasta, el aire se escapa y el equipo gira pero golpea débil o no golpea: Makita lo manda cambiar junto con los carbones (Fig. 28). El atraso y la carrera del martillo dibujados son aproximados. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "piston",
+     "martillo",
+     "oring175",
+     "junta_piston",
+     "oscilante",
+     "portaherramienta",
+     "perno"
+    ],
+    "vidrio": [
+     "piston",
+     "portaherramienta"
+    ],
+    "foco": [
+     "martillo",
+     "oring175"
+    ],
+    "capas": [
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff7a45",
+      "Aire comprimido: empuja el martillo"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío: tira el martillo hacia atrás"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perno de impacto y broca",
+    "texto": "El martillo no toca la broca: golpea el perno de impacto A (38), que pasa el golpe al extremo del vástago. Alrededor del perno, el manguito 9A guía al perno; el anillo 10A y el anillo amortiguador 12 lo frenan cuando trabaja en vacío, y la caja de O-ring A con el O-ring 9 sella el paso (Fig. 18A); el resorte de anillo 28 retiene todo en el portaherramienta. La broca corre unos milímetros dentro del portabrocas, así recibe el golpe mientras sigue girando. El anillo amortiguador 12, el O-ring 9 y el resorte de anillo 28 se cambian con los carbones (Fig. 28). La broca dibujada es solo de referencia; el avance del perno en la animación es aproximado. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "martillo",
+     "perno",
+     "manguito9",
+     "cojin",
+     "caja_oring",
+     "oring9",
+     "resorte28",
+     "portaherramienta",
+     "cubierta",
+     "bolas7"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "perno"
+    ],
+    "capas": [
+     "broca",
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Golpe que llega a la broca"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perilla de modo: solo giro",
+    "texto": "Según el manual del HR2470, este modelo tiene tres modos: solo giro, giro con percusión y solo percusión, con una perilla rotatoria y botón de bloqueo. En la arquitectura de referencia, el modo solo giro separa la leva de embrague B del rodamiento oscilante: el pistón se detiene y el engranaje 10 sigue moviendo el engranaje 51 y la broca. El recorrido de la leva es aproximado. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "palanca",
+     "tapa_palanca",
+     "empujador",
+     "resorte5",
+     "leva",
+     "oscilante",
+     "engranaje10",
+     "engranaje51",
+     "piston",
+     "portaherramienta"
+    ],
+    "vidrio": [
+     "portaherramienta"
+    ],
+    "foco": [
+     "palanca",
+     "leva"
+    ],
+    "capas": [
+     "soloGiro",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Desplazamiento de la leva de embrague B (aproximado)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perilla de modo: solo percusión",
+    "texto": "En solo percusión el portaherramienta deja de girar y la broca o el cincel solo recibe los golpes; el manual del HR2470 trae además una posición para orientar el cincel antes de fijarlo. Cómo se desacopla el giro en este modelo no está en las fuentes: la animación solo detiene el portaherramienta y mantiene la percusión. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "palanca",
+     "tapa_palanca",
+     "oscilante",
+     "piston",
+     "martillo",
+     "perno",
+     "portaherramienta",
+     "engranaje51"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "piston"
+    ],
+    "foco": [
+     "palanca"
+    ],
+    "capas": [
+     "soloPercusion",
+     "colchon",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Golpe que llega a la broca"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío / aire del colchón"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "RK26": [
+   {
+    "titulo": "Cable e interruptor",
+    "texto": "La corriente alterna entra por el cable y llega al interruptor del mango. El gatillo cierra el circuito y regula la velocidad; la palanca de reversa del mismo interruptor invierte el giro. Con el gatillo apretado, la corriente recorre las bobinas del campo, un carbón, el inducido, el otro carbón y vuelve por el interruptor al cable. Es un motor universal con doble aislación; en algunos países el interruptor lleva además un supresor de ruido (Fig. D-1). Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "cable",
+     "interruptor",
+     "estator",
+     "portaesc",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red de 50 Hz cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor universal: campo, carbones e inducido",
+    "texto": "Las bobinas del campo (estator) van en serie con el inducido: la misma corriente las vuelve un imán con un polo norte y uno sur enfrentados. Los dos carbones, apretados por los resortes espirales del portaescobillas, rozan el colector y pasan la corriente a las bobinas del inducido. Bajo cada polo la corriente de los conductores va en sentidos opuestos y el campo los empuja hacia lados contrarios: eso da el par. El colector va cambiando qué bobinas reciben corriente, así el par no cambia de sentido; y como campo e inducido se invierten juntos con la alterna, el motor gira siempre hacia el mismo lado. El ventilador del inducido aspira aire por las rendijas de la carcasa y lo pasa por el motor (ruta del aire no documentada, se dibuja la habitual). El dibujo usa 12 conductores: el número real de bobinas no está en las fuentes. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "estator",
+     "inducido",
+     "portaesc",
+     "escobillas",
+     "rod6000",
+     "rod627"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "campo",
+     "conductores",
+     "fuerza",
+     "sentido",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Líneas de campo magnético (de norte a sur a través del inducido)"
+     ],
+     [
+      "#ff9f43",
+      "Corriente hacia adelante en los conductores"
+     ],
+     [
+      "#4dd0ff",
+      "Corriente hacia atrás"
+     ],
+     [
+      "#ff5470",
+      "Fuerza sobre los conductores"
+     ],
+     [
+      "#7dd3fc",
+      "Aire de enfriamiento (ruta típica)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Piñón, engranaje helicoidal 26 y eje intermedio",
+    "texto": "El eje del inducido termina en un piñón tallado que engrana con el engranaje helicoidal 26 (64), montado a presión en el eje del engranaje recto 10 (56): es el eje intermedio. Esta primera reducción baja la velocidad, sube el par e invierte el sentido. El eje intermedio apoya en el rodamiento 608ZZ de la caja de rodamiento y en el 606ZZ de la carcasa de engranajes. Desde aquí el giro se reparte en dos ramas: la rotación de la broca (engranaje 10 a engranaje 51) y la percusión (rodamiento oscilante). Si el engranaje 26 se monta al revés, el retén del rodamiento roza el eje del inducido (Fig. 25). La relación piñón/engranaje 26 no está en las fuentes: la de la animación es ilustrativa. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "inducido",
+     "helicoidal",
+     "engranaje10",
+     "caja_rod",
+     "reten",
+     "rod606",
+     "rod6000",
+     "carcasa_int"
+    ],
+    "vidrio": [
+     "carcasa_int"
+    ],
+    "foco": [
+     "helicoidal",
+     "engranaje10"
+    ],
+    "capas": [
+     "transmision"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Giro del piñón del inducido"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rama rotativa y limitador de torque",
+    "texto": "El dentado del engranaje 10 mueve el engranaje recto 51 (30), que va sobre el portaherramienta. El 51 pasa el giro a la brida de arrastre (29) por seis pines 6, y la brida al portaherramienta (28) por cuatro bolas de 4 mm. El resorte de compresión 31, cerrado con arandelas y la arandela Spiro lock 30, mantiene ese acople apretado: si la broca se traba, el par supera lo que aguanta el resorte y el engranaje 51 patina en vez de dar el tirón al operador. En el portabrocas, las bolas 7,0 entran en las ranuras cerradas del vástago SDS-plus: lo retienen pero lo dejan correr adelante y atrás con cada golpe. Según la ficha (0-1.200 rpm y 0-4.600 golpes/min), el eje intermedio da unas 3,8 vueltas por vuelta de la broca, un golpe por vuelta. Cómo deslizan los pines contra la brida no está descrito en el documento (aproximado). Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "engranaje10",
+     "engranaje51",
+     "pines6",
+     "brida",
+     "bolas4",
+     "arandela32",
+     "resorte31",
+     "spiro",
+     "portaherramienta",
+     "rod6806",
+     "cubierta",
+     "bolas7",
+     "anillo21"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "engranaje51",
+     "resorte31"
+    ],
+    "capas": [
+     "limitador",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ff5470",
+      "Empuje del resorte 31 sobre el engranaje 51"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia; no es pieza del modelo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rodamiento oscilante: del giro al vaivén",
+    "texto": "En el mismo eje intermedio va el rodamiento oscilante 10 (58), con el aro interior inclinado respecto al eje. La leva de embrague B, en las estrías del engranaje 10, lo acopla al eje (Fig. 27). Al girar, la inclinación da la vuelta y el aro exterior, que no puede girar porque su poste entra en la unión del pistón, solo cabecea adelante y atrás. El poste empuja y tira del cilindro pistón (46) por la unión del pistón y la placa guía: cada vuelta del eje intermedio es una ida y vuelta del pistón, o sea un golpe. El resorte de compresión 14 va entre la carcasa interior y la placa guía. La carrera dibujada (unos 11 mm) es aproximada. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "engranaje10",
+     "leva",
+     "oscilante",
+     "caja_rod",
+     "piston",
+     "junta_piston",
+     "placa_guia",
+     "resorte14c"
+    ],
+    "vidrio": [
+     "piston"
+    ],
+    "foco": [
+     "oscilante"
+    ],
+    "capas": [
+     "oscilante"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del aro interior con el eje intermedio"
+     ],
+     [
+      "#ffffff",
+      "Vaivén del poste y del cilindro pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire y martillo",
+    "texto": "El martillo (44) corre libre dentro del cilindro pistón, sellado por el O-ring 17,5 (45). Pistón y martillo no se tocan: entre el fondo del pistón y el martillo queda aire encerrado. Cuando el pistón avanza comprime ese aire y lanza el martillo hacia adelante; cuando retrocede, el vacío lo trae de vuelta. Por eso el martillo va atrasado respecto al pistón. Si el O-ring 17,5 se gasta, el aire se escapa y el equipo gira pero golpea débil o no golpea: Makita lo manda cambiar junto con los carbones (Fig. 28). El atraso y la carrera del martillo dibujados son aproximados. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "piston",
+     "martillo",
+     "oring175",
+     "junta_piston",
+     "oscilante",
+     "portaherramienta",
+     "perno"
+    ],
+    "vidrio": [
+     "piston",
+     "portaherramienta"
+    ],
+    "foco": [
+     "martillo",
+     "oring175"
+    ],
+    "capas": [
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff7a45",
+      "Aire comprimido: empuja el martillo"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío: tira el martillo hacia atrás"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perno de impacto y broca",
+    "texto": "El martillo no toca la broca: golpea el perno de impacto A (38), que pasa el golpe al extremo del vástago. Alrededor del perno, el manguito 9A guía al perno; el anillo 10A y el anillo amortiguador 12 lo frenan cuando trabaja en vacío, y la caja de O-ring A con el O-ring 9 sella el paso (Fig. 18A); el resorte de anillo 28 retiene todo en el portaherramienta. La broca corre unos milímetros dentro del portabrocas, así recibe el golpe mientras sigue girando. El anillo amortiguador 12, el O-ring 9 y el resorte de anillo 28 se cambian con los carbones (Fig. 28). La broca dibujada es solo de referencia; el avance del perno en la animación es aproximado. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "martillo",
+     "perno",
+     "manguito9",
+     "cojin",
+     "caja_oring",
+     "oring9",
+     "resorte28",
+     "portaherramienta",
+     "cubierta",
+     "bolas7"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "cubierta"
+    ],
+    "foco": [
+     "perno"
+    ],
+    "capas": [
+     "broca",
+     "colchon"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Golpe que llega a la broca"
+     ],
+     [
+      "#cfd3d8",
+      "Broca (referencia)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perilla de modo: solo giro",
+    "texto": "Según kothman.cl (la descripción menciona posicionar el cincel), este modelo tiene tres modos: solo giro, giro con percusión y solo percusión, con una perilla rotatoria y botón de bloqueo. En la arquitectura de referencia, el modo solo giro separa la leva de embrague B del rodamiento oscilante: el pistón se detiene y el engranaje 10 sigue moviendo el engranaje 51 y la broca. El recorrido de la leva es aproximado. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "palanca",
+     "tapa_palanca",
+     "empujador",
+     "resorte5",
+     "leva",
+     "oscilante",
+     "engranaje10",
+     "engranaje51",
+     "piston",
+     "portaherramienta"
+    ],
+    "vidrio": [
+     "portaherramienta"
+    ],
+    "foco": [
+     "palanca",
+     "leva"
+    ],
+    "capas": [
+     "soloGiro",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Sentido de giro de cada rueda y del portaherramienta"
+     ],
+     [
+      "#ffffff",
+      "Desplazamiento de la leva de embrague B (aproximado)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Perilla de modo: solo percusión",
+    "texto": "En solo percusión el portaherramienta deja de girar y la broca o el cincel solo recibe los golpes; el manual del HR2470 trae además una posición para orientar el cincel antes de fijarlo. Cómo se desacopla el giro en este modelo no está en las fuentes: la animación solo detiene el portaherramienta y mantiene la percusión. Referencial: se dibuja con la arquitectura y los números de pieza del HR2600; no está verificado en este modelo.",
+    "piezas": [
+     "palanca",
+     "tapa_palanca",
+     "oscilante",
+     "piston",
+     "martillo",
+     "perno",
+     "portaherramienta",
+     "engranaje51"
+    ],
+    "vidrio": [
+     "portaherramienta",
+     "piston"
+    ],
+    "foco": [
+     "palanca"
+    ],
+    "capas": [
+     "soloPercusion",
+     "colchon",
+     "broca"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Golpe que llega a la broca"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío / aire del colchón"
+     ]
+    ],
+    "giro": true
+   }
+  ]
  }
 }

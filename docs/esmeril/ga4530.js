@@ -3,6 +3,7 @@
 // El resto de las medidas (diámetros, posiciones internas) son aproximadas a partir del dibujo.
 import * as THREE from 'three';
 import { YM, cuadro, piezas, gris, alu, brillo, tornillos, perno, arandela, oring, rodamiento, corona, pinon, disco, tuercaBrida, protector, V, PI, mat, acero, mesh, cil, caja, rev, tornillo } from './comun.js';
+import { vivoGA4530 } from './vivo.js';
 import { goma, negro, cobre, laminas, alambre, textoEtiqueta } from '../lib.js';
 
 export function ga4530(cfg) {
@@ -120,6 +121,6 @@ export function ga4530(cfg) {
   add('protcable', 'Protector del cable', G4, '47', [[[rev([[0.95, -23.0], [0.9, -24.5], [0.75, -27.5], [0.62, -30.3], [0.5, -30.3]], 'x', goma('#1d1f22'), 24, 0, YM, 0)], V(-9.5, 0, 0)]]);
   const curva = new THREE.CatmullRomCurve3([V(-21.4, YM - 0.5, 0), V(-25, YM, 0), V(-30.3, YM, 0), V(-33, YM - 0.8, 0.4), V(-36, YM - 4, 0.8)]);
   add('cable', 'Cable con enchufe 2,5 m', G4, '48', [[[mesh(new THREE.TubeGeometry(curva, 48, 0.4, 12), goma('#18191c'))], V(-9.5, 0, 0)]]);
-  return { k: 1, parts };
+  return { k: 1, parts, vivo: vivoGA4530() };
 }
 
