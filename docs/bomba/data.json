@@ -1,0 +1,2683 @@
+{
+ "modelos": [
+  {
+   "marca": "Bercatti",
+   "modelo": "DRE0753",
+   "tipo": "sumergible aguas sucias",
+   "ficha": [
+    [
+     "Modelo",
+     "Bercatti DRE0753 (también Lodera, Vielco)"
+    ],
+    [
+     "Tipo",
+     "Sumergible de aguas sucias, rodete semivórtice"
+    ],
+    [
+     "Potencia",
+     "1 HP (0,75 kW): dato del DRE0752; la factura de Mar Azul dice 1,5 HP"
+    ],
+    [
+     "Alimentación",
+     "220 V / 50 Hz monofásica, 5,0 A (DRE0752)"
+    ],
+    [
+     "Bocas",
+     "3\" x 3\" (resumen de búsqueda, sin verificar)"
+    ],
+    [
+     "Caudal / altura",
+     "DRE0753: sin dato en las fuentes. DRE0752: 267 L/min, 18 m"
+    ],
+    [
+     "Peso",
+     "19 kg (resumen de búsqueda, sin verificar)"
+    ],
+    [
+     "Medidas",
+     "45 x 27 x 26 cm (DRE0752)"
+    ],
+    [
+     "Sello",
+     "Doble sello mecánico de silicio en cámara de aceite (DRE0752)"
+    ],
+    [
+     "Motor",
+     "Inducción 2 polos con capacitor, cobre, eje AISI 420 (DRE0752)"
+    ],
+    [
+     "Capacitor",
+     "sin dato en las fuentes"
+    ],
+    [
+     "Documentación",
+     "REFERENCIAL: sin despiece ni manual del modelo"
+    ]
+   ],
+   "nota": "REFERENCIAL. No hay despiece, manual ni lista de piezas del DRE0753 ni del DRE0752. Las medidas externas y los materiales salen de la ficha del DRE0752 (modelo hermano, aguaclima.cl); la boca de 3\", el agitador y el peso, de un resumen de búsqueda de easy.cl que no se pudo abrir. El desarme y la mantención siguen el manual Bercatti/Vielva de la serie SCM3 (otra serie, sumergible de noria con sello mecánico). Aproximado: toda la arquitectura interna, las formas y los colores; las piezas no llevan número."
+  },
+  {
+   "marca": "Happy",
+   "modelo": "CYM158",
+   "tipo": "centrífuga 1 HP",
+   "ficha": [
+    [
+     "Modelo",
+     "Happy CYM158 (diseño Pedrollo CPm158)"
+    ],
+    [
+     "Tipo",
+     "Centrífuga de un rodete, aspiración axial"
+    ],
+    [
+     "Potencia",
+     "1 HP (0,75 kW)"
+    ],
+    [
+     "Alimentación",
+     "230 V / 50 Hz monofásica, 6,0 A (CPm158)"
+    ],
+    [
+     "Bocas",
+     "1\" x 1\", roscadas ISO 228/1"
+    ],
+    [
+     "Caudal / altura",
+     "36 m a caudal cero; 25 m a 90 L/min (CPm158)"
+    ],
+    [
+     "Succión",
+     "7 m manométricos (CPm158)"
+    ],
+    [
+     "Peso",
+     "12,1 kg (CPm158)"
+    ],
+    [
+     "Medidas",
+     "largo 286 mm, alto 240 mm, base 190 x 160 mm (CPm158)"
+    ],
+    [
+     "Sello",
+     "AR-14, eje 14 mm, cerámica / grafito / NBR"
+    ],
+    [
+     "Rodamientos",
+     "6203 ZZ x 2"
+    ],
+    [
+     "Capacitor",
+     "20 µF 450 V (CPm158)"
+    ],
+    [
+     "Documentación",
+     "REFERENCIAL: sin manual ni despiece de Happy"
+    ]
+   ],
+   "nota": "REFERENCIAL. Happy no publica manual ni despiece. Se dibuja con la arquitectura del Pedrollo CPm158, que originó el diseño: catálogo técnico Pedrollo CP (Salvador Escoda 10047464, tabla de componentes pos. 1-8 y corte) y ficha IUSA Lite CPM158 (diagrama con nombres). «pos. N CP» es la posición en la tabla Pedrollo, no un número de repuesto. Los valores de la ficha son del CPm158; los del Happy pueden diferir (confirmar con la placa). Aproximado: formas, colores y medidas internas."
+  },
+  {
+   "marca": "Redbo",
+   "modelo": "WP-30A",
+   "tipo": "motobomba bencinera 3\"",
+   "ficha": [
+    [
+     "Modelo",
+     "Redbo WP-30A"
+    ],
+    [
+     "Tipo",
+     "Motobomba centrífuga autocebante"
+    ],
+    [
+     "Bocas",
+     "3\" x 3\""
+    ],
+    [
+     "Caudal máximo",
+     "60 m³/h"
+    ],
+    [
+     "Elevación máxima",
+     "30 m"
+    ],
+    [
+     "Succión",
+     "7 m"
+    ],
+    [
+     "Motor",
+     "170F, 212 cc, 4 tiempos OHV, 7 HP, arranque manual"
+    ],
+    [
+     "Estanque",
+     "3,6 L"
+    ],
+    [
+     "Aceite",
+     "0,6 L (manual Loncin 170F)"
+    ],
+    [
+     "Régimen sin carga",
+     "3.650 ± 50 rpm (Loncin)"
+    ],
+    [
+     "Peso / medidas",
+     "sin dato en las fuentes"
+    ],
+    [
+     "Documentación",
+     "REFERENCIAL: motor según el manual de servicio Loncin 170F; bomba sin despiece"
+    ]
+   ],
+   "nota": "REFERENCIAL. No se obtuvo manual ni despiece de Redbo. La ficha Redbo da bocas, caudal, elevación, succión, cilindrada y estanque. El motor sigue el manual de servicio Loncin 165F/170F (57 págs.; versión nieve del mismo 170F): orden de desarme, torques, holguras y datos de encendido. El extremo bomba sigue el concepto autocebante del manual Honda WB30XT, sin despiece. Aproximado: medidas externas, chasis, formas del extremo bomba, largo de biela y colores (de la foto de la ficha)."
+  }
+ ],
+ "catalogo": {},
+ "catalogoPorModelo": {
+  "DRE0753": {
+   "base": [
+    "Base con rejilla de aspiración",
+    null,
+    "Extremo bomba"
+   ],
+   "tuerca": [
+    "Tuerca del rodete",
+    null,
+    "Extremo bomba"
+   ],
+   "agitador": [
+    "Agitador de acero inoxidable",
+    null,
+    "Extremo bomba"
+   ],
+   "rodete": [
+    "Rodete semivórtice",
+    null,
+    "Extremo bomba"
+   ],
+   "voluta": [
+    "Voluta (cuerpo de bomba)",
+    null,
+    "Extremo bomba"
+   ],
+   "descarga": [
+    "Codo y niple de descarga 3\"",
+    null,
+    "Extremo bomba"
+   ],
+   "camara": [
+    "Cámara de aceite (portasellos)",
+    null,
+    "Sellos y aceite"
+   ],
+   "tapon_aceite": [
+    "Tapón de aceite",
+    null,
+    "Sellos y aceite"
+   ],
+   "sello_inf": [
+    "Sello mecánico inferior (lado agua)",
+    null,
+    "Sellos y aceite"
+   ],
+   "sello_sup": [
+    "Sello mecánico superior (lado motor)",
+    null,
+    "Sellos y aceite"
+   ],
+   "rod_inf": [
+    "Rodamiento inferior",
+    null,
+    "Motor"
+   ],
+   "rotor": [
+    "Rotor con eje",
+    null,
+    "Motor"
+   ],
+   "rod_sup": [
+    "Rodamiento superior",
+    null,
+    "Motor"
+   ],
+   "estator": [
+    "Estator con bobinados principal y auxiliar",
+    null,
+    "Motor"
+   ],
+   "termico": [
+    "Protector térmico",
+    null,
+    "Motor"
+   ],
+   "capacitor": [
+    "Capacitor de marcha",
+    null,
+    "Motor"
+   ],
+   "carcasa": [
+    "Carcasa del motor",
+    null,
+    "Alimentación y carcasa"
+   ],
+   "tapa_motor": [
+    "Tapa superior del motor",
+    null,
+    "Alimentación y carcasa"
+   ],
+   "prensacable": [
+    "Prensacable",
+    null,
+    "Alimentación y carcasa"
+   ],
+   "cable": [
+    "Cable de alimentación",
+    null,
+    "Alimentación y carcasa"
+   ],
+   "asa": [
+    "Asa",
+    null,
+    "Alimentación y carcasa"
+   ]
+  },
+  "CYM158": {
+   "cuerpo": [
+    "Cuerpo de bomba (voluta)",
+    "pos. 1 CP",
+    "Extremo bomba"
+   ],
+   "tapones": [
+    "Tapones de cebado y drenaje",
+    null,
+    "Extremo bomba"
+   ],
+   "pernos": [
+    "Pernos del cuerpo",
+    null,
+    "Extremo bomba"
+   ],
+   "oring": [
+    "Junta del cuerpo",
+    null,
+    "Extremo bomba"
+   ],
+   "rodete": [
+    "Rodete",
+    "pos. 3 CP",
+    "Extremo bomba"
+   ],
+   "sello": [
+    "Sello mecánico AR-14",
+    "pos. 5 CP",
+    "Extremo bomba"
+   ],
+   "tapa": [
+    "Tapa (portasello)",
+    "pos. 2 CP",
+    "Extremo bomba"
+   ],
+   "eje_rotor": [
+    "Rotor con eje",
+    "pos. 4 CP",
+    "Motor"
+   ],
+   "rod_del": [
+    "Rodamiento delantero 6203 ZZ",
+    "pos. 6 CP",
+    "Motor"
+   ],
+   "rod_tras": [
+    "Rodamiento trasero 6203 ZZ",
+    "pos. 6 CP",
+    "Motor"
+   ],
+   "estator": [
+    "Estator con bobinados",
+    "pos. 8 CP",
+    "Motor"
+   ],
+   "carcasa_motor": [
+    "Carcasa del motor con patas",
+    null,
+    "Motor"
+   ],
+   "tapa_trasera": [
+    "Tapa trasera del motor",
+    null,
+    "Motor"
+   ],
+   "ventilador": [
+    "Ventilador",
+    null,
+    "Motor"
+   ],
+   "cubreventilador": [
+    "Cubreventilador",
+    null,
+    "Motor"
+   ],
+   "caja_conex": [
+    "Caja de conexiones",
+    null,
+    "Alimentación"
+   ],
+   "capacitor": [
+    "Condensador 20 µF 450 V",
+    "pos. 7 CP",
+    "Alimentación"
+   ],
+   "prensacable": [
+    "Prensacable",
+    null,
+    "Alimentación"
+   ],
+   "cable": [
+    "Cable de alimentación",
+    null,
+    "Alimentación"
+   ]
+  },
+  "WP-30A": {
+   "chasis": [
+    "Chasis tubular",
+    null,
+    "Chasis"
+   ],
+   "soporte": [
+    "Soporte de la bomba (adaptador)",
+    null,
+    "Bomba"
+   ],
+   "sello_b": [
+    "Sello mecánico",
+    null,
+    "Bomba"
+   ],
+   "rodete_b": [
+    "Rodete",
+    null,
+    "Bomba"
+   ],
+   "cuerpo_bomba": [
+    "Cuerpo de bomba con cámara de cebado",
+    null,
+    "Bomba"
+   ],
+   "tapones": [
+    "Tapones de cebado y drenaje",
+    null,
+    "Bomba"
+   ],
+   "tapa_bomba": [
+    "Tapa delantera con boca de succión 3\"",
+    null,
+    "Bomba"
+   ],
+   "valvula_ret": [
+    "Válvula de retención (clapeta)",
+    null,
+    "Bomba"
+   ],
+   "bloque": [
+    "Bloque (cárter y cilindro)",
+    null,
+    "Motor 170F"
+   ],
+   "tapa_carter": [
+    "Tapa del cárter",
+    null,
+    "Motor 170F"
+   ],
+   "ciguenal": [
+    "Cigüeñal",
+    null,
+    "Motor 170F"
+   ],
+   "biela": [
+    "Biela",
+    null,
+    "Motor 170F"
+   ],
+   "piston": [
+    "Pistón con aros",
+    null,
+    "Motor 170F"
+   ],
+   "arbol_levas": [
+    "Árbol de levas",
+    null,
+    "Motor 170F"
+   ],
+   "varillas": [
+    "Varillas de empuje",
+    null,
+    "Motor 170F"
+   ],
+   "culata": [
+    "Culata",
+    null,
+    "Motor 170F"
+   ],
+   "valvulas": [
+    "Válvulas de admisión y escape",
+    null,
+    "Motor 170F"
+   ],
+   "balancines": [
+    "Balancines",
+    null,
+    "Motor 170F"
+   ],
+   "tapa_culata": [
+    "Tapa de culata",
+    null,
+    "Motor 170F"
+   ],
+   "bujia": [
+    "Bujía F7RTC",
+    null,
+    "Encendido"
+   ],
+   "volante": [
+    "Volante con imán y ventilador",
+    null,
+    "Encendido"
+   ],
+   "bobina": [
+    "Bobina de encendido",
+    null,
+    "Encendido"
+   ],
+   "cubierta_vent": [
+    "Cubierta del ventilador",
+    null,
+    "Motor 170F"
+   ],
+   "arrancador": [
+    "Arrancador retráctil",
+    null,
+    "Motor 170F"
+   ],
+   "carburador": [
+    "Carburador",
+    null,
+    "Admisión"
+   ],
+   "filtro_aire": [
+    "Filtro de aire",
+    null,
+    "Admisión"
+   ],
+   "tanque": [
+    "Estanque de combustible",
+    null,
+    "Admisión"
+   ],
+   "silenciador": [
+    "Silenciador",
+    null,
+    "Escape"
+   ]
+  }
+ },
+ "piezas": {},
+ "piezasPorModelo": {
+  "DRE0753": {
+   "Base con rejilla de aspiración": {
+    "funcion": "Apoya la bomba en el fondo y filtra la entrada: deja pasar el agua y retiene piedras y basura grandes.",
+    "como_se_desgasta": "Se tapa con lodo, trapos o piedras; se golpea contra el fondo.",
+    "prueba": "Revisar que las ranuras estén libres.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota o deformada.",
+    "tip_taller": "Rejilla tapada = poca inmersión efectiva y cavitación (ruido de grava). Limpiarla es lo primero."
+   },
+   "Tuerca del rodete": {
+    "funcion": "Fija el rodete y el agitador en la punta del eje (referencial: la fuente dice «rosca o tuerca en el eje»).",
+    "como_se_desgasta": "sin dato en las fuentes",
+    "prueba": "Que apriete firme.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la rosca está dañada.",
+    "tip_taller": "Bloquear el eje por el lado del motor para soltarla. Sentido de rosca y torque: sin dato en las fuentes."
+   },
+   "Agitador de acero inoxidable": {
+    "funcion": "Remueve el lodo frente a la entrada para que no se asiente (dato de resumen de búsqueda de easy.cl, sin verificar).",
+    "como_se_desgasta": "Desgaste por arena.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está gastado o doblado.",
+    "tip_taller": null
+   },
+   "Rodete semivórtice": {
+    "funcion": "Acelera el agua hacia la periferia; en el semivórtice el agua forma un remolino y deja pasar sólidos (tipo de rodete: resumen de búsqueda).",
+    "como_se_desgasta": "Se gasta por arena; se traba con lodo, piedras o trapos.",
+    "prueba": "Desconectado, girarlo a mano por la rejilla; ver álabes y holgura.",
+    "valor_esperado": "sin dato en las fuentes",
+    "cuando_cambiar": "Si los álabes están gastados (caudal bajo).",
+    "tip_taller": "Manual SCM3: si no parte y zumba o se detiene de golpe, revisar primero que el rodete gire libre."
+   },
+   "Voluta (cuerpo de bomba)": {
+    "funcion": "Recoge el agua que sale del rodete y convierte su velocidad en presión hacia la descarga.",
+    "como_se_desgasta": "Desgaste por arena; aire atrapado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota o muy gastada.",
+    "tip_taller": "Si hay burbujeo en la descarga, inclinar la bomba o purgar el aire (manual SCM3)."
+   },
+   "Codo y niple de descarga 3\"": {
+    "funcion": "Lleva el agua de la voluta a la manguera de descarga (3\" según resumen de búsqueda; forma aproximada).",
+    "como_se_desgasta": "Rosca dañada.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la rosca no sella.",
+    "tip_taller": null
+   },
+   "Cámara de aceite (portasellos)": {
+    "funcion": "Aloja los dos sellos mecánicos y el aceite que los lubrica y separa el agua del motor.",
+    "como_se_desgasta": "Juntas tóricas resecas; aceite contaminado.",
+    "prueba": "Revisar el aceite por el tapón.",
+    "valor_esperado": "Aceite limpio; lechoso o con agua = sello dañado",
+    "cuando_cambiar": "Las juntas, en cada apertura (O-rings nuevos).",
+    "tip_taller": "Manual SCM3: aceite de maquinaria n° 10, llenar por el tapón M8 hasta llenar la cavidad (dato de otra serie Bercatti)."
+   },
+   "Tapón de aceite": {
+    "funcion": "Permite vaciar, revisar y rellenar el aceite de la cámara.",
+    "como_se_desgasta": "Golilla aplastada.",
+    "prueba": "Que no gotee.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Golilla en cada apertura.",
+    "tip_taller": "Tapón M8 en el manual SCM3 (otra serie)."
+   },
+   "Sello mecánico inferior (lado agua)": {
+    "funcion": "Dos caras planas, una fija y una que gira con resorte, unidas por una película mínima de líquido; separa el agua bombeada de la cámara de aceite.",
+    "como_se_desgasta": "Se raya en seco o con arena; entonces entra agua al aceite y al motor.",
+    "prueba": "Revisar el aceite de la cámara.",
+    "valor_esperado": "Aceite limpio",
+    "cuando_cambiar": "Si hay agua en el aceite. Siempre el conjunto completo.",
+    "tip_taller": "Doble sello de silicio según la ficha del DRE0752. No tocar las caras pulidas; lubricar solo con agua jabonosa o aceite fino. El manual SCM3 excluye el desgaste del sello de la garantía."
+   },
+   "Sello mecánico superior (lado motor)": {
+    "funcion": "Segunda barrera: separa la cámara de aceite del motor.",
+    "como_se_desgasta": "Igual que el inferior, pero trabaja en aceite.",
+    "prueba": "Si el motor tiene humedad con aceite sano, revisarlo.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Junto con el inferior.",
+    "tip_taller": "Manual SCM3: tras armar, probar con aire a 0,2 MPa por 3 minutos sin fugas (procedimiento de esa serie)."
+   },
+   "Rodamiento inferior": {
+    "funcion": "Soporta el eje junto al extremo bomba.",
+    "como_se_desgasta": "Juego o aspereza; se daña si entra agua.",
+    "prueba": "Girar el eje a mano: juego o aspereza.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Con ruido o vibración.",
+    "tip_taller": "Designación: sin dato en las fuentes."
+   },
+   "Rotor con eje": {
+    "funcion": "Rotor de jaula: el campo giratorio induce corrientes en sus barras y lo arrastra. El eje lleva el rodete.",
+    "como_se_desgasta": "Eje rayado bajo los sellos; óxido.",
+    "prueba": "Girar a mano; ver la zona de los sellos.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si el eje está doblado o rayado bajo el sello.",
+    "tip_taller": "Eje de acero AISI 420 según la ficha del DRE0752."
+   },
+   "Rodamiento superior": {
+    "funcion": "Soporta el eje en el extremo superior.",
+    "como_se_desgasta": "Juego o aspereza.",
+    "prueba": "Girar el eje a mano.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Con ruido o vibración.",
+    "tip_taller": "Designación: sin dato en las fuentes."
+   },
+   "Estator con bobinados principal y auxiliar": {
+    "funcion": "Sus dos bobinados, uno en serie con el capacitor, crean el campo giratorio (motor de inducción de 2 polos, ficha del DRE0752).",
+    "como_se_desgasta": "Se quema por fase caída, sobrecarga, arranques frecuentes o humedad.",
+    "prueba": "Aislación bobinado-carcasa con megóhmetro.",
+    "valor_esperado": "Mayor a 1 MΩ en revisión periódica; no menor a 50 MΩ cerca de la temperatura de trabajo (el mismo manual SCM3 da ambas cifras)",
+    "cuando_cambiar": "Si está quemado o sin aislación: rebobinar o cambiar el motor.",
+    "tip_taller": "Resistencia de los bobinados: sin dato en las fuentes."
+   },
+   "Protector térmico": {
+    "funcion": "Corta el motor si se calienta y lo rearma al enfriarse (referencial: parte de la arquitectura típica; el DRE0753 no tiene ficha que lo confirme).",
+    "como_se_desgasta": "Contactos pegados.",
+    "prueba": "Continuidad en frío.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si queda abierto en frío.",
+    "tip_taller": "Si se detiene de golpe, esperar que enfríe y buscar la causa de la sobrecarga (manual SCM3)."
+   },
+   "Capacitor de marcha": {
+    "funcion": "Desfasa la corriente del bobinado auxiliar para que el campo gire y el motor parta.",
+    "como_se_desgasta": "Pierde capacidad con el calor y el tiempo.",
+    "prueba": "Medir con multímetro con función µF (descargado).",
+    "valor_esperado": "sin dato en las fuentes",
+    "cuando_cambiar": "Si mide bajo lo marcado o está hinchado; cambiar por uno de igual µF y tensión.",
+    "tip_taller": "Si no parte y zumba: capacitor agotado (criterio técnico general) o voltaje bajo (manual SCM3)."
+   },
+   "Carcasa del motor": {
+    "funcion": "Encierra el motor y le pasa el calor al agua que la rodea.",
+    "como_se_desgasta": "Golpes, corrosión.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota.",
+    "tip_taller": "El agua alrededor refrigera el motor: no hacerla funcionar en seco más de 10 s (prueba de giro del manual SCM3)."
+   },
+   "Tapa superior del motor": {
+    "funcion": "Cierra el motor por arriba y lleva el asa y el prensacable.",
+    "como_se_desgasta": "Junta reseca.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Junta en cada apertura.",
+    "tip_taller": null
+   },
+   "Prensacable": {
+    "funcion": "Sella la entrada del cable para que no entre agua al motor.",
+    "como_se_desgasta": "La goma se reseca o se corta.",
+    "prueba": "Inspección; aislación del motor.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si hay humedad en el motor o el cable se mueve.",
+    "tip_taller": null
+   },
+   "Cable de alimentación": {
+    "funcion": "Lleva los 220 V al motor (dato del DRE0752).",
+    "como_se_desgasta": "Se aplasta o se daña si se usa para colgar la bomba.",
+    "prueba": "Inspección y continuidad; aislación.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está dañado: cambiarlo con su prensacable.",
+    "tip_taller": "Tierra y diferencial obligatorios; cortar la energía antes de tocar la bomba en el agua (manual SCM3)."
+   },
+   "Asa": {
+    "funcion": "Para izar y bajar la bomba (con cuerda o cadena, nunca por el cable).",
+    "como_se_desgasta": "Corrosión.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota.",
+    "tip_taller": null
+   }
+  },
+  "CYM158": {
+   "Cuerpo de bomba (voluta) (pos. 1 CP)": {
+    "funcion": "Recibe el agua por la boca axial de 1\", la lleva al rodete y la saca por la boca radial de 1\" hacia arriba.",
+    "como_se_desgasta": "Óxido; se rompe con heladas si queda con agua.",
+    "prueba": "Inspección; fuga con la bomba presurizada.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está trizado.",
+    "tip_taller": "Hierro fundido con cataforesis, bocas roscadas ISO 228/1 (CP). Presión máxima del cuerpo 6 bar. Drenar en invierno."
+   },
+   "Tapones de cebado y drenaje": {
+    "funcion": "Arriba, para llenar el cuerpo antes de arrancar; abajo, para vaciarlo.",
+    "como_se_desgasta": "Golilla aplastada.",
+    "prueba": "Que no gotee.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Golilla en cada apertura.",
+    "tip_taller": "Ubicación aproximada."
+   },
+   "Pernos del cuerpo": {
+    "funcion": "Unen el cuerpo a la brida del motor apretando la tapa y la junta.",
+    "como_se_desgasta": "Óxido.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la rosca está dañada.",
+    "tip_taller": "Cantidad y medida: sin dato en las fuentes (se dibujan 6)."
+   },
+   "Junta del cuerpo": {
+    "funcion": "Sella el cuerpo contra la tapa.",
+    "como_se_desgasta": "Se reseca o se corta.",
+    "prueba": "Fuga entre cuerpo y motor.",
+    "valor_esperado": null,
+    "cuando_cambiar": "En cada apertura.",
+    "tip_taller": null
+   },
+   "Rodete (pos. 3 CP)": {
+    "funcion": "Gira con el eje y lanza el agua hacia la periferia; el centro queda en depresión y aspira el agua.",
+    "como_se_desgasta": "Desgaste o se tapa.",
+    "prueba": "Abrir el cuerpo e inspeccionar.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está gastado o roto.",
+    "tip_taller": "Acero inoxidable AISI 304 en el CPm158; el IUSA CPM158 trae rodete plástico; el del Happy puede diferir. Sentido de rosca y torque: sin dato."
+   },
+   "Sello mecánico AR-14 (pos. 5 CP)": {
+    "funcion": "Evita que el agua pase al motor: un asiento cerámico fijo en la tapa y un anillo de grafito que gira con el eje, apretado por un resorte.",
+    "como_se_desgasta": "Se quema en seco en segundos; se raya con arena.",
+    "prueba": "Goteo entre el cuerpo y el motor.",
+    "valor_esperado": "Sin goteo",
+    "cuando_cambiar": "Si gotea: cambiar el conjunto completo.",
+    "tip_taller": "Eje de 14 mm; cerámica / grafito / NBR (CP). La cerámica es frágil: no tocar las caras."
+   },
+   "Tapa (portasello) (pos. 2 CP)": {
+    "funcion": "Cierra el cuerpo por el lado del motor y aloja el asiento fijo del sello.",
+    "como_se_desgasta": "Corrosión leve.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está deformada.",
+    "tip_taller": "Acero inoxidable AISI 304 (CP)."
+   },
+   "Rotor con eje (pos. 4 CP)": {
+    "funcion": "Rotor de jaula arrastrado por el campo giratorio; el eje lleva el rodete y el ventilador.",
+    "como_se_desgasta": "Eje oxidado o trabado.",
+    "prueba": "Girar el eje a mano por el ventilador.",
+    "valor_esperado": "Gira libre",
+    "cuando_cambiar": "Si está doblado.",
+    "tip_taller": "Eje de acero inoxidable AISI 431 (CP)."
+   },
+   "Rodamiento delantero 6203 ZZ (pos. 6 CP)": {
+    "funcion": "Soporta el eje en el lado de la bomba.",
+    "como_se_desgasta": "Juego, ruido metálico, aspereza.",
+    "prueba": "Juego axial y radial del eje.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Al primer ruido: cambiar ambos.",
+    "tip_taller": "6203 ZZ (CPm158)."
+   },
+   "Rodamiento trasero 6203 ZZ (pos. 6 CP)": {
+    "funcion": "Soporta el eje en el lado del ventilador.",
+    "como_se_desgasta": "Juego, ruido metálico.",
+    "prueba": "Juego axial y radial del eje.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Junto con el delantero.",
+    "tip_taller": "6203 ZZ (CPm158)."
+   },
+   "Estator con bobinados (pos. 8 CP)": {
+    "funcion": "Bobinado principal y auxiliar que crean el campo giratorio; trae protección térmica incorporada (CPm).",
+    "como_se_desgasta": "Se quema por sobrecarga, tensión baja o humedad.",
+    "prueba": "Medir tensión y corriente; aislación con megóhmetro.",
+    "valor_esperado": "6,0 A a 230 V (CPm158)",
+    "cuando_cambiar": "Si está quemado: rebobinar.",
+    "tip_taller": "Aislamiento clase F, IPX4 (CP). Resistencia de bobinados: sin dato."
+   },
+   "Carcasa del motor con patas": {
+    "funcion": "Sostiene el estator, la brida del cuerpo y las patas; sus aletas disipan el calor.",
+    "como_se_desgasta": "Aletas sucias; golpes.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota.",
+    "tip_taller": "Medidas de la tabla CPm158: largo 286 mm, base 190 x 160 mm; el resto, aproximado."
+   },
+   "Tapa trasera del motor": {
+    "funcion": "Cierra el motor por atrás y aloja el rodamiento trasero.",
+    "como_se_desgasta": "sin dato en las fuentes",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota.",
+    "tip_taller": null
+   },
+   "Ventilador": {
+    "funcion": "Gira con el eje y empuja aire sobre la carcasa para enfriar el motor.",
+    "como_se_desgasta": "Aspas rotas por golpes.",
+    "prueba": "Visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si tiene aspas rotas (motor caliente).",
+    "tip_taller": "Diagrama IUSA CPM158; despiece Truper pos. 18-19 como referencia."
+   },
+   "Cubreventilador": {
+    "funcion": "Protege el ventilador y guía el aire.",
+    "como_se_desgasta": "Golpes.",
+    "prueba": "Visual; ver la flecha de giro.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está roto.",
+    "tip_taller": "Verificar en él la flecha de giro."
+   },
+   "Caja de conexiones": {
+    "funcion": "Aloja la bornera, el cable y el capacitor.",
+    "como_se_desgasta": "Humedad en los bornes.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no sella.",
+    "tip_taller": "Antes de desconectar, sacar foto de las conexiones."
+   },
+   "Condensador 20 µF 450 V (pos. 7 CP)": {
+    "funcion": "Desfasa la corriente del bobinado auxiliar para que el motor parta y gire.",
+    "como_se_desgasta": "Pierde capacidad.",
+    "prueba": "Medir µF, descargado.",
+    "valor_esperado": "20 µF (CPm158)",
+    "cuando_cambiar": "Si mide bajo o está hinchado.",
+    "tip_taller": "El valor es del Pedrollo CPm158; el del Happy puede diferir. El Truper BOPA-1 de referencia usa 40 µF: no equivale."
+   },
+   "Prensacable": {
+    "funcion": "Sujeta y sella el cable en la caja.",
+    "como_se_desgasta": "Se reseca.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no aprieta.",
+    "tip_taller": null
+   },
+   "Cable de alimentación": {
+    "funcion": "Lleva 230 V / 50 Hz al motor (CPm158).",
+    "como_se_desgasta": "Aplastado o cortado.",
+    "prueba": "Continuidad y aislación.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está dañado.",
+    "tip_taller": "Tierra y diferencial; esperar la descarga del capacitor antes de abrir."
+   }
+  },
+  "WP-30A": {
+   "Chasis tubular": {
+    "funcion": "Sostiene motor y bomba y sirve para trasladar el equipo.",
+    "como_se_desgasta": "Soldaduras trizadas por vibración.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está trizado.",
+    "tip_taller": "Forma aproximada, según la foto de la ficha Redbo."
+   },
+   "Soporte de la bomba (adaptador)": {
+    "funcion": "Une el cuerpo de la bomba al motor y aloja el asiento fijo del sello.",
+    "como_se_desgasta": "Corrosión.",
+    "prueba": "Goteo por el soporte = sello dañado.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está trizado.",
+    "tip_taller": "Forma aproximada: sin despiece del extremo bomba."
+   },
+   "Sello mecánico": {
+    "funcion": "Separa el agua de la bomba del motor: cara fija en el soporte y cara que gira con el rodete.",
+    "como_se_desgasta": "Se destruye en seco.",
+    "prueba": "Goteo por la zona del soporte.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si gotea.",
+    "tip_taller": "Medida: sin dato en las fuentes."
+   },
+   "Rodete": {
+    "funcion": "Va en la punta del eje del motor y lanza el agua hacia la voluta.",
+    "como_se_desgasta": "Se gasta con arena; aumenta la holgura con la voluta.",
+    "prueba": "Desarmar la tapa e inspeccionar.",
+    "valor_esperado": "sin dato en las fuentes",
+    "cuando_cambiar": "Si está gastado (caudal bajo).",
+    "tip_taller": "Honda WB30XT reserva la holgura del rotor al servicio. Forma, sentido de rosca y torque: sin dato."
+   },
+   "Cuerpo de bomba con cámara de cebado": {
+    "funcion": "Voluta y cámara alta que guarda el agua de cebado; la descarga de 3\" sale arriba.",
+    "como_se_desgasta": "Arena; heladas.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está trizado.",
+    "tip_taller": "Concepto autocebante del manual Honda WB30XT; forma aproximada."
+   },
+   "Tapones de cebado y drenaje": {
+    "funcion": "Arriba se llena el agua de cebado; abajo se vacía la bomba después de usarla.",
+    "como_se_desgasta": "Golilla gastada.",
+    "prueba": "Que no gotee.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Golilla en cada apertura.",
+    "tip_taller": "Honda WB30XT: tras bombear agua sucia, vaciar y enjuagar la cámara."
+   },
+   "Tapa delantera con boca de succión 3\"": {
+    "funcion": "Cierra la voluta por delante y lleva la boca de succión de 3\" sobre el eje.",
+    "como_se_desgasta": "Corrosión, junta reseca.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Junta en cada apertura.",
+    "tip_taller": "Forma aproximada."
+   },
+   "Válvula de retención (clapeta)": {
+    "funcion": "Deja entrar el agua y no la deja volver: mantiene el agua de cebado al parar.",
+    "como_se_desgasta": "La goma se deforma o se corta.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no cierra.",
+    "tip_taller": "Honda WB30XT reserva la revisión de la válvula de entrada al servicio."
+   },
+   "Bloque (cárter y cilindro)": {
+    "funcion": "Cárter con el cigüeñal y el cilindro de 70 mm en una sola pieza (Loncin).",
+    "como_se_desgasta": "Desgaste del cilindro.",
+    "prueba": "Diámetro del cilindro.",
+    "valor_esperado": "70 mm (límite 70,165)",
+    "cuando_cambiar": "Si pasa el límite: rectificar.",
+    "tip_taller": "Holgura pistón-cilindro 0,015-0,05 mm (límite 0,12) (Loncin)."
+   },
+   "Tapa del cárter": {
+    "funcion": "Cierra el cárter por el lado de la toma de fuerza y lleva el rodamiento y el retén.",
+    "como_se_desgasta": "Retén con fuga de aceite.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Junta y retén al abrir.",
+    "tip_taller": "7 pernos M8×32 a 27-30 N·m (Loncin)."
+   },
+   "Cigüeñal": {
+    "funcion": "Convierte el vaivén del pistón en giro; por la toma de fuerza mueve directamente el rodete.",
+    "como_se_desgasta": "Desgaste del muñón.",
+    "prueba": "Huelgo de la cabeza de biela.",
+    "valor_esperado": "0,04-0,063 mm (límite 0,12)",
+    "cuando_cambiar": "Si pasa el límite.",
+    "tip_taller": "Gira antihorario visto desde la toma de fuerza (Loncin)."
+   },
+   "Biela": {
+    "funcion": "Une el pistón con el cigüeñal.",
+    "como_se_desgasta": "Huelgo en la cabeza.",
+    "prueba": "Huelgo de la cabeza.",
+    "valor_esperado": "0,04-0,063 mm (límite 0,12)",
+    "cuando_cambiar": "Si pasa el límite.",
+    "tip_taller": "Pernos M7 a 13-15 N·m; alinear la tapa al armar (Loncin). Largo dibujado: aproximado."
+   },
+   "Pistón con aros": {
+    "funcion": "Recibe la presión de la combustión; los aros sellan la cámara y raspan el aceite.",
+    "como_se_desgasta": "Aros gastados: baja compresión, humo.",
+    "prueba": "Luz de aros; compresión.",
+    "valor_esperado": "Aros 1° y 2°: 0,2-0,4 mm (límite 1,0); compresión 6,5-8,5 kgf/cm²",
+    "cuando_cambiar": "Si pasa los límites.",
+    "tip_taller": "Marca de los aros hacia arriba, no confundir 1° y 2°, aberturas desfasadas; marca del pistón hacia el lado de las varillas (Loncin)."
+   },
+   "Árbol de levas": {
+    "funcion": "Movido por el engranaje del cigüeñal, gira media vuelta por vuelta y abre cada válvula una vez por ciclo.",
+    "como_se_desgasta": "Desgaste de levas.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está gastado.",
+    "tip_taller": "Al armar, alinear la marca de distribución con el engranaje del cigüeñal (Loncin)."
+   },
+   "Varillas de empuje": {
+    "funcion": "Llevan el empuje de las levas a los balancines.",
+    "como_se_desgasta": "Se doblan.",
+    "prueba": "Rodarlas sobre una superficie plana.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si están dobladas.",
+    "tip_taller": null
+   },
+   "Culata": {
+    "funcion": "Cierra el cilindro, forma la cámara de combustión y aloja válvulas y bujía.",
+    "como_se_desgasta": "Alabeo, carbón.",
+    "prueba": "Planitud con regla.",
+    "valor_esperado": "Alabeo máx. 0,10 mm",
+    "cuando_cambiar": "Si pasa el límite.",
+    "tip_taller": "4 pernos M8×60 en cruz, en 2-3 pasos, 32-35 N·m; junta nueva (Loncin)."
+   },
+   "Válvulas de admisión y escape": {
+    "funcion": "Abren y cierran el paso de la mezcla y de los gases de escape.",
+    "como_se_desgasta": "Asiento quemado, vástago gastado.",
+    "prueba": "Luz en frío con galga; ancho de asiento.",
+    "valor_esperado": "Tabla: admisión 0,15 +0,02 mm, escape 0,20 +0,02 mm (la sección 3.4 del mismo manual da 0,10-0,15 y 0,15-0,20); asiento 0,8 mm (límite 2,0)",
+    "cuando_cambiar": "Si el asiento o el vástago pasan el límite.",
+    "tip_taller": "No intercambiar admisión y escape; el rotador de válvula debe ir montado (Loncin)."
+   },
+   "Balancines": {
+    "funcion": "Invierten el empuje de la varilla y abren la válvula.",
+    "como_se_desgasta": "Desgaste de la punta.",
+    "prueba": "Luz de válvulas.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si están gastados.",
+    "tip_taller": "Tuerca M6 8-12 N·m; perno de ajuste M8 26-32 N·m (Loncin)."
+   },
+   "Tapa de culata": {
+    "funcion": "Cubre los balancines.",
+    "como_se_desgasta": "Junta con fuga.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Junta al abrir.",
+    "tip_taller": "Pernos M6 a 8-12 N·m (Loncin)."
+   },
+   "Bujía F7RTC": {
+    "funcion": "Hace saltar la chispa que enciende la mezcla.",
+    "como_se_desgasta": "Electrodos gastados o sucios.",
+    "prueba": "Poner la bujía a masa y tirar la cuerda: debe haber chispa.",
+    "valor_esperado": "Luz 0,7-0,8 mm; 27-30 N·m (Loncin)",
+    "cuando_cambiar": "Sucia o mala: limpiar o cambiar.",
+    "tip_taller": "Designación del manual Loncin (Honda GX: BPR6ES). Honda revisa la bujía cada 6 meses o 100 h."
+   },
+   "Volante con imán y ventilador": {
+    "funcion": "Guarda inercia, sopla el aire de enfriamiento y su imán induce la corriente en la bobina.",
+    "como_se_desgasta": "Aletas rotas; chaveta cortada.",
+    "prueba": "Revisar la chaveta.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si tiene aletas rotas.",
+    "tip_taller": "Tuerca M14×1,5 a 80-90 N·m con aceite en la rosca; no golpearlo, usar extractor (Loncin)."
+   },
+   "Bobina de encendido": {
+    "funcion": "Cuando pasa el imán, genera la alta tensión para la bujía (encendido TCI).",
+    "como_se_desgasta": "Aislación dañada.",
+    "prueba": "Resistencia de primario y secundario.",
+    "valor_esperado": "Primario 0,8-1,1 Ω; secundario 5,9-7,1 (Loncin; revisar la unidad en el original)",
+    "cuando_cambiar": "Si no hay chispa con bujía buena.",
+    "tip_taller": "Entrehierro con el volante 0,4 ± 0,2 mm; 2 pernos M6×30 a 8-12 N·m (Loncin)."
+   },
+   "Cubierta del ventilador": {
+    "funcion": "Guía el aire del volante hacia las aletas del cilindro y sostiene el arrancador.",
+    "como_se_desgasta": "Golpes.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está rota.",
+    "tip_taller": "Forma aproximada."
+   },
+   "Arrancador retráctil": {
+    "funcion": "Al tirar la cuerda, su trinquete engancha la polea del volante y hace girar el motor.",
+    "como_se_desgasta": "Trinquete o resorte roto.",
+    "prueba": "Que enganche al tirar.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Trinquete o resorte, si no engancha.",
+    "tip_taller": "4 pernos M6×12 a 8-12 N·m; usar guantes y lentes, el resorte salta (Loncin)."
+   },
+   "Carburador": {
+    "funcion": "Mezcla la bencina con el aire en la proporción justa.",
+    "como_se_desgasta": "Boquillas tapadas, agua en la cuba.",
+    "prueba": "Altura del flotador.",
+    "valor_esperado": "13,7 mm (Loncin)",
+    "cuando_cambiar": "Si el flotador o la válvula están gastados.",
+    "tip_taller": "Vaciar la cuba antes de sacarlo; limpiar pasos con aire a baja presión (Loncin)."
+   },
+   "Filtro de aire": {
+    "funcion": "Limpia el aire que entra al carburador.",
+    "como_se_desgasta": "Se tapa con polvo.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está tapado o roto.",
+    "tip_taller": "Tuercas M6 a 8-12 N·m (Loncin). Honda lo revisa en cada mantención."
+   },
+   "Estanque de combustible": {
+    "funcion": "Guarda la bencina y la entrega al carburador por gravedad.",
+    "como_se_desgasta": "Sedimentos.",
+    "prueba": "Inspección; respiradero de la tapa limpio.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si tiene fugas.",
+    "tip_taller": "3,6 L según la ficha Redbo (el manual Loncin da 3,0 L para su versión). Llave en OFF al guardar."
+   },
+   "Silenciador": {
+    "funcion": "Baja el ruido de los gases de escape.",
+    "como_se_desgasta": "Se tapa con carbón.",
+    "prueba": "Inspección.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está roto o tapado (no sube el régimen).",
+    "tip_taller": "Tuercas del escape M8 a 27-30 N·m (Loncin). No tocar caliente."
+   }
+  }
+ },
+ "desarmado": [
+  {
+   "paso": 1,
+   "titulo": "Cortar la energía y sacar del agua",
+   "instruccion": "Cortar la energía antes de tocar o mover la bomba en el agua; desconectar, dejar en seco y limpiar el exterior (manual SCM3 de Bercatti/Vielva, otra serie).",
+   "precaucion": "No izar la bomba por el cable.",
+   "herramienta": "A mano",
+   "quita": [],
+   "foco": [
+    "cable",
+    "asa"
+   ]
+  },
+  {
+   "paso": 2,
+   "titulo": "Vaciar y revisar el aceite",
+   "instruccion": "Soltar el tapón y vaciar el aceite de la cámara en un recipiente limpio. Agua o aceite lechoso indica sello mecánico dañado (manual SCM3).",
+   "precaucion": null,
+   "herramienta": "Llave (medida sin dato)",
+   "quita": [
+    "tapon_aceite"
+   ],
+   "foco": [
+    "tapon_aceite",
+    "camara"
+   ]
+  },
+  {
+   "paso": 3,
+   "titulo": "Base y rejilla",
+   "instruccion": "Retirar la base con la rejilla de aspiración (orden referencial: no hay procedimiento del DRE0753).",
+   "precaucion": null,
+   "herramienta": "Llave o destornillador (medida sin dato)",
+   "quita": [
+    "base"
+   ],
+   "foco": [
+    "base"
+   ]
+  },
+  {
+   "paso": 4,
+   "titulo": "Voluta y descarga",
+   "instruccion": "Soltar los tornillos de la voluta y retirarla con la cañería de descarga.",
+   "precaucion": null,
+   "herramienta": "Llave (medida sin dato)",
+   "quita": [
+    "voluta",
+    "descarga"
+   ],
+   "foco": [
+    "voluta"
+   ]
+  },
+  {
+   "paso": 5,
+   "titulo": "Rodete y agitador",
+   "instruccion": "Bloquear el eje por el lado del motor y soltar la tuerca o la rosca del rodete; sacar el agitador y el rodete.",
+   "precaucion": "No forzar con golpes: el sentido de la rosca no está documentado para este modelo; confirmarlo en la pieza.",
+   "herramienta": "Llave y traba del eje",
+   "quita": [
+    "tuerca",
+    "agitador",
+    "rodete"
+   ],
+   "foco": [
+    "rodete",
+    "rotor"
+   ]
+  },
+  {
+   "paso": 6,
+   "titulo": "Sello mecánico inferior",
+   "instruccion": "Retirar el sello inferior: la parte móvil sale con el eje y el asiento fijo queda en la cámara. Cambiar siempre el conjunto completo; no reusar caras usadas.",
+   "precaucion": "No tocar las caras pulidas con los dedos.",
+   "herramienta": "A mano",
+   "quita": [
+    "sello_inf"
+   ],
+   "foco": [
+    "sello_inf"
+   ]
+  },
+  {
+   "paso": 7,
+   "titulo": "Cámara de aceite y sello superior",
+   "instruccion": "Soltar la cámara de aceite (portasellos) y sacar el sello superior.",
+   "precaucion": "O-rings nuevos al armar.",
+   "herramienta": "Llave (medida sin dato)",
+   "quita": [
+    "camara",
+    "sello_sup"
+   ],
+   "foco": [
+    "camara",
+    "sello_sup"
+   ]
+  },
+  {
+   "paso": 8,
+   "titulo": "Tapa superior, asa y cable",
+   "instruccion": "Abrir la tapa superior del motor con el asa, el prensacable y el cable.",
+   "precaucion": "Revisar que no haya humedad en el motor.",
+   "herramienta": "Llave (medida sin dato)",
+   "quita": [
+    "tapa_motor",
+    "asa",
+    "prensacable",
+    "cable"
+   ],
+   "foco": [
+    "tapa_motor",
+    "prensacable"
+   ]
+  },
+  {
+   "paso": 9,
+   "titulo": "Capacitor y protector térmico",
+   "instruccion": "Desconectar el capacitor y el protector térmico; revisar el condensador y el cable (manual SCM3: revisar bobinado, condensador y cable).",
+   "precaucion": "Descargar el capacitor antes de tocar sus bornes.",
+   "herramienta": "Multímetro con función µF",
+   "quita": [
+    "capacitor",
+    "termico"
+   ],
+   "foco": [
+    "capacitor",
+    "termico"
+   ]
+  },
+  {
+   "paso": 10,
+   "titulo": "Rotor y rodamientos",
+   "instruccion": "Sacar el rotor con el eje y los dos rodamientos; girarlos a mano para ver juego o aspereza.",
+   "precaucion": null,
+   "herramienta": "Extractor de rodamientos",
+   "quita": [
+    "rotor",
+    "rod_sup",
+    "rod_inf"
+   ],
+   "foco": [
+    "rotor"
+   ]
+  },
+  {
+   "paso": 11,
+   "titulo": "Carcasa y estator",
+   "instruccion": "Revisar el bobinado del estator: aislación con megóhmetro, mayor a 1 MΩ en revisión periódica (manual SCM3).",
+   "precaucion": null,
+   "herramienta": "Megóhmetro",
+   "quita": [
+    "carcasa"
+   ],
+   "foco": [
+    "estator"
+   ]
+  },
+  {
+   "paso": 12,
+   "titulo": "Armado y prueba",
+   "instruccion": "Armar en orden inverso: O-rings nuevos, caras del sello limpias, llenar la cámara con aceite de maquinaria n° 10 por el tapón y probar con aire a 0,2 MPa por 3 minutos sin fugas (procedimiento del manual SCM3 para esa serie). Mantención completa cada 2.500 h.",
+   "precaucion": "Prueba de giro en seco: máximo 10 s (manual SCM3).",
+   "herramienta": "Bomba de aire con manómetro",
+   "quita": [],
+   "foco": [
+    "sello_inf",
+    "sello_sup",
+    "camara"
+   ]
+  }
+ ],
+ "desarmados": {
+  "DRE0753": [
+   {
+    "paso": 1,
+    "titulo": "Cortar la energía y sacar del agua",
+    "instruccion": "Cortar la energía antes de tocar o mover la bomba en el agua; desconectar, dejar en seco y limpiar el exterior (manual SCM3 de Bercatti/Vielva, otra serie).",
+    "precaucion": "No izar la bomba por el cable.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "cable",
+     "asa"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Vaciar y revisar el aceite",
+    "instruccion": "Soltar el tapón y vaciar el aceite de la cámara en un recipiente limpio. Agua o aceite lechoso indica sello mecánico dañado (manual SCM3).",
+    "precaucion": null,
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "tapon_aceite"
+    ],
+    "foco": [
+     "tapon_aceite",
+     "camara"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Base y rejilla",
+    "instruccion": "Retirar la base con la rejilla de aspiración (orden referencial: no hay procedimiento del DRE0753).",
+    "precaucion": null,
+    "herramienta": "Llave o destornillador (medida sin dato)",
+    "quita": [
+     "base"
+    ],
+    "foco": [
+     "base"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Voluta y descarga",
+    "instruccion": "Soltar los tornillos de la voluta y retirarla con la cañería de descarga.",
+    "precaucion": null,
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "voluta",
+     "descarga"
+    ],
+    "foco": [
+     "voluta"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Rodete y agitador",
+    "instruccion": "Bloquear el eje por el lado del motor y soltar la tuerca o la rosca del rodete; sacar el agitador y el rodete.",
+    "precaucion": "No forzar con golpes: el sentido de la rosca no está documentado para este modelo; confirmarlo en la pieza.",
+    "herramienta": "Llave y traba del eje",
+    "quita": [
+     "tuerca",
+     "agitador",
+     "rodete"
+    ],
+    "foco": [
+     "rodete",
+     "rotor"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Sello mecánico inferior",
+    "instruccion": "Retirar el sello inferior: la parte móvil sale con el eje y el asiento fijo queda en la cámara. Cambiar siempre el conjunto completo; no reusar caras usadas.",
+    "precaucion": "No tocar las caras pulidas con los dedos.",
+    "herramienta": "A mano",
+    "quita": [
+     "sello_inf"
+    ],
+    "foco": [
+     "sello_inf"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Cámara de aceite y sello superior",
+    "instruccion": "Soltar la cámara de aceite (portasellos) y sacar el sello superior.",
+    "precaucion": "O-rings nuevos al armar.",
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "camara",
+     "sello_sup"
+    ],
+    "foco": [
+     "camara",
+     "sello_sup"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Tapa superior, asa y cable",
+    "instruccion": "Abrir la tapa superior del motor con el asa, el prensacable y el cable.",
+    "precaucion": "Revisar que no haya humedad en el motor.",
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "tapa_motor",
+     "asa",
+     "prensacable",
+     "cable"
+    ],
+    "foco": [
+     "tapa_motor",
+     "prensacable"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Capacitor y protector térmico",
+    "instruccion": "Desconectar el capacitor y el protector térmico; revisar el condensador y el cable (manual SCM3: revisar bobinado, condensador y cable).",
+    "precaucion": "Descargar el capacitor antes de tocar sus bornes.",
+    "herramienta": "Multímetro con función µF",
+    "quita": [
+     "capacitor",
+     "termico"
+    ],
+    "foco": [
+     "capacitor",
+     "termico"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Rotor y rodamientos",
+    "instruccion": "Sacar el rotor con el eje y los dos rodamientos; girarlos a mano para ver juego o aspereza.",
+    "precaucion": null,
+    "herramienta": "Extractor de rodamientos",
+    "quita": [
+     "rotor",
+     "rod_sup",
+     "rod_inf"
+    ],
+    "foco": [
+     "rotor"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Carcasa y estator",
+    "instruccion": "Revisar el bobinado del estator: aislación con megóhmetro, mayor a 1 MΩ en revisión periódica (manual SCM3).",
+    "precaucion": null,
+    "herramienta": "Megóhmetro",
+    "quita": [
+     "carcasa"
+    ],
+    "foco": [
+     "estator"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Armado y prueba",
+    "instruccion": "Armar en orden inverso: O-rings nuevos, caras del sello limpias, llenar la cámara con aceite de maquinaria n° 10 por el tapón y probar con aire a 0,2 MPa por 3 minutos sin fugas (procedimiento del manual SCM3 para esa serie). Mantención completa cada 2.500 h.",
+    "precaucion": "Prueba de giro en seco: máximo 10 s (manual SCM3).",
+    "herramienta": "Bomba de aire con manómetro",
+    "quita": [],
+    "foco": [
+     "sello_inf",
+     "sello_sup",
+     "camara"
+    ]
+   }
+  ],
+  "CYM158": [
+   {
+    "paso": 1,
+    "titulo": "Cortar la energía y drenar",
+    "instruccion": "Cortar y desconectar la energía, esperar que el capacitor se descargue y drenar la bomba por el tapón inferior.",
+    "precaucion": "El capacitor puede quedar cargado.",
+    "herramienta": "Llave",
+    "quita": [
+     "tapones"
+    ],
+    "foco": [
+     "tapones",
+     "capacitor"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Cuerpo de bomba",
+    "instruccion": "Soltar los pernos y retirar el cuerpo (pos. 1) con su junta.",
+    "precaucion": null,
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "pernos",
+     "cuerpo",
+     "oring"
+    ],
+    "foco": [
+     "cuerpo"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Cubreventilador",
+    "instruccion": "Sacar el cubreventilador para poder bloquear el eje por el lado del ventilador.",
+    "precaucion": null,
+    "herramienta": "Destornillador",
+    "quita": [
+     "cubreventilador"
+    ],
+    "foco": [
+     "ventilador"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Rodete",
+    "instruccion": "Bloquear el eje por el lado del ventilador y desenroscar el rodete (pos. 3).",
+    "precaucion": "Sentido de rosca no documentado para el Happy: confirmarlo en la unidad.",
+    "herramienta": "Llave y traba del eje",
+    "quita": [
+     "rodete"
+    ],
+    "foco": [
+     "rodete",
+     "eje_rotor",
+     "ventilador"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Sello mecánico",
+    "instruccion": "Retirar el sello (pos. 5): sale el resorte con el anillo móvil; el asiento cerámico se saca de la tapa.",
+    "precaucion": "Cerámica frágil: no tocar las caras; cambiar el conjunto completo.",
+    "herramienta": "A mano",
+    "quita": [
+     "sello"
+    ],
+    "foco": [
+     "sello",
+     "tapa"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Tapa",
+    "instruccion": "Extraer la tapa (pos. 2). La fuente la nombra junto con el cuerpo; en esta arquitectura sale después del rodete porque el rodete queda delante (deducido del corte Pedrollo).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "tapa"
+    ],
+    "foco": [
+     "tapa"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Caja de conexiones y capacitor",
+    "instruccion": "Abrir la caja de conexiones, tomar nota o foto de las conexiones y del capacitor, y desconectar.",
+    "precaucion": null,
+    "herramienta": "Destornillador",
+    "quita": [
+     "caja_conex",
+     "capacitor",
+     "prensacable",
+     "cable"
+    ],
+    "foco": [
+     "caja_conex",
+     "capacitor"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Ventilador y tapa trasera",
+    "instruccion": "Sacar el ventilador y soltar la tapa trasera del motor.",
+    "precaucion": null,
+    "herramienta": "Extractor o palancas",
+    "quita": [
+     "ventilador",
+     "tapa_trasera"
+    ],
+    "foco": [
+     "tapa_trasera"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Rotor y rodamientos",
+    "instruccion": "Extraer el rotor con el eje y los dos rodamientos 6203 ZZ (pos. 6).",
+    "precaucion": null,
+    "herramienta": "Extractor de rodamientos",
+    "quita": [
+     "eje_rotor",
+     "rod_del",
+     "rod_tras"
+    ],
+    "foco": [
+     "eje_rotor"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Estator",
+    "instruccion": "Revisar el estator: aislación y estado del bobinado.",
+    "precaucion": null,
+    "herramienta": "Megóhmetro",
+    "quita": [
+     "carcasa_motor"
+    ],
+    "foco": [
+     "estator"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Armado",
+    "instruccion": "En orden inverso: rodamientos nuevos si hay juego o ruido, sello nuevo completo, rodete apretado a mano más un golpe firme de llave, girar el eje a mano antes de energizar y cebar la bomba antes de arrancar.",
+    "precaucion": "Nunca funcionar en seco: el sello se quema en segundos.",
+    "herramienta": "Llave",
+    "quita": [],
+    "foco": [
+     "sello",
+     "rodete"
+    ]
+   }
+  ],
+  "WP-30A": [
+   {
+    "paso": 1,
+    "titulo": "Seguridad",
+    "instruccion": "Apagar el motor, quitar el capuchón de la bujía y esperar que se enfríe (manual Loncin 1.1).",
+    "precaucion": "Bencina inflamable: lejos de fuego y con el motor frío.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "bujia",
+     "bobina"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Drenar la bomba",
+    "instruccion": "Sacar el tapón de drenaje y vaciar la bomba; el tapón de cebado ayuda a que escurra (manual Honda WB30XT).",
+    "precaucion": null,
+    "herramienta": "Llave",
+    "quita": [
+     "tapones"
+    ],
+    "foco": [
+     "tapones"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Tapa delantera y válvula de retención",
+    "instruccion": "Referencial (no hay despiece del extremo bomba de Redbo): soltar la tapa delantera y sacar la clapeta de retención.",
+    "precaucion": "Honda WB30XT reserva la revisión de la válvula de entrada al servicio autorizado.",
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "tapa_bomba",
+     "valvula_ret"
+    ],
+    "foco": [
+     "valvula_ret"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Cuerpo de bomba",
+    "instruccion": "Soltar el cuerpo de la bomba del soporte.",
+    "precaucion": null,
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "cuerpo_bomba"
+    ],
+    "foco": [
+     "cuerpo_bomba"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Rodete",
+    "instruccion": "Extraer el rodete de la punta del eje.",
+    "precaucion": "Sentido de rosca y torque del rodete: sin dato en las fuentes.",
+    "herramienta": "Llave y traba del volante",
+    "quita": [
+     "rodete_b"
+    ],
+    "foco": [
+     "rodete_b",
+     "ciguenal"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Sello mecánico",
+    "instruccion": "Retirar el sello mecánico: la cara giratoria sale del eje y la fija queda en el soporte.",
+    "precaucion": "No tocar las caras; cambiar el conjunto.",
+    "herramienta": "A mano",
+    "quita": [
+     "sello_b"
+    ],
+    "foco": [
+     "sello_b"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Soporte",
+    "instruccion": "Soltar el soporte (adaptador) del motor.",
+    "precaucion": null,
+    "herramienta": "Llave (medida sin dato)",
+    "quita": [
+     "soporte"
+    ],
+    "foco": [
+     "soporte"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Estanque",
+    "instruccion": "Vaciar el estanque y la manguera antes de desarmar; sacar el estanque (pernos M6×14, 8-12 N·m) y revisar que el respiradero de la tapa esté limpio (Loncin 4.2).",
+    "precaucion": "Vapores de bencina inflamables.",
+    "herramienta": "Llave 10 mm",
+    "quita": [
+     "tanque"
+    ],
+    "foco": [
+     "tanque"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Silenciador",
+    "instruccion": "Sacar el protector (M6×14, 8-12 N·m) y el silenciador (tuercas M8, 27-30 N·m); junta nueva al armar (Loncin 4.3).",
+    "precaucion": "No tocarlo caliente.",
+    "herramienta": "Llave 12 mm",
+    "quita": [
+     "silenciador"
+    ],
+    "foco": [
+     "silenciador"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Filtro de aire",
+    "instruccion": "Sacar la tapa, el elemento y la base del filtro (tuercas M6, 8-12 N·m) (Loncin 4.4).",
+    "precaucion": null,
+    "herramienta": "Llave 10 mm",
+    "quita": [
+     "filtro_aire"
+    ],
+    "foco": [
+     "filtro_aire"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Carburador",
+    "instruccion": "Aflojar el tornillo de drenaje y vaciar la cuba; soltar el resorte de retorno y sacar el carburador alineando la muesca del acelerador con la palanca del gobernador; cuidar el sentido del aislante y de las juntas (Loncin 4.5). El gobernador no se dibuja.",
+    "precaucion": "Bencina en la cuba.",
+    "herramienta": "Llave 10 mm",
+    "quita": [
+     "carburador"
+    ],
+    "foco": [
+     "carburador"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Arrancador retráctil",
+    "instruccion": "Soltar los 4 pernos M6×12 (8-12 N·m) y sacar el arrancador (Loncin 4.8).",
+    "precaucion": "Usar guantes y lentes: no dejar salir el resorte.",
+    "herramienta": "Llave 10 mm",
+    "quita": [
+     "arrancador"
+    ],
+    "foco": [
+     "arrancador"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Cubierta del ventilador",
+    "instruccion": "Sacar la cubierta del ventilador (en el manual, tapa del motor: pernos M6×20 a 8-12 N·m y M8×25 a 27-30 N·m, Loncin 4.1).",
+    "precaucion": null,
+    "herramienta": "Llave 10 y 12 mm",
+    "quita": [
+     "cubierta_vent"
+    ],
+    "foco": [
+     "cubierta_vent"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Bobina de encendido",
+    "instruccion": "Sacar la bobina antes que el volante (2 pernos M6×30, 8-12 N·m); al armar, entrehierro con el volante de 0,4 ± 0,2 mm (Loncin 4.9).",
+    "precaucion": null,
+    "herramienta": "Llave 10 mm y galga",
+    "quita": [
+     "bobina"
+    ],
+    "foco": [
+     "bobina",
+     "volante"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Volante",
+    "instruccion": "Trabar el volante con una herramienta en los agujeros de la polea de arranque, soltar la tuerca M14×1,5 y sacar el volante con extractor; revisar la chaveta. Al armar: 80-90 N·m con aceite en la rosca (Loncin 4.9).",
+    "precaucion": "No golpear el volante con martillo.",
+    "herramienta": "Llave 22 mm y extractor de volante",
+    "quita": [
+     "volante"
+    ],
+    "foco": [
+     "volante"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Bujía",
+    "instruccion": "Sacar la bujía (F7RTC; luz 0,7-0,8 mm; 27-30 N·m al armar, Loncin).",
+    "precaucion": null,
+    "herramienta": "Llave de bujía",
+    "quita": [
+     "bujia"
+    ],
+    "foco": [
+     "bujia"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Tapa de culata",
+    "instruccion": "Soltar los pernos de la tapa de culata (M6, 8-12 N·m) (Loncin 4.10).",
+    "precaucion": null,
+    "herramienta": "Llave 10 mm",
+    "quita": [
+     "tapa_culata"
+    ],
+    "foco": [
+     "tapa_culata"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Balancines y varillas",
+    "instruccion": "Sacar balancines y varillas. Al armar, ajustar la luz de válvulas en frío y en PMS de compresión: tabla de mantención admisión 0,15 +0,02 mm y escape 0,20 +0,02 mm (la sección 3.4 dice 0,10-0,15 y 0,15-0,20: el manual se contradice). Tuerca M6 8-12 N·m, perno de ajuste M8 26-32 N·m.",
+    "precaucion": null,
+    "herramienta": "Galga y llaves",
+    "quita": [
+     "balancines",
+     "varillas"
+    ],
+    "foco": [
+     "balancines",
+     "valvulas"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Culata",
+    "instruccion": "Aflojar los 4 pernos M8×60 en cruz en 2-3 pasos y sacar la culata; al armar 32-35 N·m y junta nueva; alabeo máximo 0,10 mm (Loncin 4.10).",
+    "precaucion": null,
+    "herramienta": "Llave 12 mm y torquímetro",
+    "quita": [
+     "culata"
+    ],
+    "foco": [
+     "culata"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "Válvulas",
+    "instruccion": "Desmontar las válvulas con la culata fuera.",
+    "precaucion": "No desarmar los resortes sin sacar la culata (el vástago cae); el rotador de válvula debe ir montado; no intercambiar admisión y escape (Loncin).",
+    "herramienta": "Compresor de resortes",
+    "quita": [
+     "valvulas"
+    ],
+    "foco": [
+     "valvulas"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "Tapa del cárter",
+    "instruccion": "Vaciar el aceite (tapón M10×1,25, 20-25 N·m) y soltar los 7 pernos M8×32 de la tapa del cárter (27-30 N·m) (Loncin 4.11).",
+    "precaucion": "No dañar el retén.",
+    "herramienta": "Llave 12 mm",
+    "quita": [
+     "tapa_carter"
+    ],
+    "foco": [
+     "tapa_carter"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "Árbol de levas",
+    "instruccion": "Sacar el árbol de levas. Al armar, alinear su marca de distribución con la del engranaje del cigüeñal (Loncin 4.11).",
+    "precaucion": "Si la marca no coincide, el motor queda fuera de punto.",
+    "herramienta": "A mano",
+    "quita": [
+     "arbol_levas"
+    ],
+    "foco": [
+     "arbol_levas",
+     "ciguenal"
+    ]
+   },
+   {
+    "paso": 23,
+    "titulo": "Biela y pistón",
+    "instruccion": "Soltar los pernos de biela (M7, 13-15 N·m) y sacar pistón y biela por arriba. Al armar: marca de los aros hacia arriba, sin confundir 1° y 2°, aberturas desfasadas, marca del pistón hacia el lado de las varillas y tapa de biela alineada (Loncin 4.11).",
+    "precaucion": null,
+    "herramienta": "Llave 10 mm",
+    "quita": [
+     "biela",
+     "piston"
+    ],
+    "foco": [
+     "piston",
+     "biela"
+    ]
+   },
+   {
+    "paso": 24,
+    "titulo": "Cigüeñal",
+    "instruccion": "Sacar el cigüeñal. Al armar, el rodamiento entra hasta tocar el cigüeñal sin dañar el retén (Loncin 4.11).",
+    "precaucion": null,
+    "herramienta": "Prensa o extractor",
+    "quita": [
+     "ciguenal"
+    ],
+    "foco": [
+     "ciguenal",
+     "bloque"
+    ]
+   },
+   {
+    "paso": 25,
+    "titulo": "Armado y prueba",
+    "instruccion": "Armar en orden inverso, aceite 0,6 L y medir la compresión: 6,0-8,5 kgf/cm² a 600 rpm (Loncin 1.7; la tabla de holguras dice 6,5-8,5). Cebar la bomba antes de arrancar.",
+    "precaucion": "Nunca hacer funcionar la bomba sin agua de cebado (Honda WB30XT).",
+    "herramienta": "Manómetro de compresión",
+    "quita": [],
+    "foco": [
+     "bloque",
+     "culata"
+    ]
+   }
+  ]
+ },
+ "funcionamiento": {
+  "DRE0753": [
+   {
+    "titulo": "Cable y 220 V",
+    "texto": "El cable lleva 220 V / 50 Hz monofásicos por el prensacable de la tapa hasta el bobinado principal del estator (dato del DRE0752, modelo hermano: 5,0 A nominales; el DRE0753 no tiene ficha verificada). La bomba va con tierra y diferencial, y nunca se iza por el cable.",
+    "piezas": [
+     "cable",
+     "prensacable",
+     "tapa_motor",
+     "estator",
+     "capacitor"
+    ],
+    "vidrio": [
+     "tapa_motor"
+    ],
+    "foco": [
+     "prensacable"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente del bobinado principal (se dibuja en un solo sentido; en la red de 50 Hz cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Capacitor y bobinado auxiliar",
+    "texto": "Un solo bobinado con corriente alterna da un campo que solo pulsa: el motor no sabría hacia qué lado partir. Por eso hay un segundo bobinado, el auxiliar, en serie con el capacitor, que desfasa su corriente respecto de la del principal. Capacidad del capacitor: sin dato en las fuentes; se cambia por uno de igual µF y tensión. Si no parte y zumba, lo primero es medir el capacitor y el voltaje.",
+    "piezas": [
+     "estator",
+     "capacitor",
+     "cable"
+    ],
+    "vidrio": [],
+    "foco": [
+     "capacitor"
+    ],
+    "capas": [
+     "corriente",
+     "capacitor"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Bobinado principal"
+     ],
+     [
+      "#ff9f43",
+      "Bobinado auxiliar, a través del capacitor"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Campo giratorio",
+    "texto": "Los dos bobinados están a 90° en el estator y sus corrientes van desfasadas por el capacitor: sus campos se suman en uno solo, con un norte y un sur, que da vueltas. Con 2 polos a 50 Hz el campo gira a 3.000 rpm (calculado: 60 × 50 / 1 par de polos; la placa del DRE0753 no se pudo verificar). En la animación va lento.",
+    "piezas": [
+     "estator",
+     "rotor"
+    ],
+    "vidrio": [
+     "estator",
+     "rotor"
+    ],
+    "foco": [
+     "estator"
+    ],
+    "capas": [
+     "campo"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Campo magnético que gira (S → N)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "El rotor sigue al campo",
+    "texto": "El campo giratorio induce corrientes en las barras del rotor de jaula y las arrastra: el rotor gira un poco más lento que el campo (deslizamiento). El eje, de acero AISI 420 según la ficha del DRE0752, va sobre dos rodamientos y lleva el rodete en la punta. En una monofásica el sentido de giro lo fijan el cableado y el capacitor; no se cambia.",
+    "piezas": [
+     "rotor",
+     "estator",
+     "rod_inf",
+     "rod_sup"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "rotor"
+    ],
+    "capas": [
+     "campo",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Campo giratorio"
+     ],
+     [
+      "#4ade80",
+      "Giro del rotor"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El agua entra por la rejilla",
+    "texto": "Sumergida, la bomba no necesita cebado: el agua entra sola por la rejilla de la base hacia el centro del rodete. El paso de sólidos del DRE0752 es 6 mm (el DRE0753, de 3\", no tiene ficha verificada). El agitador inoxidable remueve el lodo frente a la entrada (dato de resumen de búsqueda). Si queda aire atrapado en la voluta la bomba se «bloquea»: se inclina o se purga. Con poca inmersión o la rejilla tapada aparece cavitación: ruido de grava y caída de caudal.",
+    "piezas": [
+     "base",
+     "agitador",
+     "rodete",
+     "voluta",
+     "tuerca"
+    ],
+    "vidrio": [
+     "voluta"
+    ],
+    "foco": [
+     "base"
+    ],
+    "capas": [
+     "aguaEntra"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua que entra"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rodete semivórtice y voluta",
+    "texto": "El rodete lanza el agua hacia afuera y le da velocidad; la voluta, que se ensancha hacia la salida, la frena y convierte esa velocidad en presión. En un rodete semivórtice el agua forma un remolino delante de los álabes, así pasan agua sucia y sólidos sin trabar el rodete (tipo de rodete: resumen de búsqueda). Un rodete gastado por arena da poco caudal.",
+    "piezas": [
+     "rodete",
+     "voluta",
+     "agitador"
+    ],
+    "vidrio": [
+     "voluta"
+    ],
+    "foco": [
+     "rodete"
+    ],
+    "capas": [
+     "aguaSale"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua impulsada por el rodete hacia la descarga"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Descarga de 3\"",
+    "texto": "El agua sube por el codo y sale por la boca de 3\". Curva del DRE0752 (modelo hermano, boca de 2\"): 18 m a caudal cero, 13,2 m a 8 m³/h y 2,5 m a 16 m³/h. Del DRE0753 no hay curva en las fuentes. A más altura, menos caudal; si el caudal cae, revisar altura, manguera tapada y desgaste del rodete.",
+    "piezas": [
+     "descarga",
+     "voluta",
+     "rodete"
+    ],
+    "vidrio": [
+     "voluta"
+    ],
+    "foco": [
+     "descarga"
+    ],
+    "capas": [
+     "aguaSale",
+     "descarga"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua hacia la manguera de descarga"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Doble sello y cámara de aceite",
+    "texto": "Entre la bomba y el motor hay dos sellos mecánicos (doble sello de silicio según la ficha del DRE0752) en una cámara con aceite. Cada sello tiene una cara fija y otra que gira con el eje, apretada por un resorte; entre ambas queda una película mínima de líquido. El sello inferior trabaja contra el agua sucia; el superior, en aceite. Si funciona en seco o con arena se raya y el agua pasa al aceite: por eso se revisa el aceite (lechoso = sello dañado).",
+    "piezas": [
+     "sello_inf",
+     "sello_sup",
+     "camara",
+     "tapon_aceite",
+     "rotor"
+    ],
+    "vidrio": [
+     "camara"
+    ],
+    "foco": [
+     "sello_inf",
+     "sello_sup"
+    ],
+    "capas": [
+     "aceite"
+    ],
+    "leyenda": [
+     [
+      "#f5b942",
+      "Aceite de la cámara"
+     ],
+     [
+      "#4ade80",
+      "Cara del sello que gira con el eje"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Refrigeración y protección",
+    "texto": "El agua que rodea la carcasa se lleva el calor del motor, por eso no se hace funcionar fuera del agua (prueba de giro en seco de 10 s como máximo, manual SCM3). Si el motor se calienta, el protector térmico lo corta y lo rearma al enfriarse (referencial: no hay ficha del DRE0753 que lo confirme). Si la bomba se detiene de golpe, esperar que enfríe y buscar la causa.",
+    "piezas": [
+     "carcasa",
+     "estator",
+     "termico",
+     "rotor"
+    ],
+    "vidrio": [
+     "carcasa"
+    ],
+    "foco": [
+     "termico"
+    ],
+    "capas": [
+     "refrigeracion"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Calor del bobinado"
+     ],
+     [
+      "#38bdf8",
+      "Agua que lo disipa"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "CYM158": [
+   {
+    "titulo": "Cebado",
+    "texto": "Antes de arrancar, el cuerpo y la tubería de succión deben quedar llenos de agua: se llena por el tapón superior y una válvula de pie o de retención mantiene la columna. El CPm158 aspira hasta 7 m manométricos. Sin cebado la bomba no sube agua y el sello AR-14 se quema en segundos.",
+    "piezas": [
+     "cuerpo",
+     "tapones",
+     "rodete",
+     "tapa"
+    ],
+    "vidrio": [
+     "cuerpo"
+    ],
+    "foco": [
+     "tapones"
+    ],
+    "capas": [
+     "cebado"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua de cebado"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Corriente y capacitor",
+    "texto": "El cable trae 230 V / 50 Hz (CPm158: 6,0 A) a la caja de conexiones. De ahí la corriente pasa al bobinado principal y, a través del condensador de 20 µF 450 V montado sobre el motor, al auxiliar (valores del Pedrollo CPm158; los del Happy pueden diferir). El condensador desfasa la corriente del auxiliar para que el motor pueda partir.",
+    "piezas": [
+     "cable",
+     "prensacable",
+     "caja_conex",
+     "capacitor",
+     "estator"
+    ],
+    "vidrio": [
+     "caja_conex",
+     "carcasa_motor"
+    ],
+    "foco": [
+     "capacitor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Bobinado principal"
+     ],
+     [
+      "#ff9f43",
+      "Bobinado auxiliar, por el condensador"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Campo giratorio",
+    "texto": "Los dos bobinados, a 90° y con corrientes desfasadas, forman un campo con un norte y un sur que gira dentro del estator: 3.000 rpm con 2 polos a 50 Hz (calculado; el catálogo no da la velocidad del motor). En la animación va lento. El bobinado trae protección térmica incorporada (CPm).",
+    "piezas": [
+     "estator",
+     "eje_rotor"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "estator"
+    ],
+    "capas": [
+     "campo"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Campo magnético que gira (S → N)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Rotor, eje y rodamientos",
+    "texto": "El campo induce corrientes en el rotor de jaula y lo arrastra, algo más lento que el campo. El eje de acero inoxidable AISI 431 va sobre dos rodamientos 6203 ZZ y lleva el rodete adelante y el ventilador atrás (CP). Si el eje no gira a mano, la bomba zumba y no parte: rodamientos o rodete trabados.",
+    "piezas": [
+     "eje_rotor",
+     "rod_del",
+     "rod_tras",
+     "estator",
+     "ventilador",
+     "rodete"
+    ],
+    "vidrio": [
+     "estator"
+    ],
+    "foco": [
+     "rod_del",
+     "rod_tras"
+    ],
+    "capas": [
+     "campo",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del eje"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El rodete aspira",
+    "texto": "El rodete lanza el agua hacia la periferia por fuerza centrífuga y su centro queda en depresión: esa depresión aspira el agua por la boca axial de 1\". Si la succión es muy alta, larga o delgada, o el agua está caliente, aparece cavitación: ruido de piedras, vibración y caída de presión.",
+    "piezas": [
+     "rodete",
+     "cuerpo",
+     "tapa"
+    ],
+    "vidrio": [
+     "cuerpo"
+    ],
+    "foco": [
+     "rodete"
+    ],
+    "capas": [
+     "aguaEntra"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua aspirada"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Voluta y descarga",
+    "texto": "La voluta recoge el agua del rodete, la frena y convierte su velocidad en presión hacia la boca de descarga de 1\". Curva del CPm158: 36 m a caudal cero, 30 m a 60 L/min y 25 m a 90 L/min. Si el motor gira al revés por un cableado cambiado, el caudal cae.",
+    "piezas": [
+     "rodete",
+     "cuerpo"
+    ],
+    "vidrio": [
+     "cuerpo"
+    ],
+    "foco": [
+     "cuerpo"
+    ],
+    "capas": [
+     "aguaSale"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua impulsada hacia la descarga"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Sello mecánico AR-14",
+    "texto": "Donde el eje atraviesa la tapa, el sello AR-14 evita que el agua pase al motor: un asiento cerámico fijo en la tapa y un anillo de grafito que gira con el eje, apretados por un resorte, con una película del agua bombeada entre ambos que los lubrica (cerámica / grafito / NBR, eje de 14 mm). No resiste funcionar en seco ni con arena; si gotea entre cuerpo y motor, se cambia completo.",
+    "piezas": [
+     "sello",
+     "tapa",
+     "eje_rotor",
+     "rodete"
+    ],
+    "vidrio": [
+     "tapa"
+    ],
+    "foco": [
+     "sello"
+    ],
+    "capas": [
+     "sello"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Película de agua entre las caras"
+     ],
+     [
+      "#4ade80",
+      "Anillo que gira"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Ventilación del motor",
+    "texto": "El ventilador del extremo trasero empuja aire a lo largo de las aletas de la carcasa. Motor aislamiento clase F, protección IPX4; líquido de -10 a +90 °C (CP). Con la ventilación tapada o la tensión baja, salta la protección térmica.",
+    "piezas": [
+     "ventilador",
+     "cubreventilador",
+     "carcasa_motor",
+     "eje_rotor"
+    ],
+    "vidrio": [
+     "cubreventilador"
+    ],
+    "foco": [
+     "ventilador"
+    ],
+    "capas": [
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#7dd3fc",
+      "Aire de enfriamiento"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "WP-30A": [
+   {
+    "titulo": "Bencina y aire al carburador",
+    "texto": "La bencina baja por gravedad del estanque (3,6 L según la ficha Redbo) por la llave de paso al carburador; el aire entra por el filtro. En el carburador se mezclan en la proporción justa y la mezcla pasa al conducto de admisión de la culata. Si no arranca: llave cerrada, estanque vacío o filtro y manguera tapados (Honda WB30XT y Loncin 1.7).",
+    "piezas": [
+     "tanque",
+     "carburador",
+     "filtro_aire",
+     "culata"
+    ],
+    "vidrio": [
+     "filtro_aire",
+     "culata"
+    ],
+    "foco": [
+     "carburador"
+    ],
+    "capas": [
+     "combustible",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#d9f99d",
+      "Bencina"
+     ],
+     [
+      "#f1f5f9",
+      "Aire"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Arranque retráctil",
+    "texto": "Al tirar la cuerda, el trinquete del arrancador engancha la polea del volante y hace girar el cigüeñal hasta que el motor parte; al soltar, el resorte recoge la cuerda (Loncin 4.8). El cigüeñal gira antihorario visto desde la toma de fuerza (Loncin).",
+    "piezas": [
+     "arrancador",
+     "volante",
+     "ciguenal",
+     "cubierta_vent"
+    ],
+    "vidrio": [
+     "cubierta_vent"
+    ],
+    "foco": [
+     "arrancador"
+    ],
+    "capas": [
+     "arranque"
+    ],
+    "leyenda": [
+     [
+      "#fef3c7",
+      "Cuerda"
+     ],
+     [
+      "#4ade80",
+      "Giro"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Ciclo de 4 tiempos",
+    "texto": "El 170F es un monocilíndrico de 4 tiempos y 212 cc (70 × 55 mm, compresión 8,5:1, Loncin). Admisión: el pistón baja con la válvula de admisión abierta y entra la mezcla. Compresión: ambas válvulas cerradas, el pistón sube y la comprime. Explosión: la chispa la enciende y la expansión empuja el pistón hacia abajo; es el único tiempo que da fuerza. Escape: sube el pistón con la válvula de escape abierta y saca los gases al silenciador. Un ciclo completo son dos vueltas del cigüeñal.",
+    "piezas": [
+     "piston",
+     "biela",
+     "ciguenal",
+     "valvulas",
+     "culata",
+     "bloque",
+     "bujia",
+     "silenciador"
+    ],
+    "vidrio": [
+     "bloque",
+     "culata",
+     "silenciador"
+    ],
+    "foco": [
+     "piston"
+    ],
+    "capas": [
+     "ciclo"
+    ],
+    "leyenda": [
+     [
+      "#7dd3fc",
+      "Mezcla que entra"
+     ],
+     [
+      "#a78bfa",
+      "Mezcla comprimida"
+     ],
+     [
+      "#ff7a2f",
+      "Combustión"
+     ],
+     [
+      "#9ca3af",
+      "Gases de escape"
+     ],
+     [
+      "#ff5470",
+      "Fuerza sobre el pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Biela, cigüeñal y volante",
+    "texto": "La biela convierte el vaivén del pistón en el giro del cigüeñal. Como solo el tiempo de explosión empuja, el volante guarda inercia para pasar los otros tres. El régimen sin carga es 3.650 ± 50 rpm y el gobernador mecánico lo mantiene al cargar la bomba (Loncin); en la animación va muy lento.",
+    "piezas": [
+     "piston",
+     "biela",
+     "ciguenal",
+     "volante"
+    ],
+    "vidrio": [
+     "bloque"
+    ],
+    "foco": [
+     "biela"
+    ],
+    "capas": [
+     "ciclo"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fuerza sobre el pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Válvulas, levas y balancines",
+    "texto": "El engranaje del cigüeñal mueve el del árbol de levas, que tiene el doble de dientes: gira media vuelta por cada vuelta del motor, así cada válvula abre una sola vez por ciclo. Cada leva empuja su varilla, el balancín invierte el movimiento y abre la válvula; el resorte la cierra. Luz en frío (tabla Loncin): admisión 0,15 y escape 0,20 mm. La alzada de las válvulas está exagerada en el dibujo.",
+    "piezas": [
+     "arbol_levas",
+     "varillas",
+     "balancines",
+     "valvulas",
+     "ciguenal"
+    ],
+    "vidrio": [
+     "culata",
+     "tapa_culata",
+     "bloque"
+    ],
+    "foco": [
+     "arbol_levas"
+    ],
+    "capas": [
+     "distribucion"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Cigüeñal"
+     ],
+     [
+      "#facc15",
+      "Árbol de levas (media vuelta)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Encendido: volante, imán y bobina",
+    "texto": "En el borde del volante va un imán. Cada vez que pasa frente a la bobina, induce en ella la alta tensión que salta en la bujía (encendido TCI, Loncin). Pasa una vez por vuelta, así hay chispa también al final del escape, donde no tiene efecto (criterio general de este tipo de encendido). Bobina: primario 0,8-1,1 Ω, entrehierro 0,4 ± 0,2 mm; bujía F7RTC con luz 0,7-0,8 mm (Loncin). Chispa dibujada en el PMS: el avance real no está en las fuentes.",
+    "piezas": [
+     "volante",
+     "bobina",
+     "bujia",
+     "ciguenal"
+    ],
+    "vidrio": [
+     "cubierta_vent"
+    ],
+    "foco": [
+     "bobina"
+    ],
+    "capas": [
+     "encendido"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Alta tensión a la bujía"
+     ],
+     [
+      "#fde047",
+      "Chispa"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Cebado de la bomba",
+    "texto": "Antes de arrancar se llena la cámara de la bomba con agua por el tapón de cebado. La bomba nunca debe funcionar sin agua de cebado: el sello se destruye en seco (manual Honda WB30XT, equipo equivalente). La manguera de succión debe ser rígida, sin fugas y con colador.",
+    "piezas": [
+     "cuerpo_bomba",
+     "tapones",
+     "tapa_bomba",
+     "rodete_b"
+    ],
+    "vidrio": [
+     "cuerpo_bomba",
+     "tapa_bomba"
+    ],
+    "foco": [
+     "tapones"
+    ],
+    "capas": [
+     "cebado"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua de cebado"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Autocebado",
+    "texto": "Con el motor en marcha, el rodete bate el agua de cebado con el aire de la manguera: el agua se separa en la cámara alta y vuelve al rodete, y el aire sale por la descarga hasta que la manguera de succión queda llena de agua. El tiempo de autocebado crece con la altura de la bomba sobre el agua (Honda WB30XT). La válvula de retención guarda el agua al parar. Ficha Redbo: succión máxima 7 m.",
+    "piezas": [
+     "rodete_b",
+     "cuerpo_bomba",
+     "valvula_ret",
+     "tapa_bomba"
+    ],
+    "vidrio": [
+     "cuerpo_bomba",
+     "tapa_bomba"
+    ],
+    "foco": [
+     "valvula_ret"
+    ],
+    "capas": [
+     "cebado",
+     "autocebado"
+    ],
+    "leyenda": [
+     [
+      "#f1f5f9",
+      "Aire expulsado"
+     ],
+     [
+      "#38bdf8",
+      "Agua de cebado"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rodete, voluta y sello",
+    "texto": "Ya cebada, el agua entra por la succión de 3\", llega al centro del rodete y sale por la voluta hacia la descarga de 3\" (ficha Redbo: caudal máximo 60 m³/h y elevación máxima 30 m). El rodete va en el mismo eje del motor. El sello mecánico, entre la voluta y el motor, evita que el agua pase al motor: si gotea por el soporte, está dañado.",
+    "piezas": [
+     "rodete_b",
+     "cuerpo_bomba",
+     "sello_b",
+     "soporte",
+     "ciguenal",
+     "tapa_bomba"
+    ],
+    "vidrio": [
+     "cuerpo_bomba",
+     "tapa_bomba"
+    ],
+    "foco": [
+     "sello_b"
+    ],
+    "capas": [
+     "agua",
+     "sello"
+    ],
+    "leyenda": [
+     [
+      "#38bdf8",
+      "Agua bombeada"
+     ],
+     [
+      "#4ade80",
+      "Cara del sello que gira"
+     ]
+    ],
+    "giro": true
+   }
+  ]
+ }
+}

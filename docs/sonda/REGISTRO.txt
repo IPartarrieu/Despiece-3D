@@ -1,0 +1,14 @@
+Registro de la herramienta «Sonda vibradora» (líneas exactas a aplicar; no se editó ningún archivo fuera de docs/sonda/)
+
+1) docs/app.js — agregar el import después de la línea de rotomartillo:
+import sonda from './sonda/index.js';
+
+2) docs/app.js — reemplazar la línea de HERR:
+const HERR = [esmeril, demoledor, rotomartillo, sonda];
+   (si la bomba ya está registrada, dejar ambas: [..., rotomartillo, bomba, sonda])
+
+3) README.md — agregar esta fila a la tabla de herramientas:
+| Sonda vibradora | Gasolina 5,5 HP + sonda 45 mm y + sonda 38 mm (eje flexible); alta frecuencia 45 mm. Todos referenciales (equipos de GMW sin documentación propia) | Wacker M1500/230 EU (cabezal H45 y eje SM1S, con números de pieza), Wacker BV50A-H (embrague, lista de terceros), Honda GX160 y Truper VICO-55 (motor), Enar TAX (mantención), Husqvarna AX36-AX65 (desarme y torques) y Wacker IRFU (convertidor) |
+
+URL de prueba: ?herr=sonda&modelo=EF45 | EF38 | AF45 (con func=1&etapa=N, paso=N, exp=1).
+data.json se genera y valida con /tmp/claude-1000/-home-ipartarrieu-Claude/6f55f94f-40f6-475a-b01f-030d4ce49e86/scratchpad/sondas/gen_data.py (python3 -I gen_data.py docs/sonda).

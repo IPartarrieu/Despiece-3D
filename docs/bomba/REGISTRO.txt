@@ -1,0 +1,16 @@
+Líneas para registrar la herramienta «Bomba» (no se editaron app.js, index.html ni README.md).
+
+1) docs/app.js, junto a los otros imports (después de la línea 6):
+import bomba from './bomba/index.js';
+
+2) docs/app.js, línea 9: agregar bomba al arreglo
+const HERR = [esmeril, demoledor, rotomartillo, bomba];
+
+3) README.md, tabla de herramientas: agregar la fila
+| Bomba | Bercatti DRE0753 (sumergible aguas sucias), Happy CYM158 (centrífuga 1 HP), Redbo WP-30A (motobomba bencinera 3") — los tres referenciales | Ficha DRE0752 y manual Bercatti/Vielva SCM3; catálogo técnico Pedrollo CP (CPm158); manual de servicio Loncin 165F/170F y manual Honda WB30XT |
+
+4) README.md, después de «Los modelos referenciales usan la arquitectura...», opcional:
+Las bombas son todas referenciales: ningún fabricante publica despiece con números; sus piezas no llevan `ref` salvo la posición de la tabla Pedrollo CP en la centrífuga.
+
+index.html no necesita cambios (los chips de herramientas se arman desde HERR).
+Prueba: ?herr=bomba&marca=Redbo&modelo=WP-30A&func=1&etapa=3

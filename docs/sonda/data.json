@@ -1,0 +1,2603 @@
+{
+ "aviso": "REFERENCIALES: ninguno de los equipos de GMW (unidades VR SGY-20 y Krafter KRV50, sondas Dynapac GVP45/GVP28 y Dynamic ZNW45/ZNW38, sonda de alta frecuencia de Brisas) tiene ficha, despiece ni manual publicados. La arquitectura sale de equipos equivalentes documentados: motor tipo Honda GX160 (manual del propietario) y Truper VICO-55; embrague centrífugo del Wacker BV50A-H (lista de piezas de terceros, sin verificar); eje flexible y cabezal del catálogo Wacker M1500/230 EU (SM1S y H45, con números) y del manual Enar TAX; alta frecuencia de Husqvarna AX36-AX65 (desarme y torques) y Wacker IRFU (convertidor). Las ref. indican de qué documento sale cada número; sin número, «—». Agrupación: 45 y 38 mm comparten unidad y eje (cambia el cabezal; el GVP28 entra en el de 38 mm); la alta frecuencia es otra arquitectura. Aproximado: medidas, formas y colores; el eje de 6 m va acortado; la biela y el orden de desarme interno del motor no tienen fuente. Velocidades y amplitud de la animación: ilustrativas.",
+ "modelos": [
+  {
+   "marca": "GMW (referencial)",
+   "modelo": "EF45",
+   "nombre": "Gasolina 5,5 HP + sonda 45 mm (eje flexible)",
+   "diametro": 45,
+   "largo_cabezal": 385,
+   "ficha": [
+    [
+     "Equipos de GMW",
+     "Unidades VR SGY-20 (Urbasan; Plaza Sur y Mar Azul) y Krafter KRV50 (Servamp; Mar Azul) con sondas Dynapac GVP45 (Plaza Sur) y Dynamic ZNW45 (Mar Azul), 45 mm × 6 m"
+    ],
+    [
+     "Documentación propia",
+     "ninguna: sin ficha, despiece ni manual (REFERENCIAL)"
+    ],
+    [
+     "Motor",
+     "5,5 HP a gasolina, 4 tiempos. Cilindrada propia: sin dato; análogos Truper VICO-55 y Honda GX160: 163 cc, 68 × 45 mm"
+    ],
+    [
+     "Velocidad",
+     "≈3.600 rpm del motor = ≈3.600 vpm: sin multiplicador (Truper VICO-55); tienda análoga: 3.000-3.600 rpm"
+    ],
+    [
+     "Embrague",
+     "centrífugo según Wacker BV50A-H (tabla de terceros); no confirmado en la SGY-20 ni en la KRV50"
+    ],
+    [
+     "Eje flexible",
+     "6 m, acople tipo Dynapac (inventario); arquitectura Wacker SM-S"
+    ],
+    [
+     "Cabezal",
+     "45 mm; dibujado como el Wacker H45: 385 mm, 3,4 kg, 22 ml de aceite SAE 0W-30, mínimo 41 mm"
+    ],
+    [
+     "Amplitud y fuerza centrífuga",
+     "sin dato en las fuentes"
+    ],
+    [
+     "Peso",
+     "propio sin dato; Truper VICO-55: 81,5 lb (≈37 kg, cálculo)"
+    ]
+   ],
+   "nota": "REFERENCIAL. Aproximado: medidas y forma del motor, colores, largo de la biela, el eje de 6 m dibujado acortado y la amplitud de la vibración (exagerada). Números de pieza solo donde un documento los da: cabezal Wacker H45, eje Wacker SM1S, embrague Wacker BV50A-H."
+  },
+  {
+   "marca": "GMW (referencial)",
+   "modelo": "EF38",
+   "nombre": "Gasolina 5,5 HP + sonda 38 mm (también GVP28)",
+   "diametro": 38,
+   "largo_cabezal": 345,
+   "ficha": [
+    [
+     "Equipos de GMW",
+     "Dynamic ZNW38 (38 mm × 6 m, Mar Azul) y Dynapac GVP28 (28 mm × 6 m, Plaza Sur), con las mismas unidades VR SGY-20 / KRV50"
+    ],
+    [
+     "Documentación propia",
+     "ninguna (REFERENCIAL)"
+    ],
+    [
+     "Análogo más cercano",
+     "Truper VICO-55: 5,5 HP, 163 cc, cabezal de 1,5 in (38 mm), eje de 19,6 ft (6 m), 3.600 vpm"
+    ],
+    [
+     "Cabezal",
+     "38 mm × 345 mm como el Enar AX38 (1,9 kg; mínimo 36 mm de diámetro y 330 mm de largo); sin números de pieza"
+    ],
+    [
+     "GVP28",
+     "no se dibuja aparte: misma arquitectura con cabezal de 28 mm; Wacker no tiene H28 (H25: 440 mm y 10 ml de aceite; H35: 410 mm y 15 ml)"
+    ],
+    [
+     "Amplitud y fuerza centrífuga",
+     "sin dato en las fuentes"
+    ]
+   ],
+   "nota": "REFERENCIAL. Es el mismo sistema del modelo de 45 mm con un cabezal más delgado; las piezas del cabezal no llevan número porque el catálogo Wacker solo numera el H45."
+  },
+  {
+   "marca": "GMW (referencial)",
+   "modelo": "AF45",
+   "nombre": "Alta frecuencia 45 mm (convertidor + sonda con motor)",
+   "diametro": 45,
+   "largo_cabezal": 382,
+   "ficha": [
+    [
+     "Equipo de GMW",
+     "Sonda de alta frecuencia 45 mm (Brisas, propiedad de GMW, sin factura ni marca); figura con una «unidad motriz bencinera» de tipo no informado"
+    ],
+    [
+     "Documentación propia",
+     "ninguna (REFERENCIAL)"
+    ],
+    [
+     "Tipo",
+     "motor eléctrico trifásico dentro de la sonda, alimentado por un convertidor de frecuencia"
+    ],
+    [
+     "Alimentación de la sonda",
+     "42 V, 3 fases, 200 Hz (Husqvarna AX; Wacker IRFU)"
+    ],
+    [
+     "Entrada del convertidor",
+     "IRFU: 220-240 V monofásico, 4,8 A, 0,88 kW"
+    ],
+    [
+     "Velocidad",
+     "≈12.000 rpm = 12.000 vpm (200 Hz × 60, cálculo; coincide con las fichas)"
+    ],
+    [
+     "Sonda",
+     "45 × 382 mm como el IRFU 45 (mínimo 42 mm y 372 mm); AX48: 48 × 350 mm, 4,2 kg, 560 W, 10 A"
+    ],
+    [
+     "Amplitud",
+     "propia sin dato; AX48: 1,12 mm doble; IRFU 45: 2,3 mm en aire"
+    ],
+    [
+     "Aceite",
+     "AX48: 10 cm³ Shell T46; IRFU: 10 ml 4 UH1-46N cada 100 h (servicio autorizado)"
+    ],
+    [
+     "Torques (AX48)",
+     "tapa de extremo 350 N·m con Loctite 243; tornillo B 8 N·m; acople C 200 N·m con Loctite 243"
+    ],
+    [
+     "Protección",
+     "IRFU: Bodyguard (fuga a tierra) y apagado térmico a 150 °C"
+    ]
+   ],
+   "nota": "REFERENCIAL. Piezas y orden de desarme del manual Husqvarna AX36-AX65 (letras C, F, G, H, I, J, K de su pág. 8); sin números de pieza (la lista Dynapac AX48 no se pudo leer). Aproximado: medidas internas, el excéntrico hacia la punta (deducido del desarme), la caja del convertidor y los colores."
+  }
+ ],
+ "catalogo": {
+  "chasis": [
+   "Chasis de tubo (jaula)",
+   null,
+   "Chasis y combustible"
+  ],
+  "tanque": [
+   "Tanque de combustible",
+   null,
+   "Chasis y combustible"
+  ],
+  "filtro": [
+   "Filtro de aire",
+   null,
+   "Chasis y combustible"
+  ],
+  "carburador": [
+   "Carburador",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "silenciador": [
+   "Silenciador",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "arrancador": [
+   "Arrancador retráctil",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "carter": [
+   "Bloque y cárter",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "cilindro": [
+   "Cilindro con aletas",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "culata": [
+   "Culata y tapa de balancines",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "valvulas": [
+   "Válvulas de admisión y escape",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "piston": [
+   "Pistón con aros y pasador",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "biela": [
+   "Biela",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "cigueñal": [
+   "Cigüeñal",
+   null,
+   "Motor (tipo GX160)"
+  ],
+  "volante": [
+   "Volante con imán",
+   null,
+   "Encendido"
+  ],
+  "bobina": [
+   "Bobina de encendido y cable de bujía",
+   null,
+   "Encendido"
+  ],
+  "bujia": [
+   "Bujía",
+   null,
+   "Encendido"
+  ],
+  "carcasa_embrague": [
+   "Tapa del embrague",
+   "BV50A-H 5100042584",
+   "Embrague y acople"
+  ],
+  "zapatas": [
+   "Embrague centrífugo (zapatas y resortes)",
+   "BV50A-H 5100042583",
+   "Embrague y acople"
+  ],
+  "campana": [
+   "Campana del embrague con eje de salida",
+   null,
+   "Embrague y acople"
+  ],
+  "acople": [
+   "Acople al motor con pasador",
+   "SM1S 5100069828",
+   "Embrague y acople"
+  ],
+  "conexion_motor": [
+   "Pieza de conexión lado motor",
+   "SM1S 5100069826",
+   "Eje flexible"
+  ],
+  "funda": [
+   "Manguera de protección (funda)",
+   null,
+   "Eje flexible"
+  ],
+  "alma": [
+   "Alma del eje flexible",
+   null,
+   "Eje flexible"
+  ],
+  "conexion_cabezal": [
+   "Pieza de conexión lado cabezal",
+   "SM1S 5100069807",
+   "Eje flexible"
+  ],
+  "adaptador": [
+   "Adaptador (pieza de conexión, rosca a izquierdas)",
+   "H45 5000029761",
+   "Cabezal (sonda)"
+  ],
+  "adaptador_alma": [
+   "Adaptador del alma",
+   "H45 5000029755",
+   "Cabezal (sonda)"
+  ],
+  "retenes": [
+   "Retenes del eje ×2",
+   "H45 5000029784",
+   "Cabezal (sonda)"
+  ],
+  "rod_sup": [
+   "Rodamientos superiores ×2",
+   "H45 5000078717",
+   "Cabezal (sonda)"
+  ],
+  "masa": [
+   "Masa excéntrica",
+   "H45 5000080717",
+   "Cabezal (sonda)"
+  ],
+  "rod_inf": [
+   "Rodamientos inferiores ×2",
+   "H45 5000078717",
+   "Cabezal (sonda)"
+  ],
+  "carcasa": [
+   "Carcasa del cabezal",
+   "H45 5000029760",
+   "Cabezal (sonda)"
+  ],
+  "tapa": [
+   "Tapa de cierre (punta)",
+   "H45 5000085450",
+   "Cabezal (sonda)"
+  ],
+  "convertidor": [
+   "Caja del convertidor de frecuencia",
+   null,
+   "Convertidor"
+  ],
+  "electronica": [
+   "Rectificador e inversor",
+   null,
+   "Convertidor"
+  ],
+  "cable_red": [
+   "Cable de red con enchufe",
+   null,
+   "Convertidor"
+  ],
+  "cable_salida": [
+   "Cable de salida 42 V",
+   null,
+   "Cable y manguera"
+  ],
+  "interruptor": [
+   "Caja de interruptor",
+   null,
+   "Cable y manguera"
+  ],
+  "manguera": [
+   "Manguera de protección con cable",
+   null,
+   "Cable y manguera"
+  ],
+  "niple": [
+   "Niple de manguera F",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "tuerca": [
+   "Tuerca C",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "tubo": [
+   "Tubo estator",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "portarrod": [
+   "Portarrodamiento H con rodamiento",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "estator": [
+   "Estator bobinado",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "rotor": [
+   "Rotor G",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "excentrico": [
+   "Elemento excéntrico I",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "tornillos_j": [
+   "Tornillos J",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "rod_k": [
+   "Rodamiento K",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "aceite": [
+   "Aceite de la sonda",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "orings": [
+   "Anillos O (sellos)",
+   null,
+   "Sonda de alta frecuencia"
+  ],
+  "tapa_ext": [
+   "Tapa de extremo",
+   null,
+   "Sonda de alta frecuencia"
+  ]
+ },
+ "catalogoPorModelo": {
+  "EF38": {
+   "adaptador": [
+    "Adaptador (pieza de conexión, rosca a izquierdas)",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "adaptador_alma": [
+    "Adaptador del alma",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "retenes": [
+    "Retenes del eje ×2",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "rod_sup": [
+    "Rodamientos superiores ×2",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "masa": [
+    "Masa excéntrica",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "rod_inf": [
+    "Rodamientos inferiores ×2",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "carcasa": [
+    "Carcasa del cabezal",
+    null,
+    "Cabezal (sonda)"
+   ],
+   "tapa": [
+    "Tapa de cierre (punta)",
+    null,
+    "Cabezal (sonda)"
+   ]
+  }
+ },
+ "piezas": {
+  "Chasis de tubo (jaula)": {
+   "funcion": "Bastidor que soporta el motor y lo protege; permite moverlo a mano.",
+   "como_se_desgasta": "Golpes y fisuras en soldaduras.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está fisurado o doblado.",
+   "tip_taller": "Forma y medidas aproximadas: no hay fotos ni ficha de la VR SGY-20 ni de la KRV50."
+  },
+  "Tanque de combustible": {
+   "funcion": "Guarda la bencina que va al carburador. Truper VICO-55: 0,92 gal (≈3,5 L, cálculo).",
+   "como_se_desgasta": "Sedimento y agua en el fondo; tapa con ventilación tapada.",
+   "prueba": "Revisar el combustible y la tapa.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si filtra.",
+   "tip_taller": "Truper: limpiar la tapa a las 100 h o 6 meses; estanque y colador a las 300 h (en servicio). No cargar con el motor caliente."
+  },
+  "Filtro de aire": {
+   "funcion": "Limpia el aire que entra al carburador.",
+   "como_se_desgasta": "Se tapa con polvo de la obra: el motor pierde potencia.",
+   "prueba": "Revisarlo antes de cada uso (Truper).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Truper: limpiar a las 50 h o 3 meses y cambiar a las 100 h o 6 meses.",
+   "tip_taller": "Filtro tapado = motor sin potencia (Honda GX160)."
+  },
+  "Carburador": {
+   "funcion": "Mezcla la bencina con el aire en la proporción que pide el motor; el acelerador fija las rpm.",
+   "como_se_desgasta": "Se ensucia con bencina vieja o con agua; se tapan los pasos.",
+   "prueba": "Sacar el perno de drenaje del carburador y ver si llega bencina (Truper).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no se recupera con limpieza.",
+   "tip_taller": "Truper: limpiar el sedimentador a las 100 h. Honda: revisión de carburador cada 250 h (Tomahawk)."
+  },
+  "Silenciador": {
+   "funcion": "Recibe los gases de escape y baja el ruido.",
+   "como_se_desgasta": "Corrosión y carbón.",
+   "prueba": "Inspección visual con el motor frío.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está roto.",
+   "tip_taller": "Queda muy caliente: no tocarlo después del uso."
+  },
+  "Arrancador retráctil": {
+   "funcion": "Hace girar el cigüeñal con la cuerda para arrancar.",
+   "como_se_desgasta": "Cuerda cortada o resorte cansado.",
+   "prueba": "Tirar suave y ver que la cuerda vuelva.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la cuerda está deshilachada.",
+   "tip_taller": "Desarme interno: sin procedimiento en las fuentes."
+  },
+  "Bloque y cárter": {
+   "funcion": "Aloja el cigüeñal y el aceite del motor.",
+   "como_se_desgasta": "Fugas por juntas y retenes.",
+   "prueba": "Revisar el nivel de aceite antes de cada uso: Honda GX160, SAE 10W-30 API SJ o superior.",
+   "valor_esperado": "0,37 L en el GX160 básico (verificar en la placa)",
+   "cuando_cambiar": "Si está fisurado.",
+   "tip_taller": "Truper VICO-55: primer cambio a las 20 h, luego cada 100 h o 6 meses. Con aceite bajo el sensor apaga el motor (arranca y se detiene)."
+  },
+  "Cilindro con aletas": {
+   "funcion": "Guía al pistón; las aletas lo enfrían con aire.",
+   "como_se_desgasta": "Rayado o desgaste del diámetro (68 mm en el GX160).",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Aletas sucias = recalentamiento. Medidas interiores: sin dato en las fuentes."
+  },
+  "Culata y tapa de balancines": {
+   "funcion": "Cierra el cilindro, forma la cámara de combustión y lleva las válvulas y la bujía.",
+   "como_se_desgasta": "Carbón en la cámara.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "La holgura de válvulas la ajusta un taller (Honda)."
+  },
+  "Válvulas de admisión y escape": {
+   "funcion": "Abren y cierran el paso de la mezcla (admisión) y de los gases (escape) en cada ciclo.",
+   "como_se_desgasta": "Asientos gastados o holgura descalibrada.",
+   "prueba": "Medir la holgura en frío.",
+   "valor_esperado": "admisión 0,15 ± 0,02 mm; escape 0,20 ± 0,02 mm (Honda GX160, en frío)",
+   "cuando_cambiar": "Si no sellan.",
+   "tip_taller": "Truper: holgura de válvulas a las 300 h o anual."
+  },
+  "Pistón con aros y pasador": {
+   "funcion": "Recibe la presión de la combustión y la pasa a la biela.",
+   "como_se_desgasta": "Aros gastados: consumo de aceite y pérdida de compresión.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Carrera 45 mm y diámetro 68 mm en el GX160. Desarme: sin procedimiento en las fuentes."
+  },
+  "Biela": {
+   "funcion": "Une el pistón con el cigüeñal y convierte el vaivén en giro.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Largo dibujado aproximado (sin dato en las fuentes)."
+  },
+  "Cigüeñal": {
+   "funcion": "Eje del motor: recibe el empuje de la biela y entrega el giro al embrague. En el GX160 la toma de fuerza gira antihorario.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Honda GX160: 3,6 kW a 3.600 rpm; par máximo 10,3 N·m a 2.500 rpm."
+  },
+  "Volante con imán": {
+   "funcion": "Masa que suaviza el giro; sus aletas soplan aire de enfriamiento y su imán genera la chispa al pasar frente a la bobina.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Sacarlo requiere herramienta especial: sin procedimiento en las fuentes."
+  },
+  "Bobina de encendido y cable de bujía": {
+   "funcion": "Magneto transistorizado (Honda GX160): genera la alta tensión de la chispa cuando pasa el imán.",
+   "como_se_desgasta": "Cable o capuchón dañados.",
+   "prueba": "Probar chispa con la bujía conectada y apoyada a masa (Truper).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no hay chispa con bujía buena.",
+   "tip_taller": null
+  },
+  "Bujía": {
+   "funcion": "Hace saltar la chispa que enciende la mezcla al final de la compresión.",
+   "como_se_desgasta": "Electrodos con carbón o gastados.",
+   "prueba": "Medir la luz entre electrodos.",
+   "valor_esperado": "0,7-0,8 mm (Honda GX160)",
+   "cuando_cambiar": "Truper: limpiar a las 100 h o 6 meses; Tomahawk: bujía cada 50 h.",
+   "tip_taller": "Truper: luz 0,0275-0,0314 in."
+  },
+  "Tapa del embrague (BV50A-H 5100042584)": {
+   "funcion": "Cubre el embrague y une el motor con el acople del eje.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Número de la lista de piezas del Wacker BV50A-H (pos. 6), obtenida de una página de terceros sin verificar contra el PDF."
+  },
+  "Embrague centrífugo (zapatas y resortes) (BV50A-H 5100042583)": {
+   "funcion": "A ralentí los resortes tienen las zapatas recogidas; al acelerar la fuerza centrífuga las saca, rozan la campana y el eje gira con el motor.",
+   "como_se_desgasta": "Zapatas gastadas: patina y el eje gira lento o no gira.",
+   "prueba": "Con el motor en ralentí el acople no debe girar; al acelerar debe enganchar (BV50A-H).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si patina.",
+   "tip_taller": "Embrague completo pos. 4 del BV50A-H (tabla de terceros). No está confirmado que la VR SGY-20 o la KRV50 lo traigan."
+  },
+  "Campana del embrague con eje de salida": {
+   "funcion": "Tambor que arrastran las zapatas; su eje mueve el acople del eje flexible.",
+   "como_se_desgasta": "Desgaste del interior por roce.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Parte del embrague completo BV50A-H 5100042583 (tabla de terceros)."
+  },
+  "Acople al motor con pasador (SM1S 5100069828)": {
+   "funcion": "Une el eje flexible con la unidad; el acople rápido (tipo Dynapac en Chile) se asegura con un pasador.",
+   "como_se_desgasta": "Dientes o cuadrado redondeados: el motor gira pero la sonda no vibra.",
+   "prueba": "Desconectar y mirar los dientes del acople (Truper).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si los dientes están redondeados o rotos.",
+   "tip_taller": "Número del Wacker SM1S (pág. 45; igual en SM2S). Para el eje de 6 m de GMW no hay número."
+  },
+  "Pieza de conexión lado motor (SM1S 5100069826)": {
+   "funcion": "Une la manguera de protección con el acople, en el extremo del motor.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Wacker SM1S pos. 4 (pág. 45)."
+  },
+  "Manguera de protección (funda)": {
+   "funcion": "Protege y guía al alma; guarda la grasa.",
+   "como_se_desgasta": "Cortes y dobleces por pisadas y arrastre.",
+   "prueba": "Inspección visual diaria (Wacker 8.1).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está rota: la grasa sale y el alma se traba.",
+   "tip_taller": "Guardarla estirada, no colgada (Truper). Wacker da un número por largo (SM1S 5100069810); 6 m: sin dato."
+  },
+  "Alma del eje flexible": {
+   "funcion": "Cable de alambre helicoidal que gira dentro de la funda y lleva el giro del motor al cabezal.",
+   "como_se_desgasta": "Se corta o se redondean sus extremos; sin grasa se traba y quema el motor.",
+   "prueba": "Desconectar y girarla a mano o con llave: debe girar libre (Wacker 8.2.3).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está cortada o con los extremos gastados.",
+   "tip_taller": "Grasa: Klüber Staburags N-4, 25 g por metro, capa fina, cada 100 h (Enar); no limpiar con solvente; no sobreengrasar. Alma nueva: 5 min en marcha antes de usar (Wacker)."
+  },
+  "Pieza de conexión lado cabezal (SM1S 5100069807)": {
+   "funcion": "Extremo de la manguera donde se atornilla el cabezal (rosca a izquierdas).",
+   "como_se_desgasta": "Rosca dañada.",
+   "prueba": "Apretar a mano y revisar que no filtre cemento.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la rosca está dañada.",
+   "tip_taller": "Wacker SM1S pos. 6 (pág. 45). Limpiar las roscas con cepillo de alambre y poner sellador (Wacker 8.2)."
+  },
+  "Adaptador (pieza de conexión, rosca a izquierdas) (H45 5000029761)": {
+   "funcion": "Cierra el cabezal por arriba, se atornilla al eje y aloja los retenes y los rodamientos superiores.",
+   "como_se_desgasta": "Rosca dañada.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Wacker H45 pos. 4 (catálogo M1500/230 EU, pág. 25). Rosca a izquierdas: se suelta girando a la derecha (Enar)."
+  },
+  "Adaptador del alma (H45 5000029755)": {
+   "funcion": "Recibe el extremo del alma y le pasa el giro a la masa excéntrica.",
+   "como_se_desgasta": "Encastre redondeado.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Wacker H45 pos. 6 (pág. 25)."
+  },
+  "Retenes del eje ×2 (H45 5000029784)": {
+   "funcion": "Sellan el aceite del cabezal y no dejan entrar la grasa del eje.",
+   "como_se_desgasta": "Labios gastados: la grasa entra y el aceite sale espeso y pegajoso.",
+   "prueba": "Mirar el aceite al cambiarlo (Enar).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el aceite sale espeso o junto con los rodamientos.",
+   "tip_taller": "Montarlos espalda con espalda, labios de neopreno hacia fuera, sin rayar la superficie pulida (Enar). Wacker H45 pos. 8."
+  },
+  "Rodamientos superiores ×2 (H45 5000078717)": {
+   "funcion": "Apoyan el extremo superior de la masa excéntrica.",
+   "como_se_desgasta": "Fallan por poco aceite, trabajo en vacío, agua o golpes (Enar).",
+   "prueba": "Ruido, calor y juego del eje excéntrico.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Cambiar los 4 rodamientos y los retenes juntos.",
+   "tip_taller": "Wacker H45 pos. 5: 4 rodamientos en total (pág. 25)."
+  },
+  "Masa excéntrica (H45 5000080717)": {
+   "funcion": "Eje con un contrapeso a un lado: al girar desbalanceado empuja el cabezal y produce la vibración.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Debe girar libre en sus rodamientos.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está dañada.",
+   "tip_taller": "Wacker H45 pos. 7 (en el H45S corto es la 5000080299). Amplitud y fuerza centrífuga: sin dato en las fuentes."
+  },
+  "Rodamientos inferiores ×2 (H45 5000078717)": {
+   "funcion": "Apoyan el extremo inferior de la masa excéntrica, junto a la punta.",
+   "como_se_desgasta": "Igual que los superiores.",
+   "prueba": "Ruido, calor y juego.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Con los superiores.",
+   "tip_taller": "Wacker H45 pos. 5."
+  },
+  "Carcasa del cabezal (H45 5000029760)": {
+   "funcion": "Tubo que contiene la masa, los rodamientos y el aceite, y que golpea el hormigón.",
+   "como_se_desgasta": "Se gasta por fuera con el roce del hormigón.",
+   "prueba": "Medir el diámetro con pie de metro.",
+   "valor_esperado": "45 mm nuevo; mínimo 41 mm (H45)",
+   "cuando_cambiar": "H45: bajo 41 mm de diámetro.",
+   "tip_taller": "Aceite H45: 22 ml SAE 0W-30 (Wacker). Cambio cada 300 h (Wacker y Enar)."
+  },
+  "Tapa de cierre (punta) (H45 5000085450)": {
+   "funcion": "Cierra la punta del cabezal.",
+   "como_se_desgasta": "Se gasta por roce.",
+   "prueba": "Medir el largo total del cabezal.",
+   "valor_esperado": "H45: 385 mm de largo",
+   "cuando_cambiar": "Si está gastada o dañada.",
+   "tip_taller": "Wacker H45 pos. 2."
+  },
+  "Caja del convertidor de frecuencia": {
+   "funcion": "Convierte la red monofásica en trifásica de 42 V y 200 Hz para el motor de la sonda (Wacker IRFU, Husqvarna AX).",
+   "como_se_desgasta": "Agua o polvo adentro; golpes.",
+   "prueba": "Lámpara roja (IRFU): fija = fuga o defecto; intermitente = defecto en la cabeza; 2 destellos = temperatura; 3 destellos = Bodyguard.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Solo servicio autorizado.",
+   "tip_taller": "Husqvarna los llama CF 11M, CF 25M, CF 25T y CF 67T. Caja dibujada aproximada."
+  },
+  "Rectificador e inversor": {
+   "funcion": "El rectificador pasa la alterna a continua y el inversor arma la trifásica de 200 Hz con arranque suave (IRFU).",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Solo servicio autorizado.",
+   "tip_taller": "Protección Bodyguard (fuga a tierra) y apagado térmico (IRFU). Disposición interna dibujada: sin dato en las fuentes."
+  },
+  "Cable de red con enchufe": {
+   "funcion": "Alimenta el convertidor desde la red: IRFU 220-240 V monofásico, 4,8 A, 0,88 kW.",
+   "como_se_desgasta": "Cortes por pisadas y arrastre.",
+   "prueba": "Inspección visual diaria.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está dañado.",
+   "tip_taller": "Enchufe con tierra y protector diferencial; extensiones según la tabla de secciones del manual."
+  },
+  "Cable de salida 42 V": {
+   "funcion": "Lleva la trifásica de 42 V desde el convertidor a la caja de interruptor.",
+   "como_se_desgasta": "Daño mecánico.",
+   "prueba": "Medir la resistencia de cada fase: deben ser iguales (sin valor publicado).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si falta una fase la sonda gira lenta.",
+   "tip_taller": "IRFU: cable de 15 m; Husqvarna AX: 10 m."
+  },
+  "Caja de interruptor": {
+   "funcion": "Enciende y apaga la sonda; en ella se conectan los cables de la manguera.",
+   "como_se_desgasta": "Contactos quemados.",
+   "prueba": "Continuidad.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no corta o no conecta.",
+   "tip_taller": "Husqvarna AX: abrir la caja y desconectar los cables para sacar la manguera."
+  },
+  "Manguera de protección con cable": {
+   "funcion": "Protege el cable que baja a la sonda y sirve para manejarla.",
+   "como_se_desgasta": "Cortes y dobleces.",
+   "prueba": "Inspección visual diaria.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está rota.",
+   "tip_taller": "Husqvarna AX y IRFU: 5 m. Se sujeta al niple con abrazaderas que se cambian por nuevas."
+  },
+  "Niple de manguera F": {
+   "funcion": "Pieza donde se calza la manguera, arriba de la sonda.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Rosca derecha (Husqvarna AX). Letra F del manual AX, pág. 8."
+  },
+  "Tuerca C": {
+   "funcion": "Fija el conjunto por el extremo del cable.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Rosca derecha (Husqvarna AX, pág. 8)."
+  },
+  "Tubo estator": {
+   "funcion": "Tubo exterior de la sonda; lleva adentro el estator y es la superficie que vibra contra el hormigón.",
+   "como_se_desgasta": "Se gasta por fuera.",
+   "prueba": "Medir diámetro y largo.",
+   "valor_esperado": "45 mm × 382 mm nuevo (IRFU 45)",
+   "cuando_cambiar": "IRFU 45: diámetro mínimo 42 mm, largo mínimo 372 mm.",
+   "tip_taller": "Dynapac AX: hasta el N/S 977029 el tubo estator y el rotor se cambian juntos."
+  },
+  "Portarrodamiento H con rodamiento": {
+   "funcion": "Sostiene el rodamiento del extremo del rotor hacia el cable.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Al desarmar, el rotor se empuja a través de él con varilla y martillo (Husqvarna AX)."
+  },
+  "Estator bobinado": {
+   "funcion": "Tres bobinas desfasadas 120° que, con la trifásica, forman el campo magnético giratorio.",
+   "como_se_desgasta": "Aislación dañada por recalentamiento o humedad.",
+   "prueba": "Aislación a tierra y resistencia de cada fase (sin valores publicados).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está a tierra o cortado.",
+   "tip_taller": "Ningún manual público revisado da la resistencia de los bobinados."
+  },
+  "Rotor G": {
+   "funcion": "Rotor de inducción: lo arrastra el campo giratorio y hace girar el elemento excéntrico (≈12.000 rpm).",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Debe girar libre.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Letra G del manual AX (pág. 8)."
+  },
+  "Elemento excéntrico I": {
+   "funcion": "Masa desbalanceada en el eje del rotor: produce la vibración.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Se sujeta con los tornillos J. Ubicación hacia la punta: deducida de la secuencia de desarme (aproximado)."
+  },
+  "Tornillos J": {
+   "funcion": "Sujetan el elemento excéntrico al eje del rotor.",
+   "como_se_desgasta": "Sin dato en las fuentes",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "Sin dato en las fuentes",
+   "tip_taller": "Tabla de torques AX48 (pág. 9): tornillo B 8 N·m; la correspondencia de letras entre ambas figuras no es segura."
+  },
+  "Rodamiento K": {
+   "funcion": "Apoya el eje del rotor en el extremo de la punta.",
+   "como_se_desgasta": "Se gasta con trabajo en vacío o poco aceite.",
+   "prueba": "Ruido y consumo alto en vacío (Husqvarna AX).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la fuente se detiene al arrancar o consume mucho.",
+   "tip_taller": null
+  },
+  "Aceite de la sonda": {
+   "funcion": "Lubrica y enfría los rodamientos.",
+   "como_se_desgasta": "Se degrada con el uso.",
+   "prueba": "Sin dato en las fuentes",
+   "valor_esperado": null,
+   "cuando_cambiar": "IRFU: cada 100 h, solo servicio autorizado.",
+   "tip_taller": "Husqvarna AX48: 10 cm³ Shell T46 (AX36: 5). Wacker IRFU: 10 ml de 4 UH1-46N."
+  },
+  "Anillos O (sellos)": {
+   "funcion": "Sellan la tapa y el extremo del cable para que no entre agua ni cemento.",
+   "como_se_desgasta": "Se endurecen y cortan.",
+   "prueba": "Inspección al abrir.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Husqvarna: reemplazarlos con regularidad.",
+   "tip_taller": null
+  },
+  "Tapa de extremo": {
+   "funcion": "Cierra la punta de la sonda.",
+   "como_se_desgasta": "Se gasta por roce.",
+   "prueba": "Revisar daños.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está dañada.",
+   "tip_taller": "Rosca derecha. Armado: roscas limpias y secas, 4 cordones verticales de Loctite 243, 350 N·m (AX48), esperar 6 h antes de usar."
+  }
+ },
+ "piezasPorModelo": {
+  "EF38": {
+   "Adaptador (pieza de conexión, rosca a izquierdas)": {
+    "funcion": "Cierra el cabezal por arriba, se atornilla al eje y aloja los retenes y los rodamientos superiores.",
+    "como_se_desgasta": "Rosca dañada.",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Wacker H45 pos. 4 (catálogo M1500/230 EU, pág. 25). Rosca a izquierdas: se suelta girando a la derecha (Enar)."
+   },
+   "Adaptador del alma": {
+    "funcion": "Recibe el extremo del alma y le pasa el giro a la masa excéntrica.",
+    "como_se_desgasta": "Encastre redondeado.",
+    "prueba": "Sin dato en las fuentes",
+    "valor_esperado": null,
+    "cuando_cambiar": "Sin dato en las fuentes",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Wacker H45 pos. 6 (pág. 25)."
+   },
+   "Retenes del eje ×2": {
+    "funcion": "Sellan el aceite del cabezal y no dejan entrar la grasa del eje.",
+    "como_se_desgasta": "Labios gastados: la grasa entra y el aceite sale espeso y pegajoso.",
+    "prueba": "Mirar el aceite al cambiarlo (Enar).",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si el aceite sale espeso o junto con los rodamientos.",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Montarlos espalda con espalda, labios de neopreno hacia fuera, sin rayar la superficie pulida (Enar). Wacker H45 pos. 8."
+   },
+   "Rodamientos superiores ×2": {
+    "funcion": "Apoyan el extremo superior de la masa excéntrica.",
+    "como_se_desgasta": "Fallan por poco aceite, trabajo en vacío, agua o golpes (Enar).",
+    "prueba": "Ruido, calor y juego del eje excéntrico.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Cambiar los 4 rodamientos y los retenes juntos.",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Wacker H45 pos. 5: 4 rodamientos en total (pág. 25)."
+   },
+   "Masa excéntrica": {
+    "funcion": "Eje con un contrapeso a un lado: al girar desbalanceado empuja el cabezal y produce la vibración.",
+    "como_se_desgasta": "Sin dato en las fuentes",
+    "prueba": "Debe girar libre en sus rodamientos.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está dañada.",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Wacker H45 pos. 7 (en el H45S corto es la 5000080299). Amplitud y fuerza centrífuga: sin dato en las fuentes."
+   },
+   "Rodamientos inferiores ×2": {
+    "funcion": "Apoyan el extremo inferior de la masa excéntrica, junto a la punta.",
+    "como_se_desgasta": "Igual que los superiores.",
+    "prueba": "Ruido, calor y juego.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Con los superiores.",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Wacker H45 pos. 5."
+   },
+   "Carcasa del cabezal": {
+    "funcion": "Tubo que contiene la masa, los rodamientos y el aceite, y que golpea el hormigón.",
+    "como_se_desgasta": "Se gasta por fuera con el roce del hormigón.",
+    "prueba": "Medir el diámetro con pie de metro.",
+    "valor_esperado": "38 mm nuevo; mínimo 36 mm (Enar AX38)",
+    "cuando_cambiar": "Enar AX38: bajo 36 mm de diámetro o 330 mm de largo.",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Aceite H45: 22 ml SAE 0W-30 (Wacker). Cambio cada 300 h (Wacker y Enar)."
+   },
+   "Tapa de cierre (punta)": {
+    "funcion": "Cierra la punta del cabezal.",
+    "como_se_desgasta": "Se gasta por roce.",
+    "prueba": "Medir el largo total del cabezal.",
+    "valor_esperado": "Enar AX38: 345 mm de largo",
+    "cuando_cambiar": "Si está gastada o dañada.",
+    "tip_taller": "Sin número: el catálogo Wacker solo numera el H45 (no hay H38 ni H28). Wacker H45 pos. 2."
+   }
+  }
+ },
+ "desarmado": [
+  {
+   "paso": 1,
+   "titulo": "Detener y separar el eje",
+   "instruccion": "Apagar el motor y dejarlo enfriar. Levantar el seguro (pasador) del acople rápido, sacar el eje flexible de la unidad y limpiar la suciedad alrededor del acople (Wacker HMS 7.2).",
+   "precaucion": "El acople y el cabezal quedan calientes después del uso.",
+   "herramienta": "A mano",
+   "quita": [],
+   "foco": [
+    "acople",
+    "conexion_motor"
+   ]
+  },
+  {
+   "paso": 2,
+   "titulo": "Soltar el cabezal (rosca a izquierdas)",
+   "instruccion": "Sujetar el eje en un tornillo de banco con mordazas prismáticas y desatornillar el cabezal con una llave de tubo grande, cuidando el alma (Wacker 8.2). La rosca entre cabezal y eje es a izquierdas: se suelta girando hacia la derecha (Enar).",
+   "precaucion": "Rosca a izquierdas: girarla hacia la izquierda la aprieta.",
+   "herramienta": "Tornillo de banco con mordazas prismáticas + llave de tubo grande",
+   "quita": [
+    "conexion_cabezal"
+   ],
+   "foco": [
+    "adaptador",
+    "conexion_cabezal"
+   ]
+  },
+  {
+   "paso": 3,
+   "titulo": "Abrir el cabezal y vaciar el aceite",
+   "instruccion": "Con el cabezal sujeto por la pieza de conexión (adaptador), desenroscar la carcasa con la tapa de la punta. Vaciar y desechar el aceite (Wacker 8.2.4).",
+   "precaucion": "Si el aceite sale espeso y pegajoso, entró grasa del eje: cambiar los retenes (Enar).",
+   "herramienta": "Llave de tubo grande",
+   "quita": [
+    "carcasa",
+    "tapa"
+   ],
+   "foco": [
+    "carcasa",
+    "tapa",
+    "adaptador"
+   ]
+  },
+  {
+   "paso": 4,
+   "titulo": "Masa excéntrica y rodamientos inferiores",
+   "instruccion": "Sacar la masa excéntrica con sus dos rodamientos inferiores. Orden referencial: sin procedimiento en las fuentes. El catálogo Wacker muestra estas piezas (H45, pág. 24).",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "masa",
+    "rod_inf"
+   ],
+   "foco": [
+    "masa",
+    "rod_inf"
+   ]
+  },
+  {
+   "paso": 5,
+   "titulo": "Rodamientos superiores y retenes",
+   "instruccion": "Sacar los dos rodamientos superiores y los dos retenes del adaptador. Si fallan los rodamientos, cambiar los cuatro y los retenes juntos (Enar). Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": "Montar los retenes espalda con espalda, con los labios de neopreno hacia fuera, sin rayar la superficie pulida (Enar).",
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "rod_sup",
+    "retenes"
+   ],
+   "foco": [
+    "rod_sup",
+    "retenes"
+   ]
+  },
+  {
+   "paso": 6,
+   "titulo": "Adaptador del alma",
+   "instruccion": "Sacar el adaptador del alma y revisar que su encastre no esté redondeado. Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "adaptador_alma"
+   ],
+   "foco": [
+    "adaptador_alma"
+   ]
+  },
+  {
+   "paso": 7,
+   "titulo": "Alma del eje flexible",
+   "instruccion": "Desenroscar el acople con la llave especial o de tubo, sacar el alma completa de la manguera y limpiarla con un paño sin pelusa, sin solvente (Wacker 8.2.3). Revisar que los extremos del alma y los dientes del acople no estén redondeados (Truper).",
+   "precaucion": "Al armar: grasa en capa fina y pareja (Enar: Klüber Staburags N-4, 25 g por metro, cada 100 h); no sobreengrasar.",
+   "herramienta": "Llave especial o de tubo",
+   "quita": [
+    "alma"
+   ],
+   "foco": [
+    "alma",
+    "acople"
+   ]
+  },
+  {
+   "paso": 8,
+   "titulo": "Filtro de aire",
+   "instruccion": "Sacar la tapa y el elemento del filtro. Truper: revisar antes de cada uso, limpiar a las 50 h y cambiar a las 100 h.",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [
+    "filtro"
+   ],
+   "foco": [
+    "filtro"
+   ]
+  },
+  {
+   "paso": 9,
+   "titulo": "Bujía",
+   "instruccion": "Sacar el capuchón y la bujía; limpiarla y medir la luz entre electrodos: 0,7-0,8 mm (Honda GX160).",
+   "precaucion": null,
+   "herramienta": "Llave de bujía",
+   "quita": [
+    "bujia"
+   ],
+   "foco": [
+    "bujia"
+   ]
+  },
+  {
+   "paso": 10,
+   "titulo": "Tanque de combustible",
+   "instruccion": "Vaciar el tanque y soltarlo del motor. Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": "No manipular bencina con el motor caliente ni en recintos cerrados.",
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "tanque"
+   ],
+   "foco": [
+    "tanque"
+   ]
+  },
+  {
+   "paso": 11,
+   "titulo": "Arrancador retráctil",
+   "instruccion": "Soltar la tapa del arrancador. Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "arrancador"
+   ],
+   "foco": [
+    "arrancador"
+   ]
+  },
+  {
+   "paso": 12,
+   "titulo": "Volante y bobina",
+   "instruccion": "Sacar la bobina y el volante con su imán. Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "bobina",
+    "volante"
+   ],
+   "foco": [
+    "bobina",
+    "volante"
+   ]
+  },
+  {
+   "paso": 13,
+   "titulo": "Carburador y silenciador",
+   "instruccion": "Sacar el carburador y el silenciador. Orden referencial: sin procedimiento en las fuentes. Truper: limpiar el sedimentador a las 100 h.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "carburador",
+    "silenciador"
+   ],
+   "foco": [
+    "carburador",
+    "silenciador"
+   ]
+  },
+  {
+   "paso": 14,
+   "titulo": "Tapa y embrague centrífugo",
+   "instruccion": "Sacar la tapa (BV50A-H pos. 6), el perno 1/4-20 × 1/2 in (pos. 5) y el embrague centrífugo completo (pos. 4). Prueba: con el motor en ralentí el acople no debe girar; al acelerar debe enganchar.",
+   "precaucion": "Lista de piezas obtenida de terceros, sin verificar contra el PDF de Wacker.",
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "carcasa_embrague",
+    "campana",
+    "zapatas"
+   ],
+   "foco": [
+    "zapatas",
+    "campana"
+   ]
+  },
+  {
+   "paso": 15,
+   "titulo": "Culata y válvulas",
+   "instruccion": "Sacar la culata y las válvulas. Orden referencial: sin procedimiento en las fuentes. Holgura en frío: admisión 0,15 ± 0,02 mm y escape 0,20 ± 0,02 mm (Honda GX160); la ajusta un taller.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "culata",
+    "valvulas"
+   ],
+   "foco": [
+    "culata",
+    "valvulas"
+   ]
+  },
+  {
+   "paso": 16,
+   "titulo": "Pistón y biela",
+   "instruccion": "Sacar el pistón con la biela. Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "piston",
+    "biela"
+   ],
+   "foco": [
+    "piston",
+    "biela"
+   ]
+  },
+  {
+   "paso": 17,
+   "titulo": "Cigüeñal",
+   "instruccion": "Sacar el cigüeñal del cárter. Orden referencial: sin procedimiento en las fuentes.",
+   "precaucion": null,
+   "herramienta": "sin dato en las fuentes",
+   "quita": [
+    "cigueñal"
+   ],
+   "foco": [
+    "cigueñal"
+   ]
+  },
+  {
+   "paso": 18,
+   "titulo": "Armado del eje y el cabezal",
+   "instruccion": "Orden inverso. Lubricar el alma y meterla girando hasta el adaptador del cabezal; sellador en las roscas del acople y del cabezal; curar 24 h; llenar el cabezal con aceite (SAE 0W-30, 22 ml en el H45, Wacker); probar que gire libre. Con alma nueva, 5 min en marcha antes de usar (Wacker 8.2).",
+   "precaucion": "Torque de la rosca del cabezal: sin dato en las fuentes (Wacker solo pide apretar con llave de tubo y sellador).",
+   "herramienta": "Llave de tubo grande + sellador de roscas",
+   "quita": [],
+   "foco": [
+    "carcasa",
+    "adaptador",
+    "alma"
+   ]
+  }
+ ],
+ "desarmados": {
+  "EF45": [
+   {
+    "paso": 1,
+    "titulo": "Detener y separar el eje",
+    "instruccion": "Apagar el motor y dejarlo enfriar. Levantar el seguro (pasador) del acople rápido, sacar el eje flexible de la unidad y limpiar la suciedad alrededor del acople (Wacker HMS 7.2).",
+    "precaucion": "El acople y el cabezal quedan calientes después del uso.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "acople",
+     "conexion_motor"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Soltar el cabezal (rosca a izquierdas)",
+    "instruccion": "Sujetar el eje en un tornillo de banco con mordazas prismáticas y desatornillar el cabezal con una llave de tubo grande, cuidando el alma (Wacker 8.2). La rosca entre cabezal y eje es a izquierdas: se suelta girando hacia la derecha (Enar).",
+    "precaucion": "Rosca a izquierdas: girarla hacia la izquierda la aprieta.",
+    "herramienta": "Tornillo de banco con mordazas prismáticas + llave de tubo grande",
+    "quita": [
+     "conexion_cabezal"
+    ],
+    "foco": [
+     "adaptador",
+     "conexion_cabezal"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Abrir el cabezal y vaciar el aceite",
+    "instruccion": "Con el cabezal sujeto por la pieza de conexión (adaptador), desenroscar la carcasa con la tapa de la punta. Vaciar y desechar el aceite (Wacker 8.2.4).",
+    "precaucion": "Si el aceite sale espeso y pegajoso, entró grasa del eje: cambiar los retenes (Enar).",
+    "herramienta": "Llave de tubo grande",
+    "quita": [
+     "carcasa",
+     "tapa"
+    ],
+    "foco": [
+     "carcasa",
+     "tapa",
+     "adaptador"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Masa excéntrica y rodamientos inferiores",
+    "instruccion": "Sacar la masa excéntrica con sus dos rodamientos inferiores. Orden referencial: sin procedimiento en las fuentes. El catálogo Wacker muestra estas piezas (H45, pág. 24).",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "masa",
+     "rod_inf"
+    ],
+    "foco": [
+     "masa",
+     "rod_inf"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Rodamientos superiores y retenes",
+    "instruccion": "Sacar los dos rodamientos superiores y los dos retenes del adaptador. Si fallan los rodamientos, cambiar los cuatro y los retenes juntos (Enar). Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": "Montar los retenes espalda con espalda, con los labios de neopreno hacia fuera, sin rayar la superficie pulida (Enar).",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "rod_sup",
+     "retenes"
+    ],
+    "foco": [
+     "rod_sup",
+     "retenes"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Adaptador del alma",
+    "instruccion": "Sacar el adaptador del alma y revisar que su encastre no esté redondeado. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "adaptador_alma"
+    ],
+    "foco": [
+     "adaptador_alma"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Alma del eje flexible",
+    "instruccion": "Desenroscar el acople con la llave especial o de tubo, sacar el alma completa de la manguera y limpiarla con un paño sin pelusa, sin solvente (Wacker 8.2.3). Revisar que los extremos del alma y los dientes del acople no estén redondeados (Truper).",
+    "precaucion": "Al armar: grasa en capa fina y pareja (Enar: Klüber Staburags N-4, 25 g por metro, cada 100 h); no sobreengrasar.",
+    "herramienta": "Llave especial o de tubo",
+    "quita": [
+     "alma"
+    ],
+    "foco": [
+     "alma",
+     "acople"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Filtro de aire",
+    "instruccion": "Sacar la tapa y el elemento del filtro. Truper: revisar antes de cada uso, limpiar a las 50 h y cambiar a las 100 h.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "filtro"
+    ],
+    "foco": [
+     "filtro"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Bujía",
+    "instruccion": "Sacar el capuchón y la bujía; limpiarla y medir la luz entre electrodos: 0,7-0,8 mm (Honda GX160).",
+    "precaucion": null,
+    "herramienta": "Llave de bujía",
+    "quita": [
+     "bujia"
+    ],
+    "foco": [
+     "bujia"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Tanque de combustible",
+    "instruccion": "Vaciar el tanque y soltarlo del motor. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": "No manipular bencina con el motor caliente ni en recintos cerrados.",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "tanque"
+    ],
+    "foco": [
+     "tanque"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Arrancador retráctil",
+    "instruccion": "Soltar la tapa del arrancador. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "arrancador"
+    ],
+    "foco": [
+     "arrancador"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Volante y bobina",
+    "instruccion": "Sacar la bobina y el volante con su imán. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "bobina",
+     "volante"
+    ],
+    "foco": [
+     "bobina",
+     "volante"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Carburador y silenciador",
+    "instruccion": "Sacar el carburador y el silenciador. Orden referencial: sin procedimiento en las fuentes. Truper: limpiar el sedimentador a las 100 h.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "carburador",
+     "silenciador"
+    ],
+    "foco": [
+     "carburador",
+     "silenciador"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Tapa y embrague centrífugo",
+    "instruccion": "Sacar la tapa (BV50A-H pos. 6), el perno 1/4-20 × 1/2 in (pos. 5) y el embrague centrífugo completo (pos. 4). Prueba: con el motor en ralentí el acople no debe girar; al acelerar debe enganchar.",
+    "precaucion": "Lista de piezas obtenida de terceros, sin verificar contra el PDF de Wacker.",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "carcasa_embrague",
+     "campana",
+     "zapatas"
+    ],
+    "foco": [
+     "zapatas",
+     "campana"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Culata y válvulas",
+    "instruccion": "Sacar la culata y las válvulas. Orden referencial: sin procedimiento en las fuentes. Holgura en frío: admisión 0,15 ± 0,02 mm y escape 0,20 ± 0,02 mm (Honda GX160); la ajusta un taller.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "culata",
+     "valvulas"
+    ],
+    "foco": [
+     "culata",
+     "valvulas"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Pistón y biela",
+    "instruccion": "Sacar el pistón con la biela. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "piston",
+     "biela"
+    ],
+    "foco": [
+     "piston",
+     "biela"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Cigüeñal",
+    "instruccion": "Sacar el cigüeñal del cárter. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "cigueñal"
+    ],
+    "foco": [
+     "cigueñal"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Armado del eje y el cabezal",
+    "instruccion": "Orden inverso. Lubricar el alma y meterla girando hasta el adaptador del cabezal; sellador en las roscas del acople y del cabezal; curar 24 h; llenar el cabezal con aceite (SAE 0W-30, 22 ml en el H45, Wacker); probar que gire libre. Con alma nueva, 5 min en marcha antes de usar (Wacker 8.2).",
+    "precaucion": "Torque de la rosca del cabezal: sin dato en las fuentes (Wacker solo pide apretar con llave de tubo y sellador).",
+    "herramienta": "Llave de tubo grande + sellador de roscas",
+    "quita": [],
+    "foco": [
+     "carcasa",
+     "adaptador",
+     "alma"
+    ]
+   }
+  ],
+  "EF38": [
+   {
+    "paso": 1,
+    "titulo": "Detener y separar el eje",
+    "instruccion": "Apagar el motor y dejarlo enfriar. Levantar el seguro (pasador) del acople rápido, sacar el eje flexible de la unidad y limpiar la suciedad alrededor del acople (Wacker HMS 7.2).",
+    "precaucion": "El acople y el cabezal quedan calientes después del uso.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "acople",
+     "conexion_motor"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Soltar el cabezal (rosca a izquierdas)",
+    "instruccion": "Sujetar el eje en un tornillo de banco con mordazas prismáticas y desatornillar el cabezal con una llave de tubo grande, cuidando el alma (Wacker 8.2). La rosca entre cabezal y eje es a izquierdas: se suelta girando hacia la derecha (Enar).",
+    "precaucion": "Rosca a izquierdas: girarla hacia la izquierda la aprieta.",
+    "herramienta": "Tornillo de banco con mordazas prismáticas + llave de tubo grande",
+    "quita": [
+     "conexion_cabezal"
+    ],
+    "foco": [
+     "adaptador",
+     "conexion_cabezal"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Abrir el cabezal y vaciar el aceite",
+    "instruccion": "Con el cabezal sujeto por la pieza de conexión (adaptador), desenroscar la carcasa con la tapa de la punta. Vaciar y desechar el aceite (Wacker 8.2.4).",
+    "precaucion": "Si el aceite sale espeso y pegajoso, entró grasa del eje: cambiar los retenes (Enar).",
+    "herramienta": "Llave de tubo grande",
+    "quita": [
+     "carcasa",
+     "tapa"
+    ],
+    "foco": [
+     "carcasa",
+     "tapa",
+     "adaptador"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Masa excéntrica y rodamientos inferiores",
+    "instruccion": "Sacar la masa excéntrica con sus dos rodamientos inferiores. Orden referencial: sin procedimiento en las fuentes. El catálogo Wacker muestra estas piezas (H45, pág. 24).",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "masa",
+     "rod_inf"
+    ],
+    "foco": [
+     "masa",
+     "rod_inf"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Rodamientos superiores y retenes",
+    "instruccion": "Sacar los dos rodamientos superiores y los dos retenes del adaptador. Si fallan los rodamientos, cambiar los cuatro y los retenes juntos (Enar). Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": "Montar los retenes espalda con espalda, con los labios de neopreno hacia fuera, sin rayar la superficie pulida (Enar).",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "rod_sup",
+     "retenes"
+    ],
+    "foco": [
+     "rod_sup",
+     "retenes"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Adaptador del alma",
+    "instruccion": "Sacar el adaptador del alma y revisar que su encastre no esté redondeado. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "adaptador_alma"
+    ],
+    "foco": [
+     "adaptador_alma"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Alma del eje flexible",
+    "instruccion": "Desenroscar el acople con la llave especial o de tubo, sacar el alma completa de la manguera y limpiarla con un paño sin pelusa, sin solvente (Wacker 8.2.3). Revisar que los extremos del alma y los dientes del acople no estén redondeados (Truper).",
+    "precaucion": "Al armar: grasa en capa fina y pareja (Enar: Klüber Staburags N-4, 25 g por metro, cada 100 h); no sobreengrasar.",
+    "herramienta": "Llave especial o de tubo",
+    "quita": [
+     "alma"
+    ],
+    "foco": [
+     "alma",
+     "acople"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Filtro de aire",
+    "instruccion": "Sacar la tapa y el elemento del filtro. Truper: revisar antes de cada uso, limpiar a las 50 h y cambiar a las 100 h.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "filtro"
+    ],
+    "foco": [
+     "filtro"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Bujía",
+    "instruccion": "Sacar el capuchón y la bujía; limpiarla y medir la luz entre electrodos: 0,7-0,8 mm (Honda GX160).",
+    "precaucion": null,
+    "herramienta": "Llave de bujía",
+    "quita": [
+     "bujia"
+    ],
+    "foco": [
+     "bujia"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Tanque de combustible",
+    "instruccion": "Vaciar el tanque y soltarlo del motor. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": "No manipular bencina con el motor caliente ni en recintos cerrados.",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "tanque"
+    ],
+    "foco": [
+     "tanque"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Arrancador retráctil",
+    "instruccion": "Soltar la tapa del arrancador. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "arrancador"
+    ],
+    "foco": [
+     "arrancador"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Volante y bobina",
+    "instruccion": "Sacar la bobina y el volante con su imán. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "bobina",
+     "volante"
+    ],
+    "foco": [
+     "bobina",
+     "volante"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Carburador y silenciador",
+    "instruccion": "Sacar el carburador y el silenciador. Orden referencial: sin procedimiento en las fuentes. Truper: limpiar el sedimentador a las 100 h.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "carburador",
+     "silenciador"
+    ],
+    "foco": [
+     "carburador",
+     "silenciador"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Tapa y embrague centrífugo",
+    "instruccion": "Sacar la tapa (BV50A-H pos. 6), el perno 1/4-20 × 1/2 in (pos. 5) y el embrague centrífugo completo (pos. 4). Prueba: con el motor en ralentí el acople no debe girar; al acelerar debe enganchar.",
+    "precaucion": "Lista de piezas obtenida de terceros, sin verificar contra el PDF de Wacker.",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "carcasa_embrague",
+     "campana",
+     "zapatas"
+    ],
+    "foco": [
+     "zapatas",
+     "campana"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Culata y válvulas",
+    "instruccion": "Sacar la culata y las válvulas. Orden referencial: sin procedimiento en las fuentes. Holgura en frío: admisión 0,15 ± 0,02 mm y escape 0,20 ± 0,02 mm (Honda GX160); la ajusta un taller.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "culata",
+     "valvulas"
+    ],
+    "foco": [
+     "culata",
+     "valvulas"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Pistón y biela",
+    "instruccion": "Sacar el pistón con la biela. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "piston",
+     "biela"
+    ],
+    "foco": [
+     "piston",
+     "biela"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Cigüeñal",
+    "instruccion": "Sacar el cigüeñal del cárter. Orden referencial: sin procedimiento en las fuentes.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "cigueñal"
+    ],
+    "foco": [
+     "cigueñal"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Armado del eje y el cabezal",
+    "instruccion": "Orden inverso. Lubricar el alma y meterla girando hasta el adaptador del cabezal; sellador en las roscas del acople y del cabezal; curar 24 h; llenar el cabezal con aceite (SAE 0W-30, Wacker; cantidad para 38 mm sin dato: el H35 lleva 15 ml); probar que gire libre. Con alma nueva, 5 min en marcha antes de usar (Wacker 8.2).",
+    "precaucion": "Torque de la rosca del cabezal: sin dato en las fuentes (Wacker solo pide apretar con llave de tubo y sellador).",
+    "herramienta": "Llave de tubo grande + sellador de roscas",
+    "quita": [],
+    "foco": [
+     "carcasa",
+     "adaptador",
+     "alma"
+    ]
+   }
+  ],
+  "AF45": [
+   {
+    "paso": 1,
+    "titulo": "Desconectar",
+    "instruccion": "Parar la sonda y desconectar el convertidor de la red antes de cualquier trabajo.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "cable_red",
+     "interruptor"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Manguera",
+    "instruccion": "Cortar y desechar las abrazaderas de la manguera; abrir la caja de interruptor, desconectar los cables y sacar la manguera (Husqvarna AX, págs. 10-11).",
+    "precaucion": "Al armar, abrazaderas nuevas y protección térmica nueva en los terminales.",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "manguera"
+    ],
+    "foco": [
+     "interruptor",
+     "manguera",
+     "niple"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Tapa de extremo y aceite",
+    "instruccion": "Sacar la tapa de extremo del tubo estator (rosca derecha) y vaciar el aceite. Cambiar los anillos O con regularidad (Husqvarna AX).",
+    "precaucion": "No usar agua a presión para limpiar.",
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "tapa_ext",
+     "orings",
+     "aceite"
+    ],
+    "foco": [
+     "tapa_ext",
+     "orings",
+     "aceite"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Tuerca C",
+    "instruccion": "Sacar la tuerca C (rosca derecha).",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "tuerca"
+    ],
+    "foco": [
+     "tuerca"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Niple de manguera F",
+    "instruccion": "Sacar el niple de manguera F (rosca derecha).",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "niple"
+    ],
+    "foco": [
+     "niple"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Empujar el rotor por el portarrodamiento H",
+    "instruccion": "Con una varilla y un martillo, empujar con cuidado el rotor G a través del portarrodamiento H y sacar el portarrodamiento.",
+    "precaucion": null,
+    "herramienta": "Varilla y martillo",
+    "quita": [
+     "portarrod"
+    ],
+    "foco": [
+     "rotor",
+     "portarrod"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Excéntrico, tornillos y rodamiento",
+    "instruccion": "Sacar el elemento excéntrico I, los tornillos J y el rodamiento K.",
+    "precaucion": null,
+    "herramienta": "sin dato en las fuentes",
+    "quita": [
+     "excentrico",
+     "tornillos_j",
+     "rod_k"
+    ],
+    "foco": [
+     "excentrico",
+     "tornillos_j",
+     "rod_k"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Rotor y estator",
+    "instruccion": "Sacar el rotor y el estator por el tubo. Dynapac AX: hasta el N/S 977029 el tubo estator y el rotor se cambian juntos.",
+    "precaucion": null,
+    "herramienta": "Varilla y martillo",
+    "quita": [
+     "rotor",
+     "estator"
+    ],
+    "foco": [
+     "rotor",
+     "estator"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Limpiar y examinar",
+    "instruccion": "Limpiar todo sin agua a presión y revisar daños. Desgaste (IRFU 45): diámetro mínimo 42 mm, largo mínimo 372 mm. Rellenar con aceite: AX48, 10 cm³ Shell T46.",
+    "precaucion": null,
+    "herramienta": "Pie de metro",
+    "quita": [],
+    "foco": [
+     "tubo"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Armar y apretar",
+    "instruccion": "Orden inverso. Roscas limpias y secas; 4 cordones verticales de Loctite 243 en la rosca de la tapa; tapa en vertical con el aceite, sin mojar la rosca. Torques AX48 (pág. 9): tapa 350 N·m, tornillo B 8 N·m, acople C 200 N·m con Loctite 243 (las letras de esa tabla son de su propio esquema).",
+    "precaucion": "Esperar 6 h antes de usar.",
+    "herramienta": "Llave dinamométrica + Loctite 243",
+    "quita": [],
+    "foco": [
+     "tapa_ext",
+     "tubo"
+    ]
+   }
+  ]
+ },
+ "funcionamiento": {
+  "EF45": [
+   {
+    "titulo": "Combustible y aire",
+    "texto": "El tanque alimenta al carburador, que mezcla la bencina con el aire que entra por el filtro. Antes de cada uso se revisan el aceite del motor y el filtro de aire (Truper VICO-55). Motor de 4 tiempos y 5,5 HP; el análogo Honda GX160 tiene 163 cc (68 × 45 mm) y entrega 3,6 kW a 3.600 rpm.",
+    "piezas": [
+     "tanque",
+     "carburador",
+     "filtro",
+     "culata",
+     "cilindro",
+     "valvulas"
+    ],
+    "vidrio": [
+     "culata",
+     "cilindro"
+    ],
+    "foco": [
+     "carburador"
+    ],
+    "capas": [
+     "combustible"
+    ],
+    "leyenda": [
+     [
+      "#ff9f43",
+      "Bencina"
+     ],
+     [
+      "#7dd3fc",
+      "Aire y mezcla"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Ciclo de 4 tiempos",
+    "texto": "Dos vueltas del cigüeñal por ciclo. 1) Admisión: el pistón baja y entra la mezcla por la válvula de admisión. 2) Compresión: válvulas cerradas, el pistón sube. 3) Explosión: la chispa enciende la mezcla y la presión empuja el pistón. 4) Escape: el pistón sube y saca los gases por la válvula de escape hacia el silenciador. La biela convierte el vaivén en giro. La velocidad de la animación es ilustrativa. El motor real gira a ≈3.600 rpm.",
+    "piezas": [
+     "carter",
+     "cilindro",
+     "culata",
+     "valvulas",
+     "piston",
+     "biela",
+     "cigueñal",
+     "carburador",
+     "silenciador",
+     "volante"
+    ],
+    "vidrio": [
+     "culata",
+     "cilindro",
+     "carter"
+    ],
+    "foco": [
+     "piston"
+    ],
+    "capas": [
+     "ciclo"
+    ],
+    "leyenda": [
+     [
+      "#7dd3fc",
+      "Mezcla que entra"
+     ],
+     [
+      "#4f8cff",
+      "Mezcla comprimida"
+     ],
+     [
+      "#ff6a2b",
+      "Combustión"
+     ],
+     [
+      "#b8c0cc",
+      "Gases de escape"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Encendido: imán, bobina y bujía",
+    "texto": "Al final de la compresión el imán del volante pasa frente a la bobina; el magneto transistorizado (Honda GX160) genera la alta tensión y salta la chispa en la bujía. Luz de la bujía: 0,7-0,8 mm. Sin chispa el motor no arranca: se prueba con la bujía conectada y apoyada a masa (Truper).",
+    "piezas": [
+     "volante",
+     "bobina",
+     "bujia",
+     "cigueñal",
+     "piston",
+     "biela",
+     "culata",
+     "cilindro"
+    ],
+    "vidrio": [
+     "culata",
+     "cilindro"
+    ],
+    "foco": [
+     "bobina",
+     "bujia"
+    ],
+    "capas": [
+     "chispa",
+     "ciclo"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Alta tensión a la bujía"
+     ],
+     [
+      "#fff3b0",
+      "Chispa"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Ralentí: el embrague no engancha",
+    "texto": "En ralentí (Honda GX160: 1.500 ± 150 rpm) las zapatas del embrague centrífugo quedan recogidas por sus resortes: el cigüeñal gira, pero la campana, el eje y la sonda quedan quietos. Prueba: en ralentí el acople no debe girar (BV50A-H). Tomahawk: el ralentí no debe pasar de 3.000 rpm.",
+    "piezas": [
+     "cigueñal",
+     "volante",
+     "zapatas",
+     "campana",
+     "carcasa_embrague",
+     "piston",
+     "biela",
+     "cilindro"
+    ],
+    "vidrio": [
+     "carcasa_embrague",
+     "cilindro"
+    ],
+    "foco": [
+     "zapatas"
+    ],
+    "capas": [
+     "ralenti"
+    ],
+    "leyenda": [],
+    "giro": true
+   },
+   {
+    "titulo": "Al acelerar, las zapatas enganchan",
+    "texto": "Al subir las rpm, la fuerza centrífuga vence a los resortes: las zapatas salen, rozan la campana y la arrastran, y el eje gira con el motor. No hay multiplicador: ≈3.600 rpm del motor = ≈3.600 vibraciones por minuto en la sonda (Truper VICO-55). Si el motor gira y el eje no, revisar zapatas o acople (BV50A-H, Truper). La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "cigueñal",
+     "volante",
+     "zapatas",
+     "campana",
+     "carcasa_embrague",
+     "acople",
+     "conexion_motor"
+    ],
+    "vidrio": [
+     "carcasa_embrague"
+    ],
+    "foco": [
+     "zapatas",
+     "campana"
+    ],
+    "capas": [
+     "embrague"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fuerza centrífuga en las zapatas"
+     ],
+     [
+      "#4ade80",
+      "Giro de la campana"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El eje flexible lleva el giro",
+    "texto": "El alma, un cable de alambre helicoidal engrasado, gira dentro de la manguera de protección y lleva el giro desde el acople hasta el adaptador del cabezal. La rosca del cabezal es a izquierdas (Enar). Curvas cerradas, falta o exceso de grasa o manguera rota frenan el alma y sobrecargan el motor (Wacker, Enar). La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "campana",
+     "acople",
+     "conexion_motor",
+     "funda",
+     "alma",
+     "conexion_cabezal",
+     "adaptador",
+     "adaptador_alma"
+    ],
+    "vidrio": [
+     "funda",
+     "adaptador"
+    ],
+    "foco": [
+     "alma"
+    ],
+    "capas": [
+     "alma"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del alma"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Masa excéntrica: vibración radial",
+    "texto": "En el cabezal, el adaptador del alma hace girar la masa excéntrica sobre cuatro rodamientos, con dos retenes y aceite (H45: 22 ml de SAE 0W-30, Wacker). La masa desbalanceada empuja el cabezal hacia el lado donde está en cada instante: el cabezal describe un círculo y golpea el hormigón en todas las direcciones perpendiculares a su eje. Amplitud dibujada exagerada; la amplitud y la fuerza centrífuga de estas sondas no están en las fuentes. La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "adaptador",
+     "adaptador_alma",
+     "retenes",
+     "rod_sup",
+     "masa",
+     "rod_inf",
+     "carcasa",
+     "tapa",
+     "conexion_cabezal",
+     "alma"
+    ],
+    "vidrio": [
+     "carcasa",
+     "tapa",
+     "adaptador"
+    ],
+    "foco": [
+     "masa"
+    ],
+    "capas": [
+     "vibracion"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fuerza centrífuga (gira con la masa)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Compactación del hormigón",
+    "texto": "La vibración fluidifica el hormigón en el radio de acción: el aire sube en burbujas y las partículas se acomodan. Meter la sonda vertical y rápido, dejarla 5 a 15 s y sacarla despacio (≈8 cm/s); separar las inmersiones 8 a 10 veces el diámetro; capas de 30 a 50 cm, entrando 10 cm en la anterior (Tomahawk/Enar). Parar cuando dejan de salir burbujas. No tocar la armadura ni el moldaje y no trabajar fuera del hormigón (Enar: no más de 5 min): se calientan y fallan los rodamientos.",
+    "piezas": [
+     "adaptador",
+     "adaptador_alma",
+     "retenes",
+     "rod_sup",
+     "masa",
+     "rod_inf",
+     "carcasa",
+     "tapa",
+     "conexion_cabezal"
+    ],
+    "vidrio": [
+     "carcasa",
+     "tapa",
+     "adaptador"
+    ],
+    "foco": [],
+    "capas": [
+     "hormigon"
+    ],
+    "leyenda": [
+     [
+      "#4dd0ff",
+      "Ondas de presión"
+     ],
+     [
+      "#ffffff",
+      "Burbujas de aire que suben"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "EF38": [
+   {
+    "titulo": "Combustible y aire",
+    "texto": "El tanque alimenta al carburador, que mezcla la bencina con el aire que entra por el filtro. Antes de cada uso se revisan el aceite del motor y el filtro de aire (Truper VICO-55). Motor de 4 tiempos y 5,5 HP; el análogo Honda GX160 tiene 163 cc (68 × 45 mm) y entrega 3,6 kW a 3.600 rpm.",
+    "piezas": [
+     "tanque",
+     "carburador",
+     "filtro",
+     "culata",
+     "cilindro",
+     "valvulas"
+    ],
+    "vidrio": [
+     "culata",
+     "cilindro"
+    ],
+    "foco": [
+     "carburador"
+    ],
+    "capas": [
+     "combustible"
+    ],
+    "leyenda": [
+     [
+      "#ff9f43",
+      "Bencina"
+     ],
+     [
+      "#7dd3fc",
+      "Aire y mezcla"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Ciclo de 4 tiempos",
+    "texto": "Dos vueltas del cigüeñal por ciclo. 1) Admisión: el pistón baja y entra la mezcla por la válvula de admisión. 2) Compresión: válvulas cerradas, el pistón sube. 3) Explosión: la chispa enciende la mezcla y la presión empuja el pistón. 4) Escape: el pistón sube y saca los gases por la válvula de escape hacia el silenciador. La biela convierte el vaivén en giro. La velocidad de la animación es ilustrativa. El motor real gira a ≈3.600 rpm.",
+    "piezas": [
+     "carter",
+     "cilindro",
+     "culata",
+     "valvulas",
+     "piston",
+     "biela",
+     "cigueñal",
+     "carburador",
+     "silenciador",
+     "volante"
+    ],
+    "vidrio": [
+     "culata",
+     "cilindro",
+     "carter"
+    ],
+    "foco": [
+     "piston"
+    ],
+    "capas": [
+     "ciclo"
+    ],
+    "leyenda": [
+     [
+      "#7dd3fc",
+      "Mezcla que entra"
+     ],
+     [
+      "#4f8cff",
+      "Mezcla comprimida"
+     ],
+     [
+      "#ff6a2b",
+      "Combustión"
+     ],
+     [
+      "#b8c0cc",
+      "Gases de escape"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Encendido: imán, bobina y bujía",
+    "texto": "Al final de la compresión el imán del volante pasa frente a la bobina; el magneto transistorizado (Honda GX160) genera la alta tensión y salta la chispa en la bujía. Luz de la bujía: 0,7-0,8 mm. Sin chispa el motor no arranca: se prueba con la bujía conectada y apoyada a masa (Truper).",
+    "piezas": [
+     "volante",
+     "bobina",
+     "bujia",
+     "cigueñal",
+     "piston",
+     "biela",
+     "culata",
+     "cilindro"
+    ],
+    "vidrio": [
+     "culata",
+     "cilindro"
+    ],
+    "foco": [
+     "bobina",
+     "bujia"
+    ],
+    "capas": [
+     "chispa",
+     "ciclo"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Alta tensión a la bujía"
+     ],
+     [
+      "#fff3b0",
+      "Chispa"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Ralentí: el embrague no engancha",
+    "texto": "En ralentí (Honda GX160: 1.500 ± 150 rpm) las zapatas del embrague centrífugo quedan recogidas por sus resortes: el cigüeñal gira, pero la campana, el eje y la sonda quedan quietos. Prueba: en ralentí el acople no debe girar (BV50A-H). Tomahawk: el ralentí no debe pasar de 3.000 rpm.",
+    "piezas": [
+     "cigueñal",
+     "volante",
+     "zapatas",
+     "campana",
+     "carcasa_embrague",
+     "piston",
+     "biela",
+     "cilindro"
+    ],
+    "vidrio": [
+     "carcasa_embrague",
+     "cilindro"
+    ],
+    "foco": [
+     "zapatas"
+    ],
+    "capas": [
+     "ralenti"
+    ],
+    "leyenda": [],
+    "giro": true
+   },
+   {
+    "titulo": "Al acelerar, las zapatas enganchan",
+    "texto": "Al subir las rpm, la fuerza centrífuga vence a los resortes: las zapatas salen, rozan la campana y la arrastran, y el eje gira con el motor. No hay multiplicador: ≈3.600 rpm del motor = ≈3.600 vibraciones por minuto en la sonda (Truper VICO-55). Si el motor gira y el eje no, revisar zapatas o acople (BV50A-H, Truper). La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "cigueñal",
+     "volante",
+     "zapatas",
+     "campana",
+     "carcasa_embrague",
+     "acople",
+     "conexion_motor"
+    ],
+    "vidrio": [
+     "carcasa_embrague"
+    ],
+    "foco": [
+     "zapatas",
+     "campana"
+    ],
+    "capas": [
+     "embrague"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fuerza centrífuga en las zapatas"
+     ],
+     [
+      "#4ade80",
+      "Giro de la campana"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El eje flexible lleva el giro",
+    "texto": "El alma, un cable de alambre helicoidal engrasado, gira dentro de la manguera de protección y lleva el giro desde el acople hasta el adaptador del cabezal. La rosca del cabezal es a izquierdas (Enar). Curvas cerradas, falta o exceso de grasa o manguera rota frenan el alma y sobrecargan el motor (Wacker, Enar). La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "campana",
+     "acople",
+     "conexion_motor",
+     "funda",
+     "alma",
+     "conexion_cabezal",
+     "adaptador",
+     "adaptador_alma"
+    ],
+    "vidrio": [
+     "funda",
+     "adaptador"
+    ],
+    "foco": [
+     "alma"
+    ],
+    "capas": [
+     "alma"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del alma"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Masa excéntrica: vibración radial",
+    "texto": "En el cabezal, el adaptador del alma hace girar la masa excéntrica sobre cuatro rodamientos, con dos retenes y aceite (SAE 0W-30; cantidad para 38 mm sin dato). La masa desbalanceada empuja el cabezal hacia el lado donde está en cada instante: el cabezal describe un círculo y golpea el hormigón en todas las direcciones perpendiculares a su eje. Amplitud dibujada exagerada; la amplitud y la fuerza centrífuga de estas sondas no están en las fuentes. La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "adaptador",
+     "adaptador_alma",
+     "retenes",
+     "rod_sup",
+     "masa",
+     "rod_inf",
+     "carcasa",
+     "tapa",
+     "conexion_cabezal",
+     "alma"
+    ],
+    "vidrio": [
+     "carcasa",
+     "tapa",
+     "adaptador"
+    ],
+    "foco": [
+     "masa"
+    ],
+    "capas": [
+     "vibracion"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fuerza centrífuga (gira con la masa)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Compactación del hormigón",
+    "texto": "La vibración fluidifica el hormigón en el radio de acción: el aire sube en burbujas y las partículas se acomodan. Meter la sonda vertical y rápido, dejarla 5 a 15 s y sacarla despacio (≈8 cm/s); separar las inmersiones 8 a 10 veces el diámetro; capas de 30 a 50 cm, entrando 10 cm en la anterior (Tomahawk/Enar). Parar cuando dejan de salir burbujas. No tocar la armadura ni el moldaje y no trabajar fuera del hormigón (Enar: no más de 5 min): se calientan y fallan los rodamientos.",
+    "piezas": [
+     "adaptador",
+     "adaptador_alma",
+     "retenes",
+     "rod_sup",
+     "masa",
+     "rod_inf",
+     "carcasa",
+     "tapa",
+     "conexion_cabezal"
+    ],
+    "vidrio": [
+     "carcasa",
+     "tapa",
+     "adaptador"
+    ],
+    "foco": [],
+    "capas": [
+     "hormigon"
+    ],
+    "leyenda": [
+     [
+      "#4dd0ff",
+      "Ondas de presión"
+     ],
+     [
+      "#ffffff",
+      "Burbujas de aire que suben"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "AF45": [
+   {
+    "titulo": "Red y convertidor",
+    "texto": "El convertidor se enchufa a la red monofásica (Wacker IRFU: 220-240 V, 4,8 A, 0,88 kW de entrada). Primero rectifica la alterna a continua. Trae protección Bodyguard contra fugas a tierra y apagado térmico (IRFU).",
+    "piezas": [
+     "cable_red",
+     "convertidor",
+     "electronica"
+    ],
+    "vidrio": [
+     "convertidor"
+    ],
+    "foco": [
+     "electronica"
+    ],
+    "capas": [
+     "red"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente de la red (monofásica)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Inversor: 42 V trifásico a 200 Hz",
+    "texto": "Un inversor convierte la continua en trifásica de 42 V y 200 Hz, con arranque suave (IRFU). La corriente pasa por la caja de interruptor y baja por la manguera hasta el motor que va dentro de la sonda (Husqvarna AX: 42 V, 3 fases, 200 Hz; AX48: 10 A).",
+    "piezas": [
+     "convertidor",
+     "electronica",
+     "cable_salida",
+     "interruptor",
+     "manguera",
+     "niple",
+     "estator",
+     "tubo"
+    ],
+    "vidrio": [
+     "convertidor",
+     "manguera",
+     "tubo"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "trifasica"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fase 1"
+     ],
+     [
+      "#ffc83d",
+      "Fase 2"
+     ],
+     [
+      "#6aa9ff",
+      "Fase 3"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Campo magnético giratorio",
+    "texto": "Las tres fases alimentan bobinas del estator desfasadas 120°: sus campos se suman en un campo que gira. Con 200 Hz el campo da 200 vueltas por segundo si el motor tiene un par de polos: 200 × 60 = 12.000 rpm (cálculo; coincide con las 12.000 rpm de las fichas). La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "estator",
+     "rotor",
+     "tubo"
+    ],
+    "vidrio": [
+     "tubo"
+    ],
+    "foco": [
+     "estator"
+    ],
+    "capas": [
+     "campo"
+    ],
+    "leyenda": [
+     [
+      "#6aa9ff",
+      "Campo resultante"
+     ],
+     [
+      "#ff5470",
+      "Polos de cada fase (se encienden en secuencia)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Rotor y elemento excéntrico",
+    "texto": "El campo arrastra al rotor G (motor de inducción) y con él al elemento excéntrico I, sujeto al eje con los tornillos J. El rotor gira apoyado en el rodamiento K y en el portarrodamiento H (Husqvarna AX). En los equipos de referencia, ≈12.000 rpm. La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "rotor",
+     "excentrico",
+     "tornillos_j",
+     "rod_k",
+     "portarrod",
+     "estator",
+     "tubo"
+    ],
+    "vidrio": [
+     "tubo",
+     "estator"
+    ],
+    "foco": [
+     "excentrico"
+    ],
+    "capas": [
+     "rotor"
+    ],
+    "leyenda": [
+     [
+      "#4ade80",
+      "Giro del rotor y del excéntrico"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Vibración radial",
+    "texto": "El excéntrico desbalanceado hace que la sonda describa un círculo, 12.000 veces por minuto. Fichas de referencia: AX48, 1,12 mm de amplitud doble; Paclite VX45, 1,83 mm y 2.155 N; IRFU 45, 2,3 mm en aire. Amplitud dibujada exagerada. La velocidad de la animación es ilustrativa.",
+    "piezas": [
+     "niple",
+     "tuerca",
+     "tubo",
+     "portarrod",
+     "estator",
+     "rotor",
+     "excentrico",
+     "tornillos_j",
+     "rod_k",
+     "aceite",
+     "orings",
+     "tapa_ext"
+    ],
+    "vidrio": [
+     "tubo"
+    ],
+    "foco": [
+     "excentrico"
+    ],
+    "capas": [
+     "vibracion"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Fuerza centrífuga (gira con el excéntrico)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Compactación del hormigón",
+    "texto": "La vibración fluidifica el hormigón alrededor de la sonda: el aire sube en burbujas y las partículas se acomodan. Meter la sonda vertical y rápido, 5 a 15 s por punto, sacarla despacio (≈8 cm/s) y separar las inmersiones 8 a 10 veces el diámetro (Tomahawk/Enar). No tocar la armadura (Wacker).",
+    "piezas": [
+     "niple",
+     "tuerca",
+     "tubo",
+     "portarrod",
+     "estator",
+     "rotor",
+     "excentrico",
+     "tornillos_j",
+     "rod_k",
+     "aceite",
+     "orings",
+     "tapa_ext"
+    ],
+    "vidrio": [
+     "tubo"
+    ],
+    "foco": [],
+    "capas": [
+     "hormigon"
+    ],
+    "leyenda": [
+     [
+      "#4dd0ff",
+      "Ondas de presión"
+     ],
+     [
+      "#ffffff",
+      "Burbujas de aire que suben"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Enfriamiento y protecciones",
+    "texto": "El hormigón que la rodea enfría el motor de la sonda. Fuera del hormigón, o con una sonda muy grande para la armadura, se recalienta y se detiene (Husqvarna AX); el IRFU apaga a 150 °C. Lámpara roja del convertidor (IRFU): fija = fuga o defecto; 2 destellos = temperatura (enfriar y reiniciar). Si gira lento, falta una fase o la fuente es de 60 Hz en red de 50 Hz (Husqvarna AX).",
+    "piezas": [
+     "tubo",
+     "estator",
+     "rotor",
+     "convertidor",
+     "electronica"
+    ],
+    "vidrio": [
+     "tubo",
+     "convertidor"
+    ],
+    "foco": [
+     "estator"
+    ],
+    "capas": [
+     "calor"
+    ],
+    "leyenda": [
+     [
+      "#ff9f43",
+      "Calor que sale al hormigón"
+     ]
+    ],
+    "giro": true
+   }
+  ]
+ }
+}
