@@ -27,9 +27,16 @@ const luzBajo = new THREE.DirectionalLight(0xdfe6f2, 0.7); luzBajo.position.set(
 const cam = new THREE.PerspectiveCamera(40, 1, 0.1, 600);
 const ctl = new OrbitControls(cam, cv); ctl.enableDamping = true;
 const plano = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);
+let corteZ = 0, ladoCorte = 1;   // corteZ: posición del plano (eje z); ladoCorte: +1 oculta lo que hay en z > corteZ, -1 lo que hay en z < corteZ
+// se corta siempre el lado donde está la cámara, para que el interior se vea desde cualquier ángulo
+function planoCorte() { ladoCorte = cam.position.z >= corteZ ? 1 : -1; plano.normal.set(0, 0, -ladoCorte); plano.constant = ladoCorte * corteZ; }
 let tgtGoal = null;
 const vistaDe = () => (typeof herr.vista === 'function' ? herr.vista(st.modelo) : herr.vista); // vista fija o según el modelo
-function vistaInicial() { const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null; }
+function vistaInicial() {
+  const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
+  const d = cam.position.distanceTo(ctl.target);   // límites de zoom según el tamaño de la herramienta
+  ctl.minDistance = Math.max(6, d * 0.12); ctl.maxDistance = d * 2.2;
+}
 function ajustar() { const r = $('#vista').getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
 addEventListener('resize', ajustar); ajustar();
 
@@ -77,7 +84,18 @@ function reconstruir() {
   if (st.func && !etapasDe()) st.func = false;
   st.fp = Math.min(st.fp, (etapasDe()?.length || 1) - 1);
   if (st.sel && !modelo.parts[st.sel]) st.sel = null;
+  ajustarCorte();
   aparienciaPiezas(); ui();
+}
+
+// el plano de corte recorre el espesor real de la herramienta (eje z); el deslizador solo actúa con «Corte» activo
+function ajustarCorte() {
+  const b = new THREE.Box3(); grupo.updateMatrixWorld(true);
+  for (const p of Object.values(modelo.parts)) p.items.forEach(i => b.expandByObject(i.obj));
+  const r = $('#cortePos'), lo = Math.floor(b.min.z), hi = Math.ceil(b.max.z);
+  r.min = lo; r.max = hi; r.step = 0.1;
+  r.value = corteZ = Math.min(hi, Math.max(lo, corteZ));
+  r.disabled = !st.corte;
 }
 
 // ---------- apariencia: rayos X, aislar, selección, hover, foco de paso ----------
@@ -200,8 +218,8 @@ const verTab = t => document.querySelector(`.tabs [data-t=${t}]`).click();
 $('.herr').innerHTML = HERR.map(h => `<button class="chip ${h === herr ? 'on' : ''}" data-h="${h.id}">${h.nombre}</button>`).join('') + PROXIMAS.map(n => `<span class="chip" title="Próximamente">${n}</span>`).join('');
 $('.herr').onclick = e => { const h = HERR.find(x => x.id === e.target.dataset.h); if (h && h !== herr) elegirHerramienta(h); };
 $('#exp').oninput = e => { st.exp = +e.target.value; };
-$('#corte').onchange = e => { st.corte = e.target.checked; aparienciaPiezas(); };
-$('#cortePos').oninput = e => { plano.constant = +e.target.value; };
+$('#corte').onchange = e => { st.corte = e.target.checked; $('#cortePos').disabled = !st.corte; aparienciaPiezas(); };
+$('#cortePos').oninput = e => { corteZ = +e.target.value; };
 $('#xray').onchange = e => { st.xray = e.target.checked; aparienciaPiezas(); };
 $('#aislar').onchange = e => { st.aislar = e.target.checked; aparienciaPiezas(); };
 $('#reset').onclick = () => { vistaInicial(); };
@@ -215,7 +233,7 @@ function pieza(e) {
   const vis = [];
   for (const p of Object.values(modelo.parts)) if (!st.oculta.has(p.id)) p.items.forEach(i => vis.push(i.obj));
   for (const h of ray.intersectObjects(vis, true)) {
-    if (st.corte && h.point.z > plano.constant) continue;
+    if (st.corte && (h.point.z - corteZ) * ladoCorte > 0) continue;
     const id = h.object.userData.pid; if (id && !(st.aislar && st.sel && id !== st.sel)) return id;
   }
   return null;
@@ -260,7 +278,7 @@ function bucle() {
   }
   for (const [n, c] of Object.entries(modelo.vivo?.capas || {})) { c.visible = !!et?.capas?.includes(n); if (c.visible) c.userData.tick?.(anim); }
   if (tgtGoal) { ctl.target.lerp(tgtGoal, 0.1); if (ctl.target.distanceTo(tgtGoal) < 0.02) tgtGoal = null; }
-  ctl.update(); luzCam.position.copy(cam.position); renderer.render(scene, cam);
+  ctl.update(); planoCorte(); luzCam.position.copy(cam.position); renderer.render(scene, cam);
   requestAnimationFrame(bucle);
 }
 
