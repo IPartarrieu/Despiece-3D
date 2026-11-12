@@ -6,7 +6,7 @@ Visor 3D desmontable de maquinaria menor, hecho con three.js y sin compilación 
 
 | Herramienta | Modelos | Fuente |
 |---|---|---|
-| Demoledor | DeWalt D25900K (10 kg), D25940K (12 kg) | Procedimientos de desarme ESSG de DeWalt (63 y 59 págs.) |
+| Demoledor | DeWalt D25900K (10 kg), D25940K (12 kg); Kothman HK-17 (referencial, misma arquitectura escalada a 6,5 kg) | Procedimientos de desarme ESSG de DeWalt (63 y 59 págs.); catálogo Kothman 2024 para los datos del HK-17 |
 | Rotomartillo | Makita HR2600, HR2601 (documentados); HR2470 y Kothman RK26 (referenciales, misma arquitectura) | Makita Technical Information HR2600/HR2601 (13 págs.) y manual del HR2470 |
 | Esmeril angular | Makita GA4530, Milwaukee M18 FUEL 2880-20 | Despiece Makita y lista de piezas Milwaukee 54-38-7025 |
 | Bomba | Bercatti DRE0753 (sumergible aguas sucias), Happy CYM158 (centrífuga 1 HP), Redbo WP-30A (motobomba bencinera 3") — los tres referenciales | Ficha DRE0752 y manual Bercatti/Vielva SCM3; catálogo técnico Pedrollo CP (CPm158); manual de servicio Loncin 165F/170F y manual Honda WB30XT |

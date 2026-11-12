@@ -42,7 +42,8 @@ const planta = (x0, x1, z0, z1, r, y0, h, m) => { // rectángulo redondeado en p
 export function construir(cfg) {
   const m = cfg.m || {}, E = cfg.estilo || {};
   const d40 = m.modelo === 'D25940K', iR = d40 ? 1 : 0;
-  const k = d40 ? Math.cbrt(12 / 10) : 1; // ponytail: el 12 kg se escala parejo por peso (≈ +6 %); el documento no da sus medidas
+  const kot = m.marca === 'Kothman';
+  const k = Math.cbrt((m.peso || 10) / 10); // ponytail: se escala parejo por peso (D25940K ≈ +6 %, Kothman HK-17 ≈ −13 %); el documento DeWalt no da medidas
   const amarillo = () => mat(E.color || '#f2b200', { metalness: 0.05, roughness: 0.45 });
   const negro = () => mat(E.negro || '#1c1d20', { metalness: 0.1, roughness: 0.7 });
   const fundicion = () => mat(E.carter || '#b7bbc0', { metalness: 0.7, roughness: 0.42 });
@@ -131,7 +132,7 @@ export function construir(cfg) {
   ], V(0, 0, 14)]]);
 
   // ================= cárter, cigüeñal y caja de engranajes =================
-  const logo = lienzo(512, 128, (g, w, h) => { g.fillStyle = '#1c1d20'; g.font = 'italic bold 104px sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('DEWALT', w / 2, h / 2 + 4); });
+  const logo = lienzo(512, 128, (g, w, h) => { g.fillStyle = '#1c1d20'; g.font = `italic bold ${kot ? 84 : 104}px sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(kot ? 'KOTHMAN' : 'DEWALT', w / 2, h / 2 + 4); });
   add('carcasa_principal', 'Carcasa principal metálica (cárter y caja de engranajes)', G3, [[[
     perfil([[-9.3, -7.0], [8.0, -7.0], [8.0, 3.0], [-9.3, 3.0]], 9.8, -4.9, fundicion(), 0.8),
     perfil([[8.0, -5.2], [9.6, -5.2], [9.6, 5.0], [8.0, 5.0]], 10.4, -5.2, fundicion(), 0.3), // asiento de la unidad antivibración
