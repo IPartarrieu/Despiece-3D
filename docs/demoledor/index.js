@@ -13,28 +13,37 @@ const COMUN = {
   28: ['tapa_engranajes', 'tapa21'], 29: ['inducido'], 30: ['engranaje_cig'], 31: ['engranaje_doble'], 32: ['cigueñal'], 33: ['rodamiento_inducido'],
 };
 const AV = ['tornillos65', 'carcasa_delantera', 'junta79'];
+// Demoledores verticales (Makita HM1306 y Kothman HK-55, modelo_vertical.js): pasos 1-16 de data.json (desarmados.HM1306 / HK-55), comunes a ambos.
+const QV = {
+  2: ['mango_lateral'], 3: ['tapas_escobillas', 'escobillas'], 4: ['varilla_aceite'], 5: ['tornillos_porta', 'porta_herr', 'retenedor'], 6: ['golpeo', 'goma_golpeo'],
+  7: ['barril'], 8: ['cilindro', 'percutor'], 9: ['mango', 'agarre', 'amort_mango'], 10: ['interruptor', 'cable'], 11: ['tapa_carter'], 12: ['piston', 'biela'],
+  13: ['ciguenal', 'corona', 'rodamientos_cig'], 14: ['carcasa_motor'], 15: ['inducido', 'ventilador', 'rodamientos_ind'], 16: ['portaescobillas', 'estator'],
+};
+const FV = { 1: ['retenedor', 'porta_herr'], 3: ['tapas_escobillas', 'escobillas', 'portaescobillas'], 4: ['varilla_aceite', 'carter'], 12: ['piston', 'biela', 'ciguenal'] };
+
+const VISTA_H = { pos: [2, 16, 92], tgt: [9, -1, 0] }, VISTA_V = { pos: [34, 16, 122], tgt: [9, -4, 0] };
 
 export default {
   id: 'demoledor', nombre: 'Demoledor', datos: new URL('data.json', import.meta.url), construir,
-  color: { DeWalt: '#f2b200', Kothman: '#3a3d42' },
+  color: { DeWalt: '#f2b200', Kothman: '#3a3d42', Makita: '#1595a0' },
   // colores tomados de las fotos del documento de servicio: tapa del motor, tapa de engranajes y mango amarillos;
   // carcasa principal y alojamiento delantero de metal gris plateado; portaherramienta, cubierta 66, gatillo y agarre negros
-  estilos: { DeWalt: { color: '#f2b200', carter: '#b7bbc0', negro: '#1c1d20' }, Kothman: { color: '#3a3d42', carter: '#b7bbc0', negro: '#1c1d20' } }, // Kothman HK-17: la tapa y el mango van en gris oscuro (el catálogo muestra gris, negro y rojo)
+  estilos: { DeWalt: { color: '#f2b200', carter: '#b7bbc0', negro: '#1c1d20' }, Kothman: { color: '#3a3d42', carter: '#b7bbc0', negro: '#1c1d20' }, Makita: { color: '#1595a0', carter: '#1595a0', negro: '#1c1d20' } }, // Kothman HK-17: la tapa y el mango van en gris oscuro (el catálogo muestra gris, negro y rojo); el HK-55 toma sus colores rojo/gris/negro en modelo_vertical.js; Makita teal como en el rotomartillo
   opciones: [],
   cfg0: {},
   deModelo: () => ({}),
   nombreModelo: x => `${x.modelo} · ${x.clase}`,
   ficha: m => [['Modelo', `${m.marca} ${m.modelo}`], ['Clase', m.clase], ['Portaherramienta', m.porta || '—'], ['Peso', `${dato(m.peso)} kg`], ['Potencia', `${dato(m.potencia)} W`], ['Energía de impacto', `${dato(m.energia)} J`], ['Golpes por minuto', dato(m.golpes)], ['Vibración', m.vibracion == null ? '—' : `${m.vibracion} m/s²`]],
-  resumen: () => 'Demoledor DeWalt con documento de servicio completo; Kothman HK-17 referencial.',
-  aviso: 'DeWalt D25900K y D25940K: exacto, según el procedimiento de servicio DeWalt/ESSG de cada modelo: qué piezas hay, sus números, cómo van dispuestas (cincel horizontal, unidad antivibración, cárter con biela y cigüeñal, motor vertical atrás con el ventilador arriba y la caja de engranajes abajo, mango en D) y el orden y sentido en que se desarman. Aproximado: las medidas externas y los detalles finos. El documento no trae medidas; la escala sale de la foto de corte y de las juntas tóricas que sí tienen medida, y el D25940K se escaló por peso. Kothman HK-17: referencial; usa esta misma arquitectura escalada a 6,5 kg, y sus datos salen del catálogo Kothman 2024.',
-  QUITA: m => (m?.modelo === 'D25940K' ? { ...COMUN, 12: [...AV, 'cubierta'] } : { ...COMUN, 12: ['cubierta'], 13: AV }),
-  FOCO: m => ({
+  resumen: () => 'Demoledor DeWalt con documento de servicio completo; Kothman HK-17, Kothman HK-55 y Makita HM1306 referenciales.',
+  aviso: 'DeWalt D25900K y D25940K: exacto, según el procedimiento de servicio DeWalt/ESSG de cada modelo: qué piezas hay, sus números, cómo van dispuestas (cincel horizontal, unidad antivibración, cárter con biela y cigüeñal, motor vertical atrás con el ventilador arriba y la caja de engranajes abajo, mango en D) y el orden y sentido en que se desarman. Aproximado: las medidas externas y los detalles finos. El documento no trae medidas; la escala sale de la foto de corte y de las juntas tóricas que sí tienen medida, y el D25940K se escaló por peso. Kothman HK-17: referencial; usa esta misma arquitectura escalada a 6,5 kg, y sus datos salen del catálogo Kothman 2024. Makita HM1306 y Kothman HK-55 (cincel vertical): referenciales, sin despiece. La arquitectura sale del folleto oficial Makita HM1317C/HM1307C (familia sucesora del HM1306: cigüeñal con biela, pistón, percutor, barril y portaherramienta) y del manual del HM1306 (aceite, escobillas, retenedor, mango lateral); que el motor vaya paralelo al barril con piñón cónico es un supuesto. Interior, pasos de desarme y la antivibración del HK-55 son aproximados y no llevan números de pieza.',
+  QUITA: m => (m?.vertical ? QV : m?.modelo === 'D25940K' ? { ...COMUN, 12: [...AV, 'cubierta'] } : { ...COMUN, 12: ['cubierta'], 13: AV }),
+  FOCO: m => (m?.vertical ? FV : {
     5: ['rodamiento_golpeo', 'sellos_th'], 6: ['sello_frontal'], 7: ['manguito', 'anillo_elastico'], 8: ['anillo_elastico', 'manguito', 'amortiguador_th'],
     9: ['bloqueo'], 10: ['manga_giratoria', 'brida', 'husillo', 'sellos_th'], 11: ['manga_giratoria', 'sellos_th', 'husillo'],
     13: m?.modelo === 'D25940K' ? ['cubierta', 'carcasa_delantera'] : ['tornillos65', 'carcasa_delantera', 'junta79'],
     22: ['portaescobillas', 'interruptor'], 25: ['estator', 'carcasa_principal'],
   }),
   extra: {},
-  vista: { pos: [2, 16, 92], tgt: [9, -1, 0] },
+  vista: m => (m?.vertical ? VISTA_V : VISTA_H), // el demoledor vertical es más alto: cámara más lejos
   etiqueta: (marca, m) => (m ? `${marca} ${m.modelo}`.toUpperCase() : marca.toUpperCase()),
 };

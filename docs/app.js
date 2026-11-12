@@ -28,7 +28,8 @@ const cam = new THREE.PerspectiveCamera(40, 1, 0.1, 600);
 const ctl = new OrbitControls(cam, cv); ctl.enableDamping = true;
 const plano = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);
 let tgtGoal = null;
-function vistaInicial() { cam.position.fromArray(herr.vista.pos); ctl.target.fromArray(herr.vista.tgt); tgtGoal = null; }
+const vistaDe = () => (typeof herr.vista === 'function' ? herr.vista(st.modelo) : herr.vista); // vista fija o según el modelo
+function vistaInicial() { const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null; }
 function ajustar() { const r = $('#vista').getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
 addEventListener('resize', ajustar); ajustar();
 
@@ -57,7 +58,7 @@ const focoDe = () => (typeof herr.FOCO === 'function' ? herr.FOCO(st.modelo) : h
 const etapasDe = () => DATA.funcionamiento?.[st.modelo?.modelo];
 const etapaAct = () => (st.func ? etapasDe()?.[st.fp] : null);
 const fichaPieza = nombre => DATA.piezasPorModelo?.[st.modelo?.modelo]?.[nombre] || DATA.piezas[nombre];
-function aplicarModelo(m) { st.modelo = m; if (m) Object.assign(st.cfg, herr.deModelo(m)); }
+function aplicarModelo(m) { const v0 = herr.vista && vistaDe(); st.modelo = m; if (m) Object.assign(st.cfg, herr.deModelo(m)); if (v0 && vistaDe() !== v0) vistaInicial(); }
 function cambiarMarca(marca) { // una marca trae solo sus modelos: se parte por el primero
   st.marca = marca;
   if (marca === 'Genérica') { st.modelo = null; st.cfg = { ...herr.cfg0 }; } else aplicarModelo(DATA.modelos.find(x => x.marca === marca));

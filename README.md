@@ -6,7 +6,7 @@ Visor 3D desmontable de maquinaria menor, hecho con three.js y sin compilación 
 
 | Herramienta | Modelos | Fuente |
 |---|---|---|
-| Demoledor | DeWalt D25900K (10 kg), D25940K (12 kg); Kothman HK-17 (referencial, misma arquitectura escalada a 6,5 kg) | Procedimientos de desarme ESSG de DeWalt (63 y 59 págs.); catálogo Kothman 2024 para los datos del HK-17 |
+| Demoledor | DeWalt D25900K (10 kg), D25940K (12 kg); Kothman HK-17 (referencial, misma arquitectura escalada a 6,5 kg); Makita HM1306 (15 kg) y Kothman HK-55 (17,7 kg), verticales y referenciales, sin despiece (`modelo_vertical.js`) | Procedimientos de desarme ESSG de DeWalt (63 y 59 págs.); catálogo Kothman 2024 (HK-17 y HK-55); manual y ficha Makita HM1306; arquitectura vertical según el folleto Makita HM1317C/HM1307C (motor paralelo al barril con piñón cónico: supuesto) |
 | Rotomartillo | Makita HR2600, HR2601 (documentados); HR2470 y Kothman RK26 (referenciales, misma arquitectura) | Makita Technical Information HR2600/HR2601 (13 págs.) y manual del HR2470 |
 | Esmeril angular | Makita GA4530, Milwaukee M18 FUEL 2880-20 | Despiece Makita y lista de piezas Milwaukee 54-38-7025 |
 | Bomba | Bercatti DRE0753 (sumergible aguas sucias), Happy CYM158 (centrífuga 1 HP), Redbo WP-30A (motobomba bencinera 3") — los tres referenciales | Ficha DRE0752 y manual Bercatti/Vielva SCM3; catálogo técnico Pedrollo CP (CPm158); manual de servicio Loncin 165F/170F y manual Honda WB30XT |
@@ -17,6 +17,6 @@ Los modelos referenciales usan la arquitectura de un modelo documentado y lo dic
 - Rotar, acercar y mover con el mouse; clic en una pieza para ver su ficha.
 - Explosión, corte, rayos X y aislar pieza; desarme paso a paso por modelo.
 - Pestaña «Funciona»: el equipo en marcha, etapa por etapa (por dónde pasa la corriente, cómo se forma el campo magnético, qué fuerza mueve el motor, cómo llega el giro al disco). Las piezas que intervienen se destacan, el resto se atenúa, y se pueden pausar y ajustar la velocidad. Las velocidades de la animación son ilustrativas.
-- Parámetros en la URL: `?herr=demoledor&modelo=D25940K`, `?marca=Makita`, `exp=1`, `corte`, `xray`, `paso=12`, `sel=<id>`, `cam=x,y,z,tx,ty,tz`, `func=1&etapa=3` (modo funcionamiento), `pausa`, `ang=`, `t=`.
+- Parámetros en la URL: `?herr=demoledor&modelo=D25940K` (o `&marca=Makita&modelo=HM1306`), `?marca=Makita`, `exp=1`, `corte`, `xray`, `paso=12`, `sel=<id>`, `cam=x,y,z,tx,ty,tz`, `func=1&etapa=3` (modo funcionamiento), `pausa`, `ang=`, `t=`.
 
 Estructura: cada herramienta vive en `docs/<herramienta>/` (`modelo.js`, `data.json`, `index.js`) y se registra en `app.js`; el modo funcionamiento usa las etapas de `data.json` (`funcionamiento`) y las capas animadas del modelo (`vivo`: `capas`, `giros`, `mover`; helpers en `vivo.js`); los helpers 3D comunes están en `lib.js`. Probar en local: `cd docs && python3 -m http.server`. Los modelos son procedurales, no un CAD de fabricante.

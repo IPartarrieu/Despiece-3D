@@ -35,6 +35,32 @@
    "golpes": 2900,
    "vibracion": null,
    "nota": "Referencial (suposición razonable): Kothman no publica despiece ni manual de servicio del HK-17. Datos del catálogo Kothman 2024 (código MAQ-KT-DM-HK17): 220 V, 1.500 W, 17 J, 2.900 golpes/min, hexagonal 17 mm, 6,5 kg (una tienda lista 2.600 golpes/min; se usa el catálogo). Colores gris, negro y rojo según las fotos del catálogo. Se modela con la arquitectura del DeWalt D25900K (cincel horizontal, motor vertical atrás, cárter con biela y cigüeñal), escalada por peso a 6,5 kg: el interior, los números de pieza, los pasos de desarme y las cantidades de grasa son los de DeWalt y pueden no coincidir; el portaherramienta se dibuja SDS aunque el HK-17 es hexagonal, y que el HK-17 lleve unidad antivibración o control electrónico no está documentado. Vibración, ruido y largo: sin dato."
+  },
+  {
+   "marca": "Kothman",
+   "modelo": "HK-55",
+   "clase": "17,7 kg",
+   "porta": "Hexagonal 28 mm",
+   "peso": 17.7,
+   "potencia": 1600,
+   "energia": 55,
+   "golpes": 1450,
+   "vibracion": null,
+   "vertical": true,
+   "nota": "Referencial (suposición razonable): Kothman no publica despiece ni manual de servicio del HK-55. Datos del catálogo Kothman 2024, pág. 8 (código MAQ-KT-DM-HK55): 220 V, 1.600 W, 55 J, 1.450 golpes/min, hexagonal 28 mm, 17,7 kg; la ficha de kothman.cl menciona un «sistema antivibración» sin describirlo ni dar su valor. Colores según la foto del catálogo: carcasa del motor y mango rojos, caja intermedia gris, parte inferior y agarre negros. Se dibuja con la arquitectura vertical que se usa para el Makita HM1306 (cigüeñal, biela, pistón y percutor según el folleto Makita HM1307C/HM1317C; motor paralelo al barril con piñón cónico como supuesto), escalada por peso a 17,7 kg. El interior, la lubricación (aceite o grasa), los pasos de desarme y la forma de la antivibración (aquí, gomas bajo el mango) son aproximados. Sin números de pieza. Vibración, ruido y largo: sin dato."
+  },
+  {
+   "marca": "Makita",
+   "modelo": "HM1306",
+   "clase": "15 kg",
+   "porta": "Hexagonal 30 mm",
+   "peso": 15.1,
+   "potencia": 1510,
+   "energia": null,
+   "golpes": 1450,
+   "vibracion": null,
+   "vertical": true,
+   "nota": "Referencial: no hay lista de piezas del HM1306. Datos del manual de usuario (8 págs.): 1.450 golpes/min, largo 652 mm, 15,1 kg; de la ficha Makita: 1.510 W, 652 x 121 x 231 mm, 15 kg, vástago hexagonal 30 mm (antes se anotó 28 mm: discrepancia), cable 5 m, depósito de aceite Oil Supply 100 mL (181118-7). Energía de impacto: sin dato oficial (una tienda dice 21,7 J EPTA 05/2009 y otra 28,8 J). Del manual: lleva aceite (varilla de nivel que se saca con la llave 23), escobillas con punta aislante que corta el motor al gastarse, tapas de escobilla bajo placas, mango lateral giratorio y retenedor del útil que se gira 180°. La arquitectura interna sale del folleto oficial Makita HM1317C/HM1307C (familia sucesora: misma potencia, golpes y vástago): cigüeñal perpendicular al barril con biela, pistón y percutor, barril de aluminio, portaherramienta de acero y engranajes; el HM1307C no lleva el contrapeso AVT, que es solo del HM1317C. Supuesto no confirmado: motor paralelo al barril, detrás, con piñón cónico y corona en el cigüeñal. Medidas internas, formas y orden de desarme: aproximados. Sin números de pieza."
   }
  ],
  "piezas": {
@@ -405,6 +431,246 @@
    "valor_esperado": null,
    "cuando_cambiar": "Si fallan los rodamientos del cigüeñal (no se cambian por separado).",
    "tip_taller": "El número de serie y la fecha van a la derecha, junto a la unidad antivibración; tras reparar se marca una \"R\"."
+  },
+  "Portaherramienta (boca hexagonal)": {
+   "funcion": "Recibe el vástago hexagonal del cincel, lo guía y lo deja deslizar lo justo para recibir el golpe.",
+   "como_se_desgasta": "La boca hexagonal se agranda y ovala con el uso; el cincel queda con juego y golpea torcido.",
+   "prueba": "Meter un cincel nuevo y moverlo de lado a lado: el juego debe ser pequeño y parejo.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el cincel nuevo baila mucho o la boca está agrietada.",
+   "tip_taller": "Medida de la boca: 30 mm en el HM1306 según la ficha Makita (28 mm en el HK-55, según Kothman)."
+  },
+  "Pernos del portaherramienta": {
+   "funcion": "Unen el portaherramienta al barril.",
+   "como_se_desgasta": "Se sueltan con la vibración.",
+   "prueba": "Revisar el apriete antes de usar: el manual del HM1306 advierte que los tornillos se sueltan fácilmente con la vibración.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la rosca está dañada o se aflojan una y otra vez.",
+   "tip_taller": "Cantidad y medida: sin dato (no hay despiece)."
+  },
+  "Retenedor del útil": {
+   "funcion": "Traba el cincel por la muesca de su vástago para que no salga disparado.",
+   "como_se_desgasta": "Se gasta la parte que toca la muesca y se debilita el resorte o el pasador.",
+   "prueba": "Con el cincel puesto, tirar de él con fuerza: no debe salir.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el cincel se suelta o el retenedor no queda firme.",
+   "tip_taller": "En el HM1306 se tira hacia afuera y se gira 180° para trabar (manual)."
+  },
+  "Pieza de golpeo (perno de impacto)": {
+   "funcion": "Recibe el golpe del percutor y lo pasa al cincel.",
+   "como_se_desgasta": "Se aplasta y se marca en sus dos caras de golpe.",
+   "prueba": "Revisar que las caras estén planas y sin rebabas.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si tiene hongos, grietas o la cara está hundida.",
+   "tip_taller": "Forma y medidas: aproximadas (familia Makita HM13xx)."
+  },
+  "Anillo de goma y junta de la pieza de golpeo": {
+   "funcion": "Amortigua el rebote de la pieza de golpeo y sella el paso hacia el barril.",
+   "como_se_desgasta": "La goma se endurece, se corta o se aplasta.",
+   "prueba": "Inspección visual al desarmar.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Cada vez que se desarma la percusión si está dura o cortada.",
+   "tip_taller": null
+  },
+  "Barril": {
+   "funcion": "Tubo que aloja el cilindro, el percutor y la pieza de golpeo, y lleva el portaherramienta en su punta.",
+   "como_se_desgasta": "Se raya por dentro si entra polvo; se fisura por golpes.",
+   "prueba": "Inspección visual de grietas y del asiento del portaherramienta.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está fisurado o el asiento está deformado.",
+   "tip_taller": "Makita destaca un barril de aluminio reforzado en el HM1307C/HM1317C (folleto)."
+  },
+  "Cilindro": {
+   "funcion": "Tubo liso donde corren el pistón y el percutor con el colchón de aire entre ambos.",
+   "como_se_desgasta": "Se raya y se ovala; el aire se escapa y el golpe pierde fuerza.",
+   "prueba": "Buscar rayas y medir el diámetro interior en varios puntos.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está rayado o fuera de medida.",
+   "tip_taller": "Medidas: sin dato."
+  },
+  "Percutor con junta tórica": {
+   "funcion": "Pistón libre que el aire empuja contra la pieza de golpeo: es el que da el golpe.",
+   "como_se_desgasta": "Se gasta la cara de golpe y la junta tórica pierde sello.",
+   "prueba": "Revisar la junta y la cara de golpe.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si golpea débil y la junta está gastada o la cara deformada.",
+   "tip_taller": "Si el equipo golpea débil, revisar juntas, pistón y percutor antes que el motor."
+  },
+  "Pistón con pasador y junta": {
+   "funcion": "Lo mueve la biela arriba y abajo; comprime y aspira el aire que empuja al percutor.",
+   "como_se_desgasta": "Se gasta la junta y el pasador toma juego.",
+   "prueba": "Mover la biela sobre el pasador: no debe tener juego notorio.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la junta está gastada o el pasador tiene juego.",
+   "tip_taller": null
+  },
+  "Biela": {
+   "funcion": "Une la muñequilla del cigüeñal con el pistón y convierte el giro en vaivén.",
+   "como_se_desgasta": "Se gastan los ojos donde giran los pasadores.",
+   "prueba": "Revisar el juego en ambos ojos.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si tiene juego o marcas de recalentamiento.",
+   "tip_taller": null
+  },
+  "Mango lateral giratorio": {
+   "funcion": "Segunda empuñadura, abrazada al barril, para sujetar el equipo con las dos manos.",
+   "como_se_desgasta": "Se suelta la abrazadera o se quiebra el mango.",
+   "prueba": "Apretar y comprobar que no gire solo.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la abrazadera no aprieta.",
+   "tip_taller": "En el HM1306 gira hacia cualquier lado para trabajar en cualquier posición (manual)."
+  },
+  "Cárter (caja del cigüeñal, con aceite)": {
+   "funcion": "Caja que aloja el cigüeñal, la corona y el aceite que los lubrica; lleva arriba el mango.",
+   "como_se_desgasta": "Se fisura por golpes; pierde aceite por sellos gastados.",
+   "prueba": "Buscar fugas de aceite y fisuras.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está fisurado.",
+   "tip_taller": "El manual del HM1306 pide no guardarlo con el cabezal hacia abajo porque puede perder aceite: guardarlo acostado."
+  },
+  "Tapa del cárter": {
+   "funcion": "Cierra el cárter y da acceso a la biela y al cigüeñal.",
+   "como_se_desgasta": "La junta se aplasta.",
+   "prueba": "Revisar la junta al abrir.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la junta pierde aceite.",
+   "tip_taller": "Ubicación y forma: aproximadas."
+  },
+  "Varilla de nivel de aceite": {
+   "funcion": "Tapón con varilla para ver el nivel de aceite del cárter y rellenar.",
+   "como_se_desgasta": "La junta del tapón se gasta.",
+   "prueba": "Sacarla y revisar el nivel.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la junta pierde.",
+   "tip_taller": "HM1306: se saca con la llave 23 y se rellena solo con aceite original Makita (depósito Oil Supply 100 mL, 181118-7). La cantidad exacta: sin dato."
+  },
+  "Cigüeñal con muñequilla": {
+   "funcion": "Eje que gira con la corona y lleva una muñequilla excéntrica que mueve la biela.",
+   "como_se_desgasta": "Se gastan la muñequilla y los asientos de rodamiento.",
+   "prueba": "Girarlo a mano: debe ir suave y sin juego.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la muñequilla está marcada o ovalada.",
+   "tip_taller": "Excentricidad (carrera): sin dato."
+  },
+  "Corona cónica del cigüeñal": {
+   "funcion": "Engranaje que recibe el giro del piñón del motor y lo pasa al cigüeñal, más lento y con más fuerza.",
+   "como_se_desgasta": "Los dientes se gastan o se despuntan.",
+   "prueba": "Revisar los dientes al desarmar.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si hay dientes rotos o muy gastados.",
+   "tip_taller": "Que sea cónica es un supuesto del dibujo; la relación de reducción: sin dato."
+  },
+  "Rodamientos del cigüeñal": {
+   "funcion": "Sostienen el cigüeñal dentro del cárter.",
+   "como_se_desgasta": "Se gastan y meten ruido.",
+   "prueba": "Girarlos a mano: no deben raspar.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si raspan o tienen juego.",
+   "tip_taller": null
+  },
+  "Carcasa del motor": {
+   "funcion": "Envuelve el motor, sostiene el estator y lleva las tapas de escobillas.",
+   "como_se_desgasta": "Se fisura por golpes.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está fisurada.",
+   "tip_taller": null
+  },
+  "Estator (campo)": {
+   "funcion": "Bobinas fijas que crean el campo magnético del motor.",
+   "como_se_desgasta": "Se recalienta y el barniz se oscurece o se corta.",
+   "prueba": "Medir continuidad y aislación con el multímetro y megóhmetro.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está cortado o a masa.",
+   "tip_taller": "Valores: sin dato del fabricante."
+  },
+  "Inducido con piñón cónico": {
+   "funcion": "Rotor del motor; en su punta superior lleva el piñón que mueve la corona del cigüeñal.",
+   "como_se_desgasta": "Se gasta el colector por las escobillas y se gastan los dientes del piñón.",
+   "prueba": "Revisar el colector (liso, sin quemaduras) y medir sus delgas.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si el colector está quemado o las bobinas cortadas.",
+   "tip_taller": "Que el piñón sea cónico es un supuesto del dibujo."
+  },
+  "Ventilador": {
+   "funcion": "Gira con el inducido y mueve el aire que enfría el motor.",
+   "como_se_desgasta": "Se quiebran las aspas.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si tiene aspas rotas.",
+   "tip_taller": "Ubicación aproximada."
+  },
+  "Rodamientos del inducido": {
+   "funcion": "Sostienen el inducido en sus dos extremos.",
+   "como_se_desgasta": "Se gastan y meten ruido.",
+   "prueba": "Girarlos a mano.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si raspan o tienen juego.",
+   "tip_taller": null
+  },
+  "Portaescobillas": {
+   "funcion": "Guían las escobillas y las mantienen apretadas contra el colector.",
+   "como_se_desgasta": "Se ensucian y las escobillas se traban.",
+   "prueba": "Comprobar que las escobillas deslicen libres.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si están quemados o deformados.",
+   "tip_taller": "El manual del HM1306 pide mantener las escobillas limpias y libres de deslizar en sus portaescobillas."
+  },
+  "Escobillas con punta aislante": {
+   "funcion": "Llevan la corriente al colector del inducido que gira.",
+   "como_se_desgasta": "Se acortan con el roce.",
+   "prueba": "Sacarlas y ver cuánto queda.",
+   "valor_esperado": null,
+   "cuando_cambiar": "HM1306: cuando la punta aislante de resina toca el colector, el motor se corta solo; entonces se cambian las dos a la vez, por escobillas idénticas.",
+   "tip_taller": "HM1306: sacar las placas de las tapas con llave hexagonal y luego las tapas con destornillador (manual)."
+  },
+  "Tapas y placas de las escobillas": {
+   "funcion": "Tapan el acceso a las escobillas desde afuera.",
+   "como_se_desgasta": "Se pierden o se rompen al sacarlas.",
+   "prueba": "Verificar que queden firmes.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si están rotas.",
+   "tip_taller": "HM1306: reinstalar las placas firmemente después de cambiar escobillas (manual)."
+  },
+  "Mango superior (lazo)": {
+   "funcion": "Empuñadura principal arriba del equipo; lleva el gatillo.",
+   "como_se_desgasta": "Se quiebra por golpes o caídas.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está fisurado.",
+   "tip_taller": null
+  },
+  "Agarre de goma": {
+   "funcion": "Recubrimiento blando para sujetar con firmeza.",
+   "como_se_desgasta": "Se corta o se despega.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está roto o suelto.",
+   "tip_taller": null
+  },
+  "Interruptor con gatillo y botón de bloqueo": {
+   "funcion": "Enciende el motor; el botón de bloqueo lo deja encendido sin apretar.",
+   "como_se_desgasta": "Los contactos se queman y el gatillo se traba.",
+   "prueba": "Antes de enchufar, comprobar que el gatillo vuelva a apagado al soltarlo (manual HM1306).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no corta o no vuelve.",
+   "tip_taller": "HM1306: para bloquear, apretar el gatillo y bajar el botón; para soltar, apretar el gatillo a fondo y soltarlo (manual)."
+  },
+  "Cable de alimentación con protector": {
+   "funcion": "Lleva la corriente de la red al interruptor.",
+   "como_se_desgasta": "Se corta en la salida del mango.",
+   "prueba": "Revisar la vaina y medir continuidad.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está cortado o pelado.",
+   "tip_taller": "HM1306: 5 m según la ficha Makita."
+  },
+  "Amortiguadores del mango (referencial)": {
+   "funcion": "Kothman menciona un «sistema antivibración» en el HK-55 sin describirlo; aquí se dibuja como gomas entre el mango y el cárter (supuesto).",
+   "como_se_desgasta": "Las gomas se endurecen o se cortan.",
+   "prueba": "Revisar que no estén cortadas.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si están rotas.",
+   "tip_taller": "Forma y ubicación reales: sin dato."
   }
  },
  "piezasPorModelo": {
@@ -776,6 +1042,32 @@
     "valor_esperado": null,
     "cuando_cambiar": "Si fallan los rodamientos del cigüeñal (no se cambian por separado).",
     "tip_taller": "El número de serie y la fecha van a la derecha, junto a la unidad antivibración; tras reparar se marca una \"R\"."
+   }
+  },
+  "HK-55": {
+   "Escobillas con punta aislante": {
+    "funcion": "Llevan la corriente al colector del inducido que gira.",
+    "como_se_desgasta": "Se acortan con el roce.",
+    "prueba": "Sacarlas y ver cuánto queda.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Cuando estén gastadas; que el HK-55 tenga punta aislante de corte no está documentado (el dibujo sigue al HM1306).",
+    "tip_taller": null
+   },
+   "Varilla de nivel de aceite": {
+    "funcion": "En la arquitectura de referencia (HM1306) es el tapón con varilla para ver y rellenar el aceite del cárter.",
+    "como_se_desgasta": "La junta del tapón se gasta.",
+    "prueba": "Sacarla y revisar el nivel.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la junta pierde.",
+    "tip_taller": "Kothman no documenta si el HK-55 se lubrica con aceite o con grasa: verificar en el equipo."
+   },
+   "Cárter (caja del cigüeñal, con aceite)": {
+    "funcion": "Caja que aloja el cigüeñal y la corona; lleva arriba el mango.",
+    "como_se_desgasta": "Se fisura por golpes; pierde lubricante por sellos gastados.",
+    "prueba": "Buscar fugas y fisuras.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está fisurado.",
+    "tip_taller": "Tipo de lubricante del HK-55: sin dato."
    }
   }
  },
@@ -1244,6 +1536,234 @@
     "instruccion": "Sacar el anillo (34), extraer con prensa el rodamiento del inducido (35) y sacar el sello (36). (pág. 25)",
     "precaucion": "El sello 36 se cambia siempre.",
     "herramienta": "Pinzas de anillos, prensa"
+   }
+  ],
+  "HM1306": [
+   {
+    "paso": 1,
+    "titulo": "Desenchufar y sacar el cincel",
+    "instruccion": "Desenchufar el equipo. Tirar del retenedor hacia afuera, girarlo 180° y sacar el cincel. (manual HM1306)",
+    "precaucion": "Antes de cualquier trabajo, equipo apagado y desenchufado (manual). El cincel puede estar muy caliente después de trabajar.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 2,
+    "titulo": "Sacar el mango lateral",
+    "instruccion": "Soltar la abrazadera y retirar el mango lateral del barril.",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 3,
+    "titulo": "Sacar las escobillas",
+    "instruccion": "Sacar las placas de las tapas con la llave hexagonal, luego las tapas con un destornillador, y retirar las dos escobillas. (manual HM1306)",
+    "precaucion": "Cambiar siempre las dos escobillas juntas, por escobillas idénticas.",
+    "herramienta": "Llave hexagonal y destornillador"
+   },
+   {
+    "paso": 4,
+    "titulo": "Vaciar el aceite",
+    "instruccion": "Con el equipo acostado, sacar la varilla de nivel con la llave 23 y recoger el aceite en un recipiente. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Recoger el aceite y desecharlo como residuo. Al rearmar, usar solo aceite original Makita (manual).",
+    "herramienta": "Llave 23"
+   },
+   {
+    "paso": 5,
+    "titulo": "Quitar el portaherramienta",
+    "instruccion": "Soltar los pernos y retirar el portaherramienta con el retenedor. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Los pernos se aflojan con la vibración: al rearmar, apretarlos bien (manual HM1306).",
+    "herramienta": "Llave"
+   },
+   {
+    "paso": 6,
+    "titulo": "Sacar la pieza de golpeo",
+    "instruccion": "Sacar la pieza de golpeo por la punta del barril con su anillo de goma y su junta. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 7,
+    "titulo": "Separar el barril",
+    "instruccion": "Soltar el barril del cárter y sacarlo hacia abajo. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Trabajar limpio: el polvo dentro del barril o del cárter acorta la vida del cilindro y las juntas.",
+    "herramienta": "Llave"
+   },
+   {
+    "paso": 8,
+    "titulo": "Sacar el cilindro y el percutor",
+    "instruccion": "Retirar el cilindro y sacar el percutor de su interior; revisar su junta tórica. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Si golpeaba débil, revisar juntas, pistón y percutor.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 9,
+    "titulo": "Quitar el mango superior",
+    "instruccion": "Soltar los tornillos del mango en lazo y retirarlo con su agarre. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 10,
+    "titulo": "Desconectar interruptor y cable",
+    "instruccion": "Soltar los cables del interruptor, sacar el interruptor y retirar el cable con su protector. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Anotar o fotografiar la conexión de cada cable antes de soltarlo.",
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 11,
+    "titulo": "Abrir el cárter",
+    "instruccion": "Soltar los tornillos y retirar la tapa del cárter. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Puede quedar lubricante dentro.",
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 12,
+    "titulo": "Sacar el pistón y la biela",
+    "instruccion": "Soltar la biela de la muñequilla del cigüeñal y sacar el pistón con la biela por el lado del cilindro. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 13,
+    "titulo": "Sacar el cigüeñal",
+    "instruccion": "Retirar el cigüeñal con la corona y sus rodamientos. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "En la familia Makita la corona va prensada al cigüeñal: separarla solo con prensa.",
+    "herramienta": "Extractor o prensa"
+   },
+   {
+    "paso": 14,
+    "titulo": "Separar la carcasa del motor",
+    "instruccion": "Soltar los tornillos y separar la carcasa del motor del cárter. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 15,
+    "titulo": "Sacar el inducido",
+    "instruccion": "Sacar el inducido con el piñón, el ventilador y sus rodamientos. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "No golpear el colector.",
+    "herramienta": "Extractor de rodamientos"
+   },
+   {
+    "paso": 16,
+    "titulo": "Sacar portaescobillas y estator",
+    "instruccion": "Retirar los portaescobillas y el estator de la carcasa. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "Destornillador"
+   }
+  ],
+  "HK-55": [
+   {
+    "paso": 1,
+    "titulo": "Desenchufar y sacar el cincel",
+    "instruccion": "Desenchufar el equipo. Tirar del retenedor hacia afuera, girarlo 180° y sacar el cincel. (como en el HM1306; el HK-55 puede trabar distinto)",
+    "precaucion": "Antes de cualquier trabajo, equipo apagado y desenchufado (manual). El cincel puede estar muy caliente después de trabajar.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 2,
+    "titulo": "Sacar el mango lateral",
+    "instruccion": "Soltar la abrazadera y retirar el mango lateral del barril.",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 3,
+    "titulo": "Sacar las escobillas",
+    "instruccion": "Abrir las tapas de escobillas a cada lado de la carcasa del motor y retirar las dos escobillas. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Cambiar siempre las dos escobillas juntas, por escobillas idénticas.",
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 4,
+    "titulo": "Vaciar el aceite",
+    "instruccion": "Sacar el tapón o la varilla de lubricante y recoger lo que salga. Kothman no indica si lleva aceite o grasa. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Recoger el lubricante y desecharlo como residuo.",
+    "herramienta": "Llave"
+   },
+   {
+    "paso": 5,
+    "titulo": "Quitar el portaherramienta",
+    "instruccion": "Soltar los pernos y retirar el portaherramienta con el retenedor. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Los pernos se aflojan con la vibración: al rearmar, apretarlos bien (manual HM1306).",
+    "herramienta": "Llave"
+   },
+   {
+    "paso": 6,
+    "titulo": "Sacar la pieza de golpeo",
+    "instruccion": "Sacar la pieza de golpeo por la punta del barril con su anillo de goma y su junta. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 7,
+    "titulo": "Separar el barril",
+    "instruccion": "Soltar el barril del cárter y sacarlo hacia abajo. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Trabajar limpio: el polvo dentro del barril o del cárter acorta la vida del cilindro y las juntas.",
+    "herramienta": "Llave"
+   },
+   {
+    "paso": 8,
+    "titulo": "Sacar el cilindro y el percutor",
+    "instruccion": "Retirar el cilindro y sacar el percutor de su interior; revisar su junta tórica. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Si golpeaba débil, revisar juntas, pistón y percutor.",
+    "herramienta": "—"
+   },
+   {
+    "paso": 9,
+    "titulo": "Quitar el mango superior",
+    "instruccion": "Soltar los tornillos del mango en lazo y retirarlo con su agarre y las gomas antivibración (supuestas). (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 10,
+    "titulo": "Desconectar interruptor y cable",
+    "instruccion": "Soltar los cables del interruptor, sacar el interruptor y retirar el cable con su protector. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Anotar o fotografiar la conexión de cada cable antes de soltarlo.",
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 11,
+    "titulo": "Abrir el cárter",
+    "instruccion": "Soltar los tornillos y retirar la tapa del cárter. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "Puede quedar lubricante dentro.",
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 12,
+    "titulo": "Sacar el pistón y la biela",
+    "instruccion": "Soltar la biela de la muñequilla del cigüeñal y sacar el pistón con la biela por el lado del cilindro. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "—"
+   },
+   {
+    "paso": 13,
+    "titulo": "Sacar el cigüeñal",
+    "instruccion": "Retirar el cigüeñal con la corona y sus rodamientos. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "En la familia Makita la corona va prensada al cigüeñal: separarla solo con prensa.",
+    "herramienta": "Extractor o prensa"
+   },
+   {
+    "paso": 14,
+    "titulo": "Separar la carcasa del motor",
+    "instruccion": "Soltar los tornillos y separar la carcasa del motor del cárter. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "Destornillador"
+   },
+   {
+    "paso": 15,
+    "titulo": "Sacar el inducido",
+    "instruccion": "Sacar el inducido con el piñón, el ventilador y sus rodamientos. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": "No golpear el colector.",
+    "herramienta": "Extractor de rodamientos"
+   },
+   {
+    "paso": 16,
+    "titulo": "Sacar portaescobillas y estator",
+    "instruccion": "Retirar los portaescobillas y el estator de la carcasa. (orden aproximado: no hay manual de servicio; arquitectura de referencia)",
+    "precaucion": null,
+    "herramienta": "Destornillador"
    }
   ]
  },
@@ -2080,6 +2600,456 @@
      [
       "#ff5470",
       "Sacudida de la carcasa, en sentido contrario"
+     ]
+    ],
+    "giro": true
+   }
+  ],
+  "HM1306": [
+   {
+    "titulo": "Cable, gatillo e interruptor",
+    "texto": "La corriente de la red entra por el cable de 5 m, sube al mango en lazo y llega al interruptor. Al apretar el gatillo se cierra el circuito (el botón de bloqueo lo deja encendido), y la corriente baja a la carcasa del motor, al campo y a las escobillas. Makita no publica el esquema eléctrico: el recorrido de la línea amarilla es referencial.",
+    "piezas": [
+     "cable",
+     "mango",
+     "agarre",
+     "interruptor",
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "mango",
+     "carcasa_motor"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red alterna cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor de escobillas",
+    "texto": "El motor es universal, de escobillas, y en este dibujo va parado detrás del barril (supuesto). La corriente pasa por el campo del estator y, por las escobillas, entra al colector del inducido. La fuerza entre el campo y las bobinas lo hace girar rápido, y el ventilador del eje lo enfría. Cuando la escobilla se gasta hasta su punta aislante, el motor se corta solo (manual).",
+    "piezas": [
+     "carcasa_motor",
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido",
+     "ventilador",
+     "rodamientos_ind"
+    ],
+    "vidrio": [
+     "carcasa_motor",
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente por el campo, las escobillas y el inducido (recorrido aproximado)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido (no documentado)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Reducción: piñón y corona",
+    "texto": "En la punta superior del inducido, un piñón chico mueve una corona grande montada en el cigüeñal. Así el giro dobla en ángulo recto y el cigüeñal gira mucho más lento que el motor y con más fuerza. Que el par sea cónico y de una etapa es un supuesto del dibujo; la relación real: sin dato.",
+    "piezas": [
+     "inducido",
+     "corona",
+     "ciguenal",
+     "rodamientos_cig",
+     "carter"
+    ],
+    "vidrio": [
+     "carter"
+    ],
+    "foco": [
+     "corona",
+     "inducido"
+    ],
+    "capas": [
+     "reduccion"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Sentido de giro del piñón y de la corona (ilustrativo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Cigüeñal y biela",
+    "texto": "La muñequilla del cigüeñal da vueltas en círculo y la biela convierte ese giro en un vaivén del pistón, arriba y abajo dentro del cilindro. Una vuelta del cigüeñal es un golpe: a 1.450 golpes por minuto, el cigüeñal da unas 24 vueltas por segundo.",
+    "piezas": [
+     "ciguenal",
+     "corona",
+     "biela",
+     "piston",
+     "cilindro",
+     "carter"
+    ],
+    "vidrio": [
+     "carter",
+     "barril",
+     "cilindro"
+    ],
+    "foco": [
+     "biela",
+     "piston"
+    ],
+    "capas": [
+     "biela"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Recorrido de la muñequilla"
+     ],
+     [
+      "#ff9f43",
+      "Sentido del pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire",
+    "texto": "Entre el pistón y el percutor queda aire encerrado. Cuando el pistón baja, el aire se comprime y empuja al percutor hacia abajo; cuando sube, el vacío lo tira de vuelta. El pistón nunca toca al percutor: el aire hace de resorte, por eso las juntas deben sellar bien.",
+    "piezas": [
+     "piston",
+     "percutor",
+     "cilindro",
+     "biela"
+    ],
+    "vidrio": [
+     "barril",
+     "cilindro"
+    ],
+    "foco": [
+     "percutor",
+     "piston"
+    ],
+    "capas": [
+     "aire",
+     "biela"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Aire comprimido"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El golpe",
+    "texto": "El percutor baja lanzado y golpea la pieza de golpeo, que pasa el impacto al cincel. Makita no publica la energía de impacto del HM1306 (las tiendas dan 21,7 J y 28,8 J: sin dato oficial). El retenedor sujeta el cincel por su muesca para que no salga disparado. El desfase entre pistón y percutor depende de la carga: aquí es ilustrativo.",
+    "piezas": [
+     "percutor",
+     "golpeo",
+     "goma_golpeo",
+     "porta_herr",
+     "retenedor",
+     "barril"
+    ],
+    "vidrio": [
+     "barril",
+     "porta_herr"
+    ],
+    "foco": [
+     "golpeo",
+     "percutor"
+    ],
+    "capas": [
+     "impacto",
+     "util",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Golpe"
+     ],
+     [
+      "#7f8b98",
+      "Cincel (referencia, no es parte del equipo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Lubricación con aceite",
+    "texto": "El HM1306 trabaja con aceite en el cárter: baña el cigüeñal, la biela y los engranajes. El nivel se revisa con la varilla, que se saca con la llave 23, y se rellena solo con aceite original Makita. En frío conviene hacerlo andar en vacío un rato para que el aceite se suelte. Guardarlo acostado: con el cabezal hacia abajo puede perder aceite (manual).",
+    "piezas": [
+     "carter",
+     "varilla_aceite",
+     "ciguenal",
+     "corona",
+     "biela",
+     "tapa_carter"
+    ],
+    "vidrio": [
+     "carter"
+    ],
+    "foco": [
+     "varilla_aceite"
+    ],
+    "capas": [],
+    "leyenda": [],
+    "giro": false
+   }
+  ],
+  "HK-55": [
+   {
+    "titulo": "Cable, gatillo e interruptor",
+    "texto": "La corriente de la red entra por el cable, sube al mango en lazo y llega al interruptor. Al apretar el gatillo se cierra el circuito, y la corriente baja a la carcasa del motor, al campo y a las escobillas. Kothman no publica el esquema eléctrico: el recorrido de la línea amarilla es referencial.",
+    "piezas": [
+     "cable",
+     "mango",
+     "agarre",
+     "interruptor",
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido"
+    ],
+    "vidrio": [
+     "mango",
+     "carcasa_motor"
+    ],
+    "foco": [
+     "interruptor"
+    ],
+    "capas": [
+     "corriente"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente (se dibuja en un solo sentido; en la red alterna cambia de sentido 100 veces por segundo)"
+     ]
+    ],
+    "giro": false
+   },
+   {
+    "titulo": "Motor de escobillas",
+    "texto": "El motor es universal, de escobillas, y en este dibujo va parado detrás del barril (supuesto). La corriente pasa por el campo del estator y, por las escobillas, entra al colector del inducido. La fuerza entre el campo y las bobinas lo hace girar rápido, y el ventilador del eje lo enfría.",
+    "piezas": [
+     "carcasa_motor",
+     "estator",
+     "portaescobillas",
+     "escobillas",
+     "inducido",
+     "ventilador",
+     "rodamientos_ind"
+    ],
+    "vidrio": [
+     "carcasa_motor",
+     "estator"
+    ],
+    "foco": [
+     "escobillas",
+     "inducido"
+    ],
+    "capas": [
+     "corriente",
+     "sentido"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente por el campo, las escobillas y el inducido (recorrido aproximado)"
+     ],
+     [
+      "#ffffff",
+      "Sentido de giro del inducido (no documentado)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Reducción: piñón y corona",
+    "texto": "En la punta superior del inducido, un piñón chico mueve una corona grande montada en el cigüeñal. Así el giro dobla en ángulo recto y el cigüeñal gira mucho más lento que el motor y con más fuerza. Que el par sea cónico y de una etapa es un supuesto del dibujo; la relación real: sin dato.",
+    "piezas": [
+     "inducido",
+     "corona",
+     "ciguenal",
+     "rodamientos_cig",
+     "carter"
+    ],
+    "vidrio": [
+     "carter"
+    ],
+    "foco": [
+     "corona",
+     "inducido"
+    ],
+    "capas": [
+     "reduccion"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Sentido de giro del piñón y de la corona (ilustrativo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Cigüeñal y biela",
+    "texto": "La muñequilla del cigüeñal da vueltas en círculo y la biela convierte ese giro en un vaivén del pistón, arriba y abajo dentro del cilindro. Una vuelta del cigüeñal es un golpe: a 1.450 golpes por minuto, el cigüeñal da unas 24 vueltas por segundo.",
+    "piezas": [
+     "ciguenal",
+     "corona",
+     "biela",
+     "piston",
+     "cilindro",
+     "carter"
+    ],
+    "vidrio": [
+     "carter",
+     "barril",
+     "cilindro"
+    ],
+    "foco": [
+     "biela",
+     "piston"
+    ],
+    "capas": [
+     "biela"
+    ],
+    "leyenda": [
+     [
+      "#ffffff",
+      "Recorrido de la muñequilla"
+     ],
+     [
+      "#ff9f43",
+      "Sentido del pistón"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Colchón de aire",
+    "texto": "Entre el pistón y el percutor queda aire encerrado. Cuando el pistón baja, el aire se comprime y empuja al percutor hacia abajo; cuando sube, el vacío lo tira de vuelta. El pistón nunca toca al percutor: el aire hace de resorte, por eso las juntas deben sellar bien.",
+    "piezas": [
+     "piston",
+     "percutor",
+     "cilindro",
+     "biela"
+    ],
+    "vidrio": [
+     "barril",
+     "cilindro"
+    ],
+    "foco": [
+     "percutor",
+     "piston"
+    ],
+    "capas": [
+     "aire",
+     "biela"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Aire comprimido"
+     ],
+     [
+      "#5aa0ff",
+      "Vacío"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "El golpe",
+    "texto": "El percutor baja lanzado y golpea la pieza de golpeo, que pasa el impacto al cincel. Kothman declara 55 J por golpe. El retenedor sujeta el cincel por su muesca para que no salga disparado. El desfase entre pistón y percutor depende de la carga: aquí es ilustrativo.",
+    "piezas": [
+     "percutor",
+     "golpeo",
+     "goma_golpeo",
+     "porta_herr",
+     "retenedor",
+     "barril"
+    ],
+    "vidrio": [
+     "barril",
+     "porta_herr"
+    ],
+    "foco": [
+     "golpeo",
+     "percutor"
+    ],
+    "capas": [
+     "impacto",
+     "util",
+     "aire"
+    ],
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Golpe"
+     ],
+     [
+      "#7f8b98",
+      "Cincel (referencia, no es parte del equipo)"
+     ]
+    ],
+    "giro": true
+   },
+   {
+    "titulo": "Antivibración (referencial)",
+    "texto": "Kothman dice que el HK-55 tiene un «sistema antivibración», pero no explica cómo es ni da su valor. Aquí se ilustra la solución más simple: gomas entre el mango y el cárter, para que el cuerpo vibre y el mango vibre menos. Es un supuesto, no un dato del equipo.",
+    "piezas": [
+     "amort_mango",
+     "mango",
+     "agarre",
+     "carter"
+    ],
+    "vidrio": [
+     "mango",
+     "carter"
+    ],
+    "foco": [
+     "amort_mango"
+    ],
+    "capas": [
+     "antivib"
+    ],
+    "leyenda": [
+     [
+      "#ff5470",
+      "Vibración del cuerpo (ilustrativa)"
      ]
     ],
     "giro": true

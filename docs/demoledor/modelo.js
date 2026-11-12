@@ -1,11 +1,12 @@
 // Demoledor DeWalt D25900K (10 kg) y D25940K (12 kg), según los procedimientos de servicio ESSG
 // "Full Strip down and Re-assembly" (63 y 59 páginas). Unidades: cm. Eje del cincel = X (frente hacia +X), y hacia arriba,
-// lado del logo hacia +z.
+// lado del logo hacia +z. Los modelos con "vertical": true (Makita HM1306, Kothman HK-55) se construyen en modelo_vertical.js.
 // EXACTO (del documento): qué piezas hay, cómo se ordenan (foto de corte de la pág. 1 y fotos del desarme) y el sentido y orden
 // en que salen. APROXIMADO: las medidas. El documento no trae medidas externas: la escala sale de la foto de la pág. 1 y de las
 // juntas tóricas que sí tienen medida (brida 58 x 2 mm, husillo 38 x 2,5 mm, buje 43 x 5,5 mm); el D25940K se escala por peso.
 import * as THREE from 'three';
 import { vivoDemoledor } from './vivo.js';
+import { construirVertical } from './modelo_vertical.js'; // HM1306 y HK-55 (cincel vertical): otra arquitectura
 import { PI, V, mat, acero, cobre, goma, mesh, cil, caja, rev, tornillo, laminas, alambre, lienzo, rr } from '../lib.js';
 
 const XM = -4.4, XC = 3.7, XG = -0.75; // ejes verticales: inducido, cigüeñal, engranaje doble
@@ -21,25 +22,26 @@ function engranaje(n, r, h, y0, x, z, m) { // engranaje recto con eje Y
   return mesh(g, m, x, 0, z);
 }
 const tuboX = (x0, x1, ro, ri, m, seg = 40) => rev([[ri, x0], [ro, x0], [ro, x1], [ri, x1], [ri, x0]], 'x', m, seg);
-const tuboY = (y0, y1, ro, ri, m, x, z, seg = 40) => rev([[ri, y0], [ro, y0], [ro, y1], [ri, y1], [ri, y0]], 'y', m, seg, x, 0, z);
+export const tuboY = (y0, y1, ro, ri, m, x, z, seg = 40) => rev([[ri, y0], [ro, y0], [ro, y1], [ri, y1], [ri, y0]], 'y', m, seg, x, 0, z);
 const aroX = (x, r, t, m) => mesh(new THREE.TorusGeometry(r, t, 8, 40), m, x, 0, 0).rotateY(PI / 2);
-const aroY = (x, y, z, r, t, m) => mesh(new THREE.TorusGeometry(r, t, 8, 40), m, x, y, z).rotateX(PI / 2);
+export const aroY = (x, y, z, r, t, m) => mesh(new THREE.TorusGeometry(r, t, 8, 40), m, x, y, z).rotateX(PI / 2);
 function resorteX(x0, x1, r, vueltas, rw, m) { // resorte helicoidal con eje X
   const pts = [], N = vueltas * 16;
   for (let i = 0; i <= N; i++) { const t = i / N, a = t * vueltas * PI * 2; pts.push(V(x0 + (x1 - x0) * t, r * Math.cos(a), r * Math.sin(a))); }
   return mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), N * 2, rw, 6), m);
 }
-const perfil = (pts, prof, z0, m, bisel = 0.5) => { // perfil lateral (plano XY) extruido en z, con canto redondeado
+export const perfil = (pts, prof, z0, m, bisel = 0.5) => { // perfil lateral (plano XY) extruido en z, con canto redondeado
   const s = new THREE.Shape(); pts.forEach(([x, y], i) => (i ? s.lineTo(x, y) : s.moveTo(x, y)));
   const g = new THREE.ExtrudeGeometry(s, { depth: prof - 2 * bisel, bevelEnabled: true, bevelSize: bisel, bevelThickness: bisel, bevelSegments: 4, curveSegments: 16 });
   g.translate(0, 0, z0 + bisel); return mesh(g, m);
 };
-const planta = (x0, x1, z0, z1, r, y0, h, m) => { // rectángulo redondeado en planta (XZ) con alto h desde y0
+export const planta = (x0, x1, z0, z1, r, y0, h, m) => { // rectángulo redondeado en planta (XZ) con alto h desde y0
   const g = new THREE.ExtrudeGeometry(rr(x0, z0, x1, z1, r), { depth: h, bevelEnabled: false, curveSegments: 10 }); g.rotateX(PI / 2); g.translate(0, y0 + h, 0);
   return mesh(g, m);
 };
 
 export function construir(cfg) {
+  if (cfg.m?.vertical) return construirVertical(cfg);
   const m = cfg.m || {}, E = cfg.estilo || {};
   const d40 = m.modelo === 'D25940K', iR = d40 ? 1 : 0;
   const kot = m.marca === 'Kothman';
