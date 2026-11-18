@@ -1,0 +1,2667 @@
+{
+ "aviso": "REFERENCIALES: ningún fabricante publica manual de servicio, despiece ni esquema eléctrico de estos telurómetros. Lo documentado sale de los manuales de usuario: ilustración del panel y bornes (Megger DET3/4 p.11, Fluke 1625-2 p.8, Kyoritsu KEW 4106 p.10), cambio de pilas y fusible (Megger p.20-21, Fluke 1623-2/1625-2 sección pilas, Kyoritsu §11 y Fig. 61) y especificaciones. El interior (placa, oscilador, transformador, microcontrolador, filtro, zumbador), las medidas internas, los colores exactos y el orden del desarme más allá de la tapa son APROXIMADOS. La escena del terreno no está a escala. La venta en Chile de Megger y Kyoritsu no está verificada; Fluke tiene página oficial en Chile.",
+ "modelos": [
+  {
+   "marca": "Megger",
+   "modelo": "DET3TA",
+   "nombre": "DET3TA · analógico de aguja, 3 polos",
+   "dim": [
+    203,
+    148,
+    78
+   ],
+   "analogico": true,
+   "panel": {
+    "pantalla": [
+     -0.12,
+     0.12,
+     0.5,
+     0.55
+    ],
+    "selector": [
+     0.3,
+     -0.1,
+     0.1
+    ],
+    "test": [
+     -0.2,
+     -0.33,
+     0.055
+    ],
+    "teclas": [
+     [
+      -0.38,
+      -0.33,
+      0.08,
+      0.1
+     ]
+    ],
+    "led": [
+     0.3,
+     0.24
+    ]
+   },
+   "bornes": [
+    [
+     "borne_x",
+     -0.32,
+     0,
+     "X"
+    ],
+    [
+     "borne_e",
+     -0.14,
+     0,
+     "E"
+    ],
+    [
+     "borne_s",
+     0.04,
+     0,
+     "S"
+    ],
+    [
+     "borne_h",
+     0.22,
+     0,
+     "H"
+    ]
+   ],
+   "bornes_arriba": true,
+   "tapa": [
+    0.82,
+    0.82,
+    0
+   ],
+   "tornillos_tapa": [
+    [
+     0,
+     -0.43
+    ]
+   ],
+   "pilas": 8,
+   "pilas_txt": "8 x AA",
+   "ip": "IP54",
+   "fusible": {
+    "pos": [
+     0.36,
+     0.3
+    ],
+    "largo": 32,
+    "diam": 6
+   },
+   "selector_pos": [
+    "OFF",
+    "V",
+    "2P",
+    "3P",
+    "BATT"
+   ],
+   "frec_corta": "128 Hz",
+   "ficha": [
+    [
+     "Tipo",
+     "3 polos (y 2 polos), analógico de aguja con pilas y botón TEST; no es de manivela"
+    ],
+    [
+     "Rango",
+     "sin dato en las fuentes leídas"
+    ],
+    [
+     "Resolución",
+     "sin dato (escala analógica)"
+    ],
+    [
+     "Exactitud",
+     "2 % ±3 d en 3 polos (dato de la familia DET, manual pp.41-43)"
+    ],
+    [
+     "Corriente de ensayo",
+     "sin dato"
+    ],
+    [
+     "Tensión de salida",
+     "máx. 50 V, reducible a 25 V (familia DET, manual)"
+    ],
+    [
+     "Frecuencia",
+     "128 Hz"
+    ],
+    [
+     "Rc máxima",
+     "100 kΩ a 50 V"
+    ],
+    [
+     "Alimentación",
+     "8 pilas AA (LR6)"
+    ],
+    [
+     "Fusible",
+     "500 mA F HBC 600 V, 32 x 6 mm, ref. Megger 25950-056"
+    ],
+    [
+     "Medidas y peso",
+     "203 x 148 x 78 mm, 1 kg (familia DET3/DET4)"
+    ],
+    [
+     "IP / CAT",
+     "IP54 · 100 V CAT IV (familia DET)"
+    ],
+    [
+     "Venta en Chile",
+     "no verificada"
+    ]
+   ],
+   "nota": "REFERENCIAL. Fuente: guía de usuario de la familia Megger DET3/DET4 (46 págs.): ilustración del DET3TA (p.11), pilas (p.20), fusible (p.21), principio de 3 terminales (p.23), especificaciones (pp.41-43). Calibración y reparación solo vía fábrica (p.44). Los datos de exactitud, IP, CAT y peso son de la familia y no se confirmaron para el DET3TA en particular. Aproximado: interior, colores, nombres del selector y el mecanismo de la aguja."
+  },
+  {
+   "marca": "Fluke",
+   "modelo": "1625-2 GEO",
+   "nombre": "1625-2 GEO · digital, 3 y 4 polos, selectiva, sin jabalinas",
+   "dim": [
+    250,
+    187,
+    133
+   ],
+   "analogico": false,
+   "panel": {
+    "pantalla": [
+     0.0,
+     0.26,
+     0.38,
+     0.26
+    ],
+    "selector": [
+     0.0,
+     -0.13,
+     0.085
+    ],
+    "test": [
+     -0.37,
+     0.25,
+     0.05
+    ],
+    "teclas": [
+     [
+      -0.37,
+      0.07,
+      0.1,
+      0.09
+     ],
+     [
+      -0.37,
+      -0.15,
+      0.1,
+      0.09
+     ],
+     [
+      -0.37,
+      -0.32,
+      0.1,
+      0.09
+     ]
+    ]
+   },
+   "bornes": [
+    [
+     "borne_h",
+     0.4,
+     0.33,
+     "H"
+    ],
+    [
+     "borne_s",
+     0.4,
+     0.16,
+     "S"
+    ],
+    [
+     "borne_x",
+     0.4,
+     -0.01,
+     "pinza"
+    ],
+    [
+     "borne_es",
+     0.4,
+     -0.18,
+     "ES"
+    ],
+    [
+     "borne_e",
+     0.4,
+     -0.35,
+     "E"
+    ]
+   ],
+   "bornes_arriba": false,
+   "tapa": [
+    0.5,
+    0.5,
+    -0.15
+   ],
+   "tornillos_tapa": [
+    [
+     -0.4,
+     -0.4
+    ],
+    [
+     0.4,
+     -0.4
+    ]
+   ],
+   "pilas": 6,
+   "pilas_txt": "6 x AA",
+   "ip": "IP56",
+   "puerto": [
+    0.33,
+    0.3
+   ],
+   "fusible": null,
+   "selector_pos": [
+    "OFF",
+    "3P",
+    "4P",
+    "SEL",
+    "sin jab.",
+    "ρ"
+   ],
+   "lcd_modo": "RE 3P",
+   "frec_lcd": "128 Hz",
+   "frec_corta": "94-128 Hz",
+   "ficha": [
+    [
+     "Tipo",
+     "digital: 3 y 4 polos, selectiva con pinza, sin jabalinas (2 pinzas) y resistividad"
+    ],
+    [
+     "Rango",
+     "0,020 Ω a 300 kΩ"
+    ],
+    [
+     "Resolución",
+     "0,001 Ω a 100 Ω"
+    ],
+    [
+     "Exactitud",
+     "±(2 % lec + 2 d)"
+    ],
+    [
+     "Corriente de ensayo",
+     "250 mA ac (cortocircuito)"
+    ],
+    [
+     "Frecuencia",
+     "94/105/111/128 Hz con selección automática (AFC); 55 Hz en R*"
+    ],
+    [
+     "Ruido",
+     "rechazo 120 dB a 16 2/3, 50, 60 y 400 Hz; mide Vext 1-50 V"
+    ],
+    [
+     "Rh / Rs máxima",
+     "≤ 1 MΩ"
+    ],
+    [
+     "Alimentación",
+     "6 pilas AA alcalinas; > 3.000 mediciones típicas"
+    ],
+    [
+     "Fusible",
+     "el manual no lo documenta (no se dibuja)"
+    ],
+    [
+     "Medidas y peso",
+     "250 x 133 x 187 mm; ≤ 1,1 kg sin accesorios"
+    ],
+    [
+     "IP / CAT",
+     "IP56 (tapa de pilas IP40) · sin CAT, máx. 50 V a tierra"
+    ],
+    [
+     "Venta en Chile",
+     "página oficial de Fluke Chile"
+    ]
+   ],
+   "nota": "REFERENCIAL. Fuentes: hoja técnica Fluke 1623-2/1625-2 (pp.2-7), manual 1625-2 (tabla 3 de funciones del panel, p.8; pilas) y manual 1623-2 (distancias > 20 m, pilas, mantención). Calibración anual recomendada, solo en servicio autorizado. Aproximado: interior, nombres del selector, posición exacta de los botones y del puerto USB, cantidad de tornillos de la tapa. Sin fusible dibujado porque el manual no lo menciona."
+  },
+  {
+   "marca": "Kyoritsu",
+   "modelo": "KEW 4106",
+   "nombre": "KEW 4106 · digital, 2, 3 y 4 polos, resistividad",
+   "dim": [
+    167,
+    185,
+    89
+   ],
+   "analogico": false,
+   "panel": {
+    "pantalla": [
+     0.0,
+     0.27,
+     0.8,
+     0.3
+    ],
+    "selector": [
+     0.2,
+     -0.24,
+     0.15
+    ],
+    "test": [
+     -0.24,
+     -0.26,
+     0.07
+    ],
+    "teclas": [
+     [
+      -0.34,
+      0.04,
+      0.12,
+      0.06
+     ],
+     [
+      -0.17,
+      0.04,
+      0.12,
+      0.06
+     ],
+     [
+      0,
+      0.04,
+      0.12,
+      0.06
+     ],
+     [
+      0.17,
+      0.04,
+      0.12,
+      0.06
+     ],
+     [
+      0.34,
+      0.04,
+      0.12,
+      0.06
+     ]
+    ]
+   },
+   "bornes": [
+    [
+     "borne_e",
+     -0.32,
+     0,
+     "E"
+    ],
+    [
+     "borne_es",
+     -0.16,
+     0,
+     "ES"
+    ],
+    [
+     "borne_s",
+     0.0,
+     0,
+     "S"
+    ],
+    [
+     "borne_h",
+     0.16,
+     0,
+     "H"
+    ],
+    [
+     "borne_x",
+     0.34,
+     0,
+     "ópt."
+    ]
+   ],
+   "bornes_arriba": true,
+   "tapa": [
+    0.8,
+    0.75,
+    -0.08
+   ],
+   "tornillos_tapa": [
+    [
+     -0.42,
+     0.42
+    ],
+    [
+     0.42,
+     0.42
+    ]
+   ],
+   "pilas": 8,
+   "pilas_txt": "8 x AA",
+   "ip": "IP54",
+   "fusible": {
+    "pos": [
+     0.3,
+     -0.33
+    ],
+    "largo": 32,
+    "diam": 6.35,
+    "repuesto": true
+   },
+   "selector_pos": [
+    "OFF",
+    "Ust",
+    "2W",
+    "3W",
+    "4W",
+    "ρ"
+   ],
+   "lcd_modo": "3W",
+   "frec_lcd": "128 Hz",
+   "frec_corta": "94-128 Hz",
+   "ficha": [
+    [
+     "Tipo",
+     "digital: 2, 3 y 4 polos y resistividad (Wenner, a de 1 a 30 m)"
+    ],
+    [
+     "Rango",
+     "2 Ω a 200 kΩ; ρ hasta 1999 kΩ·m"
+    ],
+    [
+     "Resolución",
+     "0,001 Ω a 100 Ω"
+    ],
+    [
+     "Exactitud",
+     "±2 % lec ±0,03 Ω (rango 2 Ω) / ±2 % ±5 d"
+    ],
+    [
+     "Corriente de ensayo",
+     "≈ 80 mA máx.; ≈ 10 Vrms"
+    ],
+    [
+     "Frecuencia",
+     "94/105/111/128 Hz"
+    ],
+    [
+     "Tensión de tierra (Ust)",
+     "0-50 Vrms (±2 % ±2 d)"
+    ],
+    [
+     "Alimentación",
+     "8 pilas AA (R6P)"
+    ],
+    [
+     "Fusible",
+     "F500 mA / 600 V, 6,35 x 32 mm, con uno de repuesto en el compartimento"
+    ],
+    [
+     "Medidas y peso",
+     "167 x 185 x 89 mm; ≈ 900 g con pilas"
+    ],
+    [
+     "IP / CAT",
+     "IP54 · CAT III 300 V / CAT IV 150 V"
+    ],
+    [
+     "Venta en Chile",
+     "no verificada"
+    ]
+   ],
+   "nota": "REFERENCIAL. Fuente: manual Kyoritsu KEW 4106 (50 págs.): especificaciones (p.11), panel (p.10), pilas y fusible (§11, Fig. 61), distancias de 5 a 10 m entre jabalinas. Aproximado: interior, nombres del selector, posición de los bornes (dibujados en el borde superior), cantidad de tornillos de la tapa."
+  }
+ ],
+ "catalogo": {
+  "funda": [
+   "Funda de goma",
+   null,
+   "Carcasa"
+  ],
+  "frente": [
+   "Carcasa frontal con rótulos",
+   null,
+   "Carcasa"
+  ],
+  "trasera": [
+   "Carcasa trasera",
+   null,
+   "Carcasa"
+  ],
+  "empaquetadura": [
+   "Empaquetadura de la carcasa",
+   null,
+   "Carcasa"
+  ],
+  "tapa": [
+   "Tapa del compartimento de pilas",
+   null,
+   "Carcasa"
+  ],
+  "tornillos_tapa": [
+   "Tornillos de la tapa",
+   null,
+   "Carcasa"
+  ],
+  "etiqueta": [
+   "Etiqueta de datos",
+   null,
+   "Carcasa"
+  ],
+  "puerto": [
+   "Puerto USB tipo B",
+   null,
+   "Carcasa"
+  ],
+  "lcd": [
+   "Pantalla LCD",
+   null,
+   "Panel y mando"
+  ],
+  "ventana": [
+   "Ventana de la pantalla",
+   null,
+   "Panel y mando"
+  ],
+  "escala": [
+   "Escala del instrumento de aguja",
+   null,
+   "Panel y mando"
+  ],
+  "aguja": [
+   "Aguja",
+   null,
+   "Panel y mando"
+  ],
+  "movimiento": [
+   "Mecanismo de la aguja",
+   null,
+   "Panel y mando"
+  ],
+  "selector": [
+   "Selector rotativo",
+   null,
+   "Panel y mando"
+  ],
+  "contactos_selector": [
+   "Contactos del selector",
+   null,
+   "Panel y mando"
+  ],
+  "test": [
+   "Botón TEST",
+   null,
+   "Panel y mando"
+  ],
+  "teclas": [
+   "Teclas de menú",
+   null,
+   "Panel y mando"
+  ],
+  "led": [
+   "LED Rc OK",
+   null,
+   "Panel y mando"
+  ],
+  "borne_e": [
+   "Borne E",
+   null,
+   "Bornes"
+  ],
+  "borne_es": [
+   "Borne ES",
+   null,
+   "Bornes"
+  ],
+  "borne_s": [
+   "Borne S (P)",
+   null,
+   "Bornes"
+  ],
+  "borne_h": [
+   "Borne H (C)",
+   null,
+   "Bornes"
+  ],
+  "borne_x": [
+   "Bornes auxiliares",
+   null,
+   "Bornes"
+  ],
+  "portapilas": [
+   "Portapilas con contactos",
+   null,
+   "Pilas y fusible"
+  ],
+  "pilas": [
+   "Pilas AA",
+   null,
+   "Pilas y fusible"
+  ],
+  "portafusible": [
+   "Portafusible",
+   null,
+   "Pilas y fusible"
+  ],
+  "fusible": [
+   "Fusible de protección",
+   null,
+   "Pilas y fusible"
+  ],
+  "fusible_rep": [
+   "Fusible de repuesto",
+   null,
+   "Pilas y fusible"
+  ],
+  "placa": [
+   "Placa principal",
+   null,
+   "Interior (referencial)"
+  ],
+  "oscilador": [
+   "Oscilador y etapa de salida",
+   null,
+   "Interior (referencial)"
+  ],
+  "transformador": [
+   "Transformador de salida",
+   null,
+   "Interior (referencial)"
+  ],
+  "micro": [
+   "Microcontrolador y conversor",
+   null,
+   "Interior (referencial)"
+  ],
+  "filtro": [
+   "Amplificador y filtro de entrada",
+   null,
+   "Interior (referencial)"
+  ],
+  "buzzer": [
+   "Zumbador",
+   null,
+   "Interior (referencial)"
+  ],
+  "jabalina_c": [
+   "Jabalina auxiliar de corriente C (H)",
+   null,
+   "Accesorios del ensayo"
+  ],
+  "jabalina_p": [
+   "Jabalina auxiliar de potencial P (S)",
+   null,
+   "Accesorios del ensayo"
+  ],
+  "carrete_c": [
+   "Carrete con cable rojo (a C)",
+   null,
+   "Accesorios del ensayo"
+  ],
+  "carrete_p": [
+   "Carrete con cable amarillo (a P)",
+   null,
+   "Accesorios del ensayo"
+  ],
+  "cable_e": [
+   "Cable corto verde (a E)",
+   null,
+   "Accesorios del ensayo"
+  ]
+ },
+ "catalogoPorModelo": {
+  "DET3TA": {
+   "borne_e": [
+    "Borne E (X), verde",
+    null,
+    "Bornes"
+   ],
+   "borne_s": [
+    "Borne P (S), amarillo",
+    null,
+    "Bornes"
+   ],
+   "borne_h": [
+    "Borne C (H), rojo",
+    null,
+    "Bornes"
+   ],
+   "borne_x": [
+    "Bornes X e Y (negros)",
+    null,
+    "Bornes"
+   ],
+   "teclas": [
+    "Botón Spike",
+    null,
+    "Panel y mando"
+   ],
+   "tapa": [
+    "Tapa trasera (1 tornillo)",
+    null,
+    "Carcasa"
+   ],
+   "tornillos_tapa": [
+    "Tornillo de la tapa trasera",
+    null,
+    "Carcasa"
+   ],
+   "fusible": [
+    "Fusible 500 mA F HBC 600 V, 32 x 6 mm",
+    null,
+    "Pilas y fusible"
+   ],
+   "pilas": [
+    "8 pilas AA (LR6)",
+    null,
+    "Pilas y fusible"
+   ]
+  },
+  "1625-2 GEO": {
+   "borne_e": [
+    "Borne E/C1",
+    null,
+    "Bornes"
+   ],
+   "borne_es": [
+    "Borne ES/P1",
+    null,
+    "Bornes"
+   ],
+   "borne_s": [
+    "Borne S/P2",
+    null,
+    "Bornes"
+   ],
+   "borne_h": [
+    "Borne H/C2",
+    null,
+    "Bornes"
+   ],
+   "borne_x": [
+    "Entrada de pinza de corriente",
+    null,
+    "Bornes"
+   ],
+   "test": [
+    "Botón START TEST",
+    null,
+    "Panel y mando"
+   ],
+   "teclas": [
+    "Botones DISPLAY MENU, CHANGE ITEM y SELECT",
+    null,
+    "Panel y mando"
+   ],
+   "pilas": [
+    "6 pilas AA alcalinas (LR6)",
+    null,
+    "Pilas y fusible"
+   ]
+  },
+  "KEW 4106": {
+   "borne_x": [
+    "Bornes del adaptador óptico",
+    null,
+    "Bornes"
+   ],
+   "teclas": [
+    "Teclas ENTER/SAVE, ESC, MENU, luz y cursores",
+    null,
+    "Panel y mando"
+   ],
+   "selector": [
+    "Selector de rango",
+    null,
+    "Panel y mando"
+   ],
+   "fusible": [
+    "Fusible F500 mA / 600 V, 6,35 x 32 mm",
+    null,
+    "Pilas y fusible"
+   ],
+   "pilas": [
+    "8 pilas AA (R6P)",
+    null,
+    "Pilas y fusible"
+   ]
+  }
+ },
+ "piezas": {
+  "Funda de goma": {
+   "funcion": "Protege la carcasa de golpes y ayuda a la hermeticidad (IP54/IP56 según el modelo).",
+   "como_se_desgasta": "Grietas, goma reseca o despegada.",
+   "prueba": "Inspección visual antes de cada uso (Megger pide revisar la caja, cables, jabalinas y conectores).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está rota o ya no calza.",
+   "tip_taller": "REFERENCIAL: forma y medidas aproximadas."
+  },
+  "Carcasa frontal con rótulos": {
+   "funcion": "Soporta la pantalla, el selector, los botones y los rótulos de los bornes.",
+   "como_se_desgasta": "Golpes, rótulos borrados.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está trizada: deja entrar agua y polvo.",
+   "tip_taller": "REFERENCIAL: forma y medidas aproximadas."
+  },
+  "Carcasa trasera": {
+   "funcion": "Cierra el equipo y aloja pilas y fusible.",
+   "como_se_desgasta": "Trizaduras y tornillos barridos.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está trizada.",
+   "tip_taller": "REFERENCIAL: la unión entre carcasas y sus tornillos no están documentados; la apertura interior la hace el servicio autorizado."
+  },
+  "Empaquetadura de la carcasa": {
+   "funcion": "Sella la unión entre carcasas para mantener el grado IP.",
+   "como_se_desgasta": "Se aplasta o reseca con los años.",
+   "prueba": "Inspección visual al abrir el equipo (solo servicio técnico).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está cortada o deformada.",
+   "tip_taller": "REFERENCIAL: no aparece en los manuales; se dibuja porque el equipo declara IP54/IP56."
+  },
+  "Tapa del compartimento de pilas": {
+   "funcion": "Cierra el compartimento de pilas (y del fusible en Megger y Kyoritsu).",
+   "como_se_desgasta": "Pestañas rotas, tornillo barrido.",
+   "prueba": "Verificar que cierre bien y que el tornillo apriete.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no cierra o está trizada.",
+   "tip_taller": "No usar el equipo con la tapa abierta (Megger, Kyoritsu)."
+  },
+  "Tornillos de la tapa": {
+   "funcion": "Fijan la tapa de pilas.",
+   "como_se_desgasta": "Ranura gastada, rosca barrida.",
+   "prueba": "Que apriete sin girar en falso.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la ranura o la rosca están dañadas.",
+   "tip_taller": "Tipo de cabeza y medida: sin dato. Cantidad dibujada aproximada salvo en Megger (1 tornillo, manual p.20)."
+  },
+  "Etiqueta de datos": {
+   "funcion": "Identifica marca, modelo, alimentación y advertencias.",
+   "como_se_desgasta": "Se borra o despega.",
+   "prueba": "Que sea legible.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no se lee: el equipo debe poder identificarse en el certificado de calibración (RIC N°06 11.4).",
+   "tip_taller": "REFERENCIAL: contenido y posición aproximados."
+  },
+  "Puerto USB tipo B": {
+   "funcion": "Descarga de los registros guardados al computador (Fluke 1625-2, puerto USB tipo B en la cara trasera, manual p.8 n°12).",
+   "como_se_desgasta": "Conector flojo o sucio.",
+   "prueba": "Conectar y descargar los datos con el software de Fluke.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Solo servicio autorizado.",
+   "tip_taller": null
+  },
+  "Pantalla LCD": {
+   "funcion": "Muestra la resistencia medida, la función, las advertencias (pilas bajas, ruido, Rh/Rs altos) y los ajustes.",
+   "como_se_desgasta": "Segmentos que no encienden, manchas por golpe o calor.",
+   "prueba": "Al encender, todos los segmentos deben aparecer en la prueba inicial.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si faltan segmentos o no se lee (servicio autorizado).",
+   "tip_taller": "REFERENCIAL: la lectura 12,40 Ω de la pantalla es un ejemplo."
+  },
+  "Ventana de la pantalla": {
+   "funcion": "Protege la pantalla o la aguja.",
+   "como_se_desgasta": "Rayas y trizaduras.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está trizada (entra polvo y agua).",
+   "tip_taller": "REFERENCIAL: forma y medidas aproximadas."
+  },
+  "Escala del instrumento de aguja": {
+   "funcion": "Escala impresa: resistencia (no lineal), tensión con banda verde/roja e indicador de pilas (Megger DET p.11).",
+   "como_se_desgasta": "Se decolora; no se desgasta con el uso.",
+   "prueba": "Con el selector en BATT la aguja debe quedar en la zona buena (Megger: control de pilas en el selector).",
+   "valor_esperado": null,
+   "cuando_cambiar": "No se cambia por separado.",
+   "tip_taller": "REFERENCIAL: dibujo aproximado de la escala de la ilustración del manual."
+  },
+  "Aguja": {
+   "funcion": "Indica el valor sobre la escala.",
+   "como_se_desgasta": "Se dobla o roza con un golpe.",
+   "prueba": "Debe moverse sin trabarse y volver a su posición.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si roza o no vuelve: servicio de fábrica.",
+   "tip_taller": "REFERENCIAL: el tipo de mecanismo de la aguja no está en el manual."
+  },
+  "Mecanismo de la aguja": {
+   "funcion": "Mueve la aguja según la señal ya procesada por la electrónica.",
+   "como_se_desgasta": "Pivote gastado, bobina abierta por golpe.",
+   "prueba": "Solo en servicio técnico.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio de fábrica (Megger p.44).",
+   "tip_taller": "REFERENCIAL: se dibuja un instrumento de bobina móvil típico; el manual no lo describe."
+  },
+  "Selector rotativo": {
+   "funcion": "Elige la función (por ejemplo 2 o 3 polos, tensión, control de pilas) y enciende o apaga el equipo.",
+   "como_se_desgasta": "Contactos sucios o desgastados: lecturas que saltan.",
+   "prueba": "Recorrer todas las posiciones: cada una debe mostrar su función.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si falla una posición: servicio autorizado.",
+   "tip_taller": "REFERENCIAL: los nombres de las posiciones rotulados en el modelo son aproximados."
+  },
+  "Contactos del selector": {
+   "funcion": "Contactos del selector sobre la placa.",
+   "como_se_desgasta": "Oxidación y desgaste por uso.",
+   "prueba": "Solo en servicio técnico.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio técnico.",
+   "tip_taller": "REFERENCIAL: interior no documentado."
+  },
+  "Botón TEST": {
+   "funcion": "Inicia la medición: inyecta la corriente de ensayo mientras se mantiene o tras pulsarlo, según el modelo.",
+   "como_se_desgasta": "Membrana o resorte gastado.",
+   "prueba": "Debe responder a cada pulsación.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no responde.",
+   "tip_taller": "Megger: no apretar TEST al cambiar pilas o fusible (manual p.20-21)."
+  },
+  "Teclas de menú": {
+   "funcion": "Navegan menús, cambian ajustes (frecuencia, límites), guardan resultados o encienden la luz, según el modelo.",
+   "como_se_desgasta": "Membrana gastada.",
+   "prueba": "Cada tecla debe responder.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no responde.",
+   "tip_taller": null
+  },
+  "LED Rc OK": {
+   "funcion": "En el DET3TA indica que la jabalina de corriente está bien (Rc OK); también avisa fusible quemado al medir (manual Megger: indicación por el LED Rc).",
+   "como_se_desgasta": "No se desgasta.",
+   "prueba": "Medir con jabalinas bien clavadas: debe indicar Rc OK.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no enciende con todo bien conectado: revisar fusible.",
+   "tip_taller": null
+  },
+  "Borne E": {
+   "funcion": "Se conecta al electrodo o malla que se mide.",
+   "como_se_desgasta": "Contacto flojo u oxidado: suma resistencia a la lectura.",
+   "prueba": "Inspección visual; los cables deben entrar firmes (Kyoritsu).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está suelto o quebrado: servicio.",
+   "tip_taller": "Cable corto verde hasta el electrodo; limpiar el punto de conexión del electrodo."
+  },
+  "Borne ES": {
+   "funcion": "Segundo borne al electrodo, para el método de 4 polos: anula la resistencia del cable de E.",
+   "como_se_desgasta": "Igual que el borne E.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está suelto o quebrado.",
+   "tip_taller": null
+  },
+  "Borne S (P)": {
+   "funcion": "Se conecta a la jabalina de potencial P: por aquí el equipo mide la tensión.",
+   "como_se_desgasta": "Contacto flojo u oxidado.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está suelto o quebrado.",
+   "tip_taller": "Cable amarillo (Megger: P/S amarillo)."
+  },
+  "Borne H (C)": {
+   "funcion": "Se conecta a la jabalina de corriente C: por aquí sale la corriente de ensayo.",
+   "como_se_desgasta": "Contacto flojo u oxidado.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está suelto o quebrado.",
+   "tip_taller": "Cable rojo (Megger: C/H rojo)."
+  },
+  "Bornes auxiliares": {
+   "funcion": "Bornes adicionales: pinza de corriente (Fluke), adaptador óptico para pasar datos (Kyoritsu) o X/Y (Megger).",
+   "como_se_desgasta": "Contacto flojo u oxidado.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está dañado.",
+   "tip_taller": null
+  },
+  "Portapilas con contactos": {
+   "funcion": "Sostiene las pilas y hace el contacto con sus polos.",
+   "como_se_desgasta": "Contactos sulfatados si una pila se derrama.",
+   "prueba": "Inspección visual al cambiar pilas.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si los contactos están corroídos.",
+   "tip_taller": "No dejar pilas dentro si el equipo no se usará por mucho tiempo (Megger, Kyoritsu)."
+  },
+  "Pilas AA": {
+   "funcion": "Alimentan el equipo.",
+   "como_se_desgasta": "Se descargan; si quedan mucho tiempo puestas, pueden derramar electrolito.",
+   "prueba": "Indicador de pila baja en la pantalla o control BATT en el selector.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Al aparecer el aviso de pila baja: cambiar el juego completo, respetando la polaridad.",
+   "tip_taller": "Con pilas bajas la lectura puede salir de la exactitud especificada."
+  },
+  "Portafusible": {
+   "funcion": "Sujeta el fusible.",
+   "como_se_desgasta": "Clips flojos u oxidados.",
+   "prueba": "El fusible debe quedar firme.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si los clips no aprietan.",
+   "tip_taller": "REFERENCIAL: forma aproximada; la posición en el compartimento sale de las figuras de los manuales."
+  },
+  "Fusible de protección": {
+   "funcion": "Protege el circuito si se conecta por error a una tensión externa.",
+   "como_se_desgasta": "Se funde por sobrecorriente; no se desgasta con el uso normal.",
+   "prueba": "Con el equipo abierto y sin pilas, continuidad con un multímetro.",
+   "valor_esperado": "continuidad: casi 0 Ω",
+   "cuando_cambiar": "Si está quemado: reemplazar siempre por uno del tipo exacto (un fusible distinto reduce la seguridad, Megger).",
+   "tip_taller": null
+  },
+  "Fusible de repuesto": {
+   "funcion": "Fusible de repuesto guardado en el compartimento (Kyoritsu, Fig. 61).",
+   "como_se_desgasta": "No se desgasta.",
+   "prueba": "Que esté en su lugar.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Reponerlo cuando se use.",
+   "tip_taller": null
+  },
+  "Placa principal": {
+   "funcion": "Lleva la electrónica: oscilador, medición, microcontrolador y conexiones.",
+   "como_se_desgasta": "Humedad, corrosión, soldaduras rotas por golpes.",
+   "prueba": "Solo servicio autorizado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio técnico.",
+   "tip_taller": "REFERENCIAL: ningún fabricante publica la placa; la disposición es aproximada."
+  },
+  "Oscilador y etapa de salida": {
+   "funcion": "Genera la corriente alterna de ensayo (por ejemplo 128 Hz) que sale por el borne H hacia la jabalina C.",
+   "como_se_desgasta": "Componentes que se dañan por tensión externa.",
+   "prueba": "Solo servicio autorizado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio técnico.",
+   "tip_taller": "REFERENCIAL: arquitectura supuesta (puente de transistores con disipador); los manuales solo dicen que el equipo inyecta una corriente conocida."
+  },
+  "Transformador de salida": {
+   "funcion": "Aísla y adapta la tensión de salida (bajo 50 V según los manuales).",
+   "como_se_desgasta": "Muy poco desgaste.",
+   "prueba": "Solo servicio autorizado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio técnico.",
+   "tip_taller": "REFERENCIAL: su existencia no está confirmada por los fabricantes."
+  },
+  "Microcontrolador y conversor": {
+   "funcion": "Controla el equipo, mide la tensión entre E y S y la corriente, calcula R = V / I y muestra el resultado.",
+   "como_se_desgasta": "Muy poco desgaste.",
+   "prueba": "Solo servicio autorizado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio técnico.",
+   "tip_taller": "REFERENCIAL: arquitectura supuesta."
+  },
+  "Amplificador y filtro de entrada": {
+   "funcion": "Amplifica la tensión captada por P y deja pasar solo la frecuencia de ensayo: rechaza 50/60 Hz y sus armónicos.",
+   "como_se_desgasta": "Muy poco desgaste.",
+   "prueba": "Solo servicio autorizado.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Lo decide el servicio técnico.",
+   "tip_taller": "REFERENCIAL: arquitectura supuesta; los manuales describen el rechazo de ruido, no el circuito."
+  },
+  "Zumbador": {
+   "funcion": "Avisos sonoros: el Fluke 1625 da una confirmación acústica de límite; el Extech GRT300 pita mientras mide (parte_c, manuales).",
+   "como_se_desgasta": "Muy poco desgaste.",
+   "prueba": "Debe sonar en los avisos, si el modelo lo usa.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si no suena.",
+   "tip_taller": "REFERENCIAL: posición y forma supuestas; en el Megger DET3TA y el Kyoritsu 4106: sin dato de que lo traigan."
+  },
+  "Jabalina auxiliar de corriente C (H)": {
+   "funcion": "Jabalina auxiliar de corriente: cierra el circuito de la corriente de ensayo a través del suelo.",
+   "como_se_desgasta": "Se dobla al clavarla y se oxida.",
+   "prueba": "Recta y limpia; el equipo mide su resistencia (Rc o Rh) antes de medir.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está doblada o muy oxidada.",
+   "tip_taller": "En suelo seco: regar el punto o clavarla más; en hormigón, acostarla con un paño mojado (Kyoritsu). Se dibuja de 30 cm (Sonel MRU-120: 30 cm; Megger DET3/2: acero galvanizado de 10 mm, 350 o 450 mm). Las del kit de cada modelo: sin dato de largo."
+  },
+  "Jabalina auxiliar de potencial P (S)": {
+   "funcion": "Jabalina auxiliar de potencial: capta la tensión del suelo a unos 62 % de la distancia E-C.",
+   "como_se_desgasta": "Se dobla y se oxida.",
+   "prueba": "Recta y limpia; el equipo mide su resistencia (Rp o Rs).",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si está doblada o muy oxidada.",
+   "tip_taller": "Repetir la medida moviendo P: si la lectura no cambia, está en la meseta."
+  },
+  "Carrete con cable rojo (a C)": {
+   "funcion": "Guarda el cable largo hasta la jabalina C.",
+   "como_se_desgasta": "Cable cortado o pelado.",
+   "prueba": "Inspección visual; desenrollarlo completo al medir.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la aislación está dañada (Kyoritsu: dejar de usar si se ve el metal).",
+   "tip_taller": "Cables enrollados o cruzados meten error por acoplamiento (Megger, Hioki, AEMC). Largo del cable: depende del kit, sin dato."
+  },
+  "Carrete con cable amarillo (a P)": {
+   "funcion": "Guarda el cable largo hasta la jabalina P.",
+   "como_se_desgasta": "Cable cortado o pelado.",
+   "prueba": "Inspección visual.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la aislación está dañada.",
+   "tip_taller": "Separar el cable de P del cable de C."
+  },
+  "Cable corto verde (a E)": {
+   "funcion": "Cable corto del borne E al electrodo bajo prueba.",
+   "como_se_desgasta": "Pinza floja u oxidada.",
+   "prueba": "Continuidad con un multímetro.",
+   "valor_esperado": null,
+   "cuando_cambiar": "Si la pinza no aprieta.",
+   "tip_taller": null
+  }
+ },
+ "piezasPorModelo": {
+  "DET3TA": {
+   "Borne E (X), verde": {
+    "funcion": "Se conecta al electrodo o malla que se mide.",
+    "como_se_desgasta": "Contacto flojo u oxidado: suma resistencia a la lectura.",
+    "prueba": "Inspección visual; los cables deben entrar firmes (Kyoritsu).",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado: servicio.",
+    "tip_taller": "Cable corto verde hasta el electrodo; limpiar el punto de conexión del electrodo."
+   },
+   "Borne P (S), amarillo": {
+    "funcion": "Se conecta a la jabalina de potencial P: por aquí el equipo mide la tensión.",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado.",
+    "tip_taller": "Cable amarillo (Megger: P/S amarillo)."
+   },
+   "Borne C (H), rojo": {
+    "funcion": "Se conecta a la jabalina de corriente C: por aquí sale la corriente de ensayo.",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado.",
+    "tip_taller": "Cable rojo (Megger: C/H rojo)."
+   },
+   "Bornes X e Y (negros)": {
+    "funcion": "Bornes adicionales: pinza de corriente (Fluke), adaptador óptico para pasar datos (Kyoritsu) o X/Y (Megger).",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está dañado.",
+    "tip_taller": null
+   },
+   "Botón Spike": {
+    "funcion": "Navegan menús, cambian ajustes (frecuencia, límites), guardan resultados o encienden la luz, según el modelo.",
+    "como_se_desgasta": "Membrana gastada.",
+    "prueba": "Cada tecla debe responder.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no responde.",
+    "tip_taller": null
+   },
+   "Tapa trasera (1 tornillo)": {
+    "funcion": "Cierra el compartimento de pilas (y del fusible en Megger y Kyoritsu).",
+    "como_se_desgasta": "Pestañas rotas, tornillo barrido.",
+    "prueba": "Verificar que cierre bien y que el tornillo apriete.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no cierra o está trizada.",
+    "tip_taller": "No usar el equipo con la tapa abierta (Megger, Kyoritsu)."
+   },
+   "Tornillo de la tapa trasera": {
+    "funcion": "Fijan la tapa de pilas.",
+    "como_se_desgasta": "Ranura gastada, rosca barrida.",
+    "prueba": "Que apriete sin girar en falso.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si la ranura o la rosca están dañadas.",
+    "tip_taller": "Tipo de cabeza y medida: sin dato. Cantidad dibujada aproximada salvo en Megger (1 tornillo, manual p.20)."
+   },
+   "Fusible 500 mA F HBC 600 V, 32 x 6 mm": {
+    "funcion": "Protege el circuito si se conecta por error a una tensión externa. Tipo: 500 mA (F), HBC (50 kA, 600 V), 32 x 6 mm, número Megger 25950-056 (manual DET p.21).",
+    "como_se_desgasta": "Se funde por sobrecorriente.",
+    "prueba": "El DET3TA avisa fusible quemado con el LED Rc al hacer una prueba (manual); confirmar con continuidad.",
+    "valor_esperado": "continuidad: casi 0 Ω",
+    "cuando_cambiar": "Si está quemado: solo el mismo tipo; un fusible distinto reduce la seguridad.",
+    "tip_taller": "Está bajo la tapa trasera, junto a las pilas."
+   },
+   "8 pilas AA (LR6)": {
+    "funcion": "Alimentan el equipo: 8 pilas AA (LR6).",
+    "como_se_desgasta": "Se descargan; pueden derramar si quedan puestas mucho tiempo.",
+    "prueba": "Posición BATT del selector: la aguja sobre la escala de pilas.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Cuando la escala de pilas lo indique; respetar la polaridad marcada en el compartimento.",
+    "tip_taller": "Si con pilas nuevas no marca carga completa, una pila puede estar invertida (Megger)."
+   }
+  },
+  "1625-2 GEO": {
+   "Borne E/C1": {
+    "funcion": "Se conecta al electrodo o malla que se mide.",
+    "como_se_desgasta": "Contacto flojo u oxidado: suma resistencia a la lectura.",
+    "prueba": "Inspección visual; los cables deben entrar firmes (Kyoritsu).",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado: servicio.",
+    "tip_taller": "Cable corto verde hasta el electrodo; limpiar el punto de conexión del electrodo."
+   },
+   "Borne ES/P1": {
+    "funcion": "Segundo borne al electrodo, para el método de 4 polos: anula la resistencia del cable de E.",
+    "como_se_desgasta": "Igual que el borne E.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado.",
+    "tip_taller": null
+   },
+   "Borne S/P2": {
+    "funcion": "Se conecta a la jabalina de potencial P: por aquí el equipo mide la tensión.",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado.",
+    "tip_taller": "Cable amarillo (Megger: P/S amarillo)."
+   },
+   "Borne H/C2": {
+    "funcion": "Se conecta a la jabalina de corriente C: por aquí sale la corriente de ensayo.",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está suelto o quebrado.",
+    "tip_taller": "Cable rojo (Megger: C/H rojo)."
+   },
+   "Entrada de pinza de corriente": {
+    "funcion": "Bornes adicionales: pinza de corriente (Fluke), adaptador óptico para pasar datos (Kyoritsu) o X/Y (Megger).",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está dañado.",
+    "tip_taller": null
+   },
+   "Botón START TEST": {
+    "funcion": "Inicia la medición: inyecta la corriente de ensayo mientras se mantiene o tras pulsarlo, según el modelo.",
+    "como_se_desgasta": "Membrana o resorte gastado.",
+    "prueba": "Debe responder a cada pulsación.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no responde.",
+    "tip_taller": "Megger: no apretar TEST al cambiar pilas o fusible (manual p.20-21)."
+   },
+   "Botones DISPLAY MENU, CHANGE ITEM y SELECT": {
+    "funcion": "Navegan menús, cambian ajustes (frecuencia, límites), guardan resultados o encienden la luz, según el modelo.",
+    "como_se_desgasta": "Membrana gastada.",
+    "prueba": "Cada tecla debe responder.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no responde.",
+    "tip_taller": null
+   },
+   "6 pilas AA alcalinas (LR6)": {
+    "funcion": "Alimentan el equipo: 6 pilas AA alcalinas (LR6); más de 3.000 mediciones típicas (hoja técnica).",
+    "como_se_desgasta": "Se descargan.",
+    "prueba": "Símbolo de pila baja en la pantalla.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Al aparecer el símbolo: cambiar el juego completo (manual).",
+    "tip_taller": "La tapa de pilas es IP40 aunque el equipo sea IP56: no abrirla bajo lluvia."
+   }
+  },
+  "KEW 4106": {
+   "Bornes del adaptador óptico": {
+    "funcion": "Bornes adicionales: pinza de corriente (Fluke), adaptador óptico para pasar datos (Kyoritsu) o X/Y (Megger).",
+    "como_se_desgasta": "Contacto flojo u oxidado.",
+    "prueba": "Inspección visual.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si está dañado.",
+    "tip_taller": null
+   },
+   "Teclas ENTER/SAVE, ESC, MENU, luz y cursores": {
+    "funcion": "Navegan menús, cambian ajustes (frecuencia, límites), guardan resultados o encienden la luz, según el modelo.",
+    "como_se_desgasta": "Membrana gastada.",
+    "prueba": "Cada tecla debe responder.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si no responde.",
+    "tip_taller": null
+   },
+   "Selector de rango": {
+    "funcion": "Elige la función (por ejemplo 2 o 3 polos, tensión, control de pilas) y enciende o apaga el equipo.",
+    "como_se_desgasta": "Contactos sucios o desgastados: lecturas que saltan.",
+    "prueba": "Recorrer todas las posiciones: cada una debe mostrar su función.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Si falla una posición: servicio autorizado.",
+    "tip_taller": "REFERENCIAL: los nombres de las posiciones rotulados en el modelo son aproximados."
+   },
+   "Fusible F500 mA / 600 V, 6,35 x 32 mm": {
+    "funcion": "Protege el circuito ante tensión externa. Tipo F500 mA / 600 V, 6,35 x 32 mm (manual 4106 §11-2).",
+    "como_se_desgasta": "Se funde por sobrecorriente.",
+    "prueba": "Continuidad con un multímetro, con el equipo abierto.",
+    "valor_esperado": "continuidad: casi 0 Ω",
+    "cuando_cambiar": "Si está quemado: mismo tipo; hay uno de repuesto en el compartimento (Fig. 61).",
+    "tip_taller": "Selector en OFF y cables desconectados antes de abrir."
+   },
+   "8 pilas AA (R6P)": {
+    "funcion": "Alimentan el equipo.",
+    "como_se_desgasta": "Se descargan; si quedan mucho tiempo puestas, pueden derramar electrolito.",
+    "prueba": "Indicador de pila baja en la pantalla o control BATT en el selector.",
+    "valor_esperado": null,
+    "cuando_cambiar": "Al aparecer el aviso de pila baja: cambiar el juego completo, respetando la polaridad.",
+    "tip_taller": "Con pilas bajas la lectura puede salir de la exactitud especificada."
+   }
+  }
+ },
+ "desarmado": [
+  {
+   "paso": 1,
+   "titulo": "Apagar y desconectar",
+   "instruccion": "Apagar el equipo con el selector y desconectar todos los cables de medida (manual Fluke, cambio de pilas, pasos 1 y 2).",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [],
+   "foco": [
+    "selector",
+    "borne_e",
+    "borne_es",
+    "borne_s",
+    "borne_h",
+    "borne_x"
+   ]
+  },
+  {
+   "paso": 2,
+   "titulo": "Abrir el compartimento de pilas",
+   "instruccion": "Soltar los tornillos del compartimento de pilas de la cara trasera (tabla 3, n°13 y 14, p.8).",
+   "precaucion": "La tapa de pilas es IP40: no abrirla bajo lluvia.",
+   "herramienta": "Destornillador (tipo sin dato)",
+   "quita": [
+    "tornillos_tapa",
+    "tapa"
+   ],
+   "foco": [
+    "tapa",
+    "tornillos_tapa"
+   ]
+  },
+  {
+   "paso": 3,
+   "titulo": "Cambiar las 6 pilas AA",
+   "instruccion": "Poner 6 pilas AA alcalinas (LR6), siempre el juego completo, con la polaridad correcta, y cerrar el compartimento (manual).",
+   "precaucion": "Si una pila se derrama, el equipo debe repararse antes de usarlo.",
+   "herramienta": "A mano",
+   "quita": [
+    "pilas"
+   ],
+   "foco": [
+    "pilas",
+    "portapilas"
+   ]
+  },
+  {
+   "paso": 4,
+   "titulo": "Retirar la funda de goma (REFERENCIAL)",
+   "instruccion": "REFERENCIAL: ningún manual describe este paso. Se saca la funda estirándola por las esquinas.",
+   "precaucion": null,
+   "herramienta": "A mano",
+   "quita": [
+    "funda"
+   ],
+   "foco": [
+    "funda"
+   ]
+  },
+  {
+   "paso": 5,
+   "titulo": "Separar la carcasa trasera (REFERENCIAL)",
+   "instruccion": "REFERENCIAL: los tornillos interiores no están documentados. La apertura, reparación y calibración corresponden al servicio autorizado o de fábrica; abrirla puede anular la calibración.",
+   "precaucion": null,
+   "herramienta": "Destornillador (tipo sin dato)",
+   "quita": [
+    "trasera",
+    "portapilas",
+    "etiqueta",
+    "empaquetadura",
+    "puerto"
+   ],
+   "foco": [
+    "trasera",
+    "empaquetadura"
+   ]
+  },
+  {
+   "paso": 6,
+   "titulo": "Placa y electrónica (REFERENCIAL)",
+   "instruccion": "REFERENCIAL: disposición supuesta. Oscilador con su disipador, transformador de salida, amplificador y filtro de entrada, microcontrolador, zumbador y contactos del selector.",
+   "precaucion": null,
+   "herramienta": "Servicio técnico",
+   "quita": [
+    "oscilador",
+    "transformador",
+    "micro",
+    "filtro",
+    "buzzer",
+    "contactos_selector",
+    "placa"
+   ],
+   "foco": [
+    "oscilador",
+    "transformador",
+    "micro",
+    "filtro",
+    "buzzer",
+    "contactos_selector",
+    "placa"
+   ]
+  },
+  {
+   "paso": 7,
+   "titulo": "Frente, pantalla, selector y bornes (REFERENCIAL)",
+   "instruccion": "REFERENCIAL: queda el frente con la pantalla, el selector, los botones y los bornes.",
+   "precaucion": null,
+   "herramienta": "Servicio técnico",
+   "quita": [
+    "frente",
+    "ventana",
+    "lcd",
+    "selector",
+    "test",
+    "teclas",
+    "led",
+    "borne_e",
+    "borne_es",
+    "borne_s",
+    "borne_h",
+    "borne_x"
+   ],
+   "foco": [
+    "frente",
+    "ventana",
+    "lcd",
+    "selector"
+   ]
+  }
+ ],
+ "desarmados": {
+  "DET3TA": [
+   {
+    "paso": 1,
+    "titulo": "Apagar y desconectar",
+    "instruccion": "Poner el selector en OFF y desconectar el equipo de todo circuito. La tapa trasera no se abre con los cables de medida conectados (manual Megger DET, p.20).",
+    "precaucion": "Riesgo de descarga eléctrica si se abre con los cables conectados.",
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "selector",
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "borne_x"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Abrir la tapa trasera",
+    "instruccion": "Soltar el tornillo de la parte inferior de la tapa y levantarla hacia arriba (manual p.20-21).",
+    "precaucion": "No usar el equipo con la tapa abierta.",
+    "herramienta": "Destornillador (tipo sin dato)",
+    "quita": [
+     "tornillos_tapa",
+     "tapa"
+    ],
+    "foco": [
+     "tapa",
+     "tornillos_tapa"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Cambiar las 8 pilas AA",
+    "instruccion": "Sacar las pilas gastadas y poner 8 pilas AA (LR6) nuevas respetando la polaridad marcada en el compartimento (manual p.20). No apretar TEST ni tocar el fusible mientras tanto.",
+    "precaucion": "Una pila invertida puede derramar electrolito y dañar el equipo.",
+    "herramienta": "A mano",
+    "quita": [
+     "pilas"
+    ],
+    "foco": [
+     "pilas",
+     "portapilas"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Cambiar el fusible",
+    "instruccion": "Sacar el fusible quemado y poner uno nuevo del tipo correcto: 500 mA (F), HBC 50 kA 600 V, 32 x 6 mm, número Megger 25950-056 (manual p.21). Cerrar la tapa y apretar el tornillo.",
+    "precaucion": "Un fusible de otro tipo reduce la seguridad del operador.",
+    "herramienta": "A mano",
+    "quita": [
+     "fusible"
+    ],
+    "foco": [
+     "fusible",
+     "portafusible"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Retirar la funda de goma (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: ningún manual describe este paso. Se saca la funda estirándola por las esquinas.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "funda"
+    ],
+    "foco": [
+     "funda"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Separar la carcasa trasera (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: los tornillos interiores no están documentados. La apertura, reparación y calibración corresponden al servicio autorizado o de fábrica; abrirla puede anular la calibración.",
+    "precaucion": null,
+    "herramienta": "Destornillador (tipo sin dato)",
+    "quita": [
+     "trasera",
+     "portapilas",
+     "etiqueta",
+     "empaquetadura",
+     "portafusible"
+    ],
+    "foco": [
+     "trasera",
+     "empaquetadura"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Placa y electrónica (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: disposición supuesta. Oscilador con su disipador, transformador de salida, amplificador y filtro de entrada, microcontrolador, zumbador y contactos del selector.",
+    "precaucion": null,
+    "herramienta": "Servicio técnico",
+    "quita": [
+     "oscilador",
+     "transformador",
+     "micro",
+     "filtro",
+     "buzzer",
+     "contactos_selector",
+     "placa"
+    ],
+    "foco": [
+     "oscilador",
+     "transformador",
+     "micro",
+     "filtro",
+     "buzzer",
+     "contactos_selector",
+     "placa"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Frente, pantalla, selector y bornes (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: queda el frente con la pantalla, el selector, los botones y los bornes.",
+    "precaucion": null,
+    "herramienta": "Servicio técnico",
+    "quita": [
+     "frente",
+     "ventana",
+     "aguja",
+     "escala",
+     "movimiento",
+     "selector",
+     "test",
+     "teclas",
+     "led",
+     "borne_e",
+     "borne_es",
+     "borne_s",
+     "borne_h",
+     "borne_x"
+    ],
+    "foco": [
+     "frente",
+     "ventana",
+     "aguja",
+     "escala",
+     "movimiento",
+     "selector"
+    ]
+   }
+  ],
+  "1625-2 GEO": [
+   {
+    "paso": 1,
+    "titulo": "Apagar y desconectar",
+    "instruccion": "Apagar el equipo con el selector y desconectar todos los cables de medida (manual Fluke, cambio de pilas, pasos 1 y 2).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "selector",
+     "borne_e",
+     "borne_es",
+     "borne_s",
+     "borne_h",
+     "borne_x"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Abrir el compartimento de pilas",
+    "instruccion": "Soltar los tornillos del compartimento de pilas de la cara trasera (tabla 3, n°13 y 14, p.8).",
+    "precaucion": "La tapa de pilas es IP40: no abrirla bajo lluvia.",
+    "herramienta": "Destornillador (tipo sin dato)",
+    "quita": [
+     "tornillos_tapa",
+     "tapa"
+    ],
+    "foco": [
+     "tapa",
+     "tornillos_tapa"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Cambiar las 6 pilas AA",
+    "instruccion": "Poner 6 pilas AA alcalinas (LR6), siempre el juego completo, con la polaridad correcta, y cerrar el compartimento (manual).",
+    "precaucion": "Si una pila se derrama, el equipo debe repararse antes de usarlo.",
+    "herramienta": "A mano",
+    "quita": [
+     "pilas"
+    ],
+    "foco": [
+     "pilas",
+     "portapilas"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Retirar la funda de goma (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: ningún manual describe este paso. Se saca la funda estirándola por las esquinas.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "funda"
+    ],
+    "foco": [
+     "funda"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Separar la carcasa trasera (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: los tornillos interiores no están documentados. La apertura, reparación y calibración corresponden al servicio autorizado o de fábrica; abrirla puede anular la calibración.",
+    "precaucion": null,
+    "herramienta": "Destornillador (tipo sin dato)",
+    "quita": [
+     "trasera",
+     "portapilas",
+     "etiqueta",
+     "empaquetadura",
+     "puerto"
+    ],
+    "foco": [
+     "trasera",
+     "empaquetadura"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Placa y electrónica (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: disposición supuesta. Oscilador con su disipador, transformador de salida, amplificador y filtro de entrada, microcontrolador, zumbador y contactos del selector.",
+    "precaucion": null,
+    "herramienta": "Servicio técnico",
+    "quita": [
+     "oscilador",
+     "transformador",
+     "micro",
+     "filtro",
+     "buzzer",
+     "contactos_selector",
+     "placa"
+    ],
+    "foco": [
+     "oscilador",
+     "transformador",
+     "micro",
+     "filtro",
+     "buzzer",
+     "contactos_selector",
+     "placa"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Frente, pantalla, selector y bornes (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: queda el frente con la pantalla, el selector, los botones y los bornes.",
+    "precaucion": null,
+    "herramienta": "Servicio técnico",
+    "quita": [
+     "frente",
+     "ventana",
+     "lcd",
+     "selector",
+     "test",
+     "teclas",
+     "led",
+     "borne_e",
+     "borne_es",
+     "borne_s",
+     "borne_h",
+     "borne_x"
+    ],
+    "foco": [
+     "frente",
+     "ventana",
+     "lcd",
+     "selector"
+    ]
+   }
+  ],
+  "KEW 4106": [
+   {
+    "paso": 1,
+    "titulo": "Selector en OFF y desconectar",
+    "instruccion": "Poner el selector de rango en OFF y desconectar los cables de medida (manual 4106 §11-1). No cambiar pilas si el equipo está mojado.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [],
+    "foco": [
+     "selector",
+     "borne_e",
+     "borne_es",
+     "borne_s",
+     "borne_h"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Retirar la tapa",
+    "instruccion": "Soltar los tornillos de la tapa del compartimento de pilas y retirarla. En la tapa va el fusible de repuesto (Fig. 61).",
+    "precaucion": null,
+    "herramienta": "Destornillador (tipo sin dato)",
+    "quita": [
+     "tornillos_tapa",
+     "tapa",
+     "fusible_rep"
+    ],
+    "foco": [
+     "tapa",
+     "tornillos_tapa",
+     "fusible_rep"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Cambiar las 8 pilas AA",
+    "instruccion": "Cambiar las 8 pilas AA (R6P), todas a la vez, y volver a atornillar la tapa (§11-1).",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "pilas"
+    ],
+    "foco": [
+     "pilas",
+     "portapilas"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Cambiar el fusible",
+    "instruccion": "Con la tapa abierta, reemplazar el fusible por uno nuevo F500 mA / 600 V, 6,35 x 32 mm (§11-2, Fig. 61). Cerrar y atornillar la tapa.",
+    "precaucion": "Solo el tipo indicado.",
+    "herramienta": "A mano",
+    "quita": [
+     "fusible"
+    ],
+    "foco": [
+     "fusible",
+     "portafusible"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Retirar la funda de goma (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: ningún manual describe este paso. Se saca la funda estirándola por las esquinas.",
+    "precaucion": null,
+    "herramienta": "A mano",
+    "quita": [
+     "funda"
+    ],
+    "foco": [
+     "funda"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Separar la carcasa trasera (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: los tornillos interiores no están documentados. La apertura, reparación y calibración corresponden al servicio autorizado o de fábrica; abrirla puede anular la calibración.",
+    "precaucion": null,
+    "herramienta": "Destornillador (tipo sin dato)",
+    "quita": [
+     "trasera",
+     "portapilas",
+     "etiqueta",
+     "empaquetadura",
+     "portafusible"
+    ],
+    "foco": [
+     "trasera",
+     "empaquetadura"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Placa y electrónica (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: disposición supuesta. Oscilador con su disipador, transformador de salida, amplificador y filtro de entrada, microcontrolador, zumbador y contactos del selector.",
+    "precaucion": null,
+    "herramienta": "Servicio técnico",
+    "quita": [
+     "oscilador",
+     "transformador",
+     "micro",
+     "filtro",
+     "buzzer",
+     "contactos_selector",
+     "placa"
+    ],
+    "foco": [
+     "oscilador",
+     "transformador",
+     "micro",
+     "filtro",
+     "buzzer",
+     "contactos_selector",
+     "placa"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Frente, pantalla, selector y bornes (REFERENCIAL)",
+    "instruccion": "REFERENCIAL: queda el frente con la pantalla, el selector, los botones y los bornes.",
+    "precaucion": null,
+    "herramienta": "Servicio técnico",
+    "quita": [
+     "frente",
+     "ventana",
+     "lcd",
+     "selector",
+     "test",
+     "teclas",
+     "led",
+     "borne_e",
+     "borne_es",
+     "borne_s",
+     "borne_h",
+     "borne_x"
+    ],
+    "foco": [
+     "frente",
+     "ventana",
+     "lcd",
+     "selector"
+    ]
+   }
+  ]
+ },
+ "funcionamiento": {
+  "DET3TA": [
+   {
+    "titulo": "Conexión en el terreno",
+    "vista": "terreno",
+    "capas": [
+     "terreno"
+    ],
+    "piezas": [
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "foco": [
+     "borne_e",
+     "borne_s",
+     "borne_h"
+    ],
+    "texto": "Método de caída de potencial (3 polos). El borne E va al electrodo que se mide (con el cable corto verde); la jabalina de corriente C (H, cable rojo) se clava lejos y la de potencial P (S, cable amarillo) en la misma línea, a unos 62 % de la distancia E-C (61,8 % teórico en suelo parejo; Megger DET p.23: A = 0,62 x B). El manual del DET3TA no da una distancia mínima en metros. RIC N°06 (Anexo 6.3): C a por lo menos 6 veces la diagonal mayor del sistema que se mide. Las distancias de la escena no están a escala; la conexión del electrodo se hace en su cámara de inspección.",
+    "leyenda": [
+     [
+      "#2f9e44",
+      "E: electrodo bajo prueba"
+     ],
+     [
+      "#e8c21c",
+      "P (S): potencial"
+     ],
+     [
+      "#d03a32",
+      "C (H): corriente"
+     ]
+    ]
+   },
+   {
+    "titulo": "Corriente de ensayo por el suelo",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "corriente"
+    ],
+    "piezas": [
+     "oscilador",
+     "transformador",
+     "borne_h",
+     "borne_e",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "oscilador"
+    ],
+    "texto": "El equipo genera una corriente alterna (no continua: la continua polariza el suelo y falsea la lectura) y la inyecta entre E y C. La corriente baja por C, cruza el terreno y vuelve por el electrodo E. Megger DET: salida de 50 V como máximo, reducible a 25 V (dato de la familia); corriente de ensayo del DET3TA: sin dato. El oscilador y el transformador dibujados son REFERENCIALES: los fabricantes no publican el circuito.",
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente de ensayo"
+     ]
+    ]
+   },
+   {
+    "titulo": "Potencial medido con P",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "potencial"
+    ],
+    "piezas": [
+     "borne_s",
+     "filtro",
+     "jabalina_p"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "jabalina_p"
+    ],
+    "texto": "La corriente crea una caída de tensión alrededor de cada electrodo. P capta la tensión entre su punto y E. Si P se mueve de E hacia C, la lectura sube rápido cerca de E, se aplana en el tramo medio (meseta) y vuelve a subir cerca de C. El valor correcto es el de la meseta: medir con P al 52, 62 y 72 % de la distancia; si coinciden en pocos %, la medida vale (AEMC); si no, alejar C. La curva dibujada es teórica para suelo parejo (ilustrativa).",
+    "leyenda": [
+     [
+      "#4ade80",
+      "R medida según la posición de P"
+     ],
+     [
+      "#4dd0ff",
+      "Tensión captada por P"
+     ]
+    ]
+   },
+   {
+    "titulo": "R = V / I y la lectura",
+    "vista": "equipo",
+    "capas": [
+     "calculo"
+    ],
+    "piezas": [
+     "micro",
+     "filtro",
+     "oscilador",
+     "borne_s",
+     "borne_h",
+     "lcd",
+     "aguja",
+     "escala",
+     "movimiento",
+     "placa"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera",
+     "ventana"
+    ],
+    "foco": [
+     "micro",
+     "lcd",
+     "aguja"
+    ],
+    "texto": "El equipo conoce la corriente que inyecta y mide la tensión entre E y P: la resistencia es R = V / I (ley de Ohm; así lo describe el manual Megger DET). En el DET3TA el resultado se lee con una aguja sobre una escala de resistencia no lineal (el mecanismo de la aguja no está descrito en el manual: REFERENCIAL). Arquitectura interior REFERENCIAL.",
+    "leyenda": [
+     [
+      "#4dd0ff",
+      "Tensión de P"
+     ],
+     [
+      "#ffc83d",
+      "Corriente de salida"
+     ],
+     [
+      "#ffffff",
+      "Resultado a la pantalla"
+     ]
+    ]
+   },
+   {
+    "titulo": "Filtrado del ruido",
+    "vista": "equipo",
+    "capas": [
+     "ruido"
+    ],
+    "piezas": [
+     "filtro",
+     "micro",
+     "placa"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "filtro"
+    ],
+    "texto": "En el suelo hay tensiones parásitas de la red (50 Hz en Chile) y de otras fuentes. Por eso el ensayo usa una frecuencia distinta de 50/60 Hz y de sus armónicos, y el equipo deja pasar solo esa frecuencia. El DET3TA trabaja a 128 Hz. La familia DET advierte con más de 40 V pico a pico de ruido y bloquea sobre 100 V (manual DET4). Si hay mucho ruido: cambiar la frecuencia o la posición de P.",
+    "leyenda": [
+     [
+      "#b8c0cc",
+      "Ruido de la red (50 Hz)"
+     ],
+     [
+      "#4ade80",
+      "Señal de ensayo"
+     ]
+    ]
+   },
+   {
+    "titulo": "Resistencia de las jabalinas auxiliares",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "auxiliares"
+    ],
+    "piezas": [
+     "jabalina_c",
+     "jabalina_p",
+     "borne_s",
+     "borne_h",
+     "led"
+    ],
+    "foco": [
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "texto": "Las jabalinas C y P también tienen resistencia de contacto con el suelo. Si es alta, limita la corriente y mete error. El DET3TA acepta hasta 100 kΩ en la jabalina de corriente (a 50 V) y lo indica con el LED Rc OK; si el LED no lo confirma, mejorar la jabalina. En suelo seco, pedregoso o arenoso: regar el punto, clavar más hondo o poner varias jabalinas; en hormigón, acostar la jabalina sobre un paño mojado (Kyoritsu).",
+    "leyenda": [
+     [
+      "#ff5470",
+      "Zona de contacto de C"
+     ],
+     [
+      "#ffc83d",
+      "Zona de contacto de P"
+     ]
+    ]
+   },
+   {
+    "titulo": "Valor aceptable (RIC N°06)",
+    "vista": "norma",
+    "capas": [
+     "norma"
+    ],
+    "piezas": [
+     "lcd",
+     "aguja",
+     "escala",
+     "ventana"
+    ],
+    "foco": [
+     "lcd",
+     "aguja"
+    ],
+    "texto": "Pliego RIC N°06 de la SEC (Res. Ex. N°33.877, 2020): tierra de servicio en baja tensión ≤ 20 Ω (punto 6.1); ≤ 80 Ω solo en los casos 6.2.1 (hasta 10 kW con neutralización, corte omnipolar y diferenciales de 300 mA y 30 mA) y 6.2.2 (neutralización con disyuntor omnipolar y protección de sobretensión). La tierra de protección se calcula: RTP ≤ VS / I0 (7.3). La medida se respalda con fotos e informe y el instrumento debe tener certificado de calibración vigente de un organismo acreditado (11.4 dice ≤ 24 meses; el Anexo 6.3 pide ≤ 1 año: criterio prudente, 12 meses). La pinza sola sirve para inspección de un sistema existente, no para la recepción inicial. La lectura de 12,4 Ω de la escena es un ejemplo.",
+    "leyenda": [
+     [
+      "#4ade80",
+      "≤ 20 Ω"
+     ],
+     [
+      "#ffc83d",
+      "≤ 80 Ω (6.2.1 y 6.2.2)"
+     ],
+     [
+      "#ff5470",
+      "sobre 80 Ω"
+     ]
+    ]
+   },
+   {
+    "titulo": "Seguridad",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "seguridad"
+    ],
+    "piezas": [
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "foco": [
+     "borne_e"
+    ],
+    "texto": "Con tormenta eléctrica en el área, postergar la medida: los cables largos actúan como antena (AEMC lo deja a criterio del operador). Mientras se inyecta corriente, el suelo junto a E y C sube de potencial: nadie debe pisar entre los electrodos. Desconectar el electrodo de la instalación solo con autorización y la instalación desenergizada, o usar el método selectivo con pinza. Medir antes la tensión de tierra. Megger: no abrir la tapa con los cables conectados. Revisar cables, jabalinas y caja antes de cada uso; no medir con el equipo o las manos mojadas.",
+    "leyenda": [
+     [
+      "#ff5470",
+      "Suelo con potencial"
+     ],
+     [
+      "#ffe14d",
+      "Tormenta: no medir"
+     ]
+    ]
+   }
+  ],
+  "1625-2 GEO": [
+   {
+    "titulo": "Conexión en el terreno",
+    "vista": "terreno",
+    "capas": [
+     "terreno"
+    ],
+    "piezas": [
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "foco": [
+     "borne_e",
+     "borne_s",
+     "borne_h"
+    ],
+    "texto": "Método de caída de potencial (3 polos). El borne E va al electrodo que se mide (con el cable corto verde); la jabalina de corriente C (H, cable rojo) se clava lejos y la de potencial P (S, cable amarillo) en la misma línea, a unos 62 % de la distancia E-C (61,8 % teórico en suelo parejo; Megger DET p.23: A = 0,62 x B). Fluke pide al menos 20 m entre el electrodo y las jabalinas, y entre ellas (manual 1623-2). RIC N°06 (Anexo 6.3): C a por lo menos 6 veces la diagonal mayor del sistema que se mide. Las distancias de la escena no están a escala; la conexión del electrodo se hace en su cámara de inspección.",
+    "leyenda": [
+     [
+      "#2f9e44",
+      "E: electrodo bajo prueba"
+     ],
+     [
+      "#e8c21c",
+      "P (S): potencial"
+     ],
+     [
+      "#d03a32",
+      "C (H): corriente"
+     ]
+    ]
+   },
+   {
+    "titulo": "Corriente de ensayo por el suelo",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "corriente"
+    ],
+    "piezas": [
+     "oscilador",
+     "transformador",
+     "borne_h",
+     "borne_e",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "oscilador"
+    ],
+    "texto": "El equipo genera una corriente alterna (no continua: la continua polariza el suelo y falsea la lectura) y la inyecta entre E y C. La corriente baja por C, cruza el terreno y vuelve por el electrodo E. Fluke 1625-2: 250 mA ac de cortocircuito. El oscilador y el transformador dibujados son REFERENCIALES: los fabricantes no publican el circuito.",
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente de ensayo"
+     ]
+    ]
+   },
+   {
+    "titulo": "Potencial medido con P",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "potencial"
+    ],
+    "piezas": [
+     "borne_s",
+     "filtro",
+     "jabalina_p"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "jabalina_p"
+    ],
+    "texto": "La corriente crea una caída de tensión alrededor de cada electrodo. P capta la tensión entre su punto y E. Si P se mueve de E hacia C, la lectura sube rápido cerca de E, se aplana en el tramo medio (meseta) y vuelve a subir cerca de C. El valor correcto es el de la meseta: medir con P al 52, 62 y 72 % de la distancia; si coinciden en pocos %, la medida vale (AEMC); si no, alejar C. La curva dibujada es teórica para suelo parejo (ilustrativa).",
+    "leyenda": [
+     [
+      "#4ade80",
+      "R medida según la posición de P"
+     ],
+     [
+      "#4dd0ff",
+      "Tensión captada por P"
+     ]
+    ]
+   },
+   {
+    "titulo": "R = V / I y la lectura",
+    "vista": "equipo",
+    "capas": [
+     "calculo"
+    ],
+    "piezas": [
+     "micro",
+     "filtro",
+     "oscilador",
+     "borne_s",
+     "borne_h",
+     "lcd",
+     "aguja",
+     "escala",
+     "movimiento",
+     "placa"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera",
+     "ventana"
+    ],
+    "foco": [
+     "micro",
+     "lcd",
+     "aguja"
+    ],
+    "texto": "El equipo conoce la corriente que inyecta y mide la tensión entre E y P: la resistencia es R = V / I (ley de Ohm; así lo describe el manual Megger DET). El 1625-2 muestra el valor en la pantalla LCD con resolución de hasta 0,001 Ω y exactitud ±(2 % + 2 d). Arquitectura interior REFERENCIAL.",
+    "leyenda": [
+     [
+      "#4dd0ff",
+      "Tensión de P"
+     ],
+     [
+      "#ffc83d",
+      "Corriente de salida"
+     ],
+     [
+      "#ffffff",
+      "Resultado a la pantalla"
+     ]
+    ]
+   },
+   {
+    "titulo": "Filtrado del ruido",
+    "vista": "equipo",
+    "capas": [
+     "ruido"
+    ],
+    "piezas": [
+     "filtro",
+     "micro",
+     "placa"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "filtro"
+    ],
+    "texto": "En el suelo hay tensiones parásitas de la red (50 Hz en Chile) y de otras fuentes. Por eso el ensayo usa una frecuencia distinta de 50/60 Hz y de sus armónicos, y el equipo deja pasar solo esa frecuencia. El 1625-2 elige solo entre 94, 105, 111 y 128 Hz la frecuencia con menos ruido (AFC) y rechaza 120 dB a 16 2/3, 50, 60 y 400 Hz; mide la tensión externa de 1 a 50 V. Si hay mucho ruido: cambiar la frecuencia o la posición de P.",
+    "leyenda": [
+     [
+      "#b8c0cc",
+      "Ruido de la red (50 Hz)"
+     ],
+     [
+      "#4ade80",
+      "Señal de ensayo"
+     ]
+    ]
+   },
+   {
+    "titulo": "Resistencia de las jabalinas auxiliares",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "auxiliares"
+    ],
+    "piezas": [
+     "jabalina_c",
+     "jabalina_p",
+     "borne_s",
+     "borne_h",
+     "led"
+    ],
+    "foco": [
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "texto": "Las jabalinas C y P también tienen resistencia de contacto con el suelo. Si es alta, limita la corriente y mete error. El 1625-2 mide Rh y Rs antes de medir y acepta hasta 1 MΩ; si se pasa, avisa «RH>Limit» o «RS>Limit». En suelo seco, pedregoso o arenoso: regar el punto, clavar más hondo o poner varias jabalinas; en hormigón, acostar la jabalina sobre un paño mojado (Kyoritsu).",
+    "leyenda": [
+     [
+      "#ff5470",
+      "Zona de contacto de C"
+     ],
+     [
+      "#ffc83d",
+      "Zona de contacto de P"
+     ]
+    ]
+   },
+   {
+    "titulo": "Valor aceptable (RIC N°06)",
+    "vista": "norma",
+    "capas": [
+     "norma"
+    ],
+    "piezas": [
+     "lcd",
+     "aguja",
+     "escala",
+     "ventana"
+    ],
+    "foco": [
+     "lcd",
+     "aguja"
+    ],
+    "texto": "Pliego RIC N°06 de la SEC (Res. Ex. N°33.877, 2020): tierra de servicio en baja tensión ≤ 20 Ω (punto 6.1); ≤ 80 Ω solo en los casos 6.2.1 (hasta 10 kW con neutralización, corte omnipolar y diferenciales de 300 mA y 30 mA) y 6.2.2 (neutralización con disyuntor omnipolar y protección de sobretensión). La tierra de protección se calcula: RTP ≤ VS / I0 (7.3). La medida se respalda con fotos e informe y el instrumento debe tener certificado de calibración vigente de un organismo acreditado (11.4 dice ≤ 24 meses; el Anexo 6.3 pide ≤ 1 año: criterio prudente, 12 meses). La pinza sola sirve para inspección de un sistema existente, no para la recepción inicial. La lectura de 12,4 Ω de la escena es un ejemplo.",
+    "leyenda": [
+     [
+      "#4ade80",
+      "≤ 20 Ω"
+     ],
+     [
+      "#ffc83d",
+      "≤ 80 Ω (6.2.1 y 6.2.2)"
+     ],
+     [
+      "#ff5470",
+      "sobre 80 Ω"
+     ]
+    ]
+   },
+   {
+    "titulo": "Seguridad",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "seguridad"
+    ],
+    "piezas": [
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "foco": [
+     "borne_e"
+    ],
+    "texto": "Con tormenta eléctrica en el área, postergar la medida: los cables largos actúan como antena (AEMC lo deja a criterio del operador). Mientras se inyecta corriente, el suelo junto a E y C sube de potencial: nadie debe pisar entre los electrodos. Desconectar el electrodo de la instalación solo con autorización y la instalación desenergizada, o usar el método selectivo con pinza. Medir antes la tensión de tierra. Fluke: no conectar directo a la red; el 1625-2 no tiene categoría CAT (máx. 50 V a tierra). Revisar cables, jabalinas y caja antes de cada uso; no medir con el equipo o las manos mojadas.",
+    "leyenda": [
+     [
+      "#ff5470",
+      "Suelo con potencial"
+     ],
+     [
+      "#ffe14d",
+      "Tormenta: no medir"
+     ]
+    ]
+   }
+  ],
+  "KEW 4106": [
+   {
+    "titulo": "Conexión en el terreno",
+    "vista": "terreno",
+    "capas": [
+     "terreno"
+    ],
+    "piezas": [
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "foco": [
+     "borne_e",
+     "borne_s",
+     "borne_h"
+    ],
+    "texto": "Método de caída de potencial (3 polos). El borne E va al electrodo que se mide (con el cable corto verde); la jabalina de corriente C (H, cable rojo) se clava lejos y la de potencial P (S, cable amarillo) en la misma línea, a unos 62 % de la distancia E-C (61,8 % teórico en suelo parejo; Megger DET p.23: A = 0,62 x B). Kyoritsu: jabalinas alineadas a 5-10 m del electrodo (manual 4106, para electrodos pequeños). RIC N°06 (Anexo 6.3): C a por lo menos 6 veces la diagonal mayor del sistema que se mide. Las distancias de la escena no están a escala; la conexión del electrodo se hace en su cámara de inspección.",
+    "leyenda": [
+     [
+      "#2f9e44",
+      "E: electrodo bajo prueba"
+     ],
+     [
+      "#e8c21c",
+      "P (S): potencial"
+     ],
+     [
+      "#d03a32",
+      "C (H): corriente"
+     ]
+    ]
+   },
+   {
+    "titulo": "Corriente de ensayo por el suelo",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "corriente"
+    ],
+    "piezas": [
+     "oscilador",
+     "transformador",
+     "borne_h",
+     "borne_e",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "oscilador"
+    ],
+    "texto": "El equipo genera una corriente alterna (no continua: la continua polariza el suelo y falsea la lectura) y la inyecta entre E y C. La corriente baja por C, cruza el terreno y vuelve por el electrodo E. Kyoritsu 4106: hasta ≈ 80 mA con ≈ 10 Vrms. El oscilador y el transformador dibujados son REFERENCIALES: los fabricantes no publican el circuito.",
+    "leyenda": [
+     [
+      "#ffc83d",
+      "Corriente de ensayo"
+     ]
+    ]
+   },
+   {
+    "titulo": "Potencial medido con P",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "potencial"
+    ],
+    "piezas": [
+     "borne_s",
+     "filtro",
+     "jabalina_p"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "jabalina_p"
+    ],
+    "texto": "La corriente crea una caída de tensión alrededor de cada electrodo. P capta la tensión entre su punto y E. Si P se mueve de E hacia C, la lectura sube rápido cerca de E, se aplana en el tramo medio (meseta) y vuelve a subir cerca de C. El valor correcto es el de la meseta: medir con P al 52, 62 y 72 % de la distancia; si coinciden en pocos %, la medida vale (AEMC); si no, alejar C. La curva dibujada es teórica para suelo parejo (ilustrativa).",
+    "leyenda": [
+     [
+      "#4ade80",
+      "R medida según la posición de P"
+     ],
+     [
+      "#4dd0ff",
+      "Tensión captada por P"
+     ]
+    ]
+   },
+   {
+    "titulo": "R = V / I y la lectura",
+    "vista": "equipo",
+    "capas": [
+     "calculo"
+    ],
+    "piezas": [
+     "micro",
+     "filtro",
+     "oscilador",
+     "borne_s",
+     "borne_h",
+     "lcd",
+     "aguja",
+     "escala",
+     "movimiento",
+     "placa"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera",
+     "ventana"
+    ],
+    "foco": [
+     "micro",
+     "lcd",
+     "aguja"
+    ],
+    "texto": "El equipo conoce la corriente que inyecta y mide la tensión entre E y P: la resistencia es R = V / I (ley de Ohm; así lo describe el manual Megger DET). El 4106 muestra el valor en su pantalla gráfica, con resolución de hasta 0,001 Ω en el rango de 2 Ω. Arquitectura interior REFERENCIAL.",
+    "leyenda": [
+     [
+      "#4dd0ff",
+      "Tensión de P"
+     ],
+     [
+      "#ffc83d",
+      "Corriente de salida"
+     ],
+     [
+      "#ffffff",
+      "Resultado a la pantalla"
+     ]
+    ]
+   },
+   {
+    "titulo": "Filtrado del ruido",
+    "vista": "equipo",
+    "capas": [
+     "ruido"
+    ],
+    "piezas": [
+     "filtro",
+     "micro",
+     "placa"
+    ],
+    "vidrio": [
+     "frente",
+     "trasera"
+    ],
+    "foco": [
+     "filtro"
+    ],
+    "texto": "En el suelo hay tensiones parásitas de la red (50 Hz en Chile) y de otras fuentes. Por eso el ensayo usa una frecuencia distinta de 50/60 Hz y de sus armónicos, y el equipo deja pasar solo esa frecuencia. El 4106 trabaja a 94, 105, 111 o 128 Hz y mide la tensión de tierra (Ust) de 0 a 50 V antes de medir. Si hay mucho ruido: cambiar la frecuencia o la posición de P.",
+    "leyenda": [
+     [
+      "#b8c0cc",
+      "Ruido de la red (50 Hz)"
+     ],
+     [
+      "#4ade80",
+      "Señal de ensayo"
+     ]
+    ]
+   },
+   {
+    "titulo": "Resistencia de las jabalinas auxiliares",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "auxiliares"
+    ],
+    "piezas": [
+     "jabalina_c",
+     "jabalina_p",
+     "borne_s",
+     "borne_h",
+     "led"
+    ],
+    "foco": [
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "texto": "Las jabalinas C y P también tienen resistencia de contacto con el suelo. Si es alta, limita la corriente y mete error. El 4106 mide Rh y Rs y avisa si están fuera del rango permitido («los resultados pueden no ser correctos»). En suelo seco, pedregoso o arenoso: regar el punto, clavar más hondo o poner varias jabalinas; en hormigón, acostar la jabalina sobre un paño mojado (Kyoritsu).",
+    "leyenda": [
+     [
+      "#ff5470",
+      "Zona de contacto de C"
+     ],
+     [
+      "#ffc83d",
+      "Zona de contacto de P"
+     ]
+    ]
+   },
+   {
+    "titulo": "Valor aceptable (RIC N°06)",
+    "vista": "norma",
+    "capas": [
+     "norma"
+    ],
+    "piezas": [
+     "lcd",
+     "aguja",
+     "escala",
+     "ventana"
+    ],
+    "foco": [
+     "lcd",
+     "aguja"
+    ],
+    "texto": "Pliego RIC N°06 de la SEC (Res. Ex. N°33.877, 2020): tierra de servicio en baja tensión ≤ 20 Ω (punto 6.1); ≤ 80 Ω solo en los casos 6.2.1 (hasta 10 kW con neutralización, corte omnipolar y diferenciales de 300 mA y 30 mA) y 6.2.2 (neutralización con disyuntor omnipolar y protección de sobretensión). La tierra de protección se calcula: RTP ≤ VS / I0 (7.3). La medida se respalda con fotos e informe y el instrumento debe tener certificado de calibración vigente de un organismo acreditado (11.4 dice ≤ 24 meses; el Anexo 6.3 pide ≤ 1 año: criterio prudente, 12 meses). La pinza sola sirve para inspección de un sistema existente, no para la recepción inicial. La lectura de 12,4 Ω de la escena es un ejemplo.",
+    "leyenda": [
+     [
+      "#4ade80",
+      "≤ 20 Ω"
+     ],
+     [
+      "#ffc83d",
+      "≤ 80 Ω (6.2.1 y 6.2.2)"
+     ],
+     [
+      "#ff5470",
+      "sobre 80 Ω"
+     ]
+    ]
+   },
+   {
+    "titulo": "Seguridad",
+    "vista": "terreno",
+    "capas": [
+     "terreno",
+     "seguridad"
+    ],
+    "piezas": [
+     "borne_e",
+     "borne_s",
+     "borne_h",
+     "jabalina_c",
+     "jabalina_p"
+    ],
+    "foco": [
+     "borne_e"
+    ],
+    "texto": "Con tormenta eléctrica en el área, postergar la medida: los cables largos actúan como antena (AEMC lo deja a criterio del operador). Mientras se inyecta corriente, el suelo junto a E y C sube de potencial: nadie debe pisar entre los electrodos. Desconectar el electrodo de la instalación solo con autorización y la instalación desenergizada, o usar el método selectivo con pinza. Medir antes la tensión de tierra. Kyoritsu: no aplicar tensión externa a los bornes y no medir en atmósferas inflamables. Revisar cables, jabalinas y caja antes de cada uso; no medir con el equipo o las manos mojadas.",
+    "leyenda": [
+     [
+      "#ff5470",
+      "Suelo con potencial"
+     ],
+     [
+      "#ffe14d",
+      "Tormenta: no medir"
+     ]
+    ]
+   }
+  ]
+ }
+}

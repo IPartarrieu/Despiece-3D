@@ -1,0 +1,65 @@
+RETROEXCAVADORA · registro del agente MODELO (2026-11-18)
+
+ARCHIVOS
+- index.js   objeto de herramienta (id 'retroexcavadora'): estilos por marca, ficha (usa m.ficha de data.json; si falta, arma una con las medidas), aviso, QUITA/FOCO, vista y vistas por etapa.
+- comun.js   armador de piezas (parts[id] con nombre/ref/grupo de data.json y respaldo del CONTRATO), tabla DIM por modelo, dims(m) que sobreescribe con data.json -> modelos[].geo, helpers (placa, chapa, neumático con tacos, llanta, cilindro camisa+vástago, letrero).
+- modelo.js  geometría procedural paramétrica (un solo constructor para los 4 modelos; cambian medidas y colores). Verifica que estén los 47 ids del contrato (console.warn si falta alguno).
+- vivo.js    cinemática (matrices delta por cuerpo), poses por capa y capas animadas de «Funciona».
+
+REGISTRO EN app.js (lo hace el coordinador; probado en una copia del scratchpad)
+  import retroexcavadora from './retroexcavadora/index.js';
+  HERR = [..., telurometro, retroexcavadora];  CATS.pesada.herr = [retroexcavadora]
+  Prueba: ?herr=retroexcavadora&modelo=580N&func&etapa=8&pausa&t=6
+
+PROBLEMAS PARA OTROS AGENTES
+1) DATOS: funcionamiento, desarmados, piezasPorModelo y catalogoPorModelo están con clave «Case 580N», «CAT 420F2»...
+   pero app.js busca por m.modelo («580N», «580 Super N», «420F2», «3CX»). Sin corregir eso, «Funciona» no aparece
+   y la ficha de pieza/desarme por modelo cae al general. Mis archivos toleran ambas claves (comun.js -> porModelo),
+   app.js no. Arreglo: duplicar o renombrar las claves a m.modelo (en la copia de prueba se duplicaron y todo anduvo).
+2) Las etapas no traen «vista». Vistas disponibles en index.js -> vistas: general, motor, transmision, ejes,
+   hidraulico, cargador, estab, giro, retro, direccion.
+3) app.js crea la cámara con far = 600 cm (corta una máquina de 7 m). Sin tocar app.js, el chasis lleva un objeto
+   invisible (frustumCulled=false) cuyo onBeforeRender sube cam.far a 5000. Mejor: que app.js lo calcule por herramienta.
+4) La marca es «Case (CNH)»: estilos y colores tienen esa clave y también «Case».
+
+COLORES (decisión)
+- Se pidió «rojo Case». El folleto oficial N-Series (fuentes/case_580n/N_SERIES_brochure.pdf, portada) muestra la 580SN
+  naranja tostado con brazos y cucharón del cargador gris oscuro, cabina negra y llantas grises: se usó eso
+  (#df8a2b muestreado de la foto). Rojo es Case IH (agrícola). Cambiar en index.js -> CASE.cuerpo si se prefiere.
+- CAT 420F2 amarillo con negro; JCB amarillo con cucharón, llantas y cabina negros (portada del folleto 3CX).
+
+MEDIDAS: PUBLICADAS (hojas técnicas, vía investigacion.json y data.json -> geo)
+- Distancia entre ejes 215 (Case) / 220 (CAT) / 199 (JCB 3CX Compact); trochas 171-172/155 Case, 190/171 CAT.
+- Altura a cabina 272 Case, 282 CAT; altura de transporte CAT 358; ancho 207/217/232/200.
+- Pasador del cucharón levantado 342 / 347 / 318; ancho de cuchilla 209 / 200; alcance del cucharón 205-208 desde eje delantero.
+- Pivote de giro 111 cm detrás del eje trasero (derivado 6,68-5,57); alcance desde el pivote 557/555/561/399;
+  profundidad 450/441/436/307; apertura de estabilizadores 287 (580N), 331 (CAT).
+- Diámetros de camisa y vástago de todos los cilindros (580N y 580SN); CAT y JCB usan los de Case (estimado).
+- Ventilador de 7 aspas, 499 mm (580N). Neumáticos por designación: 12L-16.5 / 19.5L-24 (Case), 12.5/80-18 / 19.5L-24 (CAT), 340/80 R18 (3CX Compact).
+
+MEDIDAS: ESTIMADAS (no publicadas)
+- Largos pin a pin: pluma 265, brazo 195, cuchara 100 cm (x alcance/557). Pie de pluma a 22 cm del pivote, altura = altura de transporte - 279.
+- Pluma en transporte a 105°, brazo a -32,7°. Pivote del cargador en (parrilla-138, 185) cm; brazos a ±(ancho cucharón/2 - 50).
+- Anclajes de cilindros elegidos para reproducir la carrera publicada:
+    levante 104-180 cm (P: 106,2-179,5), volteo 75-127 (P: 77-128,6), pluma 134-228 (P: 134,2-231,3),
+    brazo 116-154 (P: 100,7-163,6), cuchara 143-175 (P: 122,4-212,2; recorrido corto), giro 50-84 (P: 62,1-91,3),
+    estabilizador 104-182 (P: 86-140,3; carrera algo mayor que la real).
+- Radios de neumático desde la designación (19.5L-24 ≈ 125 cm de diámetro; 12L-16.5 ≈ 84 cm), no los «diam_rueda» estimados de geo (140/100), que son mayores que la designación.
+- Motor, convertidor, transmisión, ejes, estanques, bomba, válvulas y mangueras: formas y posiciones aproximadas.
+- JCB 3CX: data.json describe la variante 3CX Compact (hoja AE1296), así que el modelo es más corto y angosto (5,5 m).
+
+FUNCIONA (vivo.pose)
+- Se elige el movimiento por las capas de la etapa: energia (ruedas, cardanes y ventilador giran), cargador (ciclo
+  10,3 s: recoge, sube, vuelca 47°, baja), estab (bajan y suben), giro (±80°, estabilizadores abajo), excavacion
+  (ciclo 14,3 s: baja, penetra, recoge el brazo, cierra la cuchara, sube, gira 78°, descarga, vuelve), direccion
+  (manguetas ±26° y rodado). En retro el asiento gira 180°. Lo que la etapa no mueve queda en su pose neutra.
+- Cilindros: camisa sigue al anclaje A, vástago al B; ambos orientados por la recta A-B (la carrera se ve).
+- Capas: flujos de potencia (amarillo), presión (rojo), retorno (azul), succión (verde); flechas naranjas (extiende)
+  o celestes (recoge) sobre los cilindros que actúan; los flujos de la pluma, brazo y cargador siguen al cuerpo.
+
+PENDIENTES
+- Varillaje real del cargador (la 580N usa bieletas); aquí el cilindro de volteo va directo al cucharón (planos internos).
+- Extendahoe (brazo extensible) y pinza 4 en 1 no modelados.
+- Capó más curvo, contrapeso y peldaños de la cabina más detallados; tirantes de dirección.
+- Rango de la cuchara corto (143-175 vs 122-212): ajustar bieletas para la rotación publicada de 175,6°.
+- Sin terreno: en la excavación la cuchara baja bajo y = 0.

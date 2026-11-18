@@ -6,12 +6,17 @@ import demoledor from './demoledor/index.js';
 import rotomartillo from './rotomartillo/index.js';
 import bomba from './bomba/index.js';
 import sonda from './sonda/index.js';
+import telurometro from './telurometro/index.js';
+import retroexcavadora from './retroexcavadora/index.js';
 
 const $ = s => document.querySelector(s);
-const HERR = [esmeril, demoledor, rotomartillo, bomba, sonda];
-const PROXIMAS = ['Taladro'];
+const HERR = [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro, retroexcavadora];
+// categorías del inicio; cada equipo con su manual técnico (PDF en docs/manuales/; sin archivo: «en preparación»)
+const CATS = { menor: { titulo: 'Maquinaria Menor', herr: [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro], pronto: ['Taladro'] }, pesada: { titulo: 'Maquinaria Pesada', herr: [retroexcavadora], pronto: [] } };
+const MANUAL = { esmeril: 'Manual_Esmeril_Angular.pdf', demoledor: 'Manual_Demoledor.pdf', bomba: 'Manual_Bombas.pdf', sonda: 'Manual_Sondas_Vibradoras.pdf', telurometro: 'Manual_Telurometro.pdf', retroexcavadora: 'Manual_Retroexcavadora.pdf' };
 const q = new URLSearchParams(location.search);   // ?herr=demoledor&marca=Makita&exp=1&corte&xray&paso=12&sel=estator&cam=x,y,z,tx,ty,tz&rapido
 const datos = {};                                  // data.json por herramienta, cargado una vez
+let cat = q.get('cat') || Object.keys(CATS).find(c => CATS[c].herr.some(h => h.id === q.get('herr'))) || 'menor';
 
 // ---------- escena ----------
 const cv = $('#c');
@@ -36,6 +41,7 @@ function vistaInicial() {
   const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
   const d = cam.position.distanceTo(ctl.target);   // límites de zoom según el tamaño de la herramienta
   ctl.minDistance = Math.max(6, d * 0.12); ctl.maxDistance = d * 2.2;
+  cam.far = Math.max(600, d * 6); cam.updateProjectionMatrix();   // máquinas grandes (retroexcavadora ~7 m): el plano lejano sigue a la distancia
 }
 function ajustar() { const r = $('#vista').getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
 addEventListener('resize', ajustar); ajustar();
@@ -55,7 +61,7 @@ async function elegirHerramienta(h) {
   cambiarMarca(DATA.modelos[0].marca);
   for (const k in monto) delete monto[k];
   vistaInicial(); reconstruir();
-  document.querySelectorAll('.herr .chip[data-h]').forEach(c => c.classList.toggle('on', c.dataset.h === h.id));
+  uiSelector();
 }
 
 // pasos de desarme, piezas que salen y fichas propios de cada modelo (si los trae), o los generales de la herramienta
@@ -173,10 +179,16 @@ function irPaso(i) { if (i >= 0 && st.func) { st.func = false; uiFuncion(); } st
 // ---------- funcionamiento: etapas con capas animadas (corriente, campo, fuerza, giro de las piezas) ----------
 function setFunc(on) {
   st.func = on;
-  if (on) { st.paso = -1; st.exp = 0; $('#exp').value = 0; }
+  if (on) { st.paso = -1; st.exp = 0; $('#exp').value = 0; vistaEtapa(); } else if (herr.vistas) vistaInicial();
   aparienciaPiezas(); uiFuncion(); uiDesarme();
 }
-function irEtapa(i) { st.fp = Math.max(0, Math.min(i, etapasDe().length - 1)); aparienciaPiezas(); uiFuncion(); }
+function irEtapa(i) { st.fp = Math.max(0, Math.min(i, etapasDe().length - 1)); vistaEtapa(); aparienciaPiezas(); uiFuncion(); }
+// vista de cámara propia de la etapa (herr.vistas[etapa.vista]), por ejemplo la escena del terreno del telurómetro
+function vistaEtapa() {
+  const v = herr.vistas?.[etapaAct()?.vista]; if (!v) return;
+  cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
+  ctl.maxDistance = Math.max(ctl.maxDistance, cam.position.distanceTo(ctl.target) * 1.6);
+}
 function uiFuncion() {
   const E = etapasDe(), e = E?.[st.fp], p = $('#fn');
   if (!E) { p.innerHTML = '<p class="nota">Este modelo aún no tiene la animación de funcionamiento.</p>'; return; }
@@ -215,8 +227,24 @@ document.querySelector('.tabs').onclick = e => {
 };
 const verTab = t => document.querySelector(`.tabs [data-t=${t}]`).click();
 
-$('.herr').innerHTML = HERR.map(h => `<button class="chip ${h === herr ? 'on' : ''}" data-h="${h.id}">${h.nombre}</button>`).join('') + PROXIMAS.map(n => `<span class="chip" title="Próximamente">${n}</span>`).join('');
-$('.herr').onclick = e => { const h = HERR.find(x => x.id === e.target.dataset.h); if (h && h !== herr) elegirHerramienta(h); };
+// ---------- inicio, selector desplegable de equipo y manual PDF ----------
+function uiSelector() {
+  const C = CATS[cat];
+  $('#catTxt').textContent = C.titulo; $('#selBtn').textContent = `${herr.nombre} ▾`;
+  $('#menu').innerHTML = C.herr.map(h => `<button data-h="${h.id}" class="${h === herr ? 'on' : ''}">${h.nombre}</button>`).join('') + C.pronto.map(n => `<button disabled>${n} · próximamente</button>`).join('') || '<button disabled>Próximamente</button>';
+  const f = MANUAL[herr.id];
+  $('#manual').innerHTML = f ? `<a href="manuales/${f}" target="_blank" rel="noopener">📄 Abrir manual técnico (PDF)</a>` : '<span>📄 Manual técnico en preparación</span>';
+}
+async function irCategoria(c) {
+  cat = c; $('#portada').classList.add('off');
+  const h = CATS[c].herr[0]; if (h && h !== herr) await elegirHerramienta(h); else uiSelector();
+}
+$('#portada').onclick = e => { const c = e.target.closest('[data-cat]')?.dataset.cat; if (c) irCategoria(c); };
+$('#inicioBtn').onclick = () => $('#portada').classList.remove('off');
+$('#selBtn').onclick = e => { e.stopPropagation(); $('#menu').classList.toggle('on'); };
+document.addEventListener('click', () => $('#menu').classList.remove('on'));
+$('#menu').onclick = e => { const h = CATS[cat].herr.find(x => x.id === e.target.dataset.h); if (h && h !== herr) elegirHerramienta(h); };
+if (q.has('herr') || q.has('cat')) $('#portada').classList.add('off');   // enlaces directos y pruebas saltan el inicio
 $('#exp').oninput = e => { st.exp = +e.target.value; };
 $('#corte').onchange = e => { st.corte = e.target.checked; $('#cortePos').disabled = !st.corte; aparienciaPiezas(); };
 $('#cortePos').oninput = e => { corteZ = +e.target.value; };
@@ -276,6 +304,8 @@ function bucle() {
       if (st.func) for (const M of moverDe[p.id] || []) if (M.i == null || M.i === j) i.obj.position.addScaledVector(M.g.eje, M.g.f(anim));
     });
   }
+  // pose(anim, etapa, parts): articulaciones propias del modelo (pluma, brazo, cuchara...), se aplica sobre los items ya posicionados
+  if (st.func && modelo.vivo?.pose) modelo.vivo.pose(anim, et, modelo.parts);
   for (const [n, c] of Object.entries(modelo.vivo?.capas || {})) { c.visible = !!et?.capas?.includes(n); if (c.visible) c.userData.tick?.(anim); }
   if (tgtGoal) { ctl.target.lerp(tgtGoal, 0.1); if (ctl.target.distanceTo(tgtGoal) < 0.02) tgtGoal = null; }
   ctl.update(); planoCorte(); luzCam.position.copy(cam.position); renderer.render(scene, cam);
@@ -294,6 +324,7 @@ if (q.has('pausa')) st.play = false;
 anim.t = +q.get('t') || 0; anim.ang = +q.get('ang') || 0;
 if (q.get('sel')) st.sel = q.get('sel');
 $('#exp').value = st.exp; $('#corte').checked = st.corte; $('#xray').checked = st.xray;
+if (st.func) vistaEtapa();
 if (q.get('cam')) { const c = q.get('cam').split(',').map(Number); cam.position.set(c[0], c[1], c[2]); ctl.target.set(c[3], c[4], c[5]); }
 reconstruir();
 if (st.func) verTab('fn');
