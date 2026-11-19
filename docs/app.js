@@ -35,10 +35,10 @@ const plano = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);
 let corteZ = 0, ladoCorte = 1;   // corteZ: posición del plano (eje z); ladoCorte: +1 oculta lo que hay en z > corteZ, -1 lo que hay en z < corteZ
 // se corta siempre el lado donde está la cámara, para que el interior se vea desde cualquier ángulo
 function planoCorte() { ladoCorte = cam.position.z >= corteZ ? 1 : -1; plano.normal.set(0, 0, -ladoCorte); plano.constant = ladoCorte * corteZ; }
-let tgtGoal = null;
+let tgtGoal = null, distGoal = null;
 const vistaDe = () => (typeof herr.vista === 'function' ? herr.vista(st.modelo) : herr.vista); // vista fija o según el modelo
 function vistaInicial() {
-  const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
+  const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = distGoal = null;
   const d = cam.position.distanceTo(ctl.target);   // límites de zoom según el tamaño de la herramienta
   ctl.minDistance = Math.max(6, d * 0.12); ctl.maxDistance = d * 2.2;
   cam.far = Math.max(600, d * 6); cam.updateProjectionMatrix();   // máquinas grandes (retroexcavadora ~7 m): el plano lejano sigue a la distancia
@@ -198,7 +198,7 @@ function irPaso(i) {
 }
 function vistaPaso() {
   const v = herr.vistas?.[pasosDe()[st.paso]?.vista]; if (!v) return;
-  cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
+  cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = distGoal = null;
   ctl.maxDistance = Math.max(ctl.maxDistance, cam.position.distanceTo(ctl.target) * 1.6);
 }
 
@@ -212,7 +212,7 @@ function irEtapa(i) { st.fp = Math.max(0, Math.min(i, etapasDe().length - 1)); v
 // vista de cámara propia de la etapa (herr.vistas[etapa.vista]), por ejemplo la escena del terreno del telurómetro
 function vistaEtapa() {
   const v = herr.vistas?.[etapaAct()?.vista]; if (!v) return;
-  cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
+  cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = distGoal = null;
   ctl.maxDistance = Math.max(ctl.maxDistance, cam.position.distanceTo(ctl.target) * 1.6);
 }
 function uiFuncion() {
@@ -243,6 +243,7 @@ function seleccionar(id) {
   if (st.sel) { // centrar la cámara en la pieza
     const b = new THREE.Box3(); modelo.parts[id].items.forEach(i => b.expandByObject(i.obj));
     tgtGoal = b.getCenter(new THREE.Vector3());
+    distGoal = Math.min(ctl.maxDistance, Math.max(ctl.minDistance, b.getSize(new THREE.Vector3()).length() * 2.6)); // acerca la cámara según el tamaño de la pieza
   }
   aparienciaPiezas(); uiPiezas();
 }
@@ -334,6 +335,7 @@ function bucle() {
   if (st.func && modelo.vivo?.pose) modelo.vivo.pose(anim, et, modelo.parts);
   for (const [n, c] of Object.entries(modelo.vivo?.capas || {})) { c.visible = !!et?.capas?.includes(n); if (c.visible) c.userData.tick?.(anim); }
   if (tgtGoal) { ctl.target.lerp(tgtGoal, 0.1); if (ctl.target.distanceTo(tgtGoal) < 0.02) tgtGoal = null; }
+  if (distGoal) { const d = cam.position.distanceTo(ctl.target), nd = d + (distGoal - d) * 0.1; cam.position.sub(ctl.target).setLength(nd).add(ctl.target); if (Math.abs(nd - distGoal) < 0.3) distGoal = null; }
   ctl.update(); planoCorte(); luzCam.position.copy(cam.position); renderer.render(scene, cam);
   requestAnimationFrame(bucle);
 }
