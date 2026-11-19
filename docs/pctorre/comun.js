@@ -78,5 +78,5 @@ export const A = {
   ferrita: () => mat('#3a3a3c', { metalness: 0.3, roughness: 0.7 }),           // bobinas y chokes
   estano: () => mat('#b8bcc0', { metalness: 0.8, roughness: 0.35 }),
   goma: () => mat('#1b1c1e', { metalness: 0, roughness: 0.95 }),
-  vidrio: () => { const m = mat('#9fb7c4', { metalness: 0.1, roughness: 0.05, transparent: true, opacity: 0.18, depthWrite: false }); m.userData.fijo = true; return m; },
+  vidrio: () => { const m = mat('#9fb7c4', { metalness: 0.1, roughness: 0.05, transparent: true, opacity: 0.08, depthWrite: false }); m.userData.fijo = true; return m; },
 };

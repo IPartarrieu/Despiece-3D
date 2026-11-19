@@ -321,13 +321,13 @@ function quitadas() { // piezas desmontadas hasta el paso actual
 }
 let ultimo = performance.now();
 function bucle() {
-  const ahora = performance.now(), dt = Math.min((ahora - ultimo) / 1000, 0.1); ultimo = ahora;
+  const ahora = performance.now(), dt = Math.min((ahora - ultimo) / 1000, 0.5); ultimo = ahora;
   const et = etapaAct();
   if (st.func && st.play) { anim.t += dt * st.vel; if (et?.giro) anim.ang += dt * st.vel * 4; }
   const qs = st.paso >= 0 ? quitadas() : null, solo = soloDe(), arm = procAct()?.modo === 'armado' && qs;
   for (const p of Object.values(modelo.parts)) {
     const meta = st.func ? 0 : qs ? (qs.has(p.id) ? 1 : 0) : st.exp;
-    monto[p.id] += (meta - monto[p.id]) * 0.12;
+    monto[p.id] += (meta - monto[p.id]) * (1 - Math.pow(0.88, dt * 60));   // independiente de los fotogramas por segundo (equipos lentos)
     p.items.forEach((i, j) => {
       i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id) && (!solo || solo.has(p.id)) && !(arm && qs.has(p.id) && monto[p.id] > 0.97);
       const G = st.func && giroDe[p.id]?.find(x => x.i == null || x.i === j);
