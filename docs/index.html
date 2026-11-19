@@ -31,7 +31,7 @@ header h1{font-size:16px;margin:0}
 #portada h2{margin:0;font-size:32px}#portada p{margin:0;color:var(--mut)}
 .cards{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
 .card{width:260px;padding:28px 20px;font:inherit;color:var(--tx);background:var(--panel);border:1px solid var(--line);border-radius:16px;cursor:pointer}
-.card:hover{border-color:var(--acc)}.card b{display:block;font-size:20px;margin:8px 0 6px}.card span{font-size:42px}.card small{color:var(--mut)}
+.card:hover{border-color:var(--acc)}.card b{display:block;font-size:20px;margin:8px 0 6px}.card span{display:block;height:56px}.card span svg{width:56px;height:56px;fill:currentColor;color:var(--acc)}.card small{color:var(--mut)}
 #manual{padding:10px 14px;border-top:1px solid var(--line)}
 #manual a,#manual span{display:block;text-align:center;padding:9px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--acc);background:var(--acc);color:var(--sobre)}
 #manual span{background:none;border-color:var(--line);color:var(--mut);font-weight:400}
@@ -80,9 +80,9 @@ button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;backgrou
  <h1 style="margin:0;font-size:15px;letter-spacing:.2em;color:var(--acc)">VISOR VIMAC</h1>
  <h2>¿Qué equipo quieres ver?</h2>
  <div class="cards">
-  <button class="card" data-cat="pesada"><span>🚜</span><b>Maquinaria Pesada</b><small>Retroexcavadora</small></button>
-  <button class="card" data-cat="menor"><span>🛠️</span><b>Maquinaria Menor</b><small>Esmeril, demoledor, rotomartillo, bomba, sonda y telurómetro</small></button>
-  <button class="card" data-cat="oficina"><span>🖥️</span><b>Equipos de oficina</b><small>PC de torre</small></button>
+  <button class="card" data-cat="pesada"><span><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="50" width="38" height="9" rx="4.5"/><path d="M12 48V28H29L36 37V48Z"/><path d="M18 31h9l4 5H18z" fill="var(--panel)"/><path d="M31 33L45 12L57 33" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 31H62L59 41H52Z"/></svg></span><b>Maquinaria Pesada</b><small>Retroexcavadora</small></button>
+  <button class="card" data-cat="menor"><span><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="14" width="36" height="17" rx="5"/><rect x="44" y="18" width="8" height="9"/><rect x="52" y="21" width="10" height="3"/><rect x="17" y="30" width="13" height="25" rx="3"/></svg></span><b>Maquinaria Menor</b><small>Esmeril, demoledor, rotomartillo, bomba, sonda y telurómetro</small></button>
+  <button class="card" data-cat="oficina"><span><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="6" width="24" height="52" rx="3"/><rect x="14" y="12" width="16" height="3.5" rx="1" fill="var(--panel)"/><circle cx="22" cy="48" r="3.2" fill="var(--panel)"/><rect x="38" y="18" width="22" height="16" rx="2"/><rect x="47" y="34" width="4" height="6"/><rect x="42" y="40" width="14" height="3" rx="1.5"/></svg></span><b>Equipos de oficina</b><small>PC de torre</small></button>
  </div>
 </div>
 <div id="app">
