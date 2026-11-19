@@ -185,7 +185,7 @@ function uiDesarme() {
    <div class="prog"><i style="width:${(i + 1) / P.length * 100}%"></i></div>
    ${p ? `<div class="paso"><b>Paso ${p.paso} de ${P.length} · ${p.titulo}</b><p>${p.instruccion}</p>${p.precaucion ? `<p class="adv">⚠ ${p.precaucion}</p>` : ''}<p class="nota">Herramienta: ${p.herramienta}</p></div>` : `<p class="nota">Recorre el desarme paso a paso: las piezas se van separando en el modelo y se resaltan las que intervienen en cada paso. Las instrucciones vienen del manual de ${herr.nombre.toLowerCase()}.</p>`}
    <h3>Todos los pasos</h3>${P.map((x, j) => `<div class="fila ${j === i ? 'sel' : ''}" data-p="${j}"><span>${x.paso}. ${x.titulo}</span></div>`).join('')}`;
-  if ($('#proc')) $('#proc').onchange = e => { st.proc = +e.target.value; irPaso(-1); };
+  if ($('#proc')) $('#proc').onchange = e => { st.proc = +e.target.value; irPaso(-1); encuadrarProc(); };
   $('#ant').onclick = () => irPaso(i - 1); $('#sig').onclick = () => irPaso(i + 1); $('#fin').onclick = () => irPaso(-1);
   $('#ds').onclick = e => { const f = e.target.closest('[data-p]'); if (f) irPaso(+f.dataset.p); };
   $('#exp').disabled = i >= 0 || st.func;
@@ -196,6 +196,7 @@ function irPaso(i) {
   if (i >= 0) vistaPaso(); else if (v0) vistaInicial();   // vista de cámara propia del paso (herr.vistas[paso.vista]); al salir vuelve la general
   aparienciaPiezas(); uiDesarme();
 }
+function encuadrarProc() { if (!st.proc) return; st.paso = 0; vistaPaso(); st.paso = -1; }   // al elegir un procedimiento secundario, la cámara va a la vista de su primer paso
 function vistaPaso() {
   const v = herr.vistas?.[pasosDe()[st.paso]?.vista]; if (!v) return;
   cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = distGoal = null;
@@ -353,7 +354,7 @@ if (q.has('pausa')) st.play = false;
 anim.t = +q.get('t') || 0; anim.ang = +q.get('ang') || 0;
 if (q.get('sel')) st.sel = q.get('sel');
 $('#exp').value = st.exp; $('#corte').checked = st.corte; $('#xray').checked = st.xray;
-if (st.func) vistaEtapa(); else if (st.paso >= 0) vistaPaso();
+if (st.func) vistaEtapa(); else if (st.paso >= 0) vistaPaso(); else encuadrarProc();
 if (q.get('cam')) { const c = q.get('cam').split(',').map(Number); cam.position.set(c[0], c[1], c[2]); ctl.target.set(c[3], c[4], c[5]); }
 reconstruir();
 if (st.func) verTab('fn');
