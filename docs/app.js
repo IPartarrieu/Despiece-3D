@@ -8,11 +8,14 @@ import bomba from './bomba/index.js';
 import sonda from './sonda/index.js';
 import telurometro from './telurometro/index.js';
 import retroexcavadora from './retroexcavadora/index.js';
+// equipos de oficina en desarrollo: carga dinámica para que un error en pctorre/ no bote el visor completo
+const pctorre = await import('./pctorre/index.js').then(m => m.default, e => { console.warn('pctorre no disponible', e); return null; });
 
 const $ = s => document.querySelector(s);
-const HERR = [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro, retroexcavadora];
+const HERR = [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro, retroexcavadora, pctorre].filter(Boolean);
 // categorías del inicio; cada equipo con su manual técnico (PDF en docs/manuales/; sin archivo: «en preparación»)
-const CATS = { menor: { titulo: 'Maquinaria Menor', herr: [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro], pronto: ['Taladro'] }, pesada: { titulo: 'Maquinaria Pesada', herr: [retroexcavadora], pronto: [] } };
+const CATS = { menor: { titulo: 'Maquinaria Menor', herr: [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro], pronto: ['Taladro'] }, pesada: { titulo: 'Maquinaria Pesada', herr: [retroexcavadora], pronto: [] },
+  oficina: { titulo: 'Equipos de oficina', herr: [pctorre].filter(Boolean), pronto: [] } };
 const MANUAL = { esmeril: 'Manual_Esmeril_Angular.pdf', demoledor: 'Manual_Demoledor.pdf', bomba: 'Manual_Bombas.pdf', sonda: 'Manual_Sondas_Vibradoras.pdf', telurometro: 'Manual_Telurometro.pdf', retroexcavadora: 'Manual_Retroexcavadora.pdf' };
 const q = new URLSearchParams(location.search);   // ?herr=demoledor&marca=Makita&exp=1&corte&xray&paso=12&sel=estator&cam=x,y,z,tx,ty,tz&rapido
 const datos = {};                                  // data.json por herramienta, cargado una vez
@@ -40,7 +43,7 @@ const vistaDe = () => (typeof herr.vista === 'function' ? herr.vista(st.modelo) 
 function vistaInicial() {
   const v = vistaDe(); cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = distGoal = null;
   const d = cam.position.distanceTo(ctl.target);   // límites de zoom según el tamaño de la herramienta
-  ctl.minDistance = Math.max(6, d * 0.12); ctl.maxDistance = d * 2.2;
+  ctl.minDistance = herr.zoomMin ?? Math.max(6, d * 0.12); ctl.maxDistance = d * 2.2;
   cam.far = Math.max(600, d * 6); cam.updateProjectionMatrix();   // máquinas grandes (retroexcavadora ~7 m): el plano lejano sigue a la distancia
 }
 function ajustar() { const r = $('#vista').getBoundingClientRect(); renderer.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
@@ -114,7 +117,7 @@ function ajustarCorte() {
 function aparienciaPiezas() {
   const ps = st.paso >= 0 ? pasosDe()[st.paso] : null, pasoN = ps ? ps.paso : 0;
   const et = etapaAct(), activas = et?.piezas && new Set(et.piezas), vidrio = new Set(et?.vidrio || []), vidrioPaso = new Set(ps?.vidrio || []);
-  const foco = new Set(ps ? (st.proc ? ps.foco || ps.quita : focoDe()[pasoN] || quitaDe()[pasoN]) || [] : et?.foco || []);
+  const foco = new Set(ps ? (st.proc ? ps.foco || ps.pone || ps.quita : focoDe()[pasoN] || quitaDe()[pasoN]) || [] : et?.foco || []);
   for (const p of Object.values(modelo.parts)) {
     let op = 1;
     if (st.xray && p.shell) op = 0.22;
@@ -312,6 +315,7 @@ cv.addEventListener('pointermove', e => {
 function quitadas() { // piezas desmontadas hasta el paso actual
   const s = new Set();
   const P = pasosDe(), Q = quitaDe();
+  if (procAct()?.modo === 'armado') { for (let j = st.paso + 1; j < P.length; j++) (P[j].pone || []).forEach(x => s.add(x)); return s; }   // armado: lo que aún no se pone
   for (let j = 0; j <= st.paso; j++) ((st.proc ? P[j].quita : Q[P[j].paso]) || []).forEach(x => s.add(x));
   return s;
 }
@@ -320,12 +324,12 @@ function bucle() {
   const ahora = performance.now(), dt = Math.min((ahora - ultimo) / 1000, 0.1); ultimo = ahora;
   const et = etapaAct();
   if (st.func && st.play) { anim.t += dt * st.vel; if (et?.giro) anim.ang += dt * st.vel * 4; }
-  const qs = st.paso >= 0 ? quitadas() : null, solo = soloDe();
+  const qs = st.paso >= 0 ? quitadas() : null, solo = soloDe(), arm = procAct()?.modo === 'armado' && qs;
   for (const p of Object.values(modelo.parts)) {
     const meta = st.func ? 0 : qs ? (qs.has(p.id) ? 1 : 0) : st.exp;
     monto[p.id] += (meta - monto[p.id]) * 0.12;
     p.items.forEach((i, j) => {
-      i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id) && (!solo || solo.has(p.id));
+      i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id) && (!solo || solo.has(p.id)) && !(arm && qs.has(p.id) && monto[p.id] > 0.97);
       const G = st.func && giroDe[p.id]?.find(x => x.i == null || x.i === j);
       if (G) { qg.setFromAxisAngle(G.g.e, anim.ang * G.g.k); dg.copy(G.g.c).applyQuaternion(qg).negate().add(G.g.c); i.obj.quaternion.copy(qg); i.obj.position.add(dg); }
       else i.obj.quaternion.identity();
