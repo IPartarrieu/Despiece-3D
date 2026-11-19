@@ -184,7 +184,7 @@ P('mb_socket', 'Zócalo LGA1700 (cuerpo)', 'mb_pcb', C, S, ('placa', 12.5, 9.0, 
 P('mb_socket_contactos', 'Contactos del zócalo (1700 resortes)', 'mb_socket', C, S, ('placa', 12.5, 9.0, 0.2), [0, 0, 1.5], 'LGA1700')
 P('mb_ilm_marco', 'Placa de carga del ILM', 'mb_socket', C, S, ('placa', 12.5, 9.0, 0.5), [0, 0, 6], 'LGA1700', envuelve=True)
 P('mb_ilm_palanca', 'Palanca del ILM', 'mb_ilm_marco', C, S, ('placa', 16.0, 9.0, 0.4), [3, 0, 1], 'LGA1700')
-P('mb_ilm_backplate', 'Contraplaca del ILM (reverso)', 'mb_socket', C, S, ('placa', 12.5, 9.0, -0.3), [0, 0, -9], 'LGA1700')
+P('mb_ilm_backplate', 'Contraplaca del ILM (reverso)', 'mb_socket', C, S, ('placa', 12.5, 9.0, -0.3), [0, 0, -9], 'LGA1700', envuelve=True)
 P('mb_socket_mlcc', 'Condensadores MLCC bajo el zócalo (reverso)', 'mb_socket', C, S, ('placa', 12.5, 9.0, -0.2), [0, 0, -6], 'sup', disperso=True)
 S = 'VRM del CPU'
 P('mb_vrm_controlador', 'Controlador PWM digital multifase', 'mb_pcb', C, S, ('placa', 16.8, 4.0, 0.05), [0, 0, 4], 'VRM')

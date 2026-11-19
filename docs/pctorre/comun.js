@@ -33,7 +33,8 @@ export function armador() {
     const c = PIEZAS[id];
     if (!c) console.warn(`pctorre: «${id}» no está en el contrato`);
     if (parts[id]) console.warn(`pctorre: pieza duplicada «${id}»`);
-    const its = items.map(([objs, dir]) => { const g = new THREE.Group(); [].concat(objs).forEach(o => g.add(o)); return { obj: g, dir: dir || V(...(c?.explosion || [0, 0, 0])) }; });
+    // tolera [[objetos], dir?], [objeto, dir?] y listas planas [a, b, c]: todo Object3D entra a la pieza; el único Vector3 es la dirección
+    const its = items.map(it => { const f = [].concat(it).flat(Infinity), g = new THREE.Group(); f.filter(o => o && o.isObject3D).forEach(o => g.add(o)); return { obj: g, dir: f.find(o => o && o.isVector3) || V(...(c?.explosion || [0, 0, 0])) }; });
     const mats = []; its.forEach(i => i.obj.traverse(o => { if (o.material) { o.userData.pid = id; if (!o.material.userData.fijo) mats.push(o.material); } }));
     parts[id] = { id, nombre: c?.nombre || id, ref: null, grupo: c?.grupo || 'Otras', items: its, mats, shell: shell ?? !!c?.shell };
     return its;

@@ -3368,7 +3368,8 @@
    "fuente": [
     "LGA1700"
    ],
-   "supuesto": false
+   "supuesto": false,
+   "envuelve": true
   },
   {
    "id": "mb_socket_mlcc",
