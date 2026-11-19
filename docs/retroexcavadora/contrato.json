@@ -1,0 +1,4524 @@
+{
+ "version": 1,
+ "fecha": "2026-11-18",
+ "descripcion": "Contrato de piezas nuevas de la retroexcavadora (auditoría 2026-11-18). Lo leen comun.js (nombres y grupos de respaldo), los módulos modelo_*.js y prueba_modelo.mjs. Guía: CONTRATO.md.",
+ "modelos": [
+  "580N",
+  "580 Super N",
+  "420F2",
+  "3CX"
+ ],
+ "campos": {
+  "id": "snake_case único; con «cantidad», los ids reales están en «ids» y los nombres en «etiquetas»",
+  "aplica": "«todos» o lista de m.modelo",
+  "modulo": "motor | transmision | hidraulica (archivo modelo_<modulo>.js)",
+  "anclaje": "L.<punto> | K.<punto> | K.<fn>(<lado>) | pieza:<id>; «offset» [x,y,z] cm se suma; «anclajes» = uno por id",
+  "explosion": "dirección de explosión sugerida [x,y,z] cm (la app la multiplica por 0..1); «explosiones» = una por id",
+  "desarme": "pasos de «recorridos» donde sale la pieza",
+  "sale_con": "pieza madre con la que sale en el recorrido «maquina» cuando no tiene paso propio",
+  "extrae_de": "pieza actual cuya geometría la contiene hoy: hay que sacarla de ahí al dibujar esta",
+  "supuesto": "true = sin documento propio de estos modelos"
+ },
+ "fuentes": {
+  "SK": "Catálogo de partes Case 580 Super K, Bur 8-6952 (1994)",
+  "M": "Manual del operador Case 580M/580SM/590SM serie 2, Bur 87592031 (2006)",
+  "SM-T3": "Manual de servicio Case 580N/580SN Tier 3, n.º 47860801 (2015)",
+  "SM-EP": "Manual de servicio Case 580N EP Tier 4B",
+  "SM": "Secciones CNH del manual de servicio serie N (SM-T3 / SM-EP)",
+  "NEF": "Manual FPT NEF F4GE N Series, P4D32N003 E (2009), sec. 3",
+  "H-N": "Hoja técnica CNH CCE201207580N",
+  "H-SN": "Hoja técnica CNH CCE201007580SN",
+  "CAT-SM": "Manual de servicio CAT 420F2 (LBS)",
+  "JCB-SM": "Extracto de manual de servicio JCB 3CX",
+  "MR": "docs/manuales/Manual_Retroexcavadora.pdf"
+ },
+ "correcciones": {
+  "H1": "Bomba hidráulica ADELANTE, coaxial con el cigüeñal y acoplada a su polea (M pdf 215). modelo.js -> L.polea, L.acople, L.bomba; el ventilador sube al eje de la bomba de agua (K.fanC = L.bombaAgua + x).",
+  "H2": "Orden real (SM-T3): primero sale el motor (paso 23), la placa flexible y el convertidor quedan en la transmisión, y después sale la transmisión (paso 24). Ver recorridos.maquina.",
+  "camisas": "No se modelan camisas de cilindro: van integradas al bloque (NEF sec. 3). El bloque «motor» es shell y se ve semitransparente con rayos X."
+ },
+ "existentes": {
+  "motor": "motor",
+  "radiador": "motor",
+  "ventilador": "motor",
+  "filtro_aire": "motor",
+  "escape": "motor",
+  "bateria": "motor",
+  "tanque_comb": "motor",
+  "convertidor": "transmision",
+  "transmision": "transmision",
+  "cardan_del": "transmision",
+  "cardan_tras": "transmision",
+  "eje_del": "transmision",
+  "eje_tras": "transmision",
+  "chasis": "transmision",
+  "cabina": "transmision",
+  "mandos": "transmision",
+  "tanque_hid": "hidraulica",
+  "filtro_hid": "hidraulica",
+  "bomba_hid": "hidraulica",
+  "valvula_cargador": "hidraulica",
+  "valvula_retro": "hidraulica",
+  "mangueras": "hidraulica",
+  "cuchara_cargador": "hidraulica",
+  "cuchara_retro": "hidraulica",
+  "cil_levante": "hidraulica",
+  "cil_volteo": "hidraulica",
+  "cil_giro": "hidraulica",
+  "cil_pluma": "hidraulica",
+  "cil_brazo": "hidraulica",
+  "cil_cuchara": "hidraulica",
+  "cil_estab_i": "hidraulica",
+  "cil_estab_d": "hidraulica",
+  "pasadores": "hidraulica",
+  "capot": "modelo",
+  "rueda_del_i": "modelo",
+  "rueda_del_d": "modelo",
+  "rueda_tras_i": "modelo",
+  "rueda_tras_d": "modelo",
+  "asiento": "modelo",
+  "guardabarros": "modelo",
+  "brazos_cargador": "modelo",
+  "base_giro": "modelo",
+  "pluma": "modelo",
+  "brazo_retro": "modelo",
+  "biela_cuchara": "modelo",
+  "estab_i": "modelo",
+  "estab_d": "modelo"
+ },
+ "piezas": [
+  {
+   "id": "cig_ciguenal",
+   "nombre": "Cigüeñal",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.cig",
+   "explosion": [
+    0,
+    -40,
+    -150
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-49 «CRANKSHAFT ASSEMBLY»; SM-EP 10.103",
+   "supuesto": false,
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 21
+    }
+   ]
+  },
+  {
+   "id": "cig_cojinetes_bancada",
+   "nombre": "Cojinetes de bancada y axiales",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.cig",
+   "explosion": [
+    0,
+    -70,
+    -150
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-49 «BEARING - main… main thrust»",
+   "supuesto": false,
+   "sale_con": "motor",
+   "nota": "5 bancadas; el axial en la central (supuesto para F5/C4.4/Dieselmax)",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 21
+    }
+   ]
+  },
+  {
+   "id": "cig_biela",
+   "nombre": "Biela",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.cig",
+   "explosion": [
+    0,
+    10,
+    -120
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-53 «ROD ASSEMBLY - connecting»",
+   "supuesto": false,
+   "sale_con": "motor",
+   "cantidad": 4,
+   "ids": [
+    "cig_biela_1",
+    "cig_biela_2",
+    "cig_biela_3",
+    "cig_biela_4"
+   ],
+   "etiquetas": [
+    "Biela del cilindro 1",
+    "Biela del cilindro 2",
+    "Biela del cilindro 3",
+    "Biela del cilindro 4"
+   ],
+   "nota": "4 cilindros en línea en los 4 modelos (F5C/NEF/C4.4/Dieselmax). Cilindro 1 adelante (+x, lado polea)",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "cig_cojinetes_biela",
+   "nombre": "Cojinetes de biela",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.cig",
+   "explosion": [
+    0,
+    -10,
+    -120
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-53 «KIT - bearing… upper and lower»",
+   "supuesto": false,
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "cig_piston",
+   "nombre": "Pistón con aros y pasador",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.cig",
+   "explosion": [
+    0,
+    40,
+    -100
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-53/2-55 «PISTON - cylinder»; NEF sec. 3",
+   "supuesto": false,
+   "sale_con": "motor",
+   "cantidad": 4,
+   "ids": [
+    "cig_piston_1",
+    "cig_piston_2",
+    "cig_piston_3",
+    "cig_piston_4"
+   ],
+   "etiquetas": [
+    "Pistón 1 con aros y pasador",
+    "Pistón 2 con aros y pasador",
+    "Pistón 3 con aros y pasador",
+    "Pistón 4 con aros y pasador"
+   ],
+   "nota": "Sin camisas desmontables: los cilindros van integrados al bloque (NEF sec. 3; SK 2-53 «LINER… only in engine block repair»). Diámetro: F5C 99 mm, NEF 4,5 L 104 mm",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "cig_volante",
+   "nombre": "Volante con corona dentada",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.volanteM",
+   "explosion": [
+    -60,
+    0,
+    -80
+   ],
+   "prioridad": "alta",
+   "fuente": "SM-T3 «flywheel-to-flex-plate cap screws»; NEF; CAT-SM «Flywheel - Remove»",
+   "supuesto": false,
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "motor_caja_volante",
+   "nombre": "Caja (carcasa) del volante",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.volanteM",
+   "explosion": [
+    -80,
+    0,
+    -40
+   ],
+   "prioridad": "alta",
+   "fuente": "NEF «flywheel cover box»; CAT-SM «Flywheel Housing»; JCB-SM PIL 15-54-03",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "reten_cig_tras",
+   "nombre": "Retén trasero del cigüeñal y camisa de desgaste",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.volanteM",
+   "explosion": [
+    -70,
+    20,
+    -110
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-49 «RETAINER - rear seal», «SLEEVE - wear, crankshaft rear»; CAT-SM; JCB-SM PIL 15-12-09",
+   "supuesto": false,
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "reten_cig_del",
+   "nombre": "Retén delantero del cigüeñal y camisa de desgaste",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.polea",
+   "explosion": [
+    70,
+    20,
+    -110
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-49 «SEAL - oil, crankshaft front», «SLEEVE - wear, crankshaft front»; NEF (anillo en la tapa delantera)",
+   "supuesto": false,
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 13
+    }
+   ]
+  },
+  {
+   "id": "cig_polea",
+   "nombre": "Polea y amortiguador del cigüeñal",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.polea",
+   "explosion": [
+    90,
+    0,
+    -60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-49 «PULLEY - crankshaft damper»; M pdf 215",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "nota": "La bomba hidráulica se acopla a esta polea (H1)",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 13
+    }
+   ]
+  },
+  {
+   "id": "motor_tapa_del",
+   "nombre": "Tapa delantera del motor",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.polea",
+   "explosion": [
+    80,
+    0,
+    -30
+   ],
+   "prioridad": "media",
+   "fuente": "NEF",
+   "supuesto": false,
+   "sale_con": "motor",
+   "nota": "Aloja el retén delantero y la bomba de aceite",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "motor_carter",
+   "nombre": "Cárter de aceite con tapón magnético",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.carter",
+   "explosion": [
+    0,
+    -60,
+    -40
+   ],
+   "prioridad": "media",
+   "fuente": "SK 2-33 «GASKET - oil pan», «PLUG - drain, magnetic»",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 18
+    }
+   ]
+  },
+  {
+   "id": "motor_soportes",
+   "nombre": "Soportes del motor",
+   "grupo": "Motor · bloque y tren alternativo",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    -30,
+    -90
+   ],
+   "prioridad": "media",
+   "fuente": "SK 2-19; SM-T3 «front engine mount bolts»",
+   "supuesto": false,
+   "offset": [
+    0,
+    -30,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 23
+    }
+   ]
+  },
+  {
+   "id": "motor_culata",
+   "nombre": "Culata",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    120,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-35/2-37; NEF",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 10
+    }
+   ]
+  },
+  {
+   "id": "motor_junta_culata",
+   "nombre": "Empaquetadura de culata",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    95,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 2-57 «ENGINE GASKET KITS»",
+   "supuesto": false,
+   "offset": [
+    0,
+    -8,
+    0
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 10
+    }
+   ]
+  },
+  {
+   "id": "motor_tapa_valvulas",
+   "nombre": "Tapa de balancines",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    170,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "NEF «tappet caps»; M p.168 «Engine Valve Clearances 1000 h»",
+   "supuesto": false,
+   "offset": [
+    0,
+    12,
+    0
+   ],
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 4
+    }
+   ]
+  },
+  {
+   "id": "dist_balancines",
+   "nombre": "Balancines, eje y varillas",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    150,
+    -40
+   ],
+   "prioridad": "media",
+   "fuente": "NEF «rocker arm bearings… tappet rods»",
+   "supuesto": false,
+   "offset": [
+    0,
+    8,
+    0
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 5
+    }
+   ]
+  },
+  {
+   "id": "dist_valvulas",
+   "nombre": "Válvulas y resortes",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    130,
+    -70
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 2-37",
+   "supuesto": false,
+   "sale_con": "motor",
+   "nota": "NEF F4GE: 2 válvulas por cilindro; F4HE, F5C, C4.4 y Dieselmax: 4 (supuesto para F5C/Dieselmax)",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 10
+    }
+   ]
+  },
+  {
+   "id": "dist_arbol_levas",
+   "nombre": "Árbol de levas y taqués",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.cig",
+   "explosion": [
+    0,
+    0,
+    -180
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-39 «CAMSHAFT»; NEF",
+   "supuesto": false,
+   "offset": [
+    0,
+    12,
+    -12
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 22
+    }
+   ]
+  },
+  {
+   "id": "dist_engranajes",
+   "nombre": "Engranajes y caja de distribución",
+   "grupo": "Motor · culata y distribución",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.volanteM",
+   "explosion": [
+    -50,
+    40,
+    -60
+   ],
+   "prioridad": "media",
+   "fuente": "NEF «timing gearbox» (va atrás, lado volante)",
+   "supuesto": false,
+   "offset": [
+    6,
+    0,
+    0
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 19
+    }
+   ]
+  },
+  {
+   "id": "lub_bomba_aceite",
+   "nombre": "Bomba de aceite",
+   "grupo": "Motor · lubricación",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.polea",
+   "explosion": [
+    60,
+    -30,
+    -70
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-33 «PUMP - oil, engine»; NEF (adelante, sobre el cigüeñal)",
+   "supuesto": false,
+   "offset": [
+    -8,
+    0,
+    0
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "lub_filtro_aceite",
+   "nombre": "Filtro de aceite del motor",
+   "grupo": "Motor · lubricación",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    0,
+    -90
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.168 y p.183; SK 2-31",
+   "supuesto": false,
+   "offset": [
+    0,
+    -14,
+    -28
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 9
+    }
+   ]
+  },
+  {
+   "id": "lub_enfriador",
+   "nombre": "Enfriador (intercambiador) de aceite del motor",
+   "grupo": "Motor · lubricación",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    20,
+    -100
+   ],
+   "prioridad": "media",
+   "fuente": "NEF «heat exchanger»; SK 2-31 «OIL FILTER AND COOLER»",
+   "supuesto": false,
+   "offset": [
+    0,
+    -4,
+    -26
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 9
+    }
+   ]
+  },
+  {
+   "id": "lub_chupador",
+   "nombre": "Chupador y placa de refuerzo",
+   "grupo": "Motor · lubricación",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.carter",
+   "explosion": [
+    0,
+    -40,
+    -60
+   ],
+   "prioridad": "baja",
+   "fuente": "NEF «oil suction rose pipe», «stiffening plate»",
+   "supuesto": false,
+   "offset": [
+    0,
+    8,
+    0
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 18
+    }
+   ]
+  },
+  {
+   "id": "lub_varilla",
+   "nombre": "Varilla de nivel de aceite",
+   "grupo": "Motor · lubricación",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    60,
+    -60
+   ],
+   "prioridad": "baja",
+   "fuente": "M p.167 «Engine Oil Level 10 h»",
+   "supuesto": false,
+   "offset": [
+    -10,
+    20,
+    -26
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 9
+    }
+   ]
+  },
+  {
+   "id": "enf_bomba_agua",
+   "nombre": "Bomba de agua",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.bombaAgua",
+   "explosion": [
+    70,
+    40,
+    -60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-21 «WATER PUMP SYSTEM»; NEF",
+   "supuesto": false,
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "enf_correa",
+   "nombre": "Correa poli-V y tensor",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.polea",
+   "explosion": [
+    60,
+    60,
+    -40
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.212 y pdf 215; MR 4.1; NEF «POLY-V belt», «belt tensioning bracket»",
+   "supuesto": false,
+   "offset": [
+    0,
+    15,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "enf_termostato",
+   "nombre": "Termostato y su caja",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    40,
+    80,
+    -50
+   ],
+   "prioridad": "media",
+   "fuente": "NEF «thermostat unit»",
+   "supuesto": false,
+   "offset": [
+    30,
+    6,
+    0
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "enf_enfriador_hid",
+   "nombre": "Enfriador de aceite hidráulico",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.radiador",
+   "explosion": [
+    120,
+    50,
+    -40
+   ],
+   "prioridad": "media",
+   "fuente": "SM-T3 «radiator, oil coolers, and condenser»",
+   "supuesto": false,
+   "offset": [
+    -4,
+    0,
+    -20
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "enf_enfriador_trans",
+   "nombre": "Enfriador de aceite de transmisión",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.radiador",
+   "explosion": [
+    120,
+    10,
+    -40
+   ],
+   "prioridad": "baja",
+   "fuente": "SM-T3; SK 6-11",
+   "supuesto": false,
+   "offset": [
+    -4,
+    -20,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "enf_deposito",
+   "nombre": "Depósito de expansión del refrigerante",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.radiador",
+   "explosion": [
+    100,
+    90,
+    40
+   ],
+   "prioridad": "baja",
+   "fuente": "M p.187",
+   "supuesto": false,
+   "offset": [
+    -20,
+    40,
+    24
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "enf_mangueras",
+   "nombre": "Mangueras de refrigerante",
+   "grupo": "Motor y enfriamiento",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.radiador",
+   "explosion": [
+    100,
+    60,
+    40
+   ],
+   "prioridad": "baja",
+   "fuente": "modelo.js (2 tubos dentro de radiador)",
+   "supuesto": false,
+   "offset": [
+    -25,
+    0,
+    0
+   ],
+   "extrae_de": "radiador",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "adm_elem_primario",
+   "nombre": "Elemento primario del filtro de aire",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.filtroAire",
+   "explosion": [
+    0,
+    110,
+    -130
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.186 «PRIMARY ELEMENT»",
+   "supuesto": false,
+   "offset": [
+    10,
+    0,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "adm_elem_secundario",
+   "nombre": "Elemento secundario del filtro de aire",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.filtroAire",
+   "explosion": [
+    0,
+    110,
+    -170
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.186 «SECONDARY ELEMENT»",
+   "supuesto": false,
+   "offset": [
+    6,
+    0,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "adm_turbo",
+   "nombre": "Turbocompresor",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.turbo",
+   "explosion": [
+    0,
+    80,
+    120
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-27/2-29",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 2
+    }
+   ]
+  },
+  {
+   "id": "adm_multiple",
+   "nombre": "Múltiple de admisión",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    60,
+    -110
+   ],
+   "prioridad": "media",
+   "fuente": "SK 2-25; NEF",
+   "supuesto": false,
+   "offset": [
+    0,
+    -4,
+    -25
+   ],
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "esc_multiple",
+   "nombre": "Múltiple de escape",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    60,
+    110
+   ],
+   "prioridad": "media",
+   "fuente": "SK 2-25; NEF",
+   "supuesto": false,
+   "offset": [
+    0,
+    -6,
+    26
+   ],
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "esc_egr",
+   "nombre": "Válvula y enfriador EGR",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": [
+    "580N"
+   ],
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    90,
+    130
+   ],
+   "prioridad": "media",
+   "fuente": "H-N p.1 (EGR)",
+   "supuesto": false,
+   "offset": [
+    10,
+    10,
+    26
+   ],
+   "sale_con": "motor",
+   "nota": "580N Tier 4i (Case F5C). La 580 Super N Tier 3 (NEF) no lo lleva",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "esc_dpf",
+   "nombre": "Catalizador DOC y filtro de partículas (DPF)",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": [
+    "580N"
+   ],
+   "anclaje": "L.escape",
+   "explosion": [
+    40,
+    140,
+    80
+   ],
+   "prioridad": "media",
+   "fuente": "H-N p.1 (EGR + DPF); SM-EP 10.501",
+   "supuesto": false,
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "esc_scr",
+   "nombre": "Catalizador SCR",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": [
+    "420F2"
+   ],
+   "anclaje": "L.escape",
+   "explosion": [
+    40,
+    140,
+    100
+   ],
+   "prioridad": "media",
+   "fuente": "Folleto CAT 420F2 p.11-12 (SCR)",
+   "supuesto": false,
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "esc_urea",
+   "nombre": "Estanque de urea (DEF), 19 L",
+   "grupo": "Motor · admisión y escape",
+   "modulo": "motor",
+   "aplica": [
+    "420F2"
+   ],
+   "anclaje": "L.tanqueC",
+   "explosion": [
+    0,
+    30,
+    -140
+   ],
+   "prioridad": "media",
+   "fuente": "Folleto CAT 420F2 p.11-12 (urea 19 L)",
+   "supuesto": false,
+   "offset": [
+    0,
+    40,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "comb_filtros",
+   "nombre": "Filtros de combustible y separador de agua",
+   "grupo": "Motor · combustible",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    40,
+    -120
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.168 y p.190-191; SM-EP 10.206",
+   "supuesto": false,
+   "offset": [
+    -20,
+    10,
+    -32
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 23
+    }
+   ]
+  },
+  {
+   "id": "comb_inyectores",
+   "nombre": "Inyectores (juego de 4)",
+   "grupo": "Motor · combustible",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    160,
+    -60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 3-17 «FUEL INJECTION NOZZLE»; NEF; SM 10.218",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "nota": "Una sola pieza con 4 inyectores: se sacan y prueban como juego",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 3
+    }
+   ]
+  },
+  {
+   "id": "comb_bomba_ap",
+   "nombre": "Bomba de alta presión (inyección)",
+   "grupo": "Motor · combustible",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    20,
+    -140
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 3-15; NEF (la mueve la distribución)",
+   "supuesto": false,
+   "offset": [
+    -20,
+    -5,
+    -28
+   ],
+   "sale_con": "motor",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "comb_riel",
+   "nombre": "Riel común y tuberías de alta presión",
+   "grupo": "Motor · combustible",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.culata",
+   "explosion": [
+    0,
+    140,
+    -90
+   ],
+   "prioridad": "media",
+   "fuente": "H-N p.1 («riel común»); modelo.js",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "sale_con": "motor",
+   "nota": "580SN Tier 3 (NEF F4HE) también es de riel común (supuesto)",
+   "desarme": [
+    {
+     "recorrido": "motor_banco",
+     "paso": 3
+    }
+   ]
+  },
+  {
+   "id": "comb_cebado",
+   "nombre": "Bomba de cebado",
+   "grupo": "Motor · combustible",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    50,
+    -150
+   ],
+   "prioridad": "baja",
+   "fuente": "NEF «priming pump»",
+   "supuesto": false,
+   "offset": [
+    -30,
+    20,
+    -30
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 23
+    }
+   ]
+  },
+  {
+   "id": "comb_lineas",
+   "nombre": "Líneas de alimentación y retorno",
+   "grupo": "Motor · combustible",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.tanqueC",
+   "explosion": [
+    0,
+    20,
+    -100
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 3-3",
+   "supuesto": false,
+   "offset": [
+    60,
+    20,
+    20
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 23
+    }
+   ]
+  },
+  {
+   "id": "ele_alternador",
+   "nombre": "Alternador",
+   "grupo": "Eléctrico",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.alternador",
+   "explosion": [
+    60,
+    40,
+    90
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 4-7 (65/95 A), 4-13; SM 55.301",
+   "supuesto": false,
+   "extrae_de": "motor",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 21
+    }
+   ]
+  },
+  {
+   "id": "ele_arranque",
+   "nombre": "Motor de arranque",
+   "grupo": "Eléctrico",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.arranque",
+   "explosion": [
+    -30,
+    -20,
+    -110
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 4-3, 4-13; SM 55.201; SM-T3 «remove the starter»",
+   "supuesto": false,
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 21
+    }
+   ]
+  },
+  {
+   "id": "ele_arnes",
+   "nombre": "Arnés y ECU del motor",
+   "grupo": "Eléctrico",
+   "modulo": "motor",
+   "aplica": "todos",
+   "anclaje": "L.motorC",
+   "explosion": [
+    0,
+    80,
+    -130
+   ],
+   "prioridad": "baja",
+   "fuente": "SM 55.100, 55.640",
+   "supuesto": false,
+   "offset": [
+    0,
+    30,
+    -30
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 21
+    }
+   ]
+  },
+  {
+   "id": "conv_placa_flex",
+   "nombre": "Placa flexible (de arrastre)",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.conv",
+   "explosion": [
+    -20,
+    -70,
+    -60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 2-51 «PLATE ASSEMBLY - flex»; SM-T3",
+   "supuesto": false,
+   "offset": [
+    10,
+    0,
+    0
+   ],
+   "nota": "Según SM-T3 queda en la transmisión cuando sale el motor",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "conv_campana",
+   "nombre": "Campana del convertidor con tapa de acceso",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.conv",
+   "explosion": [
+    0,
+    -80,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SM-T3 «flywheel housing access cover»",
+   "supuesto": false,
+   "extrae_de": "convertidor",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_bomba",
+   "nombre": "Bomba de carga de la transmisión",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.conv",
+   "explosion": [
+    -30,
+    -90,
+    -50
+   ],
+   "prioridad": "media",
+   "fuente": "SK 6-13/6-15 «TORQUE CONVERTER HOUSING, PUMP AND OUTPUT SHAFT»",
+   "supuesto": false,
+   "offset": [
+    -14,
+    -6,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_embragues",
+   "nombre": "Embragues del inversor (adelante y atrás)",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trC",
+   "explosion": [
+    0,
+    -100,
+    -80
+   ],
+   "prioridad": "alta",
+   "fuente": "SM 21.154; MR fig. 17",
+   "supuesto": false,
+   "sale_con": "transmision",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_engranajes",
+   "nombre": "Ejes, engranajes y sincronizadores",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trC",
+   "explosion": [
+    0,
+    -100,
+    80
+   ],
+   "prioridad": "media",
+   "fuente": "H-N p.1 (4 marchas sincronizadas); SM 21.154",
+   "supuesto": false,
+   "sale_con": "transmision",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_valvula",
+   "nombre": "Válvula y solenoides del inversor",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trC",
+   "explosion": [
+    0,
+    40,
+    -90
+   ],
+   "prioridad": "media",
+   "fuente": "SK 6-29 «SHUTTLE CONTROL»; SM 21.134",
+   "supuesto": false,
+   "offset": [
+    0,
+    20,
+    -24
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_filtro",
+   "nombre": "Filtro de transmisión",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trC",
+   "explosion": [
+    0,
+    -30,
+    -110
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.198, p.167-168",
+   "supuesto": false,
+   "offset": [
+    10,
+    -10,
+    -26
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_freno_estac",
+   "nombre": "Freno de estacionamiento (SAHR)",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trOutT",
+   "explosion": [
+    -30,
+    -80,
+    -60
+   ],
+   "prioridad": "alta",
+   "fuente": "H-N p.1; SM 33.110; M p.207",
+   "supuesto": false,
+   "offset": [
+    8,
+    0,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_embrague_4wd",
+   "nombre": "Embrague de la tracción 4WD",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trOutD",
+   "explosion": [
+    30,
+    -90,
+    -60
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 6-37",
+   "supuesto": true,
+   "offset": [
+    -8,
+    0,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "tr_retenes",
+   "nombre": "Retenes de salida de la transmisión",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trOutT",
+   "explosion": [
+    -20,
+    -60,
+    60
+   ],
+   "prioridad": "baja",
+   "fuente": "supuesto",
+   "supuesto": true,
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 24
+    }
+   ]
+  },
+  {
+   "id": "card_crucetas",
+   "nombre": "Crucetas de los cardanes",
+   "grupo": "Transmisión · convertidor y caja",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.trOutT",
+   "explosion": [
+    0,
+    -130,
+    -40
+   ],
+   "prioridad": "media",
+   "fuente": "M p.178; SK 6-31, 6-41",
+   "supuesto": false,
+   "extrae_de": "cardan_del, cardan_tras",
+   "nota": "Una pieza con las 4 crucetas; cada item se liga a su cardán (cardT/cardD) para que gire en «Funciona»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 19
+    }
+   ]
+  },
+  {
+   "id": "et_diferencial",
+   "nombre": "Corona, piñón y diferencial trasero",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeT",
+   "explosion": [
+    0,
+    -60,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "H-N p.1 (relación 2,5); SM 27.106",
+   "supuesto": false,
+   "sale_con": "eje_tras",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "et_bloqueo",
+   "nombre": "Bloqueo del diferencial",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeT",
+   "explosion": [
+    20,
+    -70,
+    30
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 6-33; MR 2.2",
+   "supuesto": false,
+   "offset": [
+    0,
+    0,
+    18
+   ],
+   "sale_con": "eje_tras",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "et_semiejes",
+   "nombre": "Semiejes traseros",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeT",
+   "explosion": [
+    0,
+    -40,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK «SHAFT - axle»",
+   "supuesto": false,
+   "sale_con": "eje_tras",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 5
+    }
+   ]
+  },
+  {
+   "id": "et_planetario",
+   "nombre": "Mando final planetario trasero",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "K.CT(-1)",
+   "explosion": [
+    0,
+    -30,
+    -110
+   ],
+   "prioridad": "alta",
+   "fuente": "H-N p.1 (relación 6,4); SM 27.120 «Planetary and final drives»; SK 6-43…6-57",
+   "supuesto": false,
+   "offset": [
+    0,
+    0,
+    0
+   ],
+   "sale_con": "eje_tras",
+   "cantidad": 2,
+   "ids": [
+    "et_planetario_i",
+    "et_planetario_d"
+   ],
+   "etiquetas": [
+    "Mando final planetario trasero izq.",
+    "Mando final planetario trasero der."
+   ],
+   "explosiones": [
+    [
+     0,
+     -30,
+     -110
+    ],
+    [
+     0,
+     -30,
+     110
+    ]
+   ],
+   "anclajes": [
+    "K.CT(-1)",
+    "K.CT(1)"
+   ],
+   "nota": "Sol, satélites, corona y portasatélites. Va en el extremo de la trompeta, hacia adentro de la rueda: usar z = ±(D.rtr/2 - 16)",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 3
+    }
+   ]
+  },
+  {
+   "id": "et_cubo",
+   "nombre": "Cubo y rodamientos trasero",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "K.CT(-1)",
+   "explosion": [
+    0,
+    -20,
+    -150
+   ],
+   "prioridad": "alta",
+   "fuente": "SK «SEAL - oil, hub»; M p.168",
+   "supuesto": false,
+   "sale_con": "eje_tras",
+   "cantidad": 2,
+   "ids": [
+    "et_cubo_i",
+    "et_cubo_d"
+   ],
+   "etiquetas": [
+    "Cubo y rodamientos trasero izq.",
+    "Cubo y rodamientos trasero der."
+   ],
+   "explosiones": [
+    [
+     0,
+     -20,
+     -150
+    ],
+    [
+     0,
+     -20,
+     150
+    ]
+   ],
+   "anclajes": [
+    "K.CT(-1)",
+    "K.CT(1)"
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 2
+    }
+   ]
+  },
+  {
+   "id": "et_reten_cubo",
+   "nombre": "Retenes de cubo traseros",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeT",
+   "explosion": [
+    0,
+    -50,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK «SEAL - oil, hub»",
+   "supuesto": false,
+   "sale_con": "eje_tras",
+   "nota": "Un item por lado, en el extremo de cada trompeta",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 2
+    }
+   ]
+  },
+  {
+   "id": "et_respiradero",
+   "nombre": "Respiradero del eje trasero",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeT",
+   "explosion": [
+    0,
+    50,
+    0
+   ],
+   "prioridad": "baja",
+   "fuente": "M p.202, p.204",
+   "supuesto": false,
+   "offset": [
+    0,
+    14,
+    20
+   ],
+   "sale_con": "eje_tras",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "fr_discos",
+   "nombre": "Freno de discos húmedos",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "K.CT(-1)",
+   "explosion": [
+    0,
+    -40,
+    -90
+   ],
+   "prioridad": "alta",
+   "fuente": "H-N p.1 (2 discos por lado, 0,25 m²); SM 33.202; MR 2.3",
+   "supuesto": false,
+   "sale_con": "eje_tras",
+   "cantidad": 2,
+   "ids": [
+    "fr_discos_i",
+    "fr_discos_d"
+   ],
+   "etiquetas": [
+    "Freno de discos húmedos izq.",
+    "Freno de discos húmedos der."
+   ],
+   "explosiones": [
+    [
+     0,
+     -40,
+     -90
+    ],
+    [
+     0,
+     -40,
+     90
+    ]
+   ],
+   "anclajes": [
+    "K.CT(-1)",
+    "K.CT(1)"
+   ],
+   "nota": "Discos, separadores y pistón; entre el diferencial y la trompeta: z = ±(D.rtr/2 - 40)",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    },
+    {
+     "recorrido": "eje_trasero",
+     "paso": 4
+    }
+   ]
+  },
+  {
+   "id": "fr_bombas",
+   "nombre": "Bombas de freno y pedales",
+   "grupo": "Eje trasero y frenos",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.volante",
+   "explosion": [
+    40,
+    80,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 7-7, 7-9",
+   "supuesto": false,
+   "offset": [
+    12,
+    -40,
+    0
+   ],
+   "extrae_de": "mandos",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 10
+    }
+   ]
+  },
+  {
+   "id": "ed_diferencial",
+   "nombre": "Diferencial delantero (4WD)",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.difD",
+   "explosion": [
+    60,
+    -80,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "H-N (relación 2,0); SM 25.102",
+   "supuesto": false,
+   "sale_con": "eje_del",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "ed_planetario",
+   "nombre": "Mando final planetario delantero",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "K.CD(-1)",
+   "explosion": [
+    60,
+    -30,
+    -110
+   ],
+   "prioridad": "alta",
+   "fuente": "H-N (relación 6,0); SM 25.108",
+   "supuesto": false,
+   "sale_con": "eje_del",
+   "cantidad": 2,
+   "ids": [
+    "ed_planetario_i",
+    "ed_planetario_d"
+   ],
+   "etiquetas": [
+    "Mando final planetario delantero izq.",
+    "Mando final planetario delantero der."
+   ],
+   "explosiones": [
+    [
+     60,
+     -30,
+     -110
+    ],
+    [
+     60,
+     -30,
+     110
+    ]
+   ],
+   "anclajes": [
+    "K.CD(-1)",
+    "K.CD(1)"
+   ],
+   "nota": "Ligar a knI/knD (vira con la mangueta)",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "ed_retenes",
+   "nombre": "Retenes de semieje y de cubo delanteros",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeD",
+   "explosion": [
+    60,
+    -60,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK «SEAL - oil, axle shaft», «SEAL - oil, hub»",
+   "supuesto": false,
+   "sale_con": "eje_del",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "ed_manguetas",
+   "nombre": "Manguetas, pivotes y rodamientos",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeD",
+   "explosion": [
+    60,
+    -90,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 5-17 (kit D103626); SM 25.108",
+   "supuesto": false,
+   "extrae_de": "eje_del",
+   "sale_con": "eje_del",
+   "nota": "Hoy son los items mang(-1) y mang(1) de eje_del (ligados a knI/knD): moverlos a esta pieza conservando la liga",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "ed_pivote",
+   "nombre": "Pivote de oscilación del eje y bujes",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.difD",
+   "explosion": [
+    80,
+    -70,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "M p.177; H-N (22° de oscilación)",
+   "supuesto": false,
+   "offset": [
+    -22,
+    4,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "dir_orbitrol",
+   "nombre": "Unidad de dirección hidrostática (orbitrol)",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.orbitrol",
+   "explosion": [
+    50,
+    100,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 5-13 «STEERING CONTROL VALVE»; SM 41.200",
+   "supuesto": false,
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 25
+    }
+   ]
+  },
+  {
+   "id": "dir_columna",
+   "nombre": "Columna y volante de dirección",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.volante",
+   "explosion": [
+    40,
+    120,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 5-3, 5-9",
+   "supuesto": false,
+   "extrae_de": "mandos",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 10
+    }
+   ]
+  },
+  {
+   "id": "dir_cilindro",
+   "nombre": "Cilindro de dirección",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeD",
+   "explosion": [
+    80,
+    -90,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 5-15; SM 41.216",
+   "supuesto": false,
+   "offset": [
+    14,
+    -8,
+    0
+   ],
+   "extrae_de": "eje_del",
+   "sale_con": "eje_del",
+   "nota": "Hoy son los items camisa y vast de eje_del; el vástago se liga a steerRod",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "dir_cil_sellos",
+   "nombre": "Juego de sellos del cilindro de dirección",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.ejeD",
+   "explosion": [
+    80,
+    -110,
+    30
+   ],
+   "prioridad": "alta",
+   "fuente": "SK «KIT - seal, steering cylinder, for rod, gland, and piston»",
+   "supuesto": false,
+   "offset": [
+    14,
+    -8,
+    22
+   ],
+   "sale_con": "eje_del",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 20
+    }
+   ]
+  },
+  {
+   "id": "dir_prioridad",
+   "nombre": "Válvula de prioridad de la dirección",
+   "grupo": "Eje delantero y dirección",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.valC",
+   "explosion": [
+    40,
+    -40,
+    -60
+   ],
+   "prioridad": "baja",
+   "fuente": "supuesto (MR 2.10)",
+   "supuesto": true,
+   "offset": [
+    0,
+    -20,
+    -40
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 25
+    }
+   ]
+  },
+  {
+   "id": "cab_filtro_aire",
+   "nombre": "Filtro de aire de la cabina",
+   "grupo": "Chasis y cabina",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.cab",
+   "explosion": [
+    0,
+    200,
+    -60
+   ],
+   "prioridad": "baja",
+   "fuente": "M p.205",
+   "supuesto": false,
+   "offset": [
+    -60,
+    50,
+    0
+   ],
+   "desarme": []
+  },
+  {
+   "id": "cab_puertas",
+   "nombre": "Puertas y vidrios",
+   "grupo": "Chasis y cabina",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.cab",
+   "explosion": [
+    0,
+    200,
+    -200
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 9-127…9-141",
+   "supuesto": false,
+   "extrae_de": "cabina",
+   "desarme": []
+  },
+  {
+   "id": "cab_tablero",
+   "nombre": "Tablero de instrumentos",
+   "grupo": "Chasis y cabina",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.volante",
+   "explosion": [
+    40,
+    140,
+    0
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 9-127…9-141",
+   "supuesto": false,
+   "offset": [
+    22,
+    10,
+    0
+   ],
+   "extrae_de": "cabina",
+   "desarme": []
+  },
+  {
+   "id": "cab_peldanos",
+   "nombre": "Peldaños de acceso",
+   "grupo": "Chasis y cabina",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.cab",
+   "explosion": [
+    0,
+    -40,
+    -160
+   ],
+   "prioridad": "baja",
+   "fuente": "REGISTRO l.63",
+   "supuesto": false,
+   "offset": [
+    0,
+    -90,
+    -60
+   ],
+   "desarme": []
+  },
+  {
+   "id": "chasis_contrapeso",
+   "nombre": "Contrapeso delantero",
+   "grupo": "Chasis y cabina",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.radiador",
+   "explosion": [
+    120,
+    0,
+    0
+   ],
+   "prioridad": "baja",
+   "fuente": "REGISTRO l.63",
+   "supuesto": false,
+   "offset": [
+    23,
+    -20,
+    0
+   ],
+   "extrae_de": "chasis",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "ele_luces",
+   "nombre": "Luces de trabajo y baliza",
+   "grupo": "Eléctrico",
+   "modulo": "transmision",
+   "aplica": "todos",
+   "anclaje": "L.cab",
+   "explosion": [
+    0,
+    260,
+    0
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 4-35 a 4-57",
+   "supuesto": false,
+   "offset": [
+    0,
+    100,
+    0
+   ],
+   "extrae_de": "cabina",
+   "desarme": []
+  },
+  {
+   "id": "hid_acople",
+   "nombre": "Acople de la bomba a la polea del cigüeñal",
+   "grupo": "Sistema hidráulico",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "L.acople",
+   "explosion": [
+    90,
+    -40,
+    50
+   ],
+   "prioridad": "alta",
+   "fuente": "M pdf 215 «pump drive coupling… crankshaft pulley»; MR 4.1",
+   "supuesto": false,
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "hid_bomba_engranajes",
+   "nombre": "Engranajes de la bomba hidráulica",
+   "grupo": "Sistema hidráulico",
+   "modulo": "hidraulica",
+   "aplica": [
+    "580N",
+    "3CX"
+   ],
+   "anclaje": "L.bomba",
+   "explosion": [
+    100,
+    -60,
+    80
+   ],
+   "prioridad": "media",
+   "fuente": "H-N (Parker P330, engranajes); SK 8-63",
+   "supuesto": false,
+   "sale_con": "bomba_hid",
+   "nota": "3CX: bomba de engranajes en tándem (supuesto)",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 22
+    }
+   ]
+  },
+  {
+   "id": "hid_bomba_pistones",
+   "nombre": "Grupo rotativo de la bomba (pistones axiales)",
+   "grupo": "Sistema hidráulico",
+   "modulo": "hidraulica",
+   "aplica": [
+    "580 Super N",
+    "420F2"
+   ],
+   "anclaje": "L.bomba",
+   "explosion": [
+    100,
+    -60,
+    80
+   ],
+   "prioridad": "media",
+   "fuente": "H-SN (Rexroth, pistones axiales)",
+   "supuesto": false,
+   "sale_con": "bomba_hid",
+   "nota": "420F2: pistones axiales de caudal variable (supuesto)",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 22
+    }
+   ]
+  },
+  {
+   "id": "hid_colador",
+   "nombre": "Colador de succión",
+   "grupo": "Sistema hidráulico",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "L.tanqueH",
+   "explosion": [
+    0,
+    -50,
+    140
+   ],
+   "prioridad": "baja",
+   "fuente": "supuesto",
+   "supuesto": true,
+   "offset": [
+    0,
+    -20,
+    0
+   ],
+   "sale_con": "tanque_hid",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 25
+    }
+   ]
+  },
+  {
+   "id": "hid_valvulas_alivio",
+   "nombre": "Válvulas de alivio y antideriva",
+   "grupo": "Sistema hidráulico",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "L.valR",
+   "explosion": [
+    -60,
+    50,
+    40
+   ],
+   "prioridad": "baja",
+   "fuente": "SM 35.350; MR",
+   "supuesto": true,
+   "offset": [
+    0,
+    14,
+    0
+   ],
+   "sale_con": "valvula_retro",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 25
+    }
+   ]
+  },
+  {
+   "id": "hid_traba_pluma",
+   "nombre": "Traba de transporte de la pluma",
+   "grupo": "Retroexcavadora",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.F",
+   "explosion": [
+    -120,
+    60,
+    60
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 8-57; M p.144",
+   "supuesto": false,
+   "offset": [
+    10,
+    30,
+    0
+   ],
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    }
+   ]
+  },
+  {
+   "id": "carg_puntal",
+   "nombre": "Puntal de seguridad del cargador",
+   "grupo": "Cargador frontal",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.liftA",
+   "explosion": [
+    80,
+    20,
+    -60
+   ],
+   "prioridad": "alta",
+   "fuente": "M p.164-165",
+   "supuesto": false,
+   "offset": [
+    0,
+    20,
+    0
+   ],
+   "nota": "Va sobre el vástago del cilindro de levante izquierdo (z = -K.zA); el paso 2 del desarme lo usa",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "carg_bieletas",
+   "nombre": "Bieletas de volteo del cargador",
+   "grupo": "Cargador frontal",
+   "modulo": "hidraulica",
+   "aplica": [
+    "580N",
+    "580 Super N"
+   ],
+   "anclaje": "K.dumpB",
+   "explosion": [
+    200,
+    40,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "REGISTRO l.61 (pendiente)",
+   "supuesto": true,
+   "nota": "La cinemática actual lleva el cilindro de volteo directo al cucharón; dibujar bieletas ligadas a «bkt» sin cambiar vivo.js",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "carg_cuchilla",
+   "nombre": "Cuchilla del cucharón",
+   "grupo": "Cargador frontal",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.PB",
+   "explosion": [
+    260,
+    -20,
+    0
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 9-17",
+   "supuesto": false,
+   "offset": [
+    99,
+    -30,
+    0
+   ],
+   "extrae_de": "cuchara_cargador",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "retro_dientes",
+   "nombre": "Dientes y adaptadores de la cuchara",
+   "grupo": "Retroexcavadora",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.Q",
+   "explosion": [
+    -420,
+    -40,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "MR (tabla de reparaciones); SK 9-53",
+   "supuesto": false,
+   "extrae_de": "cuchara_retro",
+   "nota": "Hoy son 5 conos dentro de cuchara_retro; ligar a «bk»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "retro_acople_rapido",
+   "nombre": "Acople rápido de la cuchara",
+   "grupo": "Retroexcavadora",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.Q",
+   "explosion": [
+    -400,
+    40,
+    40
+   ],
+   "prioridad": "baja",
+   "fuente": "SK 9-45 (opcional)",
+   "supuesto": true,
+   "nota": "Equipamiento opcional; ligar a «dip»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "cil_levante_vastago",
+   "nombre": "Vástago · levante",
+   "grupo": "Cilindros · levante",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_levante",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_levante",
+   "sale_con": "cil_levante",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_levante",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "cil_levante_piston",
+   "nombre": "Pistón y su perno · levante",
+   "grupo": "Cilindros · levante",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_levante",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_levante",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "cil_levante_cabezal",
+   "nombre": "Cabezal (prensaestopa) · levante",
+   "grupo": "Cilindros · levante",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_levante",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_levante",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "cil_levante_sellos",
+   "nombre": "Juego de sellos y retenes · levante",
+   "grupo": "Cilindros · levante",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_levante",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_levante",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "cil_levante_bujes",
+   "nombre": "Bujes y pasadores de los ojos · levante",
+   "grupo": "Cilindros · levante",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_levante",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_levante",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 17
+    }
+   ]
+  },
+  {
+   "id": "cil_volteo_vastago",
+   "nombre": "Vástago · volteo",
+   "grupo": "Cilindros · volteo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_volteo",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_volteo",
+   "sale_con": "cil_volteo",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_volteo",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "cil_volteo_piston",
+   "nombre": "Pistón y su perno · volteo",
+   "grupo": "Cilindros · volteo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_volteo",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_volteo",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "cil_volteo_cabezal",
+   "nombre": "Cabezal (prensaestopa) · volteo",
+   "grupo": "Cilindros · volteo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_volteo",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_volteo",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "cil_volteo_sellos",
+   "nombre": "Juego de sellos y retenes · volteo",
+   "grupo": "Cilindros · volteo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_volteo",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_volteo",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "cil_volteo_bujes",
+   "nombre": "Bujes y pasadores de los ojos · volteo",
+   "grupo": "Cilindros · volteo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_volteo",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_volteo",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "cil_giro_vastago",
+   "nombre": "Vástago · giro",
+   "grupo": "Cilindros · giro",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_giro",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_giro",
+   "sale_con": "cil_giro",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_giro",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "cil_giro_piston",
+   "nombre": "Pistón y su perno · giro",
+   "grupo": "Cilindros · giro",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_giro",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_giro",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "cil_giro_cabezal",
+   "nombre": "Cabezal (prensaestopa) · giro",
+   "grupo": "Cilindros · giro",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_giro",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_giro",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "cil_giro_sellos",
+   "nombre": "Juego de sellos y retenes · giro",
+   "grupo": "Cilindros · giro",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_giro",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_giro",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "cil_giro_bujes",
+   "nombre": "Bujes y pasadores de los ojos · giro",
+   "grupo": "Cilindros · giro",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_giro",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_giro",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "cil_pluma_vastago",
+   "nombre": "Vástago · pluma",
+   "grupo": "Cilindros · pluma",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_pluma",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_pluma",
+   "sale_con": "cil_pluma",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_pluma",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    },
+    {
+     "recorrido": "cilindro_pluma",
+     "paso": 5
+    }
+   ]
+  },
+  {
+   "id": "cil_pluma_piston",
+   "nombre": "Pistón y su perno · pluma",
+   "grupo": "Cilindros · pluma",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_pluma",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_pluma",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    },
+    {
+     "recorrido": "cilindro_pluma",
+     "paso": 6
+    }
+   ]
+  },
+  {
+   "id": "cil_pluma_cabezal",
+   "nombre": "Cabezal (prensaestopa) · pluma",
+   "grupo": "Cilindros · pluma",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_pluma",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_pluma",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    },
+    {
+     "recorrido": "cilindro_pluma",
+     "paso": 4
+    }
+   ]
+  },
+  {
+   "id": "cil_pluma_sellos",
+   "nombre": "Juego de sellos y retenes · pluma",
+   "grupo": "Cilindros · pluma",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_pluma",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_pluma",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    },
+    {
+     "recorrido": "cilindro_pluma",
+     "paso": 7
+    }
+   ]
+  },
+  {
+   "id": "cil_pluma_bujes",
+   "nombre": "Bujes y pasadores de los ojos · pluma",
+   "grupo": "Cilindros · pluma",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_pluma",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_pluma",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    },
+    {
+     "recorrido": "cilindro_pluma",
+     "paso": 3
+    }
+   ]
+  },
+  {
+   "id": "cil_brazo_vastago",
+   "nombre": "Vástago · brazo",
+   "grupo": "Cilindros · brazo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_brazo",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_brazo",
+   "sale_con": "cil_brazo",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_brazo",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "cil_brazo_piston",
+   "nombre": "Pistón y su perno · brazo",
+   "grupo": "Cilindros · brazo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_brazo",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_brazo",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "cil_brazo_cabezal",
+   "nombre": "Cabezal (prensaestopa) · brazo",
+   "grupo": "Cilindros · brazo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_brazo",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_brazo",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "cil_brazo_sellos",
+   "nombre": "Juego de sellos y retenes · brazo",
+   "grupo": "Cilindros · brazo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_brazo",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_brazo",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "cil_brazo_bujes",
+   "nombre": "Bujes y pasadores de los ojos · brazo",
+   "grupo": "Cilindros · brazo",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_brazo",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_brazo",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "cil_cuchara_vastago",
+   "nombre": "Vástago · cuchara",
+   "grupo": "Cilindros · cuchara",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_cuchara",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_cuchara",
+   "sale_con": "cil_cuchara",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_cuchara",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "cil_cuchara_piston",
+   "nombre": "Pistón y su perno · cuchara",
+   "grupo": "Cilindros · cuchara",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_cuchara",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_cuchara",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "cil_cuchara_cabezal",
+   "nombre": "Cabezal (prensaestopa) · cuchara",
+   "grupo": "Cilindros · cuchara",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_cuchara",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_cuchara",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "cil_cuchara_sellos",
+   "nombre": "Juego de sellos y retenes · cuchara",
+   "grupo": "Cilindros · cuchara",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_cuchara",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_cuchara",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "cil_cuchara_bujes",
+   "nombre": "Bujes y pasadores de los ojos · cuchara",
+   "grupo": "Cilindros · cuchara",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_cuchara",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_cuchara",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_i_vastago",
+   "nombre": "Vástago · estabilizador izq.",
+   "grupo": "Cilindros · estabilizador izq.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_i",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_estab_i",
+   "sale_con": "cil_estab_i",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_estab_i",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_i_piston",
+   "nombre": "Pistón y su perno · estabilizador izq.",
+   "grupo": "Cilindros · estabilizador izq.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_i",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_estab_i",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_i_cabezal",
+   "nombre": "Cabezal (prensaestopa) · estabilizador izq.",
+   "grupo": "Cilindros · estabilizador izq.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_i",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_estab_i",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_i_sellos",
+   "nombre": "Juego de sellos y retenes · estabilizador izq.",
+   "grupo": "Cilindros · estabilizador izq.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_i",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_estab_i",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_i_bujes",
+   "nombre": "Bujes y pasadores de los ojos · estabilizador izq.",
+   "grupo": "Cilindros · estabilizador izq.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_i",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_estab_i",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_d_vastago",
+   "nombre": "Vástago · estabilizador der.",
+   "grupo": "Cilindros · estabilizador der.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_d",
+   "explosion": [
+    0,
+    30,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1341852C2)",
+   "supuesto": false,
+   "extrae_de": "cil_estab_d",
+   "sale_con": "cil_estab_d",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra. Hoy es el item «vas» de cil_estab_d",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_d_piston",
+   "nombre": "Pistón y su perno · estabilizador der.",
+   "grupo": "Cilindros · estabilizador der.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_d",
+   "explosion": [
+    0,
+    55,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (G108184)",
+   "supuesto": false,
+   "sale_con": "cil_estab_d",
+   "nota": "Ligado como el vástago (anclaje B): registrar en cils[].vasExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_d_cabezal",
+   "nombre": "Cabezal (prensaestopa) · estabilizador der.",
+   "grupo": "Cilindros · estabilizador der.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_d",
+   "explosion": [
+    0,
+    80,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (1980321C2)",
+   "supuesto": false,
+   "sale_con": "cil_estab_d",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_d_sellos",
+   "nombre": "Juego de sellos y retenes · estabilizador der.",
+   "grupo": "Cilindros · estabilizador der.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_d",
+   "explosion": [
+    0,
+    105,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 8-117 (kit 1543260C1: limpiador, sello de vástago, amortiguador, O-ring, respaldo, sello de pistón, anillo de desgaste)",
+   "supuesto": false,
+   "sale_con": "cil_estab_d",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "cil_estab_d_bujes",
+   "nombre": "Bujes y pasadores de los ojos · estabilizador der.",
+   "grupo": "Cilindros · estabilizador der.",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "pieza:cil_estab_d",
+   "explosion": [
+    0,
+    130,
+    0
+   ],
+   "prioridad": "media",
+   "fuente": "SK 8-117 (D144895, sellos de ojo D123655)",
+   "supuesto": false,
+   "sale_con": "cil_estab_d",
+   "nota": "Ligado como la camisa (anclaje A): registrar en cils[].camExtra",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  },
+  {
+   "id": "pas_carg_cucharon",
+   "nombre": "Pasadores del cucharón del cargador",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.PB",
+   "explosion": [
+    220,
+    0,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 16
+    }
+   ]
+  },
+  {
+   "id": "pas_pie_pluma",
+   "nombre": "Pasador del pie de la pluma",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.F",
+   "explosion": [
+    -120,
+    0,
+    60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 13
+    }
+   ]
+  },
+  {
+   "id": "pas_pluma_brazo",
+   "nombre": "Pasador pluma–brazo",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.T",
+   "explosion": [
+    -200,
+    60,
+    60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 12
+    }
+   ]
+  },
+  {
+   "id": "pas_brazo_cuchara",
+   "nombre": "Pasador brazo–cuchara",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.Q",
+   "explosion": [
+    -330,
+    0,
+    60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "pas_bieletas",
+   "nombre": "Pasadores de las bieletas",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.J0",
+   "explosion": [
+    -330,
+    40,
+    60
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 11
+    }
+   ]
+  },
+  {
+   "id": "pas_torre",
+   "nombre": "Pasadores (pivotes) de la torre de giro",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.PV",
+   "explosion": [
+    -100,
+    0,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "offset": [
+    0,
+    85,
+    0
+   ],
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 14
+    }
+   ]
+  },
+  {
+   "id": "pas_estab",
+   "nombre": "Pasadores de los estabilizadores",
+   "grupo": "Pasadores y bujes",
+   "modulo": "hidraulica",
+   "aplica": "todos",
+   "anclaje": "K.PS(1)",
+   "explosion": [
+    -40,
+    0,
+    0
+   ],
+   "prioridad": "alta",
+   "fuente": "SK 9-37, 9-41, 9-47; M p.171-173 (puntos de engrase)",
+   "supuesto": false,
+   "extrae_de": "pasadores",
+   "nota": "Pasador, bujes y perno de retención; ligar al cuerpo que hoy usa en «pasadores»",
+   "desarme": [
+    {
+     "recorrido": "maquina",
+     "paso": 15
+    }
+   ]
+  }
+ ],
+ "recorridos": {
+  "maquina": [
+   {
+    "paso": 1,
+    "titulo": "Estacionar y bloquear",
+    "quita": [],
+    "foco": [
+     "chasis",
+     "mandos"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Puntal de seguridad del cargador",
+    "quita": [],
+    "foco": [
+     "carg_puntal",
+     "brazos_cargador",
+     "cil_levante"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Aliviar la presión hidráulica",
+    "quita": [],
+    "foco": [
+     "valvula_cargador",
+     "valvula_retro",
+     "mandos"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Desconectar la batería",
+    "quita": [
+     "bateria"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Abrir el capó",
+    "quita": [
+     "capot"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Filtro de aire y escape",
+    "quita": [
+     "adm_elem_primario",
+     "adm_elem_secundario",
+     "filtro_aire",
+     "esc_dpf",
+     "esc_scr",
+     "esc_urea",
+     "escape"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Correa, acople de la bomba, ventilador y radiador",
+    "quita": [
+     "enf_correa",
+     "hid_acople",
+     "ventilador",
+     "enf_deposito",
+     "enf_mangueras",
+     "enf_enfriador_hid",
+     "enf_enfriador_trans",
+     "chasis_contrapeso",
+     "radiador"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Drenar el aceite hidráulico y retirar el filtro",
+    "quita": [
+     "filtro_hid"
+    ],
+    "foco": [
+     "filtro_hid",
+     "tanque_hid"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Rotular y desconectar las mangueras",
+    "quita": [
+     "mangueras"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Asiento y mandos",
+    "quita": [
+     "asiento",
+     "mandos",
+     "dir_columna",
+     "fr_bombas"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Cuchara de la retro y bieletas",
+    "quita": [
+     "cil_cuchara",
+     "cil_cuchara_vastago",
+     "cil_cuchara_piston",
+     "cil_cuchara_cabezal",
+     "cil_cuchara_sellos",
+     "cil_cuchara_bujes",
+     "biela_cuchara",
+     "pas_bieletas",
+     "pas_brazo_cuchara",
+     "retro_dientes",
+     "retro_acople_rapido",
+     "cuchara_retro"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Brazo y su cilindro",
+    "quita": [
+     "cil_brazo",
+     "cil_brazo_vastago",
+     "cil_brazo_piston",
+     "cil_brazo_cabezal",
+     "cil_brazo_sellos",
+     "cil_brazo_bujes",
+     "pas_pluma_brazo",
+     "brazo_retro"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Pluma y su cilindro",
+    "quita": [
+     "hid_traba_pluma",
+     "cil_pluma",
+     "cil_pluma_vastago",
+     "cil_pluma_piston",
+     "cil_pluma_cabezal",
+     "cil_pluma_sellos",
+     "cil_pluma_bujes",
+     "pas_pie_pluma",
+     "pluma"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Torre y cilindros de giro",
+    "quita": [
+     "cil_giro",
+     "cil_giro_vastago",
+     "cil_giro_piston",
+     "cil_giro_cabezal",
+     "cil_giro_sellos",
+     "cil_giro_bujes",
+     "pas_torre",
+     "base_giro"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Estabilizadores",
+    "quita": [
+     "cil_estab_i",
+     "cil_estab_i_vastago",
+     "cil_estab_i_piston",
+     "cil_estab_i_cabezal",
+     "cil_estab_i_sellos",
+     "cil_estab_i_bujes",
+     "cil_estab_d",
+     "cil_estab_d_vastago",
+     "cil_estab_d_piston",
+     "cil_estab_d_cabezal",
+     "cil_estab_d_sellos",
+     "cil_estab_d_bujes",
+     "pas_estab",
+     "estab_i",
+     "estab_d"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Cucharón del cargador y cilindro de volteo",
+    "quita": [
+     "cil_volteo",
+     "cil_volteo_vastago",
+     "cil_volteo_piston",
+     "cil_volteo_cabezal",
+     "cil_volteo_sellos",
+     "cil_volteo_bujes",
+     "carg_bieletas",
+     "pas_carg_cucharon",
+     "carg_cuchilla",
+     "cuchara_cargador"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Brazos del cargador y cilindros de levante",
+    "quita": [
+     "carg_puntal",
+     "cil_levante",
+     "cil_levante_vastago",
+     "cil_levante_piston",
+     "cil_levante_cabezal",
+     "cil_levante_sellos",
+     "cil_levante_bujes",
+     "pasadores",
+     "brazos_cargador"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Ruedas y guardabarros",
+    "quita": [
+     "rueda_del_i",
+     "rueda_del_d",
+     "rueda_tras_i",
+     "rueda_tras_d",
+     "guardabarros"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Cardanes",
+    "quita": [
+     "card_crucetas",
+     "cardan_del",
+     "cardan_tras"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "Ejes (ver recorrido eje_trasero para el despiece)",
+    "quita": [
+     "eje_del",
+     "ed_manguetas",
+     "ed_planetario_i",
+     "ed_planetario_d",
+     "ed_retenes",
+     "ed_diferencial",
+     "ed_pivote",
+     "dir_cilindro",
+     "dir_cil_sellos",
+     "eje_tras",
+     "et_cubo_i",
+     "et_cubo_d",
+     "et_reten_cubo",
+     "et_planetario_i",
+     "et_planetario_d",
+     "fr_discos_i",
+     "fr_discos_d",
+     "et_semiejes",
+     "et_bloqueo",
+     "et_diferencial",
+     "et_respiradero"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "Alternador, motor de arranque y arnés",
+    "quita": [
+     "ele_alternador",
+     "ele_arranque",
+     "ele_arnes"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "Bomba hidráulica (adelante, desacoplada de la polea)",
+    "quita": [
+     "hid_bomba_engranajes",
+     "hid_bomba_pistones",
+     "bomba_hid"
+    ]
+   },
+   {
+    "paso": 23,
+    "titulo": "Motor fuera (tapa de la campana, 4 pernos volante–placa flexible, soportes, 12 pernos motor–transmisión; sale hacia adelante y arriba)",
+    "quita": [
+     "motor",
+     "motor_soportes",
+     "comb_filtros",
+     "comb_cebado",
+     "comb_lineas"
+    ],
+    "foco": [
+     "motor",
+     "conv_campana",
+     "conv_placa_flex"
+    ]
+   },
+   {
+    "paso": 24,
+    "titulo": "Convertidor, placa flexible y transmisión",
+    "quita": [
+     "conv_placa_flex",
+     "convertidor",
+     "conv_campana",
+     "tr_bomba",
+     "tr_valvula",
+     "tr_filtro",
+     "tr_freno_estac",
+     "tr_embrague_4wd",
+     "tr_retenes",
+     "tr_embragues",
+     "tr_engranajes",
+     "transmision"
+    ]
+   },
+   {
+    "paso": 25,
+    "titulo": "Válvulas, orbitrol y estanques",
+    "quita": [
+     "valvula_cargador",
+     "valvula_retro",
+     "hid_valvulas_alivio",
+     "dir_prioridad",
+     "dir_orbitrol",
+     "tanque_hid",
+     "hid_colador",
+     "tanque_comb"
+    ]
+   },
+   {
+    "paso": 26,
+    "titulo": "Pasadores y bujes: inspección",
+    "quita": [],
+    "foco": [
+     "pasadores",
+     "pas_carg_cucharon",
+     "pas_pie_pluma",
+     "pas_pluma_brazo",
+     "pas_brazo_cuchara",
+     "pas_bieletas",
+     "pas_torre",
+     "pas_estab",
+     "chasis"
+    ]
+   }
+  ],
+  "motor_banco": [
+   {
+    "paso": 1,
+    "titulo": "Drenar el aceite",
+    "quita": [],
+    "foco": [
+     "motor_carter"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Turbocompresor",
+    "quita": [
+     "adm_turbo"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Tuberías de alta e inyectores",
+    "quita": [
+     "comb_riel",
+     "comb_inyectores"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Tapa de balancines",
+    "quita": [
+     "motor_tapa_valvulas"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Balancines y varillas",
+    "quita": [
+     "dist_balancines"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Múltiples de admisión y escape y EGR",
+    "quita": [
+     "esc_egr",
+     "adm_multiple",
+     "esc_multiple"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Termostato",
+    "quita": [
+     "enf_termostato"
+    ]
+   },
+   {
+    "paso": 8,
+    "titulo": "Tensor, correa, poleas y alternador (si siguen montados)",
+    "quita": [],
+    "foco": [
+     "enf_correa",
+     "ele_alternador"
+    ]
+   },
+   {
+    "paso": 9,
+    "titulo": "Filtro de aceite e intercambiador",
+    "quita": [
+     "lub_filtro_aceite",
+     "lub_enfriador",
+     "lub_varilla"
+    ]
+   },
+   {
+    "paso": 10,
+    "titulo": "Culata y empaquetadura",
+    "quita": [
+     "dist_valvulas",
+     "motor_culata",
+     "motor_junta_culata"
+    ]
+   },
+   {
+    "paso": 11,
+    "titulo": "Bomba de alta presión",
+    "quita": [
+     "comb_bomba_ap"
+    ]
+   },
+   {
+    "paso": 12,
+    "titulo": "Bomba de agua",
+    "quita": [
+     "enf_bomba_agua"
+    ]
+   },
+   {
+    "paso": 13,
+    "titulo": "Polea del cigüeñal y retén delantero",
+    "quita": [
+     "cig_polea",
+     "reten_cig_del"
+    ]
+   },
+   {
+    "paso": 14,
+    "titulo": "Bomba de aceite",
+    "quita": [
+     "lub_bomba_aceite"
+    ]
+   },
+   {
+    "paso": 15,
+    "titulo": "Tapa delantera",
+    "quita": [
+     "motor_tapa_del"
+    ]
+   },
+   {
+    "paso": 16,
+    "titulo": "Volante",
+    "quita": [
+     "cig_volante"
+    ]
+   },
+   {
+    "paso": 17,
+    "titulo": "Caja del volante con el retén trasero",
+    "quita": [
+     "reten_cig_tras",
+     "motor_caja_volante"
+    ]
+   },
+   {
+    "paso": 18,
+    "titulo": "Dar vuelta el motor: cárter, chupador y placa de refuerzo",
+    "quita": [
+     "motor_carter",
+     "lub_chupador"
+    ]
+   },
+   {
+    "paso": 19,
+    "titulo": "Engranaje del árbol de levas y caja de distribución",
+    "quita": [
+     "dist_engranajes"
+    ]
+   },
+   {
+    "paso": 20,
+    "titulo": "(s) Sombreretes de biela, pistones y bielas por arriba",
+    "quita": [
+     "cig_piston_1",
+     "cig_piston_2",
+     "cig_piston_3",
+     "cig_piston_4",
+     "cig_biela_1",
+     "cig_biela_2",
+     "cig_biela_3",
+     "cig_biela_4",
+     "cig_cojinetes_biela"
+    ]
+   },
+   {
+    "paso": 21,
+    "titulo": "(s) Sombreretes de bancada, cigüeñal y metales",
+    "quita": [
+     "cig_ciguenal",
+     "cig_cojinetes_bancada"
+    ]
+   },
+   {
+    "paso": 22,
+    "titulo": "(s) Árbol de levas y taqués",
+    "quita": [
+     "dist_arbol_levas"
+    ],
+    "foco": [
+     "motor"
+    ]
+   }
+  ],
+  "eje_trasero": [
+   {
+    "paso": 1,
+    "titulo": "Drenar el aceite del eje y sacar la rueda",
+    "quita": [],
+    "foco": [
+     "eje_tras"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Cubo, rodamientos y retén",
+    "quita": [
+     "et_cubo_i",
+     "et_reten_cubo"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Mando final planetario",
+    "quita": [
+     "et_planetario_i"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "Frenos de discos húmedos",
+    "quita": [
+     "fr_discos_i"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Semieje",
+    "quita": [
+     "et_semiejes"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "Bloqueo y diferencial",
+    "quita": [
+     "et_bloqueo",
+     "et_diferencial"
+    ],
+    "foco": [
+     "eje_tras"
+    ]
+   }
+  ],
+  "cilindro_pluma": [
+   {
+    "paso": 1,
+    "titulo": "Retraer, apoyar la pluma y aliviar la presión",
+    "quita": [],
+    "foco": [
+     "cil_pluma"
+    ]
+   },
+   {
+    "paso": 2,
+    "titulo": "Desconectar y tapar las mangueras",
+    "quita": [],
+    "foco": [
+     "mangueras"
+    ]
+   },
+   {
+    "paso": 3,
+    "titulo": "Sacar los pasadores y el cilindro",
+    "quita": [
+     "cil_pluma_bujes"
+    ]
+   },
+   {
+    "paso": 4,
+    "titulo": "(s) Soltar el cabezal",
+    "quita": [
+     "cil_pluma_cabezal"
+    ]
+   },
+   {
+    "paso": 5,
+    "titulo": "Sacar el vástago con el pistón",
+    "quita": [
+     "cil_pluma_vastago"
+    ]
+   },
+   {
+    "paso": 6,
+    "titulo": "(s) Soltar el perno del pistón",
+    "quita": [
+     "cil_pluma_piston"
+    ]
+   },
+   {
+    "paso": 7,
+    "titulo": "Cambiar el kit de sellos",
+    "quita": [
+     "cil_pluma_sellos"
+    ],
+    "foco": [
+     "cil_pluma"
+    ]
+   }
+  ]
+ }
+}

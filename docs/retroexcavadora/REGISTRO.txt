@@ -6,6 +6,14 @@ ARCHIVOS
 - modelo.js  geometría procedural paramétrica (un solo constructor para los 4 modelos; cambian medidas y colores). Verifica que estén los 47 ids del contrato (console.warn si falta alguno).
 - vivo.js    cinemática (matrices delta por cuerpo), poses por capa y capas animadas de «Funciona».
 
+AMPLIACIÓN 2026-11-18 (auditoría de piezas)
+- contrato.json  154 ids nuevos (motor 56, transmisión 40, hidráulica 58) con nombre, grupo, módulo, aplica, anclaje,
+  explosión, desarme y fuente; recorridos propuestos (máquina con H2 corregido, motor en banco, eje trasero, cilindro).
+- modelo.js arma el layout L/K y las piezas sin módulo; modelo_motor.js, modelo_transmision.js y modelo_hidraulica.js
+  (un agente cada uno, ver CONTRATO.md) construyen el resto. H1 corregido: bomba hidráulica adelante (L.bomba),
+  ventilador al eje de la bomba de agua. El bloque «motor» es shell (rayos X).
+- prueba_modelo.mjs: prueba en node de los 4 modelos (ver cabecera).
+
 REGISTRO EN app.js (lo hace el coordinador; probado en una copia del scratchpad)
   import retroexcavadora from './retroexcavadora/index.js';
   HERR = [..., telurometro, retroexcavadora];  CATS.pesada.herr = [retroexcavadora]

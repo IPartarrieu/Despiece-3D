@@ -48,7 +48,7 @@ addEventListener('resize', ajustar); ajustar();
 
 // ---------- estado ----------
 let herr = HERR.find(h => h.id === q.get('herr')) || esmeril, DATA;
-const st = { marca: 'Genérica', modelo: null, cfg: {}, exp: 0, corte: false, xray: false, aislar: false, sel: null, oculta: new Set(), paso: -1, func: false, fp: 0, play: true, vel: 1, tenue: true };
+const st = { marca: 'Genérica', modelo: null, cfg: {}, exp: 0, corte: false, xray: false, aislar: false, sel: null, oculta: new Set(), paso: -1, proc: 0, func: false, fp: 0, play: true, vel: 1, tenue: true };
 let modelo = null, grupo = null, hover = null;
 const monto = {};       // fracción de explosión actual por pieza
 const anim = { t: 0, ang: 0 };   // reloj del modo funcionamiento (t: flujos; ang: giro de referencia)
@@ -57,7 +57,7 @@ const qg = new THREE.Quaternion(), dg = new THREE.Vector3();
 
 async function elegirHerramienta(h) {
   herr = h; DATA = datos[h.id] ??= await (await fetch(h.datos)).json();
-  Object.assign(st, { marca: '', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1, func: false, fp: 0 }); st.oculta.clear();
+  Object.assign(st, { marca: '', modelo: null, cfg: { ...h.cfg0 }, sel: null, paso: -1, proc: 0, func: false, fp: 0 }); st.oculta.clear();
   cambiarMarca(DATA.modelos[0].marca);
   for (const k in monto) delete monto[k];
   vistaInicial(); reconstruir();
@@ -65,13 +65,19 @@ async function elegirHerramienta(h) {
 }
 
 // pasos de desarme, piezas que salen y fichas propios de cada modelo (si los trae), o los generales de la herramienta
-const pasosDe = () => DATA.desarmados?.[st.modelo?.modelo] || DATA.desarmado;
+// procedimientos secundarios (data.json -> procedimientos[modelo]: {nombre, solo, pasos}); st.proc = 0 es el desarme principal.
+// «solo» deja visibles únicamente esas piezas; sus pasos traen su propio quita/foco, el principal los toma de herr.QUITA/FOCO.
+const procsDe = () => DATA.procedimientos?.[st.modelo?.modelo];
+const procAct = () => (st.proc ? procsDe()?.[st.proc - 1] : null);
+const pasosDe = () => procAct()?.pasos || DATA.desarmados?.[st.modelo?.modelo] || DATA.desarmado;
+let soloK = null, soloS = null;
+const soloDe = () => { const k = procAct()?.solo; if (k !== soloK) { soloK = k; soloS = k ? new Set(k) : null; } return soloS; };
 const quitaDe = () => (typeof herr.QUITA === 'function' ? herr.QUITA(st.modelo) : herr.QUITA);
 const focoDe = () => (typeof herr.FOCO === 'function' ? herr.FOCO(st.modelo) : herr.FOCO);
 const etapasDe = () => DATA.funcionamiento?.[st.modelo?.modelo];
 const etapaAct = () => (st.func ? etapasDe()?.[st.fp] : null);
 const fichaPieza = nombre => DATA.piezasPorModelo?.[st.modelo?.modelo]?.[nombre] || DATA.piezas[nombre];
-function aplicarModelo(m) { const v0 = herr.vista && vistaDe(); st.modelo = m; if (m) Object.assign(st.cfg, herr.deModelo(m)); if (v0 && vistaDe() !== v0) vistaInicial(); }
+function aplicarModelo(m) { const v0 = herr.vista && vistaDe(); st.modelo = m; st.proc = 0; st.paso = -1; if (m) Object.assign(st.cfg, herr.deModelo(m)); if (v0 && vistaDe() !== v0) vistaInicial(); }
 function cambiarMarca(marca) { // una marca trae solo sus modelos: se parte por el primero
   st.marca = marca;
   if (marca === 'Genérica') { st.modelo = null; st.cfg = { ...herr.cfg0 }; } else aplicarModelo(DATA.modelos.find(x => x.marca === marca));
@@ -106,13 +112,14 @@ function ajustarCorte() {
 
 // ---------- apariencia: rayos X, aislar, selección, hover, foco de paso ----------
 function aparienciaPiezas() {
-  const pasoN = st.paso >= 0 ? pasosDe()[st.paso].paso : 0;
-  const et = etapaAct(), activas = et?.piezas && new Set(et.piezas), vidrio = new Set(et?.vidrio || []);
-  const foco = new Set(st.paso >= 0 ? (focoDe()[pasoN] || quitaDe()[pasoN] || []) : et?.foco || []);
+  const ps = st.paso >= 0 ? pasosDe()[st.paso] : null, pasoN = ps ? ps.paso : 0;
+  const et = etapaAct(), activas = et?.piezas && new Set(et.piezas), vidrio = new Set(et?.vidrio || []), vidrioPaso = new Set(ps?.vidrio || []);
+  const foco = new Set(ps ? (st.proc ? ps.foco || ps.quita : focoDe()[pasoN] || quitaDe()[pasoN]) || [] : et?.foco || []);
   for (const p of Object.values(modelo.parts)) {
     let op = 1;
     if (st.xray && p.shell) op = 0.22;
     if (activas && st.tenue) op = activas.has(p.id) ? (vidrio.has(p.id) ? 0.3 : 1) : p.shell ? 0.05 : 0.1;
+    if (vidrioPaso.has(p.id)) op = Math.min(op, 0.3);   // «vidrio» de un paso de desarme: se ve lo de adentro
     if (st.aislar && st.sel && p.id !== st.sel) op = Math.min(op, 0.12);
     const brillo = p.id === st.sel ? [0x3b82f6, 0.55] : foco.has(p.id) ? [0xf5a524, 0.5] : p.id === hover ? [0x3b82f6, 0.25] : [0, 0];
     for (const m of p.mats) { m.transparent = op < 1; m.opacity = op; if (m.emissive) { m.depthWrite = op >= 1; m.emissive.setHex(brillo[0]); m.emissiveIntensity = brillo[1]; } }
@@ -173,16 +180,27 @@ function uiPiezas() {
 $('#pzQ').oninput = e => { qPz = e.target.value; uiPiezas(); };
 
 function uiDesarme() {
-  const P = pasosDe(), i = st.paso, p = P[i];
-  $('#ds').innerHTML = `<div class="nav"><button class="b" id="ant" ${i < 0 ? 'disabled' : ''}>◀ Anterior</button><button class="b" id="sig" ${i >= P.length - 1 ? 'disabled' : ''}>${i < 0 ? 'Empezar' : 'Siguiente'} ▶</button><button class="b" id="fin" ${i < 0 ? 'disabled' : ''}>Salir</button></div>
+  const P = pasosDe(), i = st.paso, p = P[i], procs = procsDe();
+  $('#ds').innerHTML = (procs?.length ? `<h3>Procedimiento</h3><select id="proc"><option value="0" ${st.proc ? '' : 'selected'}>Desarme de la máquina (${DATA.desarmados[st.modelo.modelo].length} pasos)</option>${procs.map((x, j) => `<option value="${j + 1}" ${st.proc === j + 1 ? 'selected' : ''}>${x.nombre}</option>`).join('')}</select>` : '') + `<div class="nav"><button class="b" id="ant" ${i < 0 ? 'disabled' : ''}>◀ Anterior</button><button class="b" id="sig" ${i >= P.length - 1 ? 'disabled' : ''}>${i < 0 ? 'Empezar' : 'Siguiente'} ▶</button><button class="b" id="fin" ${i < 0 ? 'disabled' : ''}>Salir</button></div>
    <div class="prog"><i style="width:${(i + 1) / P.length * 100}%"></i></div>
    ${p ? `<div class="paso"><b>Paso ${p.paso} de ${P.length} · ${p.titulo}</b><p>${p.instruccion}</p>${p.precaucion ? `<p class="adv">⚠ ${p.precaucion}</p>` : ''}<p class="nota">Herramienta: ${p.herramienta}</p></div>` : `<p class="nota">Recorre el desarme paso a paso: las piezas se van separando en el modelo y se resaltan las que intervienen en cada paso. Las instrucciones vienen del manual de ${herr.nombre.toLowerCase()}.</p>`}
    <h3>Todos los pasos</h3>${P.map((x, j) => `<div class="fila ${j === i ? 'sel' : ''}" data-p="${j}"><span>${x.paso}. ${x.titulo}</span></div>`).join('')}`;
+  if ($('#proc')) $('#proc').onchange = e => { st.proc = +e.target.value; irPaso(-1); };
   $('#ant').onclick = () => irPaso(i - 1); $('#sig').onclick = () => irPaso(i + 1); $('#fin').onclick = () => irPaso(-1);
   $('#ds').onclick = e => { const f = e.target.closest('[data-p]'); if (f) irPaso(+f.dataset.p); };
   $('#exp').disabled = i >= 0 || st.func;
 }
-function irPaso(i) { if (i >= 0 && st.func) { st.func = false; uiFuncion(); } st.paso = i; aparienciaPiezas(); uiDesarme(); }
+function irPaso(i) {
+  if (i >= 0 && st.func) { st.func = false; uiFuncion(); }
+  const v0 = st.paso >= 0 && pasosDe()[st.paso]?.vista; st.paso = i;
+  if (i >= 0) vistaPaso(); else if (v0) vistaInicial();   // vista de cámara propia del paso (herr.vistas[paso.vista]); al salir vuelve la general
+  aparienciaPiezas(); uiDesarme();
+}
+function vistaPaso() {
+  const v = herr.vistas?.[pasosDe()[st.paso]?.vista]; if (!v) return;
+  cam.position.fromArray(v.pos); ctl.target.fromArray(v.tgt); tgtGoal = null;
+  ctl.maxDistance = Math.max(ctl.maxDistance, cam.position.distanceTo(ctl.target) * 1.6);
+}
 
 // ---------- funcionamiento: etapas con capas animadas (corriente, campo, fuerza, giro de las piezas) ----------
 function setFunc(on) {
@@ -292,7 +310,7 @@ cv.addEventListener('pointermove', e => {
 function quitadas() { // piezas desmontadas hasta el paso actual
   const s = new Set();
   const P = pasosDe(), Q = quitaDe();
-  for (let j = 0; j <= st.paso; j++) (Q[P[j].paso] || []).forEach(x => s.add(x));
+  for (let j = 0; j <= st.paso; j++) ((st.proc ? P[j].quita : Q[P[j].paso]) || []).forEach(x => s.add(x));
   return s;
 }
 let ultimo = performance.now();
@@ -300,12 +318,12 @@ function bucle() {
   const ahora = performance.now(), dt = Math.min((ahora - ultimo) / 1000, 0.1); ultimo = ahora;
   const et = etapaAct();
   if (st.func && st.play) { anim.t += dt * st.vel; if (et?.giro) anim.ang += dt * st.vel * 4; }
-  const qs = st.paso >= 0 ? quitadas() : null;
+  const qs = st.paso >= 0 ? quitadas() : null, solo = soloDe();
   for (const p of Object.values(modelo.parts)) {
     const meta = st.func ? 0 : qs ? (qs.has(p.id) ? 1 : 0) : st.exp;
     monto[p.id] += (meta - monto[p.id]) * 0.12;
     p.items.forEach((i, j) => {
-      i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id);
+      i.obj.position.copy(i.dir).multiplyScalar(monto[p.id]); i.obj.visible = !st.oculta.has(p.id) && (!solo || solo.has(p.id));
       const G = st.func && giroDe[p.id]?.find(x => x.i == null || x.i === j);
       if (G) { qg.setFromAxisAngle(G.g.e, anim.ang * G.g.k); dg.copy(G.g.c).applyQuaternion(qg).negate().add(G.g.c); i.obj.quaternion.copy(qg); i.obj.position.add(dg); }
       else i.obj.quaternion.identity();
@@ -326,13 +344,14 @@ if (q.get('marca')) cambiarMarca(q.get('marca'));
 for (const o of herr.opciones) if (q.has(o.k)) st.cfg[o.k] = typeof herr.cfg0[o.k] === 'number' ? +q.get(o.k) : q.get(o.k);
 if (q.get('modelo')) { const m = DATA.modelos.find(x => x.marca === st.marca && x.modelo === q.get('modelo')); if (m) aplicarModelo(m); }
 st.exp = +(q.get('exp') || 0); st.corte = q.has('corte'); st.xray = q.has('xray');
+if (q.get('proc')) st.proc = procsDe()?.[+q.get('proc') - 1] ? +q.get('proc') : 0;   // ?proc=1..3: procedimiento secundario
 if (q.get('paso')) st.paso = +q.get('paso') - 1;
 if (q.has('func') && etapasDe()) { st.func = true; st.paso = -1; st.fp = (+q.get('etapa') || 1) - 1; st.exp = 0; }
 if (q.has('pausa')) st.play = false;
 anim.t = +q.get('t') || 0; anim.ang = +q.get('ang') || 0;
 if (q.get('sel')) st.sel = q.get('sel');
 $('#exp').value = st.exp; $('#corte').checked = st.corte; $('#xray').checked = st.xray;
-if (st.func) vistaEtapa();
+if (st.func) vistaEtapa(); else if (st.paso >= 0) vistaPaso();
 if (q.get('cam')) { const c = q.get('cam').split(',').map(Number); cam.position.set(c[0], c[1], c[2]); ctl.target.set(c[3], c[4], c[5]); }
 reconstruir();
 if (st.func) verTab('fn');

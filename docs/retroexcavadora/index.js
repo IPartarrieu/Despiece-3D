@@ -40,7 +40,7 @@ export default {
   extra: {},
   // vista de 3/4 delantera izquierda; la máquina mide ~7 m con la retro plegada
   vista: { pos: [640, 400, -980], tgt: [70, 125, 0] },
-  // vistas por etapa de «Funciona» (data.json -> funcionamiento[].vista)
+  // vistas por etapa de «Funciona» (data.json -> funcionamiento[].vista) y por paso de desarme
   vistas: {
     general: { pos: [640, 400, -980], tgt: [70, 125, 0] },
     motor: { pos: [420, 260, -330], tgt: [180, 105, 0] },
@@ -52,6 +52,17 @@ export default {
     giro: { pos: [-300, 760, -520], tgt: [-200, 80, 0] },
     retro: { pos: [-480, 380, -1050], tgt: [-120, 120, 0] },
     direccion: { pos: [520, 200, -380], tgt: [200, 50, 0] },
+    // vistas de los pasos de desarme (data.json -> desarmados[].vista): motor en detalle, volante y retenes, mandos finales, cilindro
+    motor_det: { pos: [330, 185, -210], tgt: [198, 104, 0] },
+    motor_frente: { pos: [430, 150, -170], tgt: [240, 104, 0] },
+    motor_atras: { pos: [30, 180, -230], tgt: [150, 104, 0] },
+    motor_sup: { pos: [200, 330, -140], tgt: [200, 115, 0] },
+    motor_bajo: { pos: [280, 25, -230], tgt: [200, 90, 0] },
+    bateria: { pos: [260, 110, 330], tgt: [140, 65, 54] },
+    cabina: { pos: [-120, 230, -330], tgt: [40, 160, 0] },
+    eje_trasero: { pos: [-60, 80, -340], tgt: [0, 60, -20] },
+    mando_final: { pos: [90, 90, -270], tgt: [0, 60, -77] },
+    cilindro_pluma: { pos: [-250, 230, -220], tgt: [-70, 167, 0] },
   },
   etiqueta: (marca, m) => (m ? `${corta(marca)} ${m.modelo}` : corta(marca)).toUpperCase(),
 };

@@ -8,6 +8,15 @@ let datos = {};
 try { datos = await (await fetch(new URL('data.json', import.meta.url))).json(); }
 catch { console.warn('retroexcavadora: data.json no disponible; se usan los nombres de respaldo del contrato'); }
 export const CAT = datos;
+// contrato de piezas nuevas (contrato.json, guía en CONTRATO.md): un registro por id real, con su nombre, grupo, módulo y anclaje
+let contrato = { piezas: [] };
+try { contrato = await (await fetch(new URL('contrato.json', import.meta.url))).json(); }
+catch { console.warn('retroexcavadora: contrato.json no disponible'); }
+export const CONTRATO = contrato;
+export const PIEZAS_CONTRATO = Object.fromEntries(contrato.piezas.flatMap(e => (e.ids || [e.id]).map((id, i) => [id, {
+  ...e, id, base: e.id, nombre: e.etiquetas?.[i] ?? e.nombre, anclaje: e.anclajes?.[i] ?? e.anclaje, explosion: e.explosiones?.[i] ?? e.explosion,
+}])));
+export const aplicaA = (e, m) => e.aplica === 'todos' || !m?.modelo || e.aplica.includes(m.modelo);
 
 // respaldo del CONTRATO (si data.json aún no trae la pieza): [nombre, grupo]
 const G = { m: 'Motor y enfriamiento', t: 'Transmisión y ejes', r: 'Ruedas', h: 'Sistema hidráulico', c: 'Cargador frontal', x: 'Retroexcavadora', e: 'Estabilizadores', k: 'Chasis y cabina' };
@@ -29,8 +38,9 @@ export const porModelo = (tabla, m) => tabla?.[m?.modelo] ?? tabla?.[m?.nombre] 
 export function armador(m) {
   const parts = {}, cat = porModelo(CAT.catalogoPorModelo, m) || CAT.catalogo || {};
   const add = (id, items, shell = false) => {
-    const c = cat[id], r = NOMBRES[id];
-    if (!c) console.warn(`retroexcavadora: ${m?.modelo} sin «${id}» en el catálogo; nombre de respaldo`);
+    const c = cat[id], pc = PIEZAS_CONTRATO[id], r = NOMBRES[id] || (pc && [pc.nombre, pc.grupo]);
+    if (parts[id]) console.warn(`retroexcavadora: pieza duplicada «${id}»`);
+    if (!c && !r) console.warn(`retroexcavadora: ${m?.modelo} sin «${id}» en el catálogo ni en el contrato`);
     const its = items.map(([objs, dir]) => { const g = new THREE.Group(); [].concat(objs).forEach(o => g.add(o)); return { obj: g, dir }; });
     const mats = []; its.forEach(i => i.obj.traverse(o => { if (o.material) { o.userData.pid = id; if (!o.material.userData.fijo) mats.push(o.material); } }));
     const nom = c ? (c[1] ? `${c[0]} (${c[1]})` : c[0]) : r?.[0] || id;

@@ -134,7 +134,7 @@ const juntar = (...objs) => { const g = new THREE.Group(); g.add(...objs); const
 const lbl = (t, p, o = {}) => rotulo(t, p, { esc: 18, ancho: Math.max(1.6, t.length * 0.36), ...o });
 const fl = (pts, color, o = {}) => flujo(pts, { color, r: 1.1, tam: 2.6, n: 16, vel: 0.12, cono: true, ...o });
 
-// ctx: { cuerposItems: [[item, nombreCuerpo]], cils: [{id, cam, vas, A0, B0, a, b}], L: puntos de referencia }
+// ctx: { cuerposItems: [[item, nombreCuerpo]], cils: [{id, cam, vas, A0, B0, a, b, camExtra?, vasExtra?}], L: puntos de referencia }
 export function vivo(D, K, ctx) {
   const { L } = ctx, ligas = [], est = {};
   const ligado = (cuerpo, ...objs) => { const g = juntar(...objs); ligas.push([g, cuerpo]); return g; };
@@ -200,6 +200,8 @@ export function vivo(D, K, ctx) {
       const qq = new THREE.Quaternion().setFromUnitVectors(d0, d1).multiply(q);
       c.cam.obj.quaternion.copy(qq); c.cam.obj.position.copy(A).sub(c.A0.clone().applyQuaternion(qq));
       c.vas.obj.quaternion.copy(qq); c.vas.obj.position.copy(Bp).sub(c.B0.clone().applyQuaternion(qq));
+      // subpiezas del cilindro (contrato): pistón y vástago siguen al vástago; cabezal, sellos y bujes, a la camisa
+      for (const [lst, ref] of [[c.camExtra, c.cam], [c.vasExtra, c.vas]]) for (const it of lst || []) { it.obj.quaternion.copy(ref.obj.quaternion); it.obj.position.copy(ref.obj.position); }
       const Lc = A.distanceTo(Bp), e = est[c.id] || (est[c.id] = {});
       e.v = prev != null && anim.t !== prev ? (Lc - e.L) / Math.max(anim.t - prev, 1e-3) / 30 : e.v || 0; e.L = Lc; e.A = A; e.B = Bp;
     }
