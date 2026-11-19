@@ -71,15 +71,15 @@ export default function (ctx) {
     const s = new THREE.Shape(); s.moveTo(X(0), Y(0)); s.lineTo(X(24.38), Y(0)); s.lineTo(X(24.38), Y(30.48)); s.lineTo(X(0), Y(30.48)); s.closePath();
     for (const [u, v] of HOYOS) { const h = new THREE.Path(); h.absarc(X(u), Y(v), 0.19, 0, PI * 2, true); s.holes.push(h); }
     const g = new THREE.ExtrudeGeometry(s, { depth: 0.157, bevelEnabled: false, curveSegments: 10 }); g.translate(0, 0, Zc(-0.157));
-    const base = mesh(g, A.pcb('#14161a'));
+    const base = mesh(g, mat('#0c5c2e', { metalness: 0, roughness: 0.9, envMapIntensity: 0.25 }));   // verde máscara de soldadura; saturado porque la luz del visor lava los tonos oscuros
     // serigrafía, trazas y vías: una sola textura sobre la cara de componentes
     const S = 84, W = 2048, H = 2560;
     const tex = lienzo(W, H, (g2) => {
       const px = u => u * S, py = v => v * S;
       g2.lineCap = 'round'; g2.lineJoin = 'round';
-      g2.fillStyle = 'rgba(40,46,56,0.55)';   // planos de cobre bajo el VRM
+      g2.fillStyle = 'rgba(150,210,150,0.30)';   // planos de cobre bajo el VRM
       g2.fillRect(px(4.2), py(1.6), px(11.4), py(4)); g2.fillRect(px(4.2), py(4.2), px(2.2), py(9.4));
-      const haz = (u0, v0, u1, v1, n, gap, col = '#303741', w = 2) => {
+      const haz = (u0, v0, u1, v1, n, gap, col = '#d8b45f', w = 2.6) => {
         g2.strokeStyle = col; g2.lineWidth = w;
         for (let k = 0; k < n; k++) {
           const um = (u0 + u1) / 2 + (k - n / 2) * gap * 1.4;
@@ -87,7 +87,7 @@ export default function (ctx) {
         }
       };
       const hazV = (u0, v0, u1, v1, n, gap) => {   // lo mismo girado: primero a lo largo de v
-        g2.strokeStyle = '#303741'; g2.lineWidth = 2;
+        g2.strokeStyle = '#d8b45f'; g2.lineWidth = 2.6;
         for (let k = 0; k < n; k++) {
           const vm = (v0 + v1) / 2 + (k - n / 2) * gap * 1.4;
           g2.beginPath(); g2.moveTo(px(u0 + k * gap), py(v0)); g2.lineTo(px(u0 + k * gap), py(vm)); g2.lineTo(px(u1 + k * gap), py(vm)); g2.lineTo(px(u1 + k * gap), py(v1)); g2.stroke();
@@ -100,17 +100,17 @@ export default function (ctx) {
       hazV(16.8, 24.6, 13.0, 21.9, 8, 0.1); haz(19.3, 23.0, 22.3, 21.6, 8, 0.1);          // PCH -> M.2_2, SATA
       hazV(18, 21.9, 12.5, 23.1, 8, 0.1); haz(16.8, 23.5, 12.0, 28.4, 6, 0.1);            // PCH -> PCIe x16 (x4)
       haz(3.1, 17.6, 4.2, 18.6, 6, 0.1); haz(3.1, 25.8, 4.0, 24.0, 6, 0.1);               // LAN y audio
-      g2.strokeStyle = '#3a414b'; g2.lineWidth = 4;                                         // pistas gruesas de poder
+      g2.strokeStyle = '#e6c26e'; g2.lineWidth = 6;                                         // pistas gruesas de poder
       for (const [a, b, c, d] of [[8, 4.8, 8, 12.7], [8, 2.5, 14.5, 2.5], [14.5, 2.5, 16.8, 3.2], [6.4, 1.2, 6.4, 3.6]]) { g2.beginPath(); g2.moveTo(px(a), py(b)); g2.lineTo(px(c), py(d)); g2.stroke(); }
       // vías
-      const via = (u, v) => { g2.fillStyle = '#767c85'; g2.beginPath(); g2.arc(px(u), py(v), 3.2, 0, PI * 2); g2.fill(); g2.fillStyle = '#14161a'; g2.beginPath(); g2.arc(px(u), py(v), 1.2, 0, PI * 2); g2.fill(); };
+      const via = (u, v) => { g2.fillStyle = '#d8d2b8'; g2.beginPath(); g2.arc(px(u), py(v), 3.2, 0, PI * 2); g2.fill(); g2.fillStyle = '#04200f'; g2.beginPath(); g2.arc(px(u), py(v), 1.2, 0, PI * 2); g2.fill(); };
       let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
       for (let i = 0; i < 380; i++) via(0.6 + rnd() * 23, 0.6 + rnd() * 29);
       for (let u = 8.7; u < 16.4; u += 0.42) { via(u, 5.3); via(u, 12.7); }
       // agujeros de montaje: corona plateada
       for (const [u, v] of HOYOS) { g2.strokeStyle = '#b9bec5'; g2.lineWidth = 7; g2.beginPath(); g2.arc(px(u), py(v), 0.32 * S, 0, PI * 2); g2.stroke(); g2.strokeStyle = 'rgba(235,238,242,0.8)'; g2.lineWidth = 2; g2.beginPath(); g2.arc(px(u), py(v), 0.5 * S, 0, PI * 2); g2.stroke(); }
       // serigrafía
-      g2.fillStyle = 'rgba(235,238,242,0.82)'; g2.strokeStyle = 'rgba(235,238,242,0.7)'; g2.lineWidth = 2;
+      g2.fillStyle = 'rgba(250,250,250,0.95)'; g2.strokeStyle = 'rgba(250,250,250,0.9)'; g2.lineWidth = 2;
       const txt = (t, u, v, rot = 0, sz = 20) => { g2.save(); g2.translate(px(u), py(v)); g2.rotate(rot); g2.font = `bold ${sz}px sans-serif`; g2.textAlign = 'center'; g2.fillText(t, 0, 0); g2.restore(); };
       const rect = (u0, u1, v0, v1) => g2.strokeRect(px(u0), py(v0), px(u1 - u0), py(v1 - v0));
       rect(8.5, 16.5, 5.2, 12.8); txt('LGA1700', 12.5, 13.3, 0, 22); txt('CPU', 12.5, 4.8, 0, 22);
@@ -124,7 +124,7 @@ export default function (ctx) {
       txt('Z690 REF · ATX', 17.5, 20.0, 0, 20); txt('DDR5 · PCIe 5.0', 12.5, 29.3, 0, 15); txt('BAT', 14, 27.6, 0, 14);
       g2.beginPath(); g2.moveTo(px(2.7), py(19)); g2.lineTo(px(2.7), py(23.4)); g2.stroke();   // línea de aislamiento analógico
     });
-    const tm = mat('#ffffff', { map: tex, transparent: true, metalness: 0, roughness: 0.7, depthWrite: false });
+    const tm = mat('#ffffff', { map: tex, transparent: true, metalness: 0, roughness: 0.9, envMapIntensity: 0.25, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
     const sup = mesh(new THREE.PlaneGeometry(24.38, 30.48), tm, X(12.19), Y(15.24), Zc(0.004));
     add('mb_pcb', [[base, sup]]);
   }
