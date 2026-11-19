@@ -16,7 +16,7 @@ const HERR = [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro, retro
 // categorías del inicio; cada equipo con su manual técnico (PDF en docs/manuales/; sin archivo: «en preparación»)
 const CATS = { menor: { titulo: 'Maquinaria Menor', herr: [esmeril, demoledor, rotomartillo, bomba, sonda, telurometro], pronto: ['Taladro'] }, pesada: { titulo: 'Maquinaria Pesada', herr: [retroexcavadora], pronto: [] },
   oficina: { titulo: 'Equipos de oficina', herr: [pctorre].filter(Boolean), pronto: [] } };
-const MANUAL = { esmeril: 'Manual_Esmeril_Angular.pdf', demoledor: 'Manual_Demoledor.pdf', bomba: 'Manual_Bombas.pdf', sonda: 'Manual_Sondas_Vibradoras.pdf', telurometro: 'Manual_Telurometro.pdf', retroexcavadora: 'Manual_Retroexcavadora.pdf' };
+const MANUAL = { esmeril: 'Manual_Esmeril_Angular.pdf', demoledor: 'Manual_Demoledor.pdf', bomba: 'Manual_Bombas.pdf', sonda: 'Manual_Sondas_Vibradoras.pdf', telurometro: 'Manual_Telurometro.pdf', retroexcavadora: 'Manual_Retroexcavadora.pdf', pctorre: 'Manual_PC_Torre.pdf' };
 const q = new URLSearchParams(location.search);   // ?herr=demoledor&marca=Makita&exp=1&corte&xray&paso=12&sel=estator&cam=x,y,z,tx,ty,tz&rapido
 const datos = {};                                  // data.json por herramienta, cargado una vez
 let cat = q.get('cat') || Object.keys(CATS).find(c => CATS[c].herr.some(h => h.id === q.get('herr'))) || 'menor';
