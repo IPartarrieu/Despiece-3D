@@ -150,19 +150,27 @@ function uiEquipo() {
   };
 }
 
+let qPz = '';
+const sinAcento = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 function uiPiezas() {
-  const grupos = {};
-  for (const p of Object.values(modelo.parts)) (grupos[p.grupo] ??= []).push(p);
+  const grupos = {}, q = sinAcento(qPz.trim()).split(/\s+/).filter(Boolean);
+  let n = 0;
+  for (const p of Object.values(modelo.parts)) {
+    const txt = sinAcento([p.nombre, p.grupo, p.ref, p.id].join(' '));
+    if (q.every(t => txt.includes(t))) { (grupos[p.grupo] ??= []).push(p); n++; }
+  }
   const s = st.sel && modelo.parts[st.sel], d = s && (fichaPieza(s.nombre) || herr.extra?.[s.id]);
-  $('#pz').innerHTML = Object.entries(grupos).map(([g, ps]) => `<h3>${g}</h3>` + ps.map(p =>
-    `<div class="fila ${p.id === st.sel ? 'sel' : ''}" data-id="${p.id}"><button class="ojo" data-ojo="${p.id}" title="Mostrar u ocultar">${st.oculta.has(p.id) ? '◌' : '●'}</button><span>${p.nombre}</span></div>`).join('')).join('') +
+  $('#pzL').innerHTML = (q.length ? `<p class="nota">${n} pieza${n === 1 ? '' : 's'} encontrada${n === 1 ? '' : 's'}</p>` : '') +
+    (n ? Object.entries(grupos).map(([g, ps]) => `<h3>${g}</h3>` + ps.map(p =>
+    `<div class="fila ${p.id === st.sel ? 'sel' : ''}" data-id="${p.id}"><button class="ojo" data-ojo="${p.id}" title="Mostrar u ocultar">${st.oculta.has(p.id) ? '◌' : '●'}</button><span>${p.nombre}</span></div>`).join('')).join('') : '<p class="nota">Ninguna pieza coincide con la búsqueda.</p>') +
     (d ? `<div class="ficha"><h4>${s.nombre}</h4><p><b>Función.</b> ${d.funcion}</p><p><b>Cómo se desgasta.</b> ${d.como_se_desgasta}</p><p><b>Cómo probarla.</b> ${d.prueba}${d.valor_esperado ? ` (${d.valor_esperado})` : ''}</p><p><b>Cuándo cambiarla.</b> ${d.cuando_cambiar}</p>${d.tip_taller ? `<p><b>Tip de taller.</b> ${d.tip_taller}</p>` : ''}</div>` : '<p class="nota">Toca una pieza en la lista o en el modelo para ver su ficha.</p>');
-  $('#pz').onclick = e => {
+  $('#pzL').onclick = e => {
     const o = e.target.closest('[data-ojo]');
     if (o) { const id = o.dataset.ojo; st.oculta.has(id) ? st.oculta.delete(id) : st.oculta.add(id); return uiPiezas(); }
     const f = e.target.closest('[data-id]'); if (f) seleccionar(f.dataset.id);
   };
 }
+$('#pzQ').oninput = e => { qPz = e.target.value; uiPiezas(); };
 
 function uiDesarme() {
   const P = pasosDe(), i = st.paso, p = P[i];

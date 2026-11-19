@@ -44,6 +44,7 @@ aside{background:var(--panel);border-left:1px solid var(--line);display:flex;fle
 .pg h3:first-child{margin-top:0}
 select,button.b{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
 select{width:100%;margin-bottom:8px}
+#pzQ{width:100%;margin-bottom:8px;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .seg{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
 .seg button{flex:1;min-width:70px;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 4px;cursor:pointer}
 .seg button.on{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 18%,var(--bg))}
@@ -99,7 +100,7 @@ button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;backgrou
  <aside>
   <div class="tabs"><button data-t="eq" class="on">Equipo</button><button data-t="pz">Piezas</button><button data-t="ds">Desarme</button><button data-t="fn">Funciona</button></div>
   <div class="pg on" id="eq"></div>
-  <div class="pg" id="pz"></div>
+  <div class="pg" id="pz"><input id="pzQ" type="search" placeholder="Buscar pieza (nombre, grupo o referencia)" autocomplete="off" aria-label="Buscar entre las piezas"><div id="pzL"></div></div>
   <div class="pg" id="ds"></div>
   <div class="pg" id="fn"></div>
   <div id="manual"></div>
