@@ -124,7 +124,7 @@ function aparienciaPiezas() {
     if (activas && st.tenue) op = activas.has(p.id) ? (vidrio.has(p.id) ? 0.3 : 1) : p.shell ? 0.05 : 0.1;
     if (vidrioPaso.has(p.id)) op = Math.min(op, 0.3);   // «vidrio» de un paso de desarme: se ve lo de adentro
     if (st.aislar && st.sel && p.id !== st.sel) op = Math.min(op, 0.12);
-    const brillo = p.id === st.sel ? [0x3b82f6, 0.55] : foco.has(p.id) ? [0xf5a524, 0.5] : p.id === hover ? [0x3b82f6, 0.25] : [0, 0];
+    const brillo = p.id === st.sel ? [0xB7B45A, 0.55] : foco.has(p.id) ? [0xE58A5F, 0.5] : p.id === hover ? [0xB7B45A, 0.25] : [0, 0];
     for (const m of p.mats) { m.transparent = op < 1; m.opacity = op; if (m.emissive) { m.depthWrite = op >= 1; m.emissive.setHex(brillo[0]); m.emissiveIntensity = brillo[1]; } }
   }
   renderer.clippingPlanes = st.corte ? [plano] : [];

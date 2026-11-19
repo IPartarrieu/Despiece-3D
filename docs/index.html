@@ -3,10 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0F1214" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
 <title>Visor VIMAC</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <style>
-:root{--bg:#14171c;--panel:#1b1f26;--line:#2c323c;--tx:#e8eaee;--mut:#9aa3b0;--acc:#f5a524;--ok:#3b82f6}
-@media (prefers-color-scheme:light){:root{--bg:#e9ecf1;--panel:#fff;--line:#d5dae2;--tx:#1d2330;--mut:#5b6678}}
+:root{--bg:#0F1214;--panel:#171B1E;--line:#2a3035;--tx:#F3F0E8;--mut:#A9ADB0;--acc:#E58A5F;--ok:#B7B45A;--sobre:#1A0F08;--bad:#EC7068;--linea:linear-gradient(90deg,#E58A5F,#B7B45A);color-scheme:dark}   /* paleta VIMAC (la misma de la app Control de equipos) */
+@media (prefers-color-scheme:light){:root{--bg:#F4F2EC;--panel:#fff;--line:#d9d5ca;--tx:#25282B;--mut:#575B5F;--acc:#A94A24;--ok:#6B6A2C;--sobre:#fff;--bad:#B3261E;color-scheme:light}}
+input{accent-color:var(--acc)}
+header{position:relative}header::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--linea)}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,sans-serif}
 #app{display:grid;grid-template-columns:1fr 380px;grid-template-rows:auto 1fr;height:100%}
@@ -19,7 +24,7 @@ header h1{font-size:16px;margin:0}
 #menu{display:none;position:absolute;top:calc(100% + 6px);left:0;z-index:20;min-width:240px;max-height:70vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px #0006;padding:4px}
 #menu.on{display:block}
 #menu button{display:block;width:100%;text-align:left;font:inherit;color:var(--tx);background:none;border:0;border-radius:8px;padding:8px 10px;cursor:pointer}
-#menu button:hover{background:var(--bg)}#menu button.on{background:var(--acc);color:#1a1200;font-weight:600}
+#menu button:hover{background:var(--bg)}#menu button.on{background:var(--acc);color:var(--sobre);font-weight:600}
 #menu button:disabled{color:var(--mut);cursor:default}#menu button:disabled:hover{background:none}
 #portada{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px;text-align:center}
 #portada.off{display:none}
@@ -28,7 +33,7 @@ header h1{font-size:16px;margin:0}
 .card{width:260px;padding:28px 20px;font:inherit;color:var(--tx);background:var(--panel);border:1px solid var(--line);border-radius:16px;cursor:pointer}
 .card:hover{border-color:var(--acc)}.card b{display:block;font-size:20px;margin:8px 0 6px}.card span{font-size:42px}.card small{color:var(--mut)}
 #manual{padding:10px 14px;border-top:1px solid var(--line)}
-#manual a,#manual span{display:block;text-align:center;padding:9px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--acc);background:var(--acc);color:#1a1200}
+#manual a,#manual span{display:block;text-align:center;padding:9px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--acc);background:var(--acc);color:var(--sobre)}
 #manual span{background:none;border-color:var(--line);color:var(--mut);font-weight:400}
 #vista{position:relative;min-height:0}
 canvas{display:block;width:100%;height:100%;touch-action:none}
@@ -57,10 +62,10 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:0}dt{color:va
 .ficha{margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--bg)}
 .ficha h4{margin:0 0 6px;font-size:15px}.ficha p{margin:4px 0}.ficha b{color:var(--acc)}
 .paso{border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:10px;background:var(--bg)}
-.paso .adv{color:#f87171}
+.paso .adv{color:var(--bad)}
 .nav{display:flex;gap:8px;align-items:center}.nav button{flex:1;cursor:pointer}
 .prog{height:4px;background:var(--line);border-radius:4px;margin:10px 0}.prog i{display:block;height:100%;background:var(--acc);border-radius:4px}
-button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;background:var(--acc);color:#1a1200;border-color:var(--acc);font-weight:600}
+button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;background:var(--acc);color:var(--sobre);border-color:var(--acc);font-weight:600}
 .ley{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mut);margin-top:4px}.ley i{width:12px;height:12px;border-radius:50%;flex:none}
 .ctrl{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:12px;color:var(--mut)}.ctrl button{cursor:pointer}.ctrl label{display:flex;gap:6px;align-items:center}
 @media (max-width:800px){
@@ -71,6 +76,7 @@ button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;backgrou
 </head>
 <body>
 <div id="portada">
+ <img src="logo.svg" alt="" width="64" height="64">
  <h1 style="margin:0;font-size:15px;letter-spacing:.2em;color:var(--acc)">VISOR VIMAC</h1>
  <h2>¿Qué equipo quieres ver?</h2>
  <div class="cards">
@@ -81,7 +87,7 @@ button.grande{width:100%;padding:10px;margin-bottom:10px;cursor:pointer;backgrou
 </div>
 <div id="app">
  <header>
-  <h1>Visor VIMAC</h1>
+  <h1 style="display:flex;align-items:center;gap:8px"><img src="logo.svg" alt="" width="24" height="24">Visor VIMAC</h1>
   <button id="inicioBtn" title="Volver al inicio">⌂ Inicio</button>
   <span class="cat" id="catTxt"></span>
   <div class="desp"><button id="selBtn">Equipo ▾</button><div id="menu"></div></div>
